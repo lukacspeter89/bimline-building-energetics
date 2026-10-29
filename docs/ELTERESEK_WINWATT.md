@@ -22,10 +22,10 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Hatás:** a padló hővesztesége eltér. Az előjel a geometriától függ, ezért golden teszttel számszerűsítendő.
 - **Program:** a padló A és P értéke a kontúrból, a teljes padlóra (zónánként) számolódik; a helyiségekhez csak a terület kerül.
 
-### E-03 – Padló–fal csatlakozás Ψ_p,f elhagyása (FPszi = 0) — **E?**
-- **WinWatt-gyakorlat:** a padlóhatárolón `FPszi` = 0 (SKILL 1. fejezet).
-- **Forrás:** a (6.5) képlet a P·Ψ_p,f tagot tartalmazza, a Ψ_p,f értéke a 6.4. táblázatból (1. függ. 6.1.4.3, 42. o.; `modszer/netto_energiaigeny.json#tabla_6_4`).
-- **Ellenőrizendő:** hogy a WinWatt a padló-fal hőhidat máshol (pl. az egyszerűsített hőhíd-korrekcióban, ζ) számolja-e. Ha nem, a Ψ_p,f elhagyása alábecsüli a veszteséget.
+### E-03 – Talajon fekvő padló: egyenértékű U és Ψ_p,f — **E** (G1 golden teszt, 2026-10-29)
+- **WinWatt (G1):** U = 0,151 W/m²K „egyenértékű” érték + P·Ψ, ahol Ψ = 0,10 W/mK alapértelmezés: H_tr,T = 96·0,151 + 40·0,10 = 18,5 W/K. Az „átlagos rétegtervi” 0,168 W/m²K-t kiírja, de a mérlegben nem ezt használja.
+- **Forrás:** H_tr,T = A·U_T,p + P·Ψ_p,f, (6.5); U_T,p a (4.23) szerint (B = 4,8 m, d_t = 9,70 m) = 0,168 W/m²K; Ψ_p,f a 6.4. táblázatból (0,15–0,45 W/mK falazat, megszakítatlan külső hőszigetelés, a terepszint alatt 0,5 m-ig szigetelt lábazat, szigetelt padló: 0,10).
+- **Program:** a forrás szerint 96·0,168 + 40·0,10 = 20,15 W/K (+9 %). A 0,151-hez vezető WinWatt-lépés a módszerben nem található. A korábbi „FPszi = 0” feltevés tévesnek bizonyult: a WinWatt a Ψ-t figyelembe veszi.
 
 ### E-04 – Fűtetlen tér felé néző határolók importkor kiesnek az energetikai burokból — **E** (WinWatt-hiba, a felhasználó javítja)
 - **WinWatt-viselkedés:** XML-importkor minden határoló `OverSideTemp`-je `Flags=2 / 20 °C / Bu 1`-re áll; `Flags=2` mellett a szerkezet kimarad a „fűtött teret határoló szerkezetek” közül (A/V, fajlagos hőveszteség-tényező, OÉNY-szerkezetlista). A javítást szerkezetenként kézzel kell elvégezni (SKILL 6.2).
@@ -70,6 +70,16 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Forrás:** a módszer köztes kerekítést nem ír elő; a %-os korrekció a 4.1.6 szerinti U-korrekció.
 - **Program:** köztes kerekítés nincs, csak a megjelenítés kerekít. A golden teszteknél ±0,001 W/m²K tűrés.
 
+### E-12 – Ablakok U* a direkt transzmisszióban — **E?** (G1 golden teszt)
+- **WinWatt (G1):** a „Határoló szerkezetek” táblában az ablak U = 0,75 / 0,73 / 0,71 mellett U* = 0,705 / 0,687 / 0,670 (≈ 6 %-kal kisebb), és a H_tr,D (40,9 W/K) az U*-gal számol. Redőny, árnyékoló nincs.
+- **Forrás:** a (6.2) a nyílászáró hőátbocsátási tényezőjével számol; a 4.3 fejezet szerinti U-t csökkentő tényezőt (árnyékoló nélkül) a módszer nem ad.
+- **Program:** U-val számol; H_tr,D = 41,45 W/K (+1,4 %). Ellenőrizendő: a WinWatt U*-jának eredete (Péter / Bausoft).
+
+### E-13 – Effektív hőtároló képesség — **E?** (G1 golden teszt)
+- **WinWatt (G1):** C_m,eff/A_N = 301,41 kJ/m²K, a rétegrendekből számolva (MSZ EN ISO 13786 jellegű).
+- **Forrás:** egyszerűsített módszernél a 6.5. táblázat kategóriái (nehéz épület: 280 kJ/m²K); részletes számítás az MSZ EN ISO 52016-1 / 13786 szerint megengedett.
+- **Program:** jelenleg a 6.5. táblázat (felhasználói kategóriaválasztással). A rétegrend szerinti számítás később választható lesz. Hatás G1-ben: kb. +0,3 % Q_F,net.
+
 ## 2. Egyezések (rögzítve, hogy ne kerüljenek vissza „eltérésként”)
 
 | # | Tétel | WinWatt | Forrás | Hivatkozás |
@@ -93,3 +103,25 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 ## 3. Teendő a golden tesztekhez
 
 A K-007 szerinti WinWatt-exportok és OÉNY XML-ek beérkezése után minden E? tételhez egy-egy dedikált teszt készül; az eredmény alapján a tétel „E” (indokolt eltérés) vagy „=” lesz. Ami nem indokolható a mátrixszal, az hiba a programban.
+
+## 4. Golden tesztek eredménye (tests/golden, WinWatt fecske 9.58, 2026-10-29)
+
+### G1 – földszintes lapostetős ház, kondenzációs gázkazán
+- **Egyezik:**
+  - rétegtervi U (fal 0,176; tető 0,134);
+  - ablak U méretenként;
+  - A/V 1,157;
+  - H_szell,F 50,8 W/K;
+  - Q_b havonta;
+  - szoláris nyereség (árnyékolás nélkül, F_árny = 1).
+- **A havi mérleg** a WinWatt H_tr,D, H_tr,T és C_m bemenetével havonta ±0,1–1 %-on belül egyezik (Q_F,net 3912 kWh/év). Ez a (6.27)–(6.42) algoritmust igazolja.
+- **A módszer szerinti saját bemenettel** a Q_F,net 4046,5 kWh/év (+3,4 %). Okai: E-03 (talaj), E-12 (ablak U*), E-13 (C_m).
+- **Gépészet** a WinWatt Q_F,net-jével, mind pontosan egyezik:
+  - ε_F 1,01;
+  - ε_F,szab 1,018;
+  - q_F,száll 2,10 kWh/m²év;
+  - w_F,sziv 1,44 kWh/m²év;
+  - Q_F,vég 4226 kWh/év;
+  - W_F,vég 214,08 kWh/év;
+  - HMV: q 25 kWh/m²év, 24 % + 10 %, ε 1,17, Q_HMV,vég 3763 kWh/év, W 28,8 kWh/év.
+- **Primerenergia (kézi ellenőrzés):** a gáz Q_vég·0,9 (F_fé/éh)·1,1 + W·2,3 = 48,71 kWh/m²év fűtésre, egyezik. Ez megerősíti, hogy a súlyozás fűtőérték alapon történik (D-129).

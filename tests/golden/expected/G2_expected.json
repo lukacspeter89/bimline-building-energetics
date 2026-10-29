@@ -1,0 +1,372 @@
+{
+ "eset": "G2",
+ "forras": "WinWatt fecske 9.58 (2026.06.08) – XML import után a GUI-lépések a README szerint, 2026-10-29",
+ "oeny_etanusitas": {
+  "besorolas_Ep": "A+++",
+  "besorolas_CO2": "A++",
+  "hasznos_alapterulet_m2": 160.0,
+  "kondicionalt_terfogat_m3": 432.0,
+  "AV_arany": 0.82,
+  "megujulo_arany_pct": 48.94,
+  "Ep_kWh_m2a": -11.4,
+  "Ep_szazalek": -15.0,
+  "CO2_kg_m2a": 0.49,
+  "CO2_szazalek": 2.0,
+  "q_fajlagos_hoveszteseg_W_m3K": 0.07,
+  "kovetelmeny_felujitas_Ep": 130.81,
+  "kovetelmeny_felujitas_q": 0.36,
+  "kovetelmeny_kozel_nulla_Ep": 76.0,
+  "kovetelmeny_kozel_nulla_CO2": 20.0,
+  "kovetelmeny_kozel_nulla_q": 0.26,
+  "futesi_rendszer_minosites": "Excellent",
+  "hmv_rendszer_minosites": "Good",
+  "szerkezetek": [
+   {
+    "tipus": "FacadeWall",
+    "minosites": "Good",
+    "U": 0.176,
+    "felulet_m2": 164.5
+   },
+   {
+    "tipus": "FloorStructureBelowAtticAndCrawlSpace",
+    "minosites": "Good",
+    "U": 0.141,
+    "felulet_m2": 80.0
+   },
+   {
+    "tipus": "FacadeOpeningsWithWoodenOrPvcFrames",
+    "minosites": "Excellent",
+    "U": 0.708,
+    "felulet_m2": 27.8
+   },
+   {
+    "tipus": "DoorBetweenFacadeOrHeatedAndUnheatedSpaces",
+    "minosites": "Good",
+    "U": 1.4,
+    "felulet_m2": 2.1
+   },
+   {
+    "tipus": "GroundLevelFloorInNewBuildings",
+    "minosites": "Excellent",
+    "U": 0.152,
+    "felulet_m2": 80.0
+   }
+  ],
+  "energiahordozok_kWh_m2a": {
+   "NetworkElectricity": 24.48,
+   "Sun/Electrical": 29.44,
+   "EnvironmentalHeat": 20.99,
+   "ActiveRenewablePrimaryEnergy": 48.94,
+   "LocallyProduced": 41.6,
+   "ProducedRemotely": 7.34,
+   "PassiveRenewablePrimaryEnergy": 25.89,
+   "NonRenewablePrimaryEnergy": -11.4,
+   "CarbonDioxideEmissions": 0.49,
+   "AnnualHeatingEnergyNeeds": 28.8
+  },
+  "felhasznalas_celonkent_kWh_m2a": {
+   "NetworkElectricity/Heating": 10.26,
+   "NetworkElectricity/HotWater": 14.22,
+   "Sun/Electrical/ExportedEnergy": 29.44,
+   "EnvironmentalHeat/Heating": 20.99,
+   "ActiveRenewablePrimaryEnergy/Heating": 24.07,
+   "ActiveRenewablePrimaryEnergy/HotWater": 4.27,
+   "ActiveRenewablePrimaryEnergy/ExportedEnergy": 20.61,
+   "LocallyProduced/Heating": 20.99,
+   "LocallyProduced/ExportedEnergy": 20.61,
+   "ProducedRemotely/Heating": 3.08,
+   "ProducedRemotely/HotWater": 4.27,
+   "PassiveRenewablePrimaryEnergy/Heating": 25.89,
+   "NonRenewablePrimaryEnergy/Heating": 23.6,
+   "NonRenewablePrimaryEnergy/HotWater": 32.71,
+   "NonRenewablePrimaryEnergy/ExportedEnergy": -67.71,
+   "CarbonDioxideEmissions/Heating": 5.24,
+   "CarbonDioxideEmissions/HotWater": 6.47,
+   "CarbonDioxideEmissions/ExportedEnergy": -11.22
+  },
+  "alternativ_energiak": [
+   "SolarPanels",
+   "HeatPump"
+  ]
+ },
+ "winwatt_projekt": {
+  "panelek": {
+   "Ablak": {
+    "Type": "ablak (külső, fa vagy PVC)",
+    "k": 0.73,
+    "kFromLayers": null
+   },
+   "Bejárati ajtó": {
+    "Type": "ajtó (külső)",
+    "k": 1.4,
+    "kFromLayers": null
+   },
+   "R1./ Külső fal": {
+    "Type": "külső fal",
+    "k": 0.176,
+    "kFromLayers": 0.17634
+   },
+   "R3./ Talajon fekvő padló": {
+    "Type": "padló (talajra fektetett ISO 13370)",
+    "k": 0.217,
+    "kFromLayers": 0.2168
+   },
+   "R4./ Közbenső födém": {
+    "Type": "belső födém (felfelé hűlő)",
+    "k": 2.592,
+    "kFromLayers": 2.5923
+   },
+   "R5./ Padlásfödém": {
+    "Type": "padlásfödém",
+    "k": 0.141,
+    "kFromLayers": 0.14104
+   }
+  },
+  "helyisegek": {
+   "Emelet": {
+    "Area": 80.0,
+    "Height": 2.7,
+    "CalculatedVolume": 216.0,
+    "TransPower_W": 1085.0,
+    "FiltPower_W": 1285.0,
+    "Power_W": 2370.0,
+    "hatarolok": [
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 27.0,
+      "U": 0.176,
+      "Compass": 0.0,
+      "HeatingPower_W": 153.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 21.6,
+      "U": 0.176,
+      "Compass": 90.0,
+      "HeatingPower_W": 122.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 27.0,
+      "U": 0.176,
+      "Compass": 180.0,
+      "HeatingPower_W": 125.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 21.6,
+      "U": 0.176,
+      "Compass": 270.0,
+      "HeatingPower_W": 122.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 6.75,
+      "U": 0.71,
+      "Compass": 180.0,
+      "HeatingPower_W": 168.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.8,
+      "U": 0.72,
+      "Compass": 90.0,
+      "HeatingPower_W": 45.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.8,
+      "U": 0.72,
+      "Compass": 270.0,
+      "HeatingPower_W": 45.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 2.16,
+      "U": 0.75,
+      "Compass": 0.0,
+      "HeatingPower_W": 57.0
+     },
+     {
+      "Name": "R5./ Padlásfödém",
+      "Type": "4",
+      "A": 80.0,
+      "U": 0.141,
+      "Compass": null,
+      "HeatingPower_W": 248.0
+     }
+    ]
+   },
+   "Földszint": {
+    "Area": 80.0,
+    "Height": 2.7,
+    "CalculatedVolume": 216.0,
+    "TransPower_W": 1519.0,
+    "FiltPower_W": 1285.0,
+    "Power_W": 2804.0,
+    "hatarolok": [
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 27.0,
+      "U": 0.176,
+      "Compass": 0.0,
+      "HeatingPower_W": 147.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 21.6,
+      "U": 0.176,
+      "Compass": 90.0,
+      "HeatingPower_W": 122.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 27.0,
+      "U": 0.176,
+      "Compass": 180.0,
+      "HeatingPower_W": 101.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 21.6,
+      "U": 0.176,
+      "Compass": 270.0,
+      "HeatingPower_W": 122.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 8.8,
+      "U": 0.68,
+      "Compass": 180.0,
+      "HeatingPower_W": 209.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.8,
+      "U": 0.72,
+      "Compass": 180.0,
+      "HeatingPower_W": 45.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.8,
+      "U": 0.72,
+      "Compass": 90.0,
+      "HeatingPower_W": 45.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.8,
+      "U": 0.72,
+      "Compass": 270.0,
+      "HeatingPower_W": 45.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.08,
+      "U": 0.75,
+      "Compass": 0.0,
+      "HeatingPower_W": 28.0
+     },
+     {
+      "Name": "Bejárati ajtó",
+      "Type": "12",
+      "A": 2.1,
+      "U": 1.4,
+      "Compass": 0.0,
+      "HeatingPower_W": 103.0
+     },
+     {
+      "Name": "R3./ Talajon fekvő padló",
+      "Type": "26",
+      "A": 80.0,
+      "U": 0.15197,
+      "Compass": null,
+      "HeatingPower_W": 552.0
+     },
+     {
+      "Name": "R4./ Közbenső födém",
+      "Type": "7",
+      "A": 80.0,
+      "U": 2.592,
+      "Compass": null,
+      "HeatingPower_W": 0.0
+     }
+    ]
+   }
+  },
+  "epulet": {
+   "HeatingPower_W": 5174.0,
+   "HeatingFiltrationPower_W": 2570.0,
+   "TotalOutsideSurface_m2": 354.4,
+   "TotalVolume_m3": 432.0,
+   "CalculatedSpecificLoss_W_m3K": 0.152,
+   "SpecificMass_kg_m2": 660.0,
+   "EPBD_ISRG": 273.72,
+   "EPBD_ISRGSum": 1014000.0,
+   "EPBD_dTWinter": 7.2981,
+   "EPBD_AirVolume": 216.0,
+   "EPBD_HeatedArea": 160.0,
+   "EPBD_Qb": 800.0,
+   "EPBD_QHMV": 4800.0,
+   "EPBD_TempGrad": 72000.0,
+   "EPBD_HeatingHours": 4400.0,
+   "EPBD_HeatingEnergy": 6513.9,
+   "EPBD_CoolingNettoEnergy": 1525.8,
+   "EPBD_SpecificHeatingMass": 590.0,
+   "EPBD_PrimerEnergyLimit": 172.44,
+   "EPBD_OptimalPrimerEnergyLimit": 125.61,
+   "EPBD_NeerNullPrimerEnergyLimit": 100.0,
+   "EPBD_CO2Emission": 40.833,
+   "EPBD_EnergyConsumptions_attr": {
+    "Electric": -4507.4,
+    "GreenElectric": 4296.7,
+    "SolarElectric": 4710.0,
+    "AmbientHeat": 4716.9
+   },
+   "EPBD_rendszerek": {
+    "WinWatt32HeatingSystemItem": [
+     {
+      "Name": "Fűtési rendszer",
+      "SpecificPrimerEnergy": 0.0,
+      "WFinal": 202.56,
+      "QFinal": null
+     }
+    ],
+    "WinWatt32WaterHeatingSystemItem": [
+     {
+      "Name": "Melegvíz-termelő rendszer",
+      "SpecificPrimerEnergy": 0.0,
+      "WFinal": 0.0,
+      "QFinal": null
+     }
+    ],
+    "WinWatt32SolarSystemItem": [
+     {
+      "Name": "Nyereségáram forrás",
+      "SpecificPrimerEnergy": 0.0,
+      "WFinal": 0.0,
+      "QFinal": null
+     }
+    ]
+   }
+  }
+ }
+}

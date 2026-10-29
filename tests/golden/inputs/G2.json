@@ -1,0 +1,411 @@
+{
+ "id": "G2",
+ "title": "G2 – Kétszintes ház hideg padlással, levegő-víz hőszivattyú + HMV-HP + napelem",
+ "rooms": [
+  {
+   "name": "Földszint",
+   "function": "Nappali",
+   "area": 80.0,
+   "height": 2.7,
+   "temp": 20,
+   "walls": [
+    {
+     "side": "N",
+     "compass": 0,
+     "x": 10.0,
+     "y": 2.7,
+     "A": 27.0,
+     "MinA": 3.18
+    },
+    {
+     "side": "E",
+     "compass": 90,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.8
+    },
+    {
+     "side": "S",
+     "compass": 180,
+     "x": 10.0,
+     "y": 2.7,
+     "A": 27.0,
+     "MinA": 10.6
+    },
+    {
+     "side": "W",
+     "compass": 270,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.8
+    }
+   ],
+   "windows": {
+    "S": [
+     [
+      2.0,
+      2.2,
+      2
+     ],
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "E": [
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "W": [
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "N": [
+     [
+      0.9,
+      1.2,
+      1
+     ]
+    ]
+   },
+   "door": [
+    "N",
+    1.0,
+    2.1
+   ],
+   "ceiling_internal": {
+    "panel": "R4./ Közbenső födém",
+    "A": 80.0
+   },
+   "floor": {
+    "panel": "R3./ Talajon fekvő padló",
+    "A": 80.0,
+    "P": 36.0,
+    "x": 36.0
+   }
+  },
+  {
+   "name": "Emelet",
+   "function": "Hálószoba",
+   "area": 80.0,
+   "height": 2.7,
+   "temp": 20,
+   "walls": [
+    {
+     "side": "N",
+     "compass": 0,
+     "x": 10.0,
+     "y": 2.7,
+     "A": 27.0,
+     "MinA": 2.16
+    },
+    {
+     "side": "E",
+     "compass": 90,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.8
+    },
+    {
+     "side": "S",
+     "compass": 180,
+     "x": 10.0,
+     "y": 2.7,
+     "A": 27.0,
+     "MinA": 6.75
+    },
+    {
+     "side": "W",
+     "compass": 270,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.8
+    }
+   ],
+   "windows": {
+    "S": [
+     [
+      1.5,
+      1.5,
+      3
+     ]
+    ],
+    "E": [
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "W": [
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "N": [
+     [
+      0.9,
+      1.2,
+      2
+     ]
+    ]
+   },
+   "door": null,
+   "attic": {
+    "panel": "R5./ Padlásfödém",
+    "A": 80.0,
+    "t_over": -2,
+    "Bu": 0.9
+   }
+  }
+ ],
+ "heated_area": 160.0,
+ "systems": {
+  "heating": {
+   "gen": [
+    {
+     "CkType": 12,
+     "energy": 9,
+     "share": 1
+    }
+   ],
+   "SystemType": 1,
+   "qfvType": 7,
+   "qftType": 1,
+   "EfszType": 9,
+   "Efsz2Type": 4,
+   "RegPart": [
+    2,
+    0,
+    1,
+    2,
+    7
+   ],
+   "desc": "Levegő-víz hőszivattyú, padlófűtés 35/28, puffertároló fűtött térben, EC szivattyú"
+  },
+  "dhw": {
+   "gen": [
+    {
+     "CkType": 23,
+     "energy": 9,
+     "share": 1
+    }
+   ],
+   "qfvType": 3,
+   "qftType": 0,
+   "EcType": 3,
+   "BuildingCategory": 0,
+   "desc": "Ugyanaz a hőszivattyú indirekt HMV-tárolóval (fűtött térben), cirkuláció nélkül"
+  },
+  "pv": {
+   "kWp": 4,
+   "compass": 180,
+   "gradient": 30
+  }
+ },
+ "iso": {
+  "A": 80.0,
+  "P": 36.0,
+  "w": 0.47
+ },
+ "materials_used": {
+  "Mészcementvakolat": {
+   "rho": 1700,
+   "lambda": 0.87,
+   "c_kJkgK": 0.88,
+   "mu": 10
+  },
+  "Kerámia falazóblokk 30 (teszt)": {
+   "rho": 800,
+   "lambda": 0.184,
+   "c_kJkgK": 0.92,
+   "mu": 6
+  },
+  "EPS homlokzati hőszigetelés": {
+   "rho": 20,
+   "lambda": 0.039,
+   "c_kJkgK": 1.46,
+   "mu": 30
+  },
+  "Vékonyvakolat": {
+   "rho": 1600,
+   "lambda": 0.7,
+   "c_kJkgK": 0.88,
+   "mu": 15
+  },
+  "Vasbeton": {
+   "rho": 2400,
+   "lambda": 1.55,
+   "c_kJkgK": 0.84,
+   "mu": 80
+  },
+  "EPS 100 lapostető": {
+   "rho": 20,
+   "lambda": 0.035,
+   "c_kJkgK": 1.46,
+   "mu": 30
+  },
+  "Bitumenes lemez": {
+   "rho": 1100,
+   "lambda": 0.17,
+   "c_kJkgK": 1.46,
+   "mu": 20000
+  },
+  "Cementesztrich": {
+   "rho": 2000,
+   "lambda": 1.4,
+   "c_kJkgK": 0.84,
+   "mu": 20
+  },
+  "XPS": {
+   "rho": 35,
+   "lambda": 0.035,
+   "c_kJkgK": 1.46,
+   "mu": 100
+  },
+  "Kerámia burkolat": {
+   "rho": 2300,
+   "lambda": 1.05,
+   "c_kJkgK": 0.84,
+   "mu": 200
+  },
+  "Ásványgyapot": {
+   "rho": 30,
+   "lambda": 0.037,
+   "c_kJkgK": 0.84,
+   "mu": 1
+  },
+  "Kőzetgyapot lamella": {
+   "rho": 80,
+   "lambda": 0.04,
+   "c_kJkgK": 0.84,
+   "mu": 1
+  }
+ },
+ "panels": {
+  "R1./ Külső fal": {
+   "type": "OutsideWall",
+   "code": 0,
+   "Rsi": 0.13,
+   "Rse": 0.04,
+   "layers": [
+    {
+     "name": "Vékonyvakolat",
+     "d_cm": 0.5
+    },
+    {
+     "name": "EPS homlokzati hőszigetelés",
+     "d_cm": 15
+    },
+    {
+     "name": "Kerámia falazóblokk 30 (teszt)",
+     "d_cm": 30
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  },
+  "R3./ Talajon fekvő padló": {
+   "type": "FloorISO",
+   "code": 26,
+   "Rsi": 0.17,
+   "Rse": 0.04,
+   "layers": [
+    {
+     "name": "Kerámia burkolat",
+     "d_cm": 1
+    },
+    {
+     "name": "Cementesztrich",
+     "d_cm": 6
+    },
+    {
+     "name": "XPS",
+     "d_cm": 15
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 10
+    }
+   ]
+  },
+  "R4./ Közbenső födém": {
+   "type": "Roof5",
+   "code": 7,
+   "Rsi": 0.1,
+   "Rse": 0.1,
+   "layers": [
+    {
+     "name": "Kerámia burkolat",
+     "d_cm": 1
+    },
+    {
+     "name": "Cementesztrich",
+     "d_cm": 6
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 18
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  },
+  "R5./ Padlásfödém": {
+   "type": "Roof2",
+   "code": 4,
+   "Rsi": 0.1,
+   "Rse": 0.1,
+   "layers": [
+    {
+     "name": "Ásványgyapot",
+     "d_cm": 25
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 18
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  }
+ },
+ "panel_U_hand": {
+  "R1./ Külső fal": 0.176,
+  "R3./ Talajon fekvő padló": 0.217,
+  "R4./ Közbenső födém": 2.592,
+  "R5./ Padlásfödém": 0.141
+ },
+ "window": {
+  "name": "Ablak",
+  "Ug": 0.6,
+  "g": 0.5,
+  "Uf": 1.0,
+  "frame_mm": 110,
+  "glass": "3 rétegű 4-14-4-14-4 argon (teszt)",
+  "frame": "PVC 82 mm (teszt)"
+ },
+ "door": {
+  "name": "Bejárati ajtó",
+  "U": 1.4
+ }
+}
