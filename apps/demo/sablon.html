@@ -1,0 +1,132 @@
+<title>BIMLine energetika – bemutató</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Elrendezés: mobilon fülek (Bevitel / Eredmény) és tapadó összegző sáv; széles képernyőn két oszlop. */
+:root {
+  --bg: #f3f5f4; --felulet: #ffffff; --fg: #1b2523; --halk: #5c6b67; --vonal: #d9e0dd;
+  --akcent: #0f6b5c; --akcent-fg: #ffffff; --futes: #c4572f; --hutes: #2f6fb0; --jo: #1f7a3d; --rossz: #b3261e; --figyelem-bg: #e8f2ef;
+  --cim: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --test: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --szam: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111816; --felulet: #18211f; --fg: #e3ebe8; --halk: #93a39f; --vonal: #2b3835;
+  --akcent: #4fb8a4; --akcent-fg: #0b1513; --futes: #e57c55; --hutes: #6fa6e0; --jo: #5cc283; --rossz: #f08a80; --figyelem-bg: #1d2e2a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111816; --felulet: #18211f; --fg: #e3ebe8; --halk: #93a39f; --vonal: #2b3835;
+  --akcent: #4fb8a4; --akcent-fg: #0b1513; --futes: #e57c55; --hutes: #6fa6e0; --jo: #5cc283; --rossz: #f08a80; --figyelem-bg: #1d2e2a; color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--bg); color: var(--fg); font: 16px/1.45 var(--test); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px 48px }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+.keret { max-width: 1180px; margin: 0 auto; display: grid; gap: 14px }
+h1, h2, h3 { font-family: var(--cim); text-wrap: balance; margin: 0 }
+h1 { font-size: 1.55rem; font-weight: 700; letter-spacing: .01em }
+h2 { font-size: 1.2rem; font-weight: 600 }
+h3 { font-size: 1.02rem; font-weight: 600 }
+.fej { display: grid; gap: 6px }
+.fej p { margin: 0; color: var(--halk); max-width: 65ch }
+.halk { color: var(--halk); font-size: .9rem; margin: 0 }
+#mintak { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin }
+button { font: 600 .92rem var(--test); border-radius: 8px; cursor: pointer; border: 1px solid var(--vonal); background: var(--felulet); color: var(--fg); padding: 9px 12px; min-height: 40px }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--akcent); outline-offset: 1px }
+.minta { white-space: nowrap; flex: 0 0 auto }
+.minta.aktiv { background: var(--akcent); color: var(--akcent-fg); border-color: var(--akcent) }
+.masodlagos { background: transparent; color: var(--akcent); border-style: dashed }
+.osszegzes-sav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 6px; display: grid; gap: 8px }
+#osszegzes { display: flex; gap: 14px; align-items: center; background: var(--felulet); border: 1px solid var(--vonal); border-radius: 12px; padding: 10px 14px; min-height: 72px }
+.jelveny { flex: 0 0 auto; width: 64px; height: 56px; border-radius: 10px 4px 4px 10px; background: var(--osztaly); color: #fff; display: grid; place-content: center; text-align: center; clip-path: polygon(0 0, 82% 0, 100% 50%, 82% 100%, 0 100%) }
+.jelveny span { font: 700 1.35rem/1 var(--cim) }
+.jelveny small { font: 500 .62rem var(--szam); opacity: .85; margin-right: 8px }
+.fo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; flex: 1 }
+.fo div { min-width: 0 }
+.fo dt { font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--halk) }
+.fo dd { margin: 0; font: 500 1.08rem var(--szam); font-variant-numeric: tabular-nums; white-space: nowrap }
+.fo dd em { display: block; font: .72rem var(--test); color: var(--halk); font-style: normal }
+.fulek { display: flex; gap: 6px }
+.fulek button { flex: 1 }
+.fulek button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg) }
+.oszlopok { display: grid; gap: 14px }
+#bevitel, #reszletek { display: grid; gap: 14px; min-width: 0; align-content: start }
+.kartya { background: var(--felulet); border: 1px solid var(--vonal); border-radius: 12px; padding: 14px; display: grid; gap: 12px; min-width: 0 }
+.racs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px }
+.mezo { display: grid; gap: 4px; min-width: 0 }
+.cimke { font-size: .82rem; color: var(--halk) }
+.bevitel { display: flex; align-items: center; border: 1px solid var(--vonal); border-radius: 8px; background: var(--bg); min-width: 0 }
+.bevitel input { border: 0; background: transparent; min-width: 0; width: 100% }
+.bevitel em { font-style: normal; font-size: .78rem; color: var(--halk); padding-right: 8px; white-space: nowrap }
+input, select { font: 500 1rem var(--szam); color: var(--fg); padding: 9px 10px; min-height: 42px }
+select, .reteg-nev { border: 1px solid var(--vonal); border-radius: 8px; background: var(--bg); width: 100%; font-family: var(--test) }
+.kapcsolo { display: flex; gap: 10px; align-items: center; font-size: .95rem }
+.kapcsolo input { width: 20px; height: 20px; min-height: 0; accent-color: var(--akcent) }
+.retegrend { display: grid; gap: 8px; border-top: 1px solid var(--vonal); padding-top: 10px }
+.retegrend-fej { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; justify-content: space-between }
+.retegek, .nyilasok { display: grid; gap: 6px }
+.reteg { display: grid; grid-template-columns: minmax(0, 1fr) 82px 104px 40px; gap: 6px; align-items: center }
+.nyilas { display: grid; grid-template-columns: 64px minmax(0, 1fr) 12px minmax(0, 1fr) 72px 40px; gap: 6px; align-items: center }
+.szor { text-align: center; color: var(--halk) }
+.bevitel.kicsi input { padding-inline: 8px }
+.ikon { padding: 0; width: 40px; font-size: 1.2rem; line-height: 1 }
+@media (max-width: 460px) {
+  .reteg { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px }
+  .reteg .reteg-nev { grid-column: 1 / -1 }
+  .nyilas { grid-template-columns: 58px minmax(0, 1fr) 10px minmax(0, 1fr) }
+  .nyilas .bevitel:nth-of-type(3) { grid-column: 1 / 4 }
+}
+.tablazat { overflow-x: auto }
+table { border-collapse: collapse; width: 100%; font-size: .93rem }
+th, td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--vonal); vertical-align: top }
+td { font-family: var(--szam); font-size: .86rem; font-variant-numeric: tabular-nums }
+thead th { font: 600 .74rem var(--test); letter-spacing: .06em; text-transform: uppercase; color: var(--halk) }
+tbody th { font-weight: 600 }
+tbody th small { display: block; font-weight: 400; color: var(--halk); font-size: .78rem }
+.ww { color: var(--akcent) }
+.jo { color: var(--jo) }
+.rossz { color: var(--rossz); font-weight: 600 }
+.figyelem { background: var(--figyelem-bg); border-radius: 10px; padding: 10px 12px; margin: 0; font-size: .92rem }
+.hiba { color: var(--rossz) }
+svg { width: 100%; max-width: 560px; height: auto }
+.racsvonal { stroke: var(--vonal); stroke-width: 1 }
+.tengely { fill: var(--halk); font: 10px var(--szam) }
+.oszlop-f { fill: var(--futes) }
+.oszlop-h { fill: var(--hutes) }
+.jelmagyarazat { display: flex; gap: 14px; font-size: .85rem; align-items: center; flex-wrap: wrap }
+.jelmagyarazat i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px }
+.j-f { background: var(--futes) } .j-h { background: var(--hutes) }
+.savok { display: grid; gap: 8px }
+.sav { display: grid; grid-template-columns: 120px minmax(0, 1fr) 64px; gap: 8px; align-items: center; font-size: .92rem }
+.sav-sin { height: 12px; background: var(--bg); border-radius: 6px; overflow: hidden }
+.sav-sin i { display: block; height: 100%; background: var(--akcent); border-radius: 6px }
+.sav-sin i.neg { background: var(--jo) }
+.sav b { font: 500 .86rem var(--szam); text-align: right }
+.jelzesek { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: .9rem }
+.lab { color: var(--halk); font-size: .82rem; max-width: 65ch }
+@media (min-width: 920px) {
+  .fulek { display: none }
+  .oszlopok { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start }
+  #bevitel[hidden], #reszletek[hidden] { display: grid !important }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important } }
+</style>
+<div class="keret">
+  <header class="fej">
+    <h1>BIMLine energetika <span class="halk" id="projekt-nev"></span></h1>
+    <p>Bemutató a 9/2023. (V. 25.) ÉKM szerinti számítási maghoz: egyszerűsített havi módszer, egy zóna, téglatest épület. Az adatok csak ezen a készüléken maradnak.</p>
+    <div id="mintak"></div>
+  </header>
+  <div class="osszegzes-sav">
+    <div id="osszegzes" aria-live="polite"></div>
+    <div class="fulek" role="tablist">
+      <button role="tab" data-ful="bevitel" aria-selected="false">Bevitel</button>
+      <button role="tab" data-ful="eredmeny" aria-selected="true">Eredmény</button>
+    </div>
+  </div>
+  <div class="oszlopok">
+    <div id="bevitel" hidden></div>
+    <div id="reszletek"></div>
+  </div>
+  <p class="lab">Próbaverzió, tanúsításra nem használható. A minták a WinWatt fecske 9.58 golden esetei (G1–G3). Ahol a program és a WinWatt eltér, a jogszabály szerinti számítás látszik.</p>
+</div>
+<script>/*BUNDLE*/</script>
