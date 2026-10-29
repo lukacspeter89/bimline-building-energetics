@@ -1,0 +1,418 @@
+{
+ "verzio": 1,
+ "azon": "golden-G1",
+ "nev": "G1 – Földszintes lapostetős ház, kondenzációs gázkazán",
+ "modositva": "2026-10-29T00:00:00.000Z",
+ "adatok": {
+  "cim": "8060 Mór, Teszt utca 1.",
+  "helyrajziSzam": "0000/1",
+  "megrendelo": "Golden teszt",
+  "megjegyzes": "WinWatt fecske 9.58 golden eset (tests/golden)."
+ },
+ "epulet": {
+  "rendeltetes": "Családi ház*",
+  "ujEpulet": true,
+  "cmKategoria": 3,
+  "nFilt": 0.06,
+  "szakaszosFutes": false,
+  "labazatiFal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+  "kulsoFalKialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+  "hohidassag": "erősen hőhidas",
+  "hohidKorrekcio": false
+ },
+ "anyagok": [
+  {
+   "azon": "a-Mészcementvakolat",
+   "nev": "Mészcementvakolat",
+   "lambda": 0.87,
+   "rho": 1700,
+   "c": 880,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Kerámia falazóblokk 30 (teszt)",
+   "nev": "Kerámia falazóblokk 30 (teszt)",
+   "lambda": 0.184,
+   "rho": 800,
+   "c": 920,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-EPS homlokzati hőszigetelés",
+   "nev": "EPS homlokzati hőszigetelés",
+   "lambda": 0.039,
+   "rho": 20,
+   "c": 1460,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Vékonyvakolat",
+   "nev": "Vékonyvakolat",
+   "lambda": 0.7,
+   "rho": 1600,
+   "c": 880,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Vasbeton",
+   "nev": "Vasbeton",
+   "lambda": 1.55,
+   "rho": 2400,
+   "c": 840,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-EPS 100 lapostető",
+   "nev": "EPS 100 lapostető",
+   "lambda": 0.035,
+   "rho": 20,
+   "c": 1460,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Bitumenes lemez",
+   "nev": "Bitumenes lemez",
+   "lambda": 0.17,
+   "rho": 1100,
+   "c": 1460,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Cementesztrich",
+   "nev": "Cementesztrich",
+   "lambda": 1.4,
+   "rho": 2000,
+   "c": 840,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-XPS",
+   "nev": "XPS",
+   "lambda": 0.035,
+   "rho": 35,
+   "c": 1460,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Kerámia burkolat",
+   "nev": "Kerámia burkolat",
+   "lambda": 1.05,
+   "rho": 2300,
+   "c": 840,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Ásványgyapot",
+   "nev": "Ásványgyapot",
+   "lambda": 0.037,
+   "rho": 30,
+   "c": 840,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "a-Kőzetgyapot lamella",
+   "nev": "Kőzetgyapot lamella",
+   "lambda": 0.04,
+   "rho": 80,
+   "c": 840,
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  }
+ ],
+ "retegrendek": [
+  {
+   "azon": "r-R1./ Külső fal",
+   "nev": "R1./ Külső fal",
+   "szerkezet": "homlokzati_fal",
+   "retegek": [
+    {
+     "anyagAzon": "a-Vékonyvakolat",
+     "d": 0.005
+    },
+    {
+     "anyagAzon": "a-EPS homlokzati hőszigetelés",
+     "d": 0.15
+    },
+    {
+     "anyagAzon": "a-Kerámia falazóblokk 30 (teszt)",
+     "d": 0.3
+    },
+    {
+     "anyagAzon": "a-Mészcementvakolat",
+     "d": 0.015
+    }
+   ]
+  },
+  {
+   "azon": "r-R2./ Lapostető",
+   "nev": "R2./ Lapostető",
+   "szerkezet": "lapos_teto",
+   "retegek": [
+    {
+     "anyagAzon": "a-Bitumenes lemez",
+     "d": 0.01
+    },
+    {
+     "anyagAzon": "a-EPS 100 lapostető",
+     "d": 0.25
+    },
+    {
+     "anyagAzon": "a-Vasbeton",
+     "d": 0.2
+    },
+    {
+     "anyagAzon": "a-Mészcementvakolat",
+     "d": 0.015
+    }
+   ]
+  },
+  {
+   "azon": "r-R3./ Talajon fekvő padló",
+   "nev": "R3./ Talajon fekvő padló",
+   "szerkezet": "talajon_fekvo_padlo",
+   "retegek": [
+    {
+     "anyagAzon": "a-Kerámia burkolat",
+     "d": 0.01
+    },
+    {
+     "anyagAzon": "a-Cementesztrich",
+     "d": 0.06
+    },
+    {
+     "anyagAzon": "a-XPS",
+     "d": 0.15
+    },
+    {
+     "anyagAzon": "a-Vasbeton",
+     "d": 0.1
+    }
+   ]
+  }
+ ],
+ "nyilaszarok": [
+  {
+   "azon": "ny-ablak",
+   "nev": "Ablak",
+   "fajta": "ablak",
+   "osszetevok": {
+    "Ug": 0.6,
+    "g": 0.5,
+    "Uf": 1,
+    "keretSzelesseg": 0.11,
+    "psiG": 0
+   },
+   "forras": {
+    "tipus": "feltevés",
+    "indoklas": "golden tesztbemenet (Péter, 2026-10-29), nem termékadat"
+   }
+  },
+  {
+   "azon": "ny-ajto",
+   "nev": "Bejárati ajtó",
+   "fajta": "ajto",
+   "U": 1.4,
+   "forras": {
+    "tipus": "jogszabaly",
+    "hivatkozas": "9/2023 ÉKM 1. melléklet 1.1. 16. sor (terv nélkül)"
+   }
+  }
+ ],
+ "helyisegek": [
+  {
+   "azon": "hs-0",
+   "nev": "Lakótér",
+   "szint": "0",
+   "alapterulet": 96,
+   "belmagassag": 2.7,
+   "hatarolok": [
+    {
+     "azon": "h-0-N",
+     "retegrendAzon": "r-R1./ Külső fal",
+     "tuloldal": {
+      "fajta": "külső"
+     },
+     "tajolas": "É",
+     "hajlasszog": 90,
+     "felulet": 32.4,
+     "nyilasok": [
+      {
+       "nyilaszaroAzon": "ny-ablak",
+       "szelesseg": 0.9,
+       "magassag": 1.2,
+       "db": 1
+      },
+      {
+       "nyilaszaroAzon": "ny-ajto",
+       "szelesseg": 1,
+       "magassag": 2.1,
+       "db": 1
+      }
+     ]
+    },
+    {
+     "azon": "h-0-E",
+     "retegrendAzon": "r-R1./ Külső fal",
+     "tuloldal": {
+      "fajta": "külső"
+     },
+     "tajolas": "K",
+     "hajlasszog": 90,
+     "felulet": 21.6,
+     "nyilasok": [
+      {
+       "nyilaszaroAzon": "ny-ablak",
+       "szelesseg": 1.2,
+       "magassag": 1.2,
+       "db": 1
+      }
+     ]
+    },
+    {
+     "azon": "h-0-S",
+     "retegrendAzon": "r-R1./ Külső fal",
+     "tuloldal": {
+      "fajta": "külső"
+     },
+     "tajolas": "D",
+     "hajlasszog": 90,
+     "felulet": 32.4,
+     "nyilasok": [
+      {
+       "nyilaszaroAzon": "ny-ablak",
+       "szelesseg": 1.5,
+       "magassag": 1.5,
+       "db": 4
+      }
+     ]
+    },
+    {
+     "azon": "h-0-W",
+     "retegrendAzon": "r-R1./ Külső fal",
+     "tuloldal": {
+      "fajta": "külső"
+     },
+     "tajolas": "Ny",
+     "hajlasszog": 90,
+     "felulet": 21.6,
+     "nyilasok": [
+      {
+       "nyilaszaroAzon": "ny-ablak",
+       "szelesseg": 1.2,
+       "magassag": 1.2,
+       "db": 1
+      }
+     ]
+    },
+    {
+     "azon": "h-0-teto",
+     "retegrendAzon": "r-R2./ Lapostető",
+     "tuloldal": {
+      "fajta": "külső"
+     },
+     "hajlasszog": 0,
+     "felulet": 96,
+     "nyilasok": []
+    },
+    {
+     "azon": "h-0-padlo",
+     "retegrendAzon": "r-R3./ Talajon fekvő padló",
+     "tuloldal": {
+      "fajta": "talaj"
+     },
+     "hajlasszog": 0,
+     "felulet": 96,
+     "nyilasok": [],
+     "kitettKerulet": 40
+    }
+   ]
+  }
+ ],
+ "rendszerek": {
+  "futes": {
+   "hotermelo": {
+    "tipus": "kazan",
+    "kazan": "kondenzacios",
+    "elhelyezes": "futott_terben"
+   },
+   "hordozo": "fosszilis_gaz",
+   "hoelado": "szabad",
+   "hofoklepcso": {
+    "elore": 55,
+    "vissza": 45
+   },
+   "szabalyozas": {
+    "hoelado": "szabad",
+    "alap": "Szabályozás referencia helyiségre, PI-szabályozó\nKözponti előremenő hőmérséklet szabályozás helyiségenkénti hőmérséklet szabályozással",
+    "korrekcio1": {
+     "alcsoport": "kétcsöves fűtés és modernizált egycsöves fűtés",
+     "leiras": "55 °C/45 °C"
+    },
+    "korrekcio2": "külsőfali radiátor",
+    "korrekcio3": "különálló, képes önálló be-kikapcsolásra (pl. termosztatikus szelep)",
+    "beszabalyozas": {
+     "rendszer": "Kétcsöves rendszer",
+     "kialakitas": "fűtőtestenként /fűtőfelületenként statikus-beállítás csoportos statikus beszabályozással (pl. strangszabályozó szelepekkel)",
+     "hoeladokSzama": 10
+    }
+   },
+   "elosztasHelye": "futott_terben",
+   "tarolo": null,
+   "szivattyu": "ec_eei_023",
+   "hotermeloHelye": "futott_terben"
+  },
+  "hmv": {
+   "hotermelo": {
+    "tipus": "kazan",
+    "kazan": "kondenzacios"
+   },
+   "hordozo": "fosszilis_gaz",
+   "tarolo": {
+    "fajta": "indirekt",
+    "helye": "futott_terben"
+   },
+   "elosztasHelye": "futott_terben",
+   "cirkulacio": false
+  },
+  "szellozes": {
+   "fajta": "természetes"
+  },
+  "hutes": null,
+  "napelemek": []
+ }
+}
