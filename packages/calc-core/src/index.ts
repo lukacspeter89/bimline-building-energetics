@@ -29,3 +29,4 @@ export * from './rendszer/hmv.js';
 export * from './rendszer/indikatorok.js';
 export * from './rendszer/legtechnika.js';
 export * from './rendszer/hutes.js';
+export * from './rendszer/napelem.js';

@@ -95,6 +95,12 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Forrás:** az éjszakai többletszellőzés „májustól szeptemberig” vehető figyelembe (6.11), 45. o.; egyszerűsített számításnál b_éjjel = 1,5.
 - **Program:** május–szeptember, b_éjjel = 1,5. Hatás G3-ban: Q_H,net 346,9 kWh/év a 292,5 helyett (+19 %). A WinWatt H_szell,H és egész éves b_nyár bemenetével a mérleg ±2 %-on belül egyezik.
 
+### E-17 – Napelem termelése a mérlegben — **E** (G2 golden teszt; WinWatt-bemeneti vagy -számítási hiba)
+- **WinWatt (G2):** a napelem lapja 4 kWp, 30°, déli tájolás mellett „éves energiahozam 4320 kWh/a”-t ír (= 1080·4, helyes), a mérlegben viszont 4710 kWh/év exportált energiával számol (= 942·5, vagyis 5 kWp vízszintes; feltehetően a sablonból maradt érték). Ebből jön a −11,40 kWh/m²év.
+- **Forrás:** W_PV = w_PV·P_PV,össz (13.1), 13.1. táblázat: D, 30° → 1080 kWh/kWp.
+- **Program:** 4320 kWh/év → E_nren = −5,79 kWh/m²év. A besorolás (A+++) nem változik.
+- **Teendő (Péter):** a WinWatt G2 projektben a napelem-tétel ellenőrzése.
+
 ## 2. Egyezések (rögzítve, hogy ne kerüljenek vissza „eltérésként”)
 
 | # | Tétel | WinWatt | Forrás | Hivatkozás |
@@ -108,7 +114,7 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 | =07 | HMV tárolás gázbojlerrel, fűtött térben, 100 m² | 78% | azonos | 1. függ. 9.9. táblázat, 73. o. |
 | =08 | Hűtőgépek SEER / ε_H | split 2,5/0,4; léghűtéses folyadékhűtő 3,0/0,33 … | azonos | 1. függ. 11.2. táblázat, 82–83. o. |
 | =09 | Hűtés szabályozási veszteség, látens tényező | 6/12 °C: 1,13; direkt elpárologtatás 1,13; c_H 1,25 / 1,45 | azonos | 1. függ. 11.1., 11.3. táblázat |
-| =10 | Napelem, egyszerűsített | 5 kWp, vízszintes → 4710 kWh (942 kWh/kWp) | azonos | 1. függ. 13.1. táblázat, 87. o. |
+| =10 | Napelem, egyszerűsített | 5 kWp, vízszintes → 4710 kWh (942 kWh/kWp) | azonos (de lásd E-17: G2-ben a mérleg nem a napelem lapjának értékével számol) | 1. függ. 13.1. táblázat, 87. o. |
 | =11 | Fűtőérték / égéshő, földgáz | 0,9 | azonos | 2. függ. 3.1. táblázat, 25. o. |
 | =12 | Redőny árnyékolási tényezője, kívül | 0,1 | azonos | 2. függ. 4.5. táblázat, 28. o. |
 | =13 | Világítás lakóépületnél | a WinWatt hibának jelzi | lakónál nem számítandó | 9/2023 ÉKM 5. melléklet 2.8.1.; 176/2008 5. melléklet |

@@ -10,6 +10,7 @@ import {
   hoelosztasVesztesege,
   hotarolas,
   lakoHmvNettoIgeny,
+  napelemTermeles,
   nettoEnergiaigeny,
   osszesitettEnergetikaiJellemzo,
   szivattyuSegedenergia,
@@ -135,5 +136,20 @@ describe('Golden G2 – gépészet (a WinWatt Q_F,net = 4608 kWh/év bemenetéve
     expect(r.exp.nren).toBeCloseTo(67.71, 2);
     expect(r.fajlagos.nren).toBeCloseTo(vart.oeny_etanusitas.Ep_kWh_m2a, 1);
     expect(r.fajlagos.co2).toBeCloseTo(vart.oeny_etanusitas.CO2_kg_m2a, 1);
+  });
+
+  it('MEG-004 E-17 napelem 4 kWp, D, 30°: a módszer szerint 4320 kWh/év; a WinWatt mérlege 4710 kWh/évvel számol', () => {
+    const W = napelemTermeles(4, 'D', 30);
+    expect(W).toBe(4320);
+    const r = osszesitettEnergetikaiJellemzo(
+      {
+        F: { ho: [{ Qveg: 1439.28, hordozo: 'villamos', hoszivattyuEps: 0.3 }], W: 202.56 },
+        HMV: { ho: [{ Qveg: 2275.2, hordozo: 'villamos', hoszivattyuEps: 0.45 }], W: 0 },
+      },
+      [{ Wexp: W, termelo: 'nap_pv', cel: 'export_halozatba' }],
+      AN,
+    );
+    // E_nren = 23,60 + 32,71 − 4320·2,3/160 = −5,79 kWh/m²év (a WinWatt −11,40-et ad)
+    expect(r.fajlagos.nren).toBeCloseTo(23.6 + 32.705 - 62.1, 1);
   });
 });
