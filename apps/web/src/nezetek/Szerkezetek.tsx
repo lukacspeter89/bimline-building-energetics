@@ -13,6 +13,7 @@ export const SZERKEZET_NEV: Record<SzerkezetTipus, string> = {
   futott_futetlen_kozotti_fal: 'Fal fűtetlen tér felé',
   szomszed_futott_epulet_fal: 'Fal fűtött szomszéd felé',
   talajon_fekvo_padlo: 'Talajon fekvő padló',
+  talajjal_erintkezo_fal: 'Pincefal talaj felé (a pincepadlónál)',
 };
 
 function ForrasMezo({ forras, onValtozas, id }: { forras: Forras; onValtozas: (f: Forras) => void; id: string }) {

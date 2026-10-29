@@ -76,3 +76,55 @@ describe('Ellenőrzés', () => {
     expect(f.some((h) => h.uzenet.includes('hőhidak'))).toBe(true);
   });
 });
+
+describe('Talajjal érintkező szerkezetek a modellben', () => {
+  it('HT-088 D-140 a B a teljes padlóra számít: a padlót két határolóra bontva ugyanaz a H_tr,T', () => {
+    const p = goldenProjekt('G1');
+    const hs = p.helyisegek[0]!;
+    const padlo = hs.hatarolok.find((b) => b.tuloldal.fajta === 'talaj')!;
+    hs.hatarolok.push({ ...structuredClone(padlo), azon: 'padlo-2', felulet: padlo.felulet / 2, kitettKerulet: padlo.kitettKerulet! / 2 });
+    padlo.felulet /= 2;
+    padlo.kitettKerulet! /= 2;
+    const k = szamolProjekt(p);
+    if (!k.rendben) throw new Error(JSON.stringify(k.hianyok));
+    expect(k.eredmeny.hTrT).toBeCloseTo(eredmeny('G1').hTrT, 9);
+  });
+
+  it('HT-103 HT-104 TR-021 fűtött pince z = 2,5 m: U_T,p 0,1522; U_T,pf 0,2272 (d_pf < d_p); ΔH_tr,T = +21,18 W/K', () => {
+    // Kézi számítás: R_p = 4,4026; d_p = 0,47 + 2,0·(0,17 + 4,4026 + 0,04) = 9,6952 m; B = 96/(0,5·40) = 4,8 m;
+    // d_p + 0,5z ≥ B → (4.23): U = 2,0/(0,457·4,8 + 10,9452) = 0,15222 (z = 0-nál 0,16823).
+    // Pincefal: R_pf = 0,10/0,035 + 0,30/1,55 = 3,0507; d_pf = 2,0·(0,13 + 3,0507 + 0,04) = 6,4414 m < d_p;
+    // (4.28): U_T,pf = 4/(π·2,5)·(1 + 0,5·6,4414/8,9414)·ln(2,5/6,4414 + 1) = 0,22718.
+    // ΔH = 96·(0,15222 − 0,16823) + 2,5·40·0,22718 = 21,182 W/K.
+    const p = goldenProjekt('G1');
+    p.anyagok.push({ azon: 'eps-l', nev: 'Lábazati XPS', lambda: 0.035, forras: { tipus: 'feltevés', indoklas: 'teszt' } });
+    p.retegrendek.push({ azon: 'pf', nev: 'PF1 pincefal', szerkezet: 'talajjal_erintkezo_fal', retegek: [{ anyagAzon: 'eps-l', d: 0.1 }, { anyagAzon: 'a-Vasbeton', d: 0.3 }] });
+    const padlo = p.helyisegek[0]!.hatarolok.find((b) => b.tuloldal.fajta === 'talaj')!;
+    padlo.melyseg = 2.5;
+    expect(ellenoriz(p).some((h) => h.sulyossag === 'hiba' && h.uzenet.includes('pincefal rétegrendje'))).toBe(true);
+    padlo.pinceFalRetegrendAzon = 'pf';
+    const k = szamolProjekt(p);
+    if (!k.rendben) throw new Error(JSON.stringify(k.hianyok));
+    expect(k.eredmeny.hTrT - eredmeny('G1').hTrT).toBeCloseTo(21.1819, 3);
+    const fal = k.eredmeny.szerkezetek.find((s) => s.nev === 'PF1 pincefal')!;
+    expect(fal.A).toBeCloseTo(100, 9);
+    expect(fal.U).toBeCloseTo(0.22718, 4);
+    expect(fal.Umax).toBe(0.3);
+    expect(fal.megfelel).toBe(true);
+  });
+
+  it('HT-096 0,5 m-en belüli mélység: nincs pincefal, a padló z = 0-val számít', () => {
+    const p = goldenProjekt('G1');
+    p.helyisegek[0]!.hatarolok.find((b) => b.tuloldal.fajta === 'talaj')!.melyseg = 0.4;
+    const k = szamolProjekt(p);
+    if (!k.rendben) throw new Error(JSON.stringify(k.hianyok));
+    expect(k.eredmeny.hTrT).toBeCloseTo(eredmeny('G1').hTrT, 9);
+  });
+
+  it('a talajjal érintkező falat önálló határolóként nem fogadja el (a (6.6) z·P-vel számol)', () => {
+    const p = goldenProjekt('G1');
+    p.retegrendek.push({ azon: 'pf', nev: 'PF1', szerkezet: 'talajjal_erintkezo_fal', retegek: [{ anyagAzon: 'a-Vasbeton', d: 0.3 }] });
+    p.helyisegek[0]!.hatarolok.push({ azon: 'x', retegrendAzon: 'pf', tuloldal: { fajta: 'talaj' }, felulet: 10, nyilasok: [] });
+    expect(ellenoriz(p).some((h) => h.sulyossag === 'hiba' && h.uzenet.includes('nem önálló határoló'))).toBe(true);
+  });
+});

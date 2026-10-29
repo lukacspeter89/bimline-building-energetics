@@ -45,7 +45,9 @@ export type SzerkezetTipus =
   | 'also_zarofodem_futetlen_felett'
   | 'futott_futetlen_kozotti_fal'
   | 'szomszed_futott_epulet_fal'
-  | 'talajon_fekvo_padlo';
+  | 'talajon_fekvo_padlo'
+  /** Fűtött pince talajjal érintkező fala: nem önálló határoló, a pincepadlónál hivatkozott rétegrend (6.6). */
+  | 'talajjal_erintkezo_fal';
 
 export interface Retegrend {
   azon: string;
@@ -90,6 +92,10 @@ export interface Hatarolo {
   nyilasok: Nyilas[];
   /** Talajon fekvő padlónál: kitett kerület [m]. */
   kitettKerulet?: number;
+  /** Talajon fekvő padlónál: a padló terepszint alatti mélysége z [m]; ±0,5 m-en belül 0 (4.4.2). */
+  melyseg?: number;
+  /** Fűtött pincénél (z > 0,5 m): a talajjal érintkező pincefal rétegrendje; felülete z·P (4.4.4, 6.6). */
+  pinceFalRetegrendAzon?: string;
 }
 
 export interface Helyiseg {

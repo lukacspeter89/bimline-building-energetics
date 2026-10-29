@@ -143,7 +143,7 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
           id={`b-${b.azon}-r`}
           cimke="Szerkezet"
           ertek={b.retegrendAzon}
-          opciok={p.retegrendek.map((x) => ({ ertek: x.azon, nev: `${x.nev} – ${SZERKEZET_NEV[x.szerkezet]}` }))}
+          opciok={p.retegrendek.filter((x) => x.szerkezet !== 'talajjal_erintkezo_fal').map((x) => ({ ertek: x.azon, nev: `${x.nev} – ${SZERKEZET_NEV[x.szerkezet]}` }))}
           onValtozas={(v) =>
             valtoztat((x) => {
               x.retegrendAzon = v;
@@ -190,6 +190,21 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
           <button type="button" class="meret" onClick={() => valtoztat((x) => void (x.kitettKerulet = falHossz))}>
             = a helyiség külső falainak hossza: {szam(falHossz, 2)} m
           </button>
+        )}
+        {r?.szerkezet === 'talajon_fekvo_padlo' && (
+          <SzamMezo id={`b-${b.azon}-z`} cimke="Mélység terepszint alatt (pince)" egyseg="m" ertek={b.melyseg ?? 0} onValtozas={(v) => valtoztat((x) => void (x.melyseg = v))} />
+        )}
+        {r?.szerkezet === 'talajon_fekvo_padlo' && (b.melyseg ?? 0) > 0.5 && (
+          <Valaszto
+            id={`b-${b.azon}-pf`}
+            cimke="Pincefal rétegrendje (z·P felület)"
+            ertek={b.pinceFalRetegrendAzon ?? ''}
+            opciok={[
+              ...(b.pinceFalRetegrendAzon ? [] : [{ ertek: '', nev: '— válassz pincefalat —' }]),
+              ...p.retegrendek.filter((x) => x.szerkezet === 'talajjal_erintkezo_fal').map((x) => ({ ertek: x.azon, nev: x.nev })),
+            ]}
+            onValtozas={(v) => valtoztat((x) => void (v ? (x.pinceFalRetegrendAzon = v) : delete x.pinceFalRetegrendAzon))}
+          />
         )}
         {!fuggoleges && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}
       </div>

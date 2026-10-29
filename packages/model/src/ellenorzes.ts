@@ -1,4 +1,5 @@
 // A projekt adatainak ellenőrzése a számítás előtt: hiányzó, ellentmondó vagy forrás nélküli adatok listája.
+import { szamitasiMelyseg } from '@bimline/calc-core';
 import type { Projekt } from './projekt.js';
 
 export interface Hiany {
@@ -64,9 +65,19 @@ export function ellenoriz(p: Projekt): Hiany[] {
       if (r.szerkezet === 'talajon_fekvo_padlo') {
         if (b.tuloldal.fajta !== 'talaj') hiba(hely, 'Talajon fekvő padló túloldala a talaj.', b.azon);
         if (!pozitiv(b.kitettKerulet)) hiba(hely, 'A talajon fekvő padló kitett kerülete szükséges (4.20).', b.azon);
+        // ±0,5 m-en belül z = 0 (HT-096); negatív: terepszint feletti padló.
+        const z = Number.isFinite(b.melyseg) ? szamitasiMelyseg(b.melyseg ?? 0) : 0;
+        if (z < 0) hiba(hely, 'Terepszint feletti padlót (4.4.3) a program még nem kezel; a mélység nem lehet negatív.', b.azon);
+        if (z > 0) {
+          const fal = b.pinceFalRetegrendAzon === undefined ? undefined : p.retegrendek.find((x) => x.azon === b.pinceFalRetegrendAzon);
+          if (!fal) hiba(hely, 'Fűtött pincénél (z > 0,5 m) a talajjal érintkező pincefal rétegrendje szükséges (4.4.4).', b.azon);
+          else if (fal.szerkezet !== 'talajjal_erintkezo_fal') hiba(hely, `A pincefal rétegrendje (${fal.nev}) nem „talajjal érintkező fal” típusú.`, b.azon);
+        }
       }
-      if (b.tuloldal.fajta === 'talaj' && r.szerkezet !== 'talajon_fekvo_padlo') {
-        hiba(hely, 'Talajjal érintkező falat és pincepadlót a bemutató még nem kezel (4.4.3–4.4.4).', b.azon);
+      if (r.szerkezet === 'talajjal_erintkezo_fal') {
+        hiba(hely, 'A talajjal érintkező pincefal nem önálló határoló: a pincepadlónál hivatkozz rá (felülete z·P, 6.6).', b.azon);
+      } else if (b.tuloldal.fajta === 'talaj' && r.szerkezet !== 'talajon_fekvo_padlo') {
+        hiba(hely, 'A talajjal érintkező pincefalat a pincepadlónál add meg (mélység és pincefal-rétegrend); felülete z·P (6.6).', b.azon);
       }
     }
   }

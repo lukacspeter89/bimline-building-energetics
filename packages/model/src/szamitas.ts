@@ -51,6 +51,7 @@ import {
   szolarSzivattyuSegedenergia,
   talajHoatvitel,
   talajonFekvoPadlo,
+  futottPinceFal,
   termeszetesSzellozes,
   ventilatorEnergia,
   vizesSzabalyozasiTenyezo,
@@ -139,6 +140,7 @@ const SZERKEZETEK: Record<SzerkezetTipus, SzerkezetJellemzo> = {
   },
   szomszed_futott_epulet_fal: { irany: () => 'vizszintes' },
   talajon_fekvo_padlo: { irany: () => 'lefele' },
+  talajjal_erintkezo_fal: { irany: () => 'vizszintes' },
 };
 
 const ELH = (h: 'futott_terben' | 'futott_teren_kivul') => h;
@@ -199,6 +201,11 @@ function szamol(p: Projekt): ProjektEredmeny {
     return anyag.get(vastag.anyagAzon)!.lambda;
   })();
 
+  // A karakterisztikus méret (4.20) a teljes, összefüggő padlóra számítandó, nem helyiségenként (E-02, D-140).
+  const talajPadlok = p.helyisegek.flatMap((h) => h.hatarolok).filter((b) => rr.get(b.retegrendAzon)!.szerkezet === 'talajon_fekvo_padlo');
+  const padloAossz = talajPadlok.reduce((s, b) => s + b.felulet, 0);
+  const padloPossz = talajPadlok.reduce((s, b) => s + (b.kitettKerulet ?? 0), 0);
+
   for (const h of p.helyisegek) {
     for (const b of h.hatarolok) {
       const r = rr.get(b.retegrendAzon)!;
@@ -238,7 +245,20 @@ function szamol(p: Projekt): ProjektEredmeny {
 
       if (r.szerkezet === 'talajon_fekvo_padlo') {
         const P = b.kitettKerulet ?? 0;
-        const padlo = talajonFekvoPadlo({ A: b.felulet, P, df: falVastagsag, rP: Rretegek(r), melyseg: 0 });
+        const padlo = talajonFekvoPadlo({ A: padloAossz, P: padloPossz, df: falVastagsag, rP: Rretegek(r), melyseg: b.melyseg ?? 0 });
+        // Fűtött pince (4.4.4): a pincefal U_T,pf-je (4.28) a pincepadló d_p-jével; hőátvitele z·P·U_T,pf (6.6).
+        let pince: { z: number; uTpf: number } | undefined;
+        if (padlo.z > 0) {
+          const falR = rr.get(b.pinceFalRetegrendAzon!)!;
+          pince = { z: padlo.z, uTpf: futottPinceFal({ z: padlo.z, dp: padlo.dp, rPf: Rretegek(falR) }) };
+          const Afal = padlo.z * P;
+          Aossz += Afal;
+          const of = szerkOssz.get(falR.azon) ?? { A: 0, UA: 0, r: falR, megj: `z = ${String(padlo.z).replace('.', ',')} m; felület z·P (6.6)` };
+          of.A += Afal;
+          of.UA += Afal * pince.uTpf;
+          szerkOssz.set(falR.azon, of);
+          refHatarolok.push({ kod: 'talajjal_erintkezo_fal', A: Afal });
+        }
         const psi =
           P > 0 && falazatLambda !== null
             ? psiPf({
@@ -248,9 +268,9 @@ function szamol(p: Projekt): ProjektEredmeny {
                 padloHoszigetelesR: Math.max(...r.retegek.map((x) => retegEllenallas(x.d, anyag.get(x.anyagAzon)!.lambda))),
               })
             : 0;
-        hTrT += talajHoatvitel(b.felulet, padlo.U, P, psi);
+        hTrT += talajHoatvitel(b.felulet, padlo.U, P, psi, pince);
         talajA += b.felulet;
-        const o = szerkOssz.get(r.azon) ?? { A: 0, UA: 0, r, megj: `B = ${padlo.B.toFixed(2).replace('.', ',')} m; Ψ_p,f = ${String(psi).replace('.', ',')} W/mK` };
+        const o = szerkOssz.get(r.azon) ?? { A: 0, UA: 0, r, megj: `B = ${padlo.B.toFixed(2).replace('.', ',')} m; Ψ_p,f = ${String(psi).replace('.', ',')} W/mK${padlo.z > 0 ? `; z = ${String(padlo.z).replace('.', ',')} m` : ''}` };
         o.A += b.felulet;
         o.UA += b.felulet * padlo.U;
         szerkOssz.set(r.azon, o);
