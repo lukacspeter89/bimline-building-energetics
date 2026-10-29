@@ -7,7 +7,8 @@ energetikai tanúsítvány, OÉNY e-tanúsítás feltöltő XML. A feladatleír�
 
 - **0. fázis (kutatás):** kész, Péter 2026-10-29-én jóváhagyta (döntések: `docs/DONTESEK.md`).
 - **1. fázis (számítási mag):** folyamatban. Kész: hőtechnika (U-érték, légrétegek, inhomogén rétegek, korrekciók,
-  nyílászárók, talajjal érintkező szerkezetek, panelos falak), követelmények, besorolás, szerkezet- és rendszerminősítés.
+  nyílászárók, talajjal érintkező szerkezetek, panelos falak), nettó fűtési és hűtési energiaigény (havi mérleg,
+  q_m, hőszükséglet-becslés; kézi kontrollpéldával), követelmények, besorolás, szerkezet- és rendszerminősítés.
 
 | Dokumentum | Tartalom |
 |------------|----------|

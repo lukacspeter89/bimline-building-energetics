@@ -42,3 +42,13 @@ export function alapertek(hivatkozas: TablaHivatkozas, kulcs: string): number {
   const sor = sorKeres(hivatkozas, (s) => s['kulcs'] === kulcs);
   return szamMezo(sor, 'ertek', `${hivatkozas}/${kulcs}`);
 }
+
+/** Kulcs–érték táblázat lista típusú értéke (pl. hónapok listája). */
+export function alapertekLista(hivatkozas: TablaHivatkozas, kulcs: string): readonly number[] {
+  const sor = sorKeres(hivatkozas, (s) => s['kulcs'] === kulcs);
+  const v = sor['ertek'];
+  if (!Array.isArray(v) || !v.every((x) => typeof x === 'number')) {
+    throw new NormativAdatHiba(`A(z) ${hivatkozas}/${kulcs} érték nem számlista.`, hivatkozas);
+  }
+  return v as number[];
+}

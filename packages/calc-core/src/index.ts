@@ -18,3 +18,8 @@ export * from './hotechnika/nyilaszaro.js';
 export * from './hotechnika/talaj.js';
 export * from './hotechnika/egyeb.js';
 export * from './kovetelmeny/index.js';
+export * from './netto/eghajlat.js';
+export * from './netto/transzmisszio.js';
+export * from './netto/szellozes.js';
+export * from './netto/nyereseg.js';
+export * from './netto/merleg.js';
