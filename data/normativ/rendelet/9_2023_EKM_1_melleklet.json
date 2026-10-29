@@ -1,0 +1,188 @@
+{
+  "schema_verzio": 1,
+  "tablazatok": [
+    {
+      "id": "u_kovetelmeny",
+      "cim": "A hőátbocsátási tényező követelményértékei",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "1. melléklet 1.1. pont, táblázat",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "(*) A követelményérték határoló szerkezetek esetében az adott épülethatároló szerkezet átlagos hőátbocsátási tényezőjére vonatkozik. Új épületek és felújítások esetén a tervezett szerkezeteket állagvédelmi szempontból is ellenőrizni kell. (**) A nyílászáró szerkezetek esetében a keretszerkezet, a transzparens szerkezet (üvegezés), annak távtartói és hasonló funkciójú szerkezetek hatását is tartalmazó hőátbocsátási tényezőt kell figyelembe venni. Társított árnyékoló szerkezetek hővezetési ellenállásának többlet hőszigetelő hatása az elemi követelmények ellenőrzésekor nem vehető figyelembe. (***) A talaj hatását is tartalmazó egyenértékű hőátbocsátási tényező. Terepszint közelében vagy terepszint felett fekvő padló esetében a padló kerülete mentén vízszintes síkban legalább 2,5 m, vagy függőleges síkban a padlósík alatt legalább 1,5 m mélységig perem hőszigetelést kell alkalmazni, amely legalább 2,5 m2K/W hővezetési ellenállással rendelkezik. Ha a terepszint közelében fekvő padló tartalmaz legalább 2,5 m2K/W hővezetési ellenállású hőszigetelő réteget, perem hőszigetelésként elegendő a terepszint alatt 0,5 m mélységig függőleges síkban elhelyezni legalább 2,5 m2K/W hővezetési ellenállású hőszigetelő réteget. (****) A követelmény teljesítése elhagyható, ha a számítás igazolja, hogy az energiagyűjtő fal fűtési szezonra vetített energiamérlege jobb, mint a követelménynek megfelelő azonos méretű homlokzati fal energiamérlege. A 22. sor szövege a forrásban: „Talajjal érintkező fal csak új épületeknél)” – a nyitó zárójel hiányzik, értelemszerűen „(csak új épületeknél)”.",
+      "oszlopok": [
+        {"kulcs": "sor", "cim": "táblázat sora"},
+        {"kulcs": "kod", "cim": "programbeli azonosító (nem normatív)"},
+        {"kulcs": "szerkezet", "cim": "Épülethatároló szerkezet"},
+        {"kulcs": "u_max", "cim": "A hőátbocsátási tényező követelményértéke (*)", "egyseg": "W/m2K"},
+        {"kulcs": "labjegyzet", "cim": "a sorhoz tartozó lábjegyzetek"}
+      ],
+      "sorok": [
+        {"sor": 2, "kod": "homlokzati_fal", "szerkezet": "Homlokzati fal", "u_max": 0.24, "labjegyzet": ["*"]},
+        {"sor": 3, "kod": "lapos_teto", "szerkezet": "Lapostető", "u_max": 0.17, "labjegyzet": ["*"]},
+        {"sor": 4, "kod": "futott_tetoter_hatarolo", "szerkezet": "Fűtött tetőteret határoló szerkezetek", "u_max": 0.17, "labjegyzet": ["*"]},
+        {"sor": 5, "kod": "padlasfodem", "szerkezet": "Padlás és búvótér alatti födém", "u_max": 0.17, "labjegyzet": ["*"]},
+        {"sor": 6, "kod": "arkad_athajto_feletti_fodem", "szerkezet": "Árkád és áthajtó feletti födém", "u_max": 0.17, "labjegyzet": ["*"]},
+        {"sor": 7, "kod": "also_zarofodem_futetlen_felett", "szerkezet": "Alsó zárófödém fűtetlen terek felett", "u_max": 0.26, "labjegyzet": ["*"]},
+        {"sor": 8, "kod": "uvegezes", "szerkezet": "Üvegezés", "u_max": 1.0, "labjegyzet": ["*"]},
+        {"sor": 9, "kod": "kulonleges_uvegezes", "szerkezet": "Különleges üvegezés (magas akusztikai vagy biztonsági követelményű üvegezés)", "u_max": 1.2, "labjegyzet": ["*"]},
+        {"sor": 10, "kod": "ablak_fa_pvc", "szerkezet": "Fa vagy PVC keretszerkezetű homlokzati üvegezett nyílászáró (> 0,5m2) (**)", "u_max": 1.1, "labjegyzet": ["*", "**"], "min_felulet_m2": 0.5},
+        {"sor": 11, "kod": "ablak_fem", "szerkezet": "Fém keretszerkezetű homlokzati üvegezett nyílászáró (> 0,5m2) (**)", "u_max": 1.4, "labjegyzet": ["*", "**"], "min_felulet_m2": 0.5},
+        {"sor": 12, "kod": "uvegfal_fuggonyfal", "szerkezet": "Homlokzati üvegfal, függönyfal (**)", "u_max": 1.4, "labjegyzet": ["*", "**"]},
+        {"sor": 13, "kod": "uvegteto", "szerkezet": "Üvegtető", "u_max": 1.5, "labjegyzet": ["*"]},
+        {"sor": 14, "kod": "tetofelulvilagito_kupola", "szerkezet": "Tetőfelülvilágító, füstelvezető kupola (> 0,5m2)", "u_max": 1.7, "labjegyzet": ["*"], "min_felulet_m2": 0.5},
+        {"sor": 15, "kod": "tetosik_ablak", "szerkezet": "Tetősík ablak (> 0,5m2)", "u_max": 1.3, "labjegyzet": ["*"], "min_felulet_m2": 0.5},
+        {"sor": 16, "kod": "ipari_tuzgatlo_ajto_kapu", "szerkezet": "Ipari és tűzgátló ajtó és kapu (fűtött tér határolására)", "u_max": 2.0, "labjegyzet": ["*"]},
+        {"sor": 17, "kod": "ajto", "szerkezet": "Homlokzati vagy fűtött és fűtetlen terek közötti ajtó", "u_max": 1.4, "labjegyzet": ["*"]},
+        {"sor": 18, "kod": "kapu", "szerkezet": "Homlokzati vagy fűtött és fűtetlen terek közötti kapu", "u_max": 1.8, "labjegyzet": ["*"]},
+        {"sor": 19, "kod": "futott_futetlen_kozotti_fal", "szerkezet": "Fűtött és fűtetlen terek közötti fal", "u_max": 0.4, "labjegyzet": ["*"]},
+        {"sor": 20, "kod": "szomszed_futott_epulet_fal", "szerkezet": "Szomszédos fűtött épületek és épületrészek közötti fal", "u_max": 1.5, "labjegyzet": ["*"]},
+        {"sor": 21, "kod": "labazati_fal", "szerkezet": "Lábazati fal", "u_max": 0.3, "labjegyzet": ["*"]},
+        {"sor": 22, "kod": "talajjal_erintkezo_fal", "szerkezet": "Talajjal érintkező fal csak új épületeknél) (***)", "u_max": 0.3, "labjegyzet": ["*", "***"], "csak_uj_epulet": true},
+        {"sor": 23, "kod": "talajon_fekvo_padlo", "szerkezet": "Talajon fekvő padló (új épületeknél) (***)", "u_max": 0.3, "labjegyzet": ["*", "***"], "csak_uj_epulet": true},
+        {"sor": 24, "kod": "energiagyujto_fal", "szerkezet": "Hagyományos energiagyűjtő falak (pl. tömegfal, Trombe fal) (****)", "u_max": 1.0, "labjegyzet": ["*", "****"]}
+      ]
+    },
+    {
+      "id": "perem_hoszigeteles",
+      "cim": "Perem hőszigetelés minimális követelménye terepszint közelében vagy felett fekvő padlónál",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "1. melléklet 1.1. pont, (***) lábjegyzet",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "Az u_kovetelmeny táblázat (***) lábjegyzetéből kiemelve, ellenőrzési szabályként.",
+      "oszlopok": [
+        {"kulcs": "eset", "cim": "eset"},
+        {"kulcs": "vizszintes_min_m", "cim": "vízszintes kiterjedés", "egyseg": "m"},
+        {"kulcs": "fuggoleges_min_m", "cim": "függőleges mélység a padlósík / terepszint alatt", "egyseg": "m"},
+        {"kulcs": "r_min", "cim": "hővezetési ellenállás", "egyseg": "m2K/W"}
+      ],
+      "sorok": [
+        {"eset": "általános: vízszintes vagy függőleges perem hőszigetelés", "vizszintes_min_m": 2.5, "fuggoleges_min_m": 1.5, "r_min": 2.5, "eredeti": "vízszintes síkban legalább 2,5 m, vagy függőleges síkban a padlósík alatt legalább 1,5 m mélységig"},
+        {"eset": "a padló tartalmaz legalább 2,5 m2K/W hőszigetelő réteget", "vizszintes_min_m": null, "fuggoleges_min_m": 0.5, "r_min": 2.5, "eredeti": "perem hőszigetelésként elegendő a terepszint alatt 0,5 m mélységig függőleges síkban"}
+      ]
+    },
+    {
+      "id": "nyari_hovedelem",
+      "cim": "A nyári hővédelemre vonatkozó követelmény",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "1. melléklet 2. pont",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "Feltétel: ha az épület határolásának az északi tájolástól legalább 45°-kal eltérő tájolású, vagy 45°-nál alacsonyabb hajlásszögű transzparens szerkezeteinek összfelülete meghaladja az épület hasznos alapterületének 8%-át. Követelmény: Σ(A_ü,i · g_H,i · g_árny,H,i · F_árny,i) / Σ A_ü ≤ 0,3, ahol A_ü a transzparens szerkezet felülete az üvegezés mérete alapján számolva. A szöveg „bruttó felülettel súlyozott” átlagot említ, a képlet jelmagyarázata viszont az üvegezés méretét adja – lásd NYITOTT_KERDESEK.md. A képlet a forrásban képként szerepel (docs/forrasok/jogszabaly/9_2023_EKM_1_melleklet_2pont_keplet.png). Nem kell alkalmazni a 3. § (8) szerinti, huzamos tartózkodásra szolgáló helyiség nélküli mezőgazdasági, logisztikai, ipari és műhely jellegű épületre.",
+      "oszlopok": [
+        {"kulcs": "parameter", "cim": "paraméter"},
+        {"kulcs": "ertek", "cim": "érték"},
+        {"kulcs": "egyseg", "cim": "egység"}
+      ],
+      "sorok": [
+        {"parameter": "eszaktol_elteres_min", "ertek": 45, "egyseg": "°", "eredeti": "az északi tájolástól legalább 45°-kal eltérő tájolású"},
+        {"parameter": "hajlasszog_max", "ertek": 45, "egyseg": "°", "eredeti": "vagy 45°-nál alacsonyabb hajlásszögű"},
+        {"parameter": "transzparens_arany_kuszob", "ertek": 0.08, "egyseg": "–", "eredeti": "meghaladja az épület hasznos alapterületének 8%-át"},
+        {"parameter": "g_atlag_max", "ertek": 0.3, "egyseg": "–", "eredeti": "≤ 0,3"}
+      ]
+    },
+    {
+      "id": "rendszer_kuszobok",
+      "cim": "Az épülettechnikai rendszerre vonatkozó előírások számszerű küszöbei (ellenőrzési szabályok)",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "1. melléklet 3.2.1., 3.2.2., 3.2.5., 3.4.1., 3.4.2., 3.7.1. pont",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "Tervezési előírások; a programban figyelmeztetésként jelennek meg, az energetikai számítást nem módosítják.",
+      "oszlopok": [
+        {"kulcs": "pont", "cim": "rendeleti pont"},
+        {"kulcs": "szabaly", "cim": "szabály"},
+        {"kulcs": "kuszob", "cim": "küszöbérték"},
+        {"kulcs": "egyseg", "cim": "egység"},
+        {"kulcs": "kotelezo", "cim": "kötelező (true) / javasolt (false)"}
+      ],
+      "sorok": [
+        {"pont": "3.2.1.", "szabaly": "Új épületben, ha az egy rendszerről ellátott fűtött vagy hűtött alapterület nagyobb a küszöbnél: központi időjárásfüggő szabályozás kötelező (kisebbnél javasolt).", "kuszob": 100, "egyseg": "m2", "kotelezo": true},
+        {"pont": "3.2.2.", "szabaly": "Új fűtési és hűtési rendszer létesítésekor minden, a küszöbnél nagyobb alapterületű helyiségben önálló hőmérséklet-szabályozás.", "kuszob": 12, "egyseg": "m2", "kotelezo": true},
+        {"pont": "3.2.5.", "szabaly": "Új épületnél és meglévő fűtési/hűtési rendszer korszerűsítésekor a küszöb feletti rendszer-alapterületnél kötelező beszabályozás és dokumentálás.", "kuszob": 300, "egyseg": "m2", "kotelezo": true},
+        {"pont": "3.4.1.", "szabaly": "Cirkulációs szivattyú időprogram szerinti működtetése ajánlott, ha a vezetékek hőszigeteltek, a rendszer beszabályozott és a rendszer-alapterület a küszöb alatti.", "kuszob": 300, "egyseg": "m2", "kotelezo": false},
+        {"pont": "3.4.2.", "szabaly": "Új épületnél / új melegvíz-elosztóhálózatnál a küszöb feletti rendszer-alapterületnél termosztatikus automatikus beszabályozó szelep felszállónként.", "kuszob": 300, "egyseg": "m2", "kotelezo": true},
+        {"pont": "3.7.1.", "szabaly": "Egyéb rendeltetésű épületben a küszöbnél nagyobb effektív névleges teljesítményű fűtési, légkondicionáló és kombinált rendszereket 2025. január 1-jéig épületautomatizálási és -szabályozási rendszerrel kell felszerelni, ha műszakilag lehetséges.", "kuszob": 290, "egyseg": "kW", "kotelezo": true}
+      ]
+    },
+    {
+      "id": "csoszigeteles",
+      "cim": "Fűtési és HMV elosztóvezetékek hőszigetelési követelményei",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "1. melléklet 3.3.2. pont, táblázat; kiegészítő szabályok: 3.3.3.–3.3.6.",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "A vastagságok 0,036 W/mK hővezetési tényezőre vonatkoznak (eltérő λ esetén azonos hőellenállás, számítással – 3.3.4.). (*) a 8. sorhoz: kivéve a felületfűtési rendszerek hőleadást szolgáló vezetékei. 3.3.3.: nincs követelmény, ha a vezetékek azonos tulajdonú fűtött helyiségekben haladnak és a hőleadás hozzáférhető szerelvénnyel változtatható; nem vonatkozik a 22 mm alatti, cirkulációs körhöz nem tartozó, elektromos kísérőfűtés nélküli HMV-vezetékekre. 3.3.5.: 50 °C-nál magasabb névleges középhőmérsékletnél a következő, nagyobb csőátmérőhöz tartozó vastagság kell. A 6. és 7. sor „az 1–4 sorok értékeinek fele” – a táblázat valójában a 2–5. sorban adja a vastagságokat (az 1. sor a fejléc); értelmezés a NYITOTT_KERDESEK.md-ben.",
+      "oszlopok": [
+        {"kulcs": "sor", "cim": "táblázat sora"},
+        {"kulcs": "vezetek", "cim": "Vezeték/szerelvény fajtája"},
+        {"kulcs": "belso_atmero_min_mm", "cim": "belső átmérő alsó határa", "egyseg": "mm"},
+        {"kulcs": "belso_atmero_max_mm", "cim": "belső átmérő felső határa", "egyseg": "mm"},
+        {"kulcs": "vastagsag", "cim": "A hőszigetelés minimális vastagsága 0,036 W/mK hővezetési tényezőre vonatkoztatva"}
+      ],
+      "sorok": [
+        {"sor": 2, "vezetek": "belső átmérő 22 mm-ig", "belso_atmero_min_mm": null, "belso_atmero_max_mm": 22, "vastagsag": {"mm": 19}, "eredeti": "19 mm"},
+        {"sor": 3, "vezetek": "belső átmérő 22 mm-től és 35 mm-ig", "belso_atmero_min_mm": 22, "belso_atmero_max_mm": 35, "vastagsag": {"mm": 30}, "eredeti": "30 mm"},
+        {"sor": 4, "vezetek": "belső átmérő 35 mm-től és 100 mm-ig", "belso_atmero_min_mm": 35, "belso_atmero_max_mm": 100, "vastagsag": {"belso_atmerovel_egyenlo": true}, "eredeti": "belső átmérővel megegyező"},
+        {"sor": 5, "vezetek": "belső átmérő 100 mm felett", "belso_atmero_min_mm": 100, "belso_atmero_max_mm": null, "vastagsag": {"mm": 100}, "eredeti": "100 mm"},
+        {"sor": 6, "vezetek": "fal- és födémáttöréseknél, vezetékkeresztezéseknél, kötéseknél, központi elosztóknál", "belso_atmero_min_mm": null, "belso_atmero_max_mm": null, "vastagsag": {"szorzo_az_alapertekhez": 0.5}, "eredeti": "az 1–4 sorok értékeinek fele"},
+        {"sor": 7, "vezetek": "különböző tulajdonú fűtött helyiségek elválasztó falaiba kerülő fűtési vezetékek", "belso_atmero_min_mm": null, "belso_atmero_max_mm": null, "vastagsag": {"szorzo_az_alapertekhez": 0.5}, "eredeti": "az 1–4 sorok értékeinek fele"},
+        {"sor": 8, "vezetek": "különböző tulajdonú fűtött helyiségek elválasztó födémeibe kerülő fűtési vezetékek (*)", "belso_atmero_min_mm": null, "belso_atmero_max_mm": null, "vastagsag": {"mm": 6}, "eredeti": "6 mm"}
+      ],
+      "alap_lambda_W_mK": 0.036
+    },
+    {
+      "id": "legtechnika_nyomasveszteseg",
+      "cim": "Légtechnikai elemek megengedett nyomásvesztesége",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "1. melléklet 3.5.1.2. pont, táblázat",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "(*) H1–H3 osztály az MSZ EN 13053:2006 szabvány alapján. (**) Szűrőcsere előtti nyomásesés. Megfelelő az MSZ EN 16798-3 „normál” előírása is; nagyobb nyomásveszteségű elem más elemek csökkentésével kompenzálható (3.5.1.1.). A 3.5.2.2. légcsatorna-tömörségi táblázat ajánlott érték, a számításhoz nem kell, ezért nincs átvéve.",
+      "oszlopok": [
+        {"kulcs": "elem", "cim": "Légtechnikai elem"},
+        {"kulcs": "dp_max_Pa", "cim": "Nyomásveszteség", "egyseg": "Pa"}
+      ],
+      "sorok": [
+        {"elem": "Befúvó légcsatorna", "dp_max_Pa": 300},
+        {"elem": "Elszívó légcsatorna", "dp_max_Pa": 200},
+        {"elem": "Fűtő kalorifer", "dp_max_Pa": 80},
+        {"elem": "Hűtő kalorifer", "dp_max_Pa": 140},
+        {"elem": "Hővisszanyerő, H3 (*)", "dp_max_Pa": 150},
+        {"elem": "Hővisszanyerő, H2-H1 (*)", "dp_max_Pa": 300},
+        {"elem": "Nedvesítő", "dp_max_Pa": 100},
+        {"elem": "Mosókamra", "dp_max_Pa": 200},
+        {"elem": "Szűrő F5-F7 (**)", "dp_max_Pa": 150},
+        {"elem": "Szűrő F8-F9 (**)", "dp_max_Pa": 250},
+        {"elem": "HEPA szűrő", "dp_max_Pa": 500},
+        {"elem": "Gázszűrő", "dp_max_Pa": 150},
+        {"elem": "Hangcsillapító", "dp_max_Pa": 50},
+        {"elem": "Levegőbemenet, -kimenet", "dp_max_Pa": 50}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_verzio": 1,
+  "tablazatok": [
+    {
+      "id": "energetikai_besorolas",
+      "cim": "Energetikai minőség és szén-dioxid-kibocsátás szerinti besorolás (hatékonysági osztályok)",
+      "forras": {
+        "dokumentum": "176/2008. (VI. 30.) Korm. rendelet",
+        "hely": "3. melléklet 1.–3. pont, 2. pont táblázata",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2008-176-20-22",
+        "idoallapot": "2026.01.06.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "Az arány (%) = 100 · a vizsgált épület (önálló rendeltetési egység) összesített energetikai jellemzője [ill. fajlagos CO2-kibocsátása] / az új épületek létesítése során a teljes épületre a 9/2023. ÉKM rendelet szerint megengedett követelményérték. Egyéb rendeltetésű épület önálló rendeltetési egységének tanúsításakor az önálló rendeltetési egységre meghatározott, új épületekre vonatkozó követelményérték a viszonyítási alap (3. melléklet 1.1.–1.2.). Ha az épület műszaki állapota miatt nem alkalmas a rendeltetésszerű funkció ellátására, mindkét besorolás „I”, és a nem meghatározható számszerű eredmények nem kerülnek kitöltésre (3. pont). A két skála határai azonosak. A hatalyos_tol a 200/2023. (V. 25.) Korm. rendelettel megállapított szövegre és a 9/2023. ÉKM rendelet hatálybalépésére utal; a pontos hatálybalépés a módosító rendeletből ellenőrizendő.",
+      "oszlopok": [
+        {"kulcs": "osztaly", "cim": "Besorolás"},
+        {"kulcs": "also_hatar_kizart", "cim": "arány alsó határa (kizárólagos, <)", "egyseg": "%"},
+        {"kulcs": "felso_hatar", "cim": "arány felső határa (≤)", "egyseg": "%"},
+        {"kulcs": "eredeti", "cim": "eredeti cella"}
+      ],
+      "sorok": [
+        {"osztaly": "A+++2023", "also_hatar_kizart": null, "felso_hatar": 0, "eredeti": "≤0"},
+        {"osztaly": "A++2023", "also_hatar_kizart": 0, "felso_hatar": 50, "eredeti": "0<…≤50"},
+        {"osztaly": "A+2023", "also_hatar_kizart": 50, "felso_hatar": 90, "eredeti": "50<…≤90"},
+        {"osztaly": "A2023", "also_hatar_kizart": 90, "felso_hatar": 100, "eredeti": "90<…≤100"},
+        {"osztaly": "B2023", "also_hatar_kizart": 100, "felso_hatar": 130, "eredeti": "100<…≤130"},
+        {"osztaly": "C2023", "also_hatar_kizart": 130, "felso_hatar": 160, "eredeti": "130<…≤160"},
+        {"osztaly": "D2023", "also_hatar_kizart": 160, "felso_hatar": 200, "eredeti": "160<…≤200"},
+        {"osztaly": "E2023", "also_hatar_kizart": 200, "felso_hatar": 250, "eredeti": "200<…≤250"},
+        {"osztaly": "F2023", "also_hatar_kizart": 250, "felso_hatar": 310, "eredeti": "250<…≤310"},
+        {"osztaly": "G2023", "also_hatar_kizart": 310, "felso_hatar": 390, "eredeti": "310<…≤390"},
+        {"osztaly": "H2023", "also_hatar_kizart": 390, "felso_hatar": 500, "eredeti": "390<…≤500"},
+        {"osztaly": "I2023", "also_hatar_kizart": 500, "felso_hatar": null, "eredeti": "500<…"}
+      ]
+    },
+    {
+      "id": "szerkezet_ertekelesi_osztalyok",
+      "cim": "Épületszerkezetek értékelési osztályai",
+      "forras": {
+        "dokumentum": "176/2008. (VI. 30.) Korm. rendelet",
+        "hely": "4. melléklet 2. pont, táblázat",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2008-176-20-22",
+        "idoallapot": "2026.01.06.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "A besorolást a szerkezet 9/2023. ÉKM rendelet szerinti átlagos hőátbocsátási tényezője alapján kell végezni (4. melléklet 1.). Mértékadó szerkezetek: a legnagyobb összfelületű nyílászárótípus, homlokzati fal, lapostető, fűtött tetőteret határoló szerkezet, padlás és búvótér alatti födém, árkád és áthajtó feletti födém, alsó zárófödém fűtetlen terek felett, továbbá a lehűlő felület 10%-át meghaladó összfelületű szerkezetek (4. § (4)). A korszerűsítési javaslat „jó” szintje a D, „kiváló” szintje az E oszlop (7. § (1)). A forrás nem rendel külön sort pl. a fűtött tetőteret határoló szerkezethez, az árkád feletti födémhez vagy az ajtókhoz – lásd NYITOTT_KERDESEK.md K-012. A határok: rossz: x > h1; gyenge: h2 < x ≤ h1; közepes: h3 < x ≤ h2; jó: h4 < x ≤ h3; kiváló: x ≤ h4.",
+      "oszlopok": [
+        {"kulcs": "szerkezet", "cim": "szerkezet"},
+        {"kulcs": "egyseg", "cim": "egység"},
+        {"kulcs": "h1", "cim": "rossz / gyenge határ"},
+        {"kulcs": "h2", "cim": "gyenge / közepes határ"},
+        {"kulcs": "h3", "cim": "közepes / jó határ"},
+        {"kulcs": "h4", "cim": "jó / kiváló határ"}
+      ],
+      "sorok": [
+        {"szerkezet": "homlokzati fal", "egyseg": "W/m2K", "h1": 0.9, "h2": 0.45, "h3": 0.24, "h4": 0.16, "eredeti": "0,9<… | 0,45<…≤0,9 | 0,24<…≤0,45 | 0,16<…≤0,24 | ≤0,16"},
+        {"szerkezet": "padlásfödém", "egyseg": "W/m2K", "h1": 0.7, "h2": 0.3, "h3": 0.17, "h4": 0.12, "eredeti": "0,7<… | 0,3<…≤0,7 | 0,17<…≤0,3 | 0,12<…≤0,17 | ≤0,12"},
+        {"szerkezet": "talajjal érintkező fal", "egyseg": "W/m2K", "h1": 0.8, "h2": 0.5, "h3": 0.3, "h4": 0.2, "eredeti": "0,8<… | 0,5<…≤0,8 | 0,3<…≤0,5 | 0,2<…≤0,3 | ≤0,2"},
+        {"szerkezet": "talajon fekvő padló egyenértékű hőátbocsátási tényezője", "egyseg": "W/m2K", "h1": 0.8, "h2": 0.5, "h3": 0.3, "h4": 0.2, "eredeti": "0,8<… | 0,5<…≤0,8 | 0,3<…≤0,5 | 0,2<…≤0,3 | ≤0,2"},
+        {"szerkezet": "pincefödém", "egyseg": "W/m2K", "h1": 0.9, "h2": 0.5, "h3": 0.26, "h4": 0.2, "eredeti": "0,9<… | 0,5<…≤0,9 | 0,26<…≤0,5 | 0,2<…≤0,26 | ≤0,2"},
+        {"szerkezet": "magastető, lapostető", "egyseg": "W/m2K", "h1": 0.7, "h2": 0.3, "h3": 0.17, "h4": 0.12, "eredeti": "0,7<… | 0,3<…≤0,7 | 0,17<…≤0,3 | 0,12<…≤0,17 | ≤0,12"},
+        {"szerkezet": "nyílászáró", "egyseg": "W/m2K", "h1": 3.0, "h2": 1.5, "h3": 1.1, "h4": 0.8, "eredeti": "3,0<… | 1,5<…≤3,0 | 1,1<…≤1,5 | 0,8<…≤1,1 | ≤0,8"},
+        {"szerkezet": "tetősík ablakok", "egyseg": "W/m2K", "h1": 3.0, "h2": 1.5, "h3": 1.3, "h4": 1.1, "eredeti": "3,0<… | 1,5<…≤3,0 | 1,3<…≤1,5 | 1,1<…≤1,3 | ≤1,1"}
+      ]
+    },
+    {
+      "id": "rendszer_ertekelesi_osztalyok",
+      "cim": "Épülettechnikai rendszerek értékelési osztályai",
+      "forras": {
+        "dokumentum": "176/2008. (VI. 30.) Korm. rendelet",
+        "hely": "5. melléklet 1.–2. pont, táblázat",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2008-176-20-22",
+        "idoallapot": "2026.01.06.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "A besorolás a felhasználási célonkénti – fűtési és hűtési rendszereknél a nettó energiaigényhez mért – nem megújuló primerenergia-felhasználás és a referenciaépület azonos mutatójának hányadosa (%). Jelölések: EF/H/HMV/LT/V,nren a fűtés/hűtés/HMV/szellőzés/világítás éves nem megújuló primerenergia-igénye; QF/H,net a nettó fűtési/hűtési energiaigény; REF index: a referenciaépület. Világítás lakóépületnél elhagyandó. A korszerűsítési javaslat „jó” szintje a D, „kiváló” szintje az E oszlop (7. § (1)). Az arány-határok %-ban: rossz: x > h1; gyenge: h2 < x ≤ h1; közepes: h3 < x ≤ h2; jó: h4 < x ≤ h3; kiváló: x ≤ h4.",
+      "oszlopok": [
+        {"kulcs": "rendszer", "cim": "rendszer"},
+        {"kulcs": "mutato", "cim": "mutató (szó szerint)"},
+        {"kulcs": "h1", "cim": "rossz / gyenge határ", "egyseg": "%"},
+        {"kulcs": "h2", "cim": "gyenge / közepes határ", "egyseg": "%"},
+        {"kulcs": "h3", "cim": "közepes / jó határ", "egyseg": "%"},
+        {"kulcs": "h4", "cim": "jó / kiváló határ", "egyseg": "%"}
+      ],
+      "sorok": [
+        {"rendszer": "futes", "mutato": "(EF,nren ⁄ QF,net )/(EF,nren,REF ⁄ QF,net,REF)", "h1": 130, "h2": 105, "h3": 95, "h4": 70},
+        {"rendszer": "futes_es_szellozes", "mutato": "[(EF,nren+ELT,nren) ⁄ QF,net]/[(EF,nren,REF+ELT,nren,REF) ⁄ QF,net,REF]", "h1": 120, "h2": 105, "h3": 90, "h4": 55},
+        {"rendszer": "hmv", "mutato": "EHMV,nren / EHMV,nren,REF", "h1": 120, "h2": 105, "h3": 90, "h4": 50},
+        {"rendszer": "hutes_legkondicionalas", "mutato": "(EH,nren/QH,net) ⁄ (EH,nren,REF ⁄ QH,net,REF)", "h1": 125, "h2": 110, "h3": 95, "h4": 80},
+        {"rendszer": "beepitett_vilagitas", "mutato": "EV,nren/EV,nren,REF (lakóépületeknél elhagyandó)", "h1": 800, "h2": 250, "h3": 115, "h4": 85}
+      ]
+    },
+    {
+      "id": "tanusitas_altalanos",
+      "cim": "A tanúsítás számszerű általános szabályai",
+      "forras": {
+        "dokumentum": "176/2008. (VI. 30.) Korm. rendelet",
+        "hely": "1. § (2), 4. § (4), 8. § (1)–(2)",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2008-176-20-22",
+        "idoallapot": "2026.01.06.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "Ellenőrzési és megjelenítési szabályok.",
+      "oszlopok": [
+        {"kulcs": "hely", "cim": "jogszabályhely"},
+        {"kulcs": "parameter", "cim": "paraméter"},
+        {"kulcs": "ertek", "cim": "érték"},
+        {"kulcs": "egyseg", "cim": "egység"}
+      ],
+      "sorok": [
+        {"hely": "1. § (2) a)", "parameter": "hatalyon_kivul_onallo_epulet_alapterulet_alatt", "ertek": 50, "egyseg": "m2", "eredeti": "az önálló, más épülethez nem csatlakozó, 50 m2-nél kisebb hasznos alapterületű épületre"},
+        {"hely": "1. § (2) b)", "parameter": "hatalyon_kivul_hasznalat_honap_alatt", "ertek": 4, "egyseg": "hónap/év", "eredeti": "az évente 4 hónapnál rövidebb használatra szánt lakhatás és pihenés céljára használt épületre"},
+        {"hely": "1. § (2) e)", "parameter": "hatalyon_kivul_futesi_homerseklet_max", "ertek": 12, "egyseg": "°C", "eredeti": "a levegő hőmérséklete a fűtési rendszer üzemideje alatt nem haladja meg a 12 °C-ot vagy négy hónapnál rövidebb ideig kerül fűtésre és két hónapnál rövidebb ideig kerül hűtésre"},
+        {"hely": "1. § (2) f)", "parameter": "hatalyon_kivul_technologiai_belso_hoterheles", "ertek": 20, "egyseg": "W/m2", "eredeti": "a technológiából származó belső hőnyereség … nagyobb, mint 20 W/m2, vagy a fűtési idényben több, mint húszszoros légcsere"},
+        {"hely": "4. § (4)", "parameter": "mertekado_szerkezet_lehulo_felulet_arany", "ertek": 0.1, "egyseg": "–", "eredeti": "azon határoló és nyílászáró szerkezetek, amelyek összfelülete meghaladja az épület lehűlő felületének 10%-át"},
+        {"hely": "8. § (1)", "parameter": "tanusitvany_hatalya", "ertek": 5, "egyseg": "év", "eredeti": "A tanúsítvány öt évig hatályos."},
+        {"hely": "8. § (2)", "parameter": "valtozas_utani_felhasznalhatosag", "ertek": 60, "egyseg": "nap", "eredeti": "a változás előtt kiállított tanúsítvány még a változást követő 60. napig használható fel"}
+      ]
+    }
+  ]
+}
