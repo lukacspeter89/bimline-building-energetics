@@ -70,10 +70,10 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Forrás:** a módszer köztes kerekítést nem ír elő; a %-os korrekció a 4.1.6 szerinti U-korrekció.
 - **Program:** köztes kerekítés nincs, csak a megjelenítés kerekít. A golden teszteknél ±0,001 W/m²K tűrés.
 
-### E-12 – Ablakok U* a direkt transzmisszióban — **E?** (G1 golden teszt)
-- **WinWatt (G1):** a „Határoló szerkezetek” táblában az ablak U = 0,75 / 0,73 / 0,71 mellett U* = 0,705 / 0,687 / 0,670 (≈ 6 %-kal kisebb), és a H_tr,D (40,9 W/K) az U*-gal számol. Redőny, árnyékoló nincs.
-- **Forrás:** a (6.2) a nyílászáró hőátbocsátási tényezőjével számol; a 4.3 fejezet szerinti U-t csökkentő tényezőt (árnyékoló nélkül) a módszer nem ad.
-- **Program:** U-val számol; H_tr,D = 41,45 W/K (+1,4 %). Ellenőrizendő: a WinWatt U*-jának eredete (Péter / Bausoft).
+### E-12 – Ablakok U* a direkt transzmisszióban — **=** (képlet), golden bemeneti hiba (tisztázva 2026-10-29)
+- **WinWatt:** U* = 0,7·U + 0,3·1/(1/U + ΔR), ahol ΔR a határoló `FNightPlusR` értéke (éjszakai többlet-hőellenállás: redőny, zsalu). A golden esetekben ΔR = 0,33 m²K/W a sablonból maradt a határolókon (a panel `NightPlusR`-je 0; Péter, README).
+- **Forrás:** azonos a módszer (4.18) képletével (1. függ. 4.3.3, 30. o.; HT-075; program: `arnyekolosNyilaszaroU`). Elemi követelmény ellenőrzésére nem használható.
+- **Program:** a golden bemenetekben nincs redőny, ezért U-val számol (H_tr,D G1-ben +1,4 %). A WinWatt-eredmény ebben a tételben bemeneti hibát hordoz, nem módszertani eltérést.
 
 ### E-13 – Effektív hőtároló képesség — **E?** (G1 golden teszt)
 - **WinWatt (G1):** C_m,eff/A_N = 301,41 kJ/m²K, a rétegrendekből számolva (MSZ EN ISO 13786 jellegű).
@@ -95,11 +95,11 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Forrás:** az éjszakai többletszellőzés „májustól szeptemberig” vehető figyelembe (6.11), 45. o.; egyszerűsített számításnál b_éjjel = 1,5.
 - **Program:** május–szeptember, b_éjjel = 1,5. Hatás G3-ban: Q_H,net 346,9 kWh/év a 292,5 helyett (+19 %). A WinWatt H_szell,H és egész éves b_nyár bemenetével a mérleg ±2 %-on belül egyezik.
 
-### E-17 – Napelem termelése a mérlegben — **E** (G2 golden teszt; WinWatt-bemeneti vagy -számítási hiba)
+### E-17 – Napelem termelése a mérlegben — **megoldva** (G2 golden teszt; WinWatt-bemeneti hiba)
 - **WinWatt (G2):** a napelem lapja 4 kWp, 30°, déli tájolás mellett „éves energiahozam 4320 kWh/a”-t ír (= 1080·4, helyes), a mérlegben viszont 4710 kWh/év exportált energiával számol (= 942·5, vagyis 5 kWp vízszintes; feltehetően a sablonból maradt érték). Ebből jön a −11,40 kWh/m²év.
 - **Forrás:** W_PV = w_PV·P_PV,össz (13.1), 13.1. táblázat: D, 30° → 1080 kWh/kWp.
-- **Program:** 4320 kWh/év → E_nren = −5,79 kWh/m²év. A besorolás (A+++) nem változik.
-- **Teendő (Péter):** a WinWatt G2 projektben a napelem-tétel ellenőrzése.
+- **Program:** 4320 kWh/év → E_nren = −5,79 kWh/m²év.
+- **Megoldva (Péter, 2026-10-29):** sablonból maradt érték volt; a napelem-párbeszédablak OK-zása után a WinWatt is 4320 kWh/év-vel számol (E_nren −5,79; E_CO2 1,42), a G2 fájlok újragenerálva. A program és a WinWatt egyezik.
 
 ## 2. Egyezések (rögzítve, hogy ne kerüljenek vissza „eltérésként”)
 
@@ -165,17 +165,17 @@ A K-007 szerinti WinWatt-exportok és OÉNY XML-ek beérkezése után minden E? 
   - HMV: tárolás 16,4 %, ε 0,45, Q_HMV,vég 2275 kWh/év.
 - **A WinWatt a táblázatok sorai között lineárisan interpolál:** w_sziv 0,854, w_tár 0,412 kWh/m²év, HMV-tárolás 16,4 % 160 m²-nél. Ez a D-122 értelmezést igazolja.
 - **Üres cellánál** a WinWatt a szomszédos kitöltött cellák között interpolál (8.15. táblázat: 0,07). A program ezt átvette (D-131).
-- **Eltérés:** H_tr,D +2,3 % (E-12, ablak U*). Az ablakoknál U* ≈ 1/(1/U + 0,085), vagyis kb. 0,085 m²K/W állandó többlet-hőellenállásnak felel meg, árnyékoló nélkül is.
-- **Napelem:** a WinWatt két különböző értéket ad. A PDF-ben 4320 kWh/év „éves energiahozam” szerepel, a mérlegben viszont 4710 kWh/év exportált energia. A napelem-modul elkészülte után kell összevetni.
+- **H_tr,D +2,3 %:** a WinWatt a sablonból maradt ΔR = 0,33 m²K/W éjszakai többlet-ellenállással számol (E-12, (4.18)); a bemenetben nincs redőny.
+- **Napelem:** 4 kWp, D, 30° → 4320 kWh/év; az első exportban a WinWatt mérlege a sablonból maradt 4710 kWh/évvel számolt (E-17, javítva).
 
 ### Indikátorok (14. fejezet) – G1 és G2
 - **Az összesítő mutatók a WinWatt-tal azonos gépészeti végsőenergiákból ±0,05 kWh/m²év-en belül egyeznek:**
   - G1: E_nren 88,20 kWh/m²év, E_CO2 23,39 kg/m²év;
-  - G2: E_nren −11,40 kWh/m²év, E_CO2 0,49 kg/m²év.
+  - G2 (javított export): E_nren −5,79 kWh/m²év, E_CO2 1,42 kg/m²év.
 - **G2, hőszivattyú megújuló része:**
   - fűtés (ε 0,30 ≤ 0,37): a környezeti hő 3359 kWh/év megújulóként számít;
   - HMV (ε 0,45 > 0,37): nem számít megújulónak (IND-028).
-- **G2, napelem:** a WinWatt a teljes termelést (4710 kWh/év) exportáltnak veszi. Az önfogyasztás kezelését a napelem-modulnál (13. fejezet) kell a módszerrel összevetni.
+- **G2, napelem:** a teljes termelés (4320 kWh/év) exportáltként számít; ez a módszer egyszerűsített elszámolása (13.1, MEG-002), a WinWatt is így számol.
 
 ### G3 – fűtetlen pince és garázs, hővisszanyerős szellőzés, split hűtés
 - **Egyezik:**

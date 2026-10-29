@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   HONAPOK,
+  arnyekolosNyilaszaroU,
   cirkulaciosSegedenergia,
   futesiAlrendszer,
   futesiHotermelo,
@@ -102,6 +103,14 @@ describe('Golden G1 (WinWatt fecske 9.58) – földszintes lapostetős ház, kon
     expect(ablakU(be, 0.9, 1.2).U).toBeCloseTo(0.75, 2);
     expect(ablakU(be, 1.2, 1.2).U).toBeCloseTo(0.73, 2);
     expect(ablakU(be, 1.5, 1.5).U).toBeCloseTo(0.71, 2);
+  });
+
+  it('HT-075 E-12 a WinWatt U*-a a (4.18) képlet a sablonból maradt ΔR = 0,33 m²K/W-tal: 0,75 → 0,705; H_tr,D 40,9 W/K', () => {
+    expect(arnyekolosNyilaszaroU(0.75, 0.33)).toBeCloseTo(0.705, 3);
+    // a WinWatt az ablak U-ját előbb 2 tizedesre kerekíti (E-11): 0,71 → 0,670
+    expect(arnyekolosNyilaszaroU(0.71, 0.33)).toBeCloseTo(0.67, 3);
+    const uCsillag = elemek.map((e) => (e.U < 1.3 && e.U > 0.6 ? { A: e.A, U: arnyekolosNyilaszaroU(e.U, 0.33) } : e));
+    expect(direktTranszmisszio({ elemek: uCsillag })).toBeCloseTo(WW.hTrD, 1);
   });
 
   it('HT-096 talajon fekvő padló (4.23): 0,168 = a WinWatt „átlagos rétegtervi” értéke', () => {

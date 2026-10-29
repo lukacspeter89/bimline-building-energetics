@@ -121,24 +121,7 @@ describe('Golden G2 – gépészet (a WinWatt Q_F,net = 4608 kWh/év bemenetéve
     expect(e.WHMVveg).toBe(0);
   });
 
-  it('IND-001 … IND-028 hőszivattyú (ε_F 0,30 megújuló, ε_HMV 0,45 nem) és napelem-export: E_nren −11,40; E_CO2 0,49', () => {
-    const r = osszesitettEnergetikaiJellemzo(
-      {
-        F: { ho: [{ Qveg: 1439.28, hordozo: 'villamos', hoszivattyuEps: 0.3 }], W: 202.56 },
-        HMV: { ho: [{ Qveg: 2275.2, hordozo: 'villamos', hoszivattyuEps: 0.45 }], W: 0 },
-      },
-      [{ Wexp: 4710, termelo: 'nap_pv', cel: 'export_halozatba' }],
-      AN,
-    );
-    expect(r.celonkent.F!.nren).toBeCloseTo(23.6, 1);
-    expect(r.celonkent.F!.ren).toBeCloseTo(24.07, 1);
-    expect(r.celonkent.HMV!.ren).toBeCloseTo(4.27, 2);
-    expect(r.exp.nren).toBeCloseTo(67.71, 2);
-    expect(r.fajlagos.nren).toBeCloseTo(vart.oeny_etanusitas.Ep_kWh_m2a, 1);
-    expect(r.fajlagos.co2).toBeCloseTo(vart.oeny_etanusitas.CO2_kg_m2a, 1);
-  });
-
-  it('MEG-004 E-17 napelem 4 kWp, D, 30°: a módszer szerint 4320 kWh/év; a WinWatt mérlege 4710 kWh/évvel számol', () => {
+  it('MEG-004 IND-001 … IND-028 hőszivattyú (ε_F 0,30 megújuló, ε_HMV 0,45 nem), napelem 4 kWp D 30° = 4320 kWh/év exportálva: E_nren −5,79; E_CO2 1,42', () => {
     const W = napelemTermeles(4, 'D', 30);
     expect(W).toBe(4320);
     const r = osszesitettEnergetikaiJellemzo(
@@ -149,7 +132,12 @@ describe('Golden G2 – gépészet (a WinWatt Q_F,net = 4608 kWh/év bemenetéve
       [{ Wexp: W, termelo: 'nap_pv', cel: 'export_halozatba' }],
       AN,
     );
-    // E_nren = 23,60 + 32,71 − 4320·2,3/160 = −5,79 kWh/m²év (a WinWatt −11,40-et ad)
-    expect(r.fajlagos.nren).toBeCloseTo(23.6 + 32.705 - 62.1, 1);
+    expect(r.celonkent.F!.nren).toBeCloseTo(23.6, 1);
+    expect(r.celonkent.F!.ren).toBeCloseTo(24.07, 1);
+    expect(r.celonkent.HMV!.ren).toBeCloseTo(4.27, 2);
+    expect(r.exp.nren).toBeCloseTo(62.1, 2);
+    expect(r.exp.co2).toBeCloseTo(10.29, 2);
+    expect(r.fajlagos.nren).toBeCloseTo(vart.oeny_etanusitas.Ep_kWh_m2a, 1);
+    expect(r.fajlagos.co2).toBeCloseTo(vart.oeny_etanusitas.CO2_kg_m2a, 1);
   });
 });
