@@ -146,3 +146,12 @@ A K-007 szerinti WinWatt-exportok és OÉNY XML-ek beérkezése után minden E? 
 - **Üres cellánál** a WinWatt a szomszédos kitöltött cellák között interpolál (8.15. táblázat: 0,07). A program ezt átvette (D-131).
 - **Eltérés:** H_tr,D +2,3 % (E-12, ablak U*). Az ablakoknál U* ≈ 1/(1/U + 0,085), vagyis kb. 0,085 m²K/W állandó többlet-hőellenállásnak felel meg, árnyékoló nélkül is.
 - **Napelem:** a WinWatt két különböző értéket ad. A PDF-ben 4320 kWh/év „éves energiahozam” szerepel, a mérlegben viszont 4710 kWh/év exportált energia. A napelem-modul elkészülte után kell összevetni.
+
+### Indikátorok (14. fejezet) – G1 és G2
+- **Az összesítő mutatók a WinWatt-tal azonos gépészeti végsőenergiákból ±0,05 kWh/m²év-en belül egyeznek:**
+  - G1: E_nren 88,20 kWh/m²év, E_CO2 23,39 kg/m²év;
+  - G2: E_nren −11,40 kWh/m²év, E_CO2 0,49 kg/m²év.
+- **G2, hőszivattyú megújuló része:**
+  - fűtés (ε 0,30 ≤ 0,37): a környezeti hő 3359 kWh/év megújulóként számít;
+  - HMV (ε 0,45 > 0,37): nem számít megújulónak (IND-028).
+- **G2, napelem:** a WinWatt a teljes termelést (4710 kWh/év) exportáltnak veszi. Az önfogyasztás kezelését a napelem-modulnál (13. fejezet) kell a módszerrel összevetni.

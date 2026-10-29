@@ -11,6 +11,7 @@ import {
   hotarolas,
   lakoHmvNettoIgeny,
   nettoEnergiaigeny,
+  osszesitettEnergetikaiJellemzo,
   szivattyuSegedenergia,
   vizesSzabalyozasiTenyezo,
 } from '../../src/index.js';
@@ -118,5 +119,21 @@ describe('Golden G2 – gépészet (a WinWatt Q_F,net = 4608 kWh/év bemenetéve
     expect(e.QHMVveg).toBeCloseTo(2275, 0);
     expect(e.WHMVveg).toBe(0);
   });
-});
 
+  it('IND-001 … IND-028 hőszivattyú (ε_F 0,30 megújuló, ε_HMV 0,45 nem) és napelem-export: E_nren −11,40; E_CO2 0,49', () => {
+    const r = osszesitettEnergetikaiJellemzo(
+      {
+        F: { ho: [{ Qveg: 1439.28, hordozo: 'villamos', hoszivattyuEps: 0.3 }], W: 202.56 },
+        HMV: { ho: [{ Qveg: 2275.2, hordozo: 'villamos', hoszivattyuEps: 0.45 }], W: 0 },
+      },
+      [{ Wexp: 4710, termelo: 'nap_pv', cel: 'export_halozatba' }],
+      AN,
+    );
+    expect(r.celonkent.F!.nren).toBeCloseTo(23.6, 1);
+    expect(r.celonkent.F!.ren).toBeCloseTo(24.07, 1);
+    expect(r.celonkent.HMV!.ren).toBeCloseTo(4.27, 2);
+    expect(r.exp.nren).toBeCloseTo(67.71, 2);
+    expect(r.fajlagos.nren).toBeCloseTo(vart.oeny_etanusitas.Ep_kWh_m2a, 1);
+    expect(r.fajlagos.co2).toBeCloseTo(vart.oeny_etanusitas.CO2_kg_m2a, 1);
+  });
+});

@@ -10,6 +10,7 @@ import {
   hmvTarolasiVesztesege,
   hoelosztasVesztesege,
   lakoHmvNettoIgeny,
+  osszesitettEnergetikaiJellemzo,
   szivattyuSegedenergia,
   vizesSzabalyozasiTenyezo,
   direktTranszmisszio,
@@ -210,5 +211,20 @@ describe('Golden G1 – gépészet (a WinWatt Q_F,net = 3912 kWh/év bemenetéve
     expect(e.QHMVveg).toBeCloseTo(3763, 0);
     expect(e.WHMVveg).toBeCloseTo(vart.winwatt_projekt.epulet.EPBD_rendszerek['WinWatt32WaterHeatingSystemItem']![0]!.WFinal, 1);
   });
-});
 
+  it('IND-001 … IND-021 primerenergia és CO2: F 48,71; HMV 39,49; összesen 88,20 kWh/m²év; 23,39 kg/m²év', () => {
+    const r = osszesitettEnergetikaiJellemzo(
+      {
+        F: { ho: [{ Qveg: (QFnet * 1.018 + 2.1 * AN) * 1.01, hordozo: 'fosszilis_gaz' }], W: 214.08 },
+        HMV: { ho: [{ Qveg: 2400 * 1.34 * 1.17, hordozo: 'fosszilis_gaz' }], W: 28.8 },
+      },
+      [],
+      AN,
+    );
+    expect(r.celonkent.F!.nren).toBeCloseTo(48.71, 2);
+    expect(r.celonkent.F!.ren).toBeCloseTo(0.67, 2);
+    expect(r.celonkent.HMV!.nren).toBeCloseTo(39.49, 2);
+    expect(r.fajlagos.nren).toBeCloseTo(vart.oeny_etanusitas.Ep_kWh_m2a, 1);
+    expect(r.fajlagos.co2).toBeCloseTo(vart.oeny_etanusitas.CO2_kg_m2a, 1);
+  });
+});

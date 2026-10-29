@@ -26,3 +26,4 @@ export * from './netto/merleg.js';
 export * from './rendszer/kozos.js';
 export * from './rendszer/futes.js';
 export * from './rendszer/hmv.js';
+export * from './rendszer/indikatorok.js';
