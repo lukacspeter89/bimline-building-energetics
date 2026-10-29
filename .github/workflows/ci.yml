@@ -23,3 +23,5 @@ jobs:
         run: npm test
       - name: Követelménymátrix-lefedettség
         run: npm run matrix
+      - name: PWA építése
+        run: node apps/web/build.mjs

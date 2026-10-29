@@ -1,0 +1,15 @@
+{
+  "name": "@bimline/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BIMLine energetika – PWA (telefonos terepi és PC-s gyors bevitel)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --serve"
+  },
+  "dependencies": {
+    "@bimline/model": "0.1.0",
+    "preact": "10.29.8"
+  }
+}

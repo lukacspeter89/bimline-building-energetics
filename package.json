@@ -3,11 +3,12 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/web"
   ],
   "scripts": {
     "lint": "eslint .",
-    "typecheck": "tsc -p packages/calc-core && tsc -p packages/model",
+    "typecheck": "tsc -p packages/calc-core && tsc -p packages/model && tsc -p apps/web",
     "test": "vitest run",
     "matrix": "node scripts/matrix-lefedettseg.mjs",
     "check": "npm run lint && npm run typecheck && npm run test && npm run matrix"
