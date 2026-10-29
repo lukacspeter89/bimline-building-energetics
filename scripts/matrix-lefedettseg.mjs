@@ -13,12 +13,12 @@ for (const csomag of readdirSync(join(gyoker, 'packages'))) {
   const mappa = join(gyoker, 'packages', csomag, 'test');
   let fajlok = [];
   try {
-    fajlok = readdirSync(mappa).filter((f) => f.endsWith('.test.ts'));
+    fajlok = readdirSync(mappa, { recursive: true }).filter((f) => String(f).endsWith('.test.ts'));
   } catch {
     continue;
   }
   for (const f of fajlok) {
-    const szoveg = readFileSync(join(mappa, f), 'utf8');
+    const szoveg = readFileSync(join(mappa, String(f)), 'utf8');
     for (const nev of szoveg.matchAll(/\bit\(\s*'([^']*)'/g)) {
       for (const id of nev[1].matchAll(/\b([A-Z]{2,4}-\d{3})\b/g)) tesztIdk.add(id[1]);
       // Tartomány: „HT-010 … HT-013”

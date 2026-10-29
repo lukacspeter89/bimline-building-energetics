@@ -101,6 +101,17 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Program:** 4320 kWh/év → E_nren = −5,79 kWh/m²év.
 - **Megoldva (Péter, 2026-10-29):** sablonból maradt érték volt; a napelem-párbeszédablak OK-zása után a WinWatt is 4320 kWh/év-vel számol (E_nren −5,79; E_CO2 1,42), a G2 fájlok újragenerálva. A program és a WinWatt egyezik.
 
+### E-18 – Referencia épülettechnikai rendszer és rendszerminősítés — **E** (G1 golden teszt)
+- **WinWatt (G1):** a referencia-adatlap szerint „hőtermelő a fűtött téren kívül, elosztóvezetékek a fűtött téren kívül”, HMV-elosztás a fűtött téren kívül. A tárgyi épületben mindkettő a fűtött térben van. A referenciarendszert a tárgyi épület nettó igényére (3912 kWh/év) számolja: E_F,nren,REF = 5385,9, E_HMV,nren,REF = 4525,8 kWh/év. A program ezeket a WinWatt feltevéseivel pontosan visszaadja. A minősítés: fűtés 86,8 % („jó”), HMV 83,8 % („jó”).
+- **Forrás:**
+  - 9/2023 ÉKM 5. melléklet 2.1.1.: a hőtermelő helye „a tárgyi épület állapotának megfelelően adottságként veendő figyelembe”;
+  - 2.1.5. és 2.2.4.: a vezetékek nyomvonala azonos a tárgyi épületével;
+  - 176/2008 5. melléklet: a fűtés mutatója (E_F,nren/Q_F,net)/(E_F,nren,REF/Q_F,net,REF), a referenciaépület nettó igényével.
+- **Program (D-137):**
+  - G1 fűtés: Q_F,net,REF = 6141 kWh/év; E_F,nren,REF = 6908 kWh/év; arány 106,3 % → „gyenge”;
+  - G1 HMV: E_HMV,nren,REF = 4414,6 kWh/év; 85,9 % → „jó”.
+- **Megjegyzés:** a tanúsítványon a fűtési rendszer minősítése ennek megfelelően eltér a WinWatt-étól.
+
 ## 2. Egyezések (rögzítve, hogy ne kerüljenek vissza „eltérésként”)
 
 | # | Tétel | WinWatt | Forrás | Hivatkozás |
