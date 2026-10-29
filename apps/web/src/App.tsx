@@ -1,14 +1,16 @@
-import { MODELL_VERZIO, szamolProjekt, ujAzon, type Projekt, type SzamitasKimenet } from '@bimline/model';
+import { MODELL_VERZIO, rajzSzinkron, szamolProjekt, ujAzon, type Projekt, type SzamitasKimenet } from '@bimline/model';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import G1 from '../../../packages/model/mintak/G1.json';
 import G2 from '../../../packages/model/mintak/G2.json';
 import G3 from '../../../packages/model/mintak/G3.json';
+import { AlaprajzNezet } from './nezetek/Alaprajz.js';
 import { EpuletNezet } from './nezetek/Epulet.js';
 import { EredmenyNezet, OsszegzoSav } from './nezetek/Eredmeny.js';
 import { GepeszetNezet } from './nezetek/Gepeszet.js';
 import { HelyisegekNezet } from './nezetek/Helyisegek.js';
 import { ProjektLista } from './nezetek/ProjektLista.js';
 import { SzerkezetekNezet } from './nezetek/Szerkezetek.js';
+import { TablazatNezet } from './nezetek/Tablazat.js';
 import * as tarolo from './tarolo.js';
 
 export const MINTAK: readonly { azon: string; cim: string; projekt: Projekt }[] = [
@@ -37,9 +39,11 @@ export function ujProjekt(): Projekt {
 
 export const mintabol = (m: Projekt): Projekt => ({ ...structuredClone(m), azon: ujAzon('p'), modositva: new Date().toISOString() });
 
-export type Ful = 'epulet' | 'szerkezetek' | 'helyisegek' | 'gepeszet' | 'eredmeny';
+export type Ful = 'alaprajz' | 'tablazat' | 'epulet' | 'szerkezetek' | 'helyisegek' | 'gepeszet' | 'eredmeny';
 const FULEK: { azon: Ful; nev: string }[] = [
+  { azon: 'alaprajz', nev: 'Alaprajz' },
   { azon: 'helyisegek', nev: 'Helyiségek' },
+  { azon: 'tablazat', nev: 'Táblázat' },
   { azon: 'szerkezetek', nev: 'Szerkezetek' },
   { azon: 'gepeszet', nev: 'Gépészet' },
   { azon: 'epulet', nev: 'Épület' },
@@ -73,6 +77,7 @@ export function App() {
       if (!elozo) return elozo;
       const uj = structuredClone(elozo);
       f(uj);
+      rajzSzinkron(uj);
       uj.modositva = new Date().toISOString();
       window.clearTimeout(mentesIdozito.current);
       mentesIdozito.current = window.setTimeout(() => {
@@ -117,7 +122,7 @@ export function App() {
     );
 
   return (
-    <div class="projekt">
+    <div class={`projekt${ful === 'alaprajz' || ful === 'tablazat' ? ' szeles' : ''}`}>
       <header class="projekt-fej">
         <button class="vissza" onClick={() => setAktiv(null)} aria-label="Vissza a projektekhez">
           ‹ Projektek
@@ -137,6 +142,8 @@ export function App() {
       <main class="tartalom">
         {ful === 'epulet' && <EpuletNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'szerkezetek' && <SzerkezetekNezet p={aktiv} valtoztat={valtoztat} />}
+        {ful === 'alaprajz' && <AlaprajzNezet p={aktiv} valtoztat={valtoztat} />}
+        {ful === 'tablazat' && <TablazatNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'helyisegek' && <HelyisegekNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'gepeszet' && <GepeszetNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'eredmeny' && kimenet && <EredmenyNezet p={aktiv} kimenet={kimenet} minta={minta} onUgras={setFul} />}

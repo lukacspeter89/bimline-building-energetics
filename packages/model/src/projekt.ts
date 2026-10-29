@@ -98,6 +98,16 @@ export interface Hatarolo {
   pinceFalRetegrendAzon?: string;
   /** Terepszint feletti padlónál (negatív mélység, a padló felső síkja 0,5 m-nél magasabban): a lábazati fal rétegrendje (4.4.3). */
   labazatiFalRetegrendAzon?: string;
+  /** Rajzból: a helyiség alaprajzának ezen éle (0-tól); a felület és a tájolás az élből számít (alaprajz.ts). */
+  rajzEl?: number;
+  /** Rajzból: padló vagy födém, felülete a helyiség alaprajzi területe; padlónál a kitett kerület is. */
+  rajzAlap?: boolean;
+}
+
+/** Alaprajzi pont [m]; x kelet felé (ha az északi irány 0°), y észak felé. */
+export interface Pont {
+  x: number;
+  y: number;
 }
 
 export interface Helyiseg {
@@ -108,6 +118,8 @@ export interface Helyiseg {
   alapterulet: number;
   belmagassag: number;
   hatarolok: Hatarolo[];
+  /** Rajzolt alaprajz: a nettó (belméretű) kontúr pontjai, zárt sokszög (JEL-004, MOD-006). */
+  alaprajz?: { pontok: Pont[] };
 }
 
 export interface FutesiRendszer {
@@ -177,6 +189,8 @@ export interface Projekt {
     kulsoFalKialakitasa: 'külső oldali, megszakítatlan hőszigeteléssel' | 'hőszigetelés nélkül';
     /** A csatlakozási hőhidak hőhidassága (6.2. táblázat; a referenciaépülethez is). */
     hohidassag: Hohidassag;
+    /** A rajz „fel” irányától az északig mért szög az óramutató járásával [°]; 0: a rajz teteje észak. */
+    eszakSzog?: number;
   };
   anyagok: Anyag[];
   retegrendek: Retegrend[];

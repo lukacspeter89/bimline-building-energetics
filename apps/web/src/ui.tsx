@@ -48,6 +48,32 @@ export function SzamMezo(p: {
   );
 }
 
+/** Címke nélküli számmező táblázatcellába (tizedesvessző, gépelés közben nem írja felül a szöveget). */
+export function CellaSzam(p: { ertek: number | undefined; cimke: string; onValtozas: (x: number) => void; tiltott?: boolean; tized?: number }) {
+  const kulso = p.ertek === undefined ? undefined : Math.round(p.ertek * 1e6) / 1e6;
+  const [szoveg, setSzoveg] = useState(szovegbe(kulso));
+  useEffect(() => {
+    const most = Number(szoveg.replace(/\s/g, '').replace(',', '.'));
+    if (most !== kulso) setSzoveg(szovegbe(kulso));
+  }, [kulso]);
+  if (p.tiltott) return <span class="cella-ro">{p.ertek === undefined ? '–' : szam(p.ertek, p.tized ?? 2)}</span>;
+  return (
+    <input
+      class="cella"
+      inputMode="decimal"
+      aria-label={p.cimke}
+      value={szoveg}
+      onInput={(e) => {
+        const t = (e.target as HTMLInputElement).value;
+        setSzoveg(t);
+        const v = Number(t.replace(/\s/g, '').replace(',', '.'));
+        if (t !== '' && Number.isFinite(v)) p.onValtozas(v);
+      }}
+      onFocus={(e) => (e.target as HTMLInputElement).select()}
+    />
+  );
+}
+
 export function SzovegMezo(p: { id: string; cimke: string; ertek: string; onValtozas: (s: string) => void; hely?: string; fokusz?: boolean }) {
   const ref = useRef<HTMLInputElement>(null);
   useEffect(() => {

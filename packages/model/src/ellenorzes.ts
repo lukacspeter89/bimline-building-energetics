@@ -52,7 +52,8 @@ export function ellenoriz(p: Projekt): Hiany[] {
         continue;
       }
       if (r.szerkezet === 'homlokzati_fal') falVan = true;
-      if (!pozitiv(b.felulet)) hiba(hely, 'A felület hiányzik.', b.azon);
+      // Rajzolt élnél a 0 m² a teljesen közös (fűtött szomszéddal határos) falat jelenti.
+      if (!pozitiv(b.felulet) && !(b.rajzEl !== undefined && b.felulet === 0 && b.nyilasok.length === 0)) hiba(hely, 'A felület hiányzik.', b.azon);
       let nyA = 0;
       for (const n of b.nyilasok) {
         const t = ny.get(n.nyilaszaroAzon);

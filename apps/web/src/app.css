@@ -142,3 +142,51 @@ svg { width: 100%; max-width: 560px; height: auto }
 .sav b { font: 500 .86rem var(--szam); text-align: right }
 .hianyok { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: .92rem }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important } }
+
+/* Alaprajz: telefonon egymás alatt a rajz és a panel, széles képernyőn egymás mellett. */
+.projekt.szeles { max-width: none }
+#app:has(.projekt.szeles) { max-width: 1500px }
+.alaprajz-oldal { display: grid; gap: 14px; align-items: start }
+@media (min-width: 1000px) { .alaprajz-oldal { grid-template-columns: minmax(0, 1.7fr) minmax(340px, 1fr) } .alaprajz-panel { position: sticky; top: 170px } }
+.alaprajz-panel { display: grid; gap: 14px; min-width: 0 }
+.rajz-eszkozok { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center }
+.rajz-sugo { min-height: 2.6em }
+.rajz-doboz { width: 100%; border: 1px solid var(--vonal); border-radius: 10px; overflow: hidden; background: var(--bg) }
+svg.rajz { display: block; width: 100%; max-width: none; touch-action: none; user-select: none; -webkit-user-select: none; cursor: crosshair }
+.rajz.eszkoz-kijelöl { cursor: default }
+.racs-al { stroke: var(--vonal); stroke-width: .5; opacity: .6 }
+.racs-fo { stroke: var(--vonal); stroke-width: 1 }
+.rajz-alatti { fill: none; stroke: var(--halk); stroke-width: 1; stroke-dasharray: 4 4; opacity: .5 }
+.rajz-helyiseg { fill: color-mix(in srgb, var(--akcent) 10%, var(--felulet)); stroke: none }
+.kij .rajz-helyiseg { fill: color-mix(in srgb, var(--akcent) 22%, var(--felulet)) }
+.rajz-el { stroke-linecap: round }
+.el-kulso { stroke: var(--fg); stroke-width: 6 }
+.el-futetlen { stroke: var(--hutes); stroke-width: 5 }
+.el-kozos { stroke: var(--halk); stroke-width: 2 }
+.el-nincs { stroke: var(--halk); stroke-width: 2; stroke-dasharray: 5 4 }
+.el-kij { stroke: var(--futes) !important; stroke-width: 8 !important }
+.rajz-ablak { stroke: #9fd3f0; stroke-width: 4 }
+.rajz-nev { font: 600 12px var(--test); fill: var(--fg); pointer-events: none }
+.rajz-ter, .rajz-meret { font: 500 11px var(--szam); fill: var(--halk); pointer-events: none; paint-order: stroke; stroke: var(--felulet); stroke-width: 3px }
+.rajz-meret { fill: var(--fg) }
+.rajz-csucs { fill: var(--felulet); stroke: var(--futes); stroke-width: 2.5 }
+.rajz-csucs.elso { fill: var(--futes) }
+.rajz-vazlat { fill: color-mix(in srgb, var(--futes) 12%, transparent); stroke: var(--futes); stroke-width: 2; stroke-dasharray: 6 4 }
+.rajz-kurzor { fill: var(--futes) }
+.rajz-eszak circle { fill: var(--felulet); stroke: var(--vonal) }
+.rajz-eszak path { fill: var(--futes) }
+.rajz-eszak text { font: 700 11px var(--cim); fill: var(--fg) }
+.j-kulso, .j-futetlen, .j-kozos, .j-ablak { display: inline-block; width: 18px; height: 5px; border-radius: 2px; margin-right: 6px; vertical-align: middle }
+.j-kulso { background: var(--fg) } .j-futetlen { background: var(--hutes) } .j-kozos { background: var(--halk); height: 2px } .j-ablak { background: #9fd3f0 }
+
+/* Táblázatos bevitel (PC) */
+table.beviteli { border-collapse: collapse; width: 100%; min-width: 640px }
+table.beviteli th { font: 600 .78rem var(--test); color: var(--halk); text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--vonal); white-space: nowrap }
+table.beviteli td { padding: 2px 3px; border-bottom: 1px solid var(--vonal) }
+table.beviteli tr:focus-within { background: var(--figyelem-bg) }
+.cella { width: 100%; min-width: 64px; font: 500 .9rem var(--szam); color: var(--fg); background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 6px 6px; min-height: 34px }
+select.cella { font-family: var(--test); min-width: 120px }
+.cella:hover { border-color: var(--vonal) }
+.cella:focus { background: var(--felulet); border-color: var(--akcent); outline: none }
+.cella.rovid { min-width: 48px; width: 64px }
+.cella-ro { display: block; padding: 6px; font: 500 .9rem var(--szam); color: var(--halk) }

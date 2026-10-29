@@ -7,7 +7,7 @@ import { Gombsor, Kartya, Leptetos, SzamMezo, SzovegMezo, TorlesGomb, Valaszto, 
 import { SZERKEZET_NEV } from './Szerkezetek.js';
 
 const TAJOLASOK: readonly Tajolas[] = ['É', 'ÉK', 'K', 'DK', 'D', 'DNy', 'Ny', 'ÉNy'];
-const FUTETLEN: readonly string[] = [
+export const FUTETLEN: readonly string[] = [
   'Padlástérrel határos födém vagy fal',
   'Zárt, fűtetlen pincével határos födém vagy fal',
   'Zárt, fűtetlen mélygarázzsal határos födém vagy fal',
@@ -119,12 +119,14 @@ function HelyisegKartya(props: { p: Projekt; h: Helyiseg; i: number; nyitott: bo
 type PadloHelyzet = 'terepszinten' | 'pince' | 'terepszint felett';
 const PADLO_HELYZETEK: readonly PadloHelyzet[] = ['terepszinten', 'pince', 'terepszint felett'];
 
-function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: string | undefined; valtoztat: (f: (b: Hatarolo) => void) => void; onTorol: () => void }) {
+export function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: string | undefined; valtoztat: (f: (b: Hatarolo) => void) => void; onTorol: () => void }) {
   const { p, h, b, valtoztat } = props;
   const [hossz, setHossz] = useState<number | undefined>(undefined);
   const r = p.retegrendek.find((x) => x.azon === b.retegrendAzon);
   const fuggoleges = (b.hajlasszog ?? 90) >= 60;
   const padlo = r?.szerkezet === 'talajon_fekvo_padlo';
+  // Rajzolt élhez vagy alaprajzhoz kötött határolónál a felület, a tájolás és a kerület a rajzból jön.
+  const rajz = b.rajzEl !== undefined || b.rajzAlap === true;
   const [helyzet, setHelyzet] = useState<PadloHelyzet>((b.melyseg ?? 0) > 0 ? 'pince' : (b.melyseg ?? 0) < 0 ? 'terepszint felett' : 'terepszinten');
   const nyA = b.nyilasok.reduce((s, n) => s + n.szelesseg * n.magassag * n.db, 0);
   // Javaslat a padló kitett kerületére: a helyiség külső levegővel határos falainak hossza (felület / belmagasság).
@@ -188,9 +190,9 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
           }}
         />
       )}
-      {fuggoleges && <Gombsor cimke="Tájolás" ertek={b.tajolas} opciok={TAJOLASOK} onValtozas={(t) => valtoztat((x) => void (x.tajolas = t))} />}
+      {fuggoleges && !rajz && <Gombsor cimke="Tájolás" ertek={b.tajolas} opciok={TAJOLASOK} onValtozas={(t) => valtoztat((x) => void (x.tajolas = t))} />}
       <div class="racs">
-        {fuggoleges && (
+        {fuggoleges && !rajz && (
           <SzamMezo
             id={`b-${b.azon}-hossz`}
             cimke={`Hossz (× ${szam(h.belmagassag, 2)} m belmagasság)`}
@@ -202,11 +204,18 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
             }}
           />
         )}
+        {rajz ? (
+          <div class="mezo">
+            <span class="cimke">Felület (rajzból)</span>
+            <b>{szam(b.felulet, 2)} m²{padlo && b.rajzAlap ? ` · kitett kerület ${szam(b.kitettKerulet ?? 0, 2)} m` : ''}</b>
+          </div>
+        ) : (
         <SzamMezo id={`b-${b.azon}-a`} cimke="Bruttó felület" egyseg="m²" ertek={b.felulet} onValtozas={(v) => valtoztat((x) => void (x.felulet = v))} />
-        {padlo && (
+        )}
+        {padlo && !b.rajzAlap && (
           <SzamMezo id={`b-${b.azon}-p`} cimke="Kitett kerület (4.20)" egyseg="m" ertek={b.kitettKerulet} onValtozas={(v) => valtoztat((x) => void (x.kitettKerulet = v))} />
         )}
-        {padlo && falHossz > 0 && Math.abs(falHossz - (b.kitettKerulet ?? 0)) > 0.005 && (
+        {padlo && !b.rajzAlap && falHossz > 0 && Math.abs(falHossz - (b.kitettKerulet ?? 0)) > 0.005 && (
           <button type="button" class="meret" onClick={() => valtoztat((x) => void (x.kitettKerulet = falHossz))}>
             = a helyiség külső falainak hossza: {szam(falHossz, 2)} m
           </button>
