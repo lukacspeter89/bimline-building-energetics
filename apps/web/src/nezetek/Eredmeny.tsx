@@ -166,6 +166,11 @@ export function EredmenyNezet({ kimenet, minta, onUgras }: { p: Projekt; kimenet
               {sor(<>Q<sub>F,net</sub> [kWh/a]</>, szam(e.QFnet, 0), ww && szam(ww.QFnet, 0))}
               {sor(<>Q<sub>H,net</sub> [kWh/a]</>, szam(e.QHnet, 0))}
               {sor('q [W/m³K]', `${szam(e.qm, 3)} ${e.qm <= e.qmMax ? '≤' : '>'} ${szam(e.qmMax, 3)}`)}
+              {sor(
+                'Nyári hővédelem (Σ g_H·A_ü / ΣA_ü)',
+                e.nyariHovedelem.alkalmazando ? `${szam(e.nyariHovedelem.arany!, 3)} ${e.nyariHovedelem.megfelel ? '≤' : '>'} ${szam(e.nyariHovedelem.hatar, 2)}` : 'nem alkalmazandó',
+                minta === 'G1' ? '0,450 > 0,3' : undefined,
+              )}
               {sor('A/V [m²/m³]', szam(e.av, 3))}
               {sor(<>A<sub>N</sub> / V</>, `${szam(e.AN, 1)} m² / ${szam(e.V, 1)} m³`)}
               {sor('Fűtési rendszer', `${MIN[e.futesMinosites.minosites]} (${szam(e.futesMinosites.arany, 1)} %)`)}

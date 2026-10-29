@@ -34,6 +34,7 @@ import {
   latensTenyezo,
   napelemTermeles,
   napkollektorosHmv,
+  nyariHovedelem,
   nettoEnergiaigeny,
   osszesitettEnergetikaiJellemzo,
   psiPf,
@@ -92,6 +93,7 @@ export interface ProjektEredmeny {
   QHnet: number;
   qm: number;
   qmMax: number;
+  nyariHovedelem: { alkalmazando: boolean; arany: number | null; hatar: number; megfelel: boolean };
   vegso: { cel: FelhasznalasiCel | 'PV'; nev: string; Q: number; W: number; hordozo: string }[];
   celonkent: Partial<Record<FelhasznalasiCel | 'PV', { nren: number; co2: number }>>;
   Ep: number;
@@ -428,6 +430,10 @@ function szamol(p: Projekt): ProjektEredmeny {
     QHnet: net.QHnetEv,
     qm: net.qm,
     qmMax: qmMax(av, 'kozel_nulla'),
+    nyariHovedelem: nyariHovedelem(
+      transzparens.map((t) => ({ Au: t.Au, tajolas: t.tajolas, hajlasszog: t.hajlasszog, gN: t.gN, ...(t.gArnyH !== undefined ? { gArnyH: t.gArnyH } : {}) })),
+      AN,
+    ),
     vegso: [
       { cel: 'F', nev: 'Fűtés', Q: fut.QFveg, W: fut.WFveg, hordozo: hordozoNev(f.hordozo) },
       { cel: 'HMV', nev: 'Melegvíz', Q: hmvQveg, W: hmvW, hordozo: hordozoNev(hm.hordozo) },

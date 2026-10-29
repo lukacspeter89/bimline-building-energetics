@@ -19,6 +19,9 @@ describe('Projekt-adatmodell – golden esetek', () => {
     expect(e.Ep).toBeCloseTo(89.63, 2);
     expect(e.futesMinosites.minosites).toBe('gyenge');
     expect(e.hmvMinosites.minosites).toBe('jo');
+    // KOV-031: WinWatt 0,450 > 0,3 – nem teljesül
+    expect(e.nyariHovedelem.arany).toBeCloseTo(0.45, 3);
+    expect(e.nyariHovedelem.megfelel).toBe(false);
   });
 
   it('TAN-005 MEG-004 G2: A+++2023; napelem 4320 kWh/év; E_nren −4,31', () => {

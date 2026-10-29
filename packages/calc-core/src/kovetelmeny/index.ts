@@ -1,5 +1,7 @@
 import { ErvenytelenBemenet, NormativAdatHiba } from '../hibak.js';
 import { sorKeres, szamMezo, tabla, type NormativSor, type TablaHivatkozas } from '../normativ/index.js';
+import type { Tajolas } from '../netto/eghajlat.js';
+import { osszesitettG } from '../netto/nyereseg.js';
 
 const U_KOV: TablaHivatkozas = 'rendelet/9_2023_EKM_1_melleklet#u_kovetelmeny';
 const KNZE_QM: TablaHivatkozas = 'rendelet/9_2023_EKM_2_3_5_melleklet_kovetelmenyek#knze_qm_max';
@@ -208,4 +210,36 @@ export type MinositettRendszer = 'futes' | 'futes_es_szellozes' | 'hmv' | 'hutes
 export function rendszerMinosites(aranySzazalek: number, rendszer: MinositettRendszer): Minosites {
   if (!(aranySzazalek >= 0)) throw new ErvenytelenBemenet('Érvénytelen arány.', 'TAN-009');
   return minosit(sorKeres(RENDSZ_OSZT, (s) => s['rendszer'] === rendszer), aranySzazalek, RENDSZ_OSZT);
+}
+
+/** Nyári hővédelemhez egy transzparens szerkezet (az üvegezés mérete szerinti felülettel). */
+export interface NyariTranszparens {
+  Au: number;
+  tajolas: Tajolas;
+  hajlasszog: number;
+  /** Merőleges beesésű sugárzásátbocsátás g⊥; g_H = F_ü·g⊥ (6.24). */
+  gN: number;
+  /** Társított árnyékoló sugárzásátbocsátása hűtéskor (2. függ. 4.5. tábla); nincs: 1. */
+  gArnyH?: number;
+  /** Külső akadályok miatti árnyékoltsági tényező hűtésre; vizsgálat nélkül 1. */
+  fArnyH?: number;
+}
+
+const ESZAKTOL: Record<Tajolas, number> = { É: 0, ÉK: 45, K: 90, DK: 135, D: 180, DNy: 135, Ny: 90, ÉNy: 45 };
+
+/**
+ * Nyári hővédelem (KOV-030, KOV-031; 9/2023 ÉKM 1. melléklet 2. pont): ha az északtól legalább 45°-kal eltérő
+ * tájolású vagy 45°-nál kisebb hajlásszögű transzparens szerkezetek összfelülete > 0,08·A_N, akkor ezekre
+ * Σ(A_ü·g_H·g_árny,H·F_árny) / ΣA_ü ≤ 0,3 (D-138, D-139).
+ */
+export function nyariHovedelem(elemek: readonly NyariTranszparens[], AN: number): { alkalmazando: boolean; arany: number | null; hatar: number; megfelel: boolean } {
+  if (!(AN > 0)) throw new ErvenytelenBemenet('Érvénytelen hasznos alapterület.', 'KOV-030');
+  const hiv: TablaHivatkozas = 'rendelet/9_2023_EKM_1_melleklet#nyari_hovedelem';
+  const param = (k: string): number => szamMezo(sorKeres(hiv, (s) => s['parameter'] === k), 'ertek', hiv);
+  const erintett = elemek.filter((e) => ESZAKTOL[e.tajolas] >= param('eszaktol_elteres_min') || e.hajlasszog < param('hajlasszog_max'));
+  const A = erintett.reduce((s, e) => s + e.Au, 0);
+  const hatar = param('g_atlag_max');
+  if (!(A > param('transzparens_arany_kuszob') * AN)) return { alkalmazando: false, arany: null, hatar, megfelel: true };
+  const arany = erintett.reduce((s, e) => s + e.Au * osszesitettG(e.gN) * (e.gArnyH ?? 1) * (e.fArnyH ?? 1), 0) / A;
+  return { alkalmazando: true, arany, hatar, megfelel: arany <= hatar };
 }

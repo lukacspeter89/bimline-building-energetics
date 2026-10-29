@@ -2,6 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   ErvenytelenBemenet,
+  nyariHovedelem,
   arany,
   besorolas,
   co2MaxLako,
@@ -129,5 +130,32 @@ describe('Szerkezet- és rendszerminősítés (176/2008 4–5. melléklet)', () 
     expect(rendszerMinosites(100, 'futes')).toBe('kozepes');
     expect(rendszerMinosites(120, 'futes')).toBe('gyenge');
     expect(rendszerMinosites(131, 'futes')).toBe('rossz');
+  });
+});
+
+describe('Nyári hővédelem (1. melléklet 2. pont)', () => {
+  it('KOV-030 KOV-031 G1: déli 6,6 + keleti 0,96 + nyugati 0,96 m² üvegezés > 0,08·96; g_H = 0,9·0,5 = 0,45 > 0,3 (WinWatt: 0,450)', () => {
+    const r = nyariHovedelem(
+      [
+        { Au: 6.5536, tajolas: 'D', hajlasszog: 90, gN: 0.5 },
+        { Au: 0.9604, tajolas: 'K', hajlasszog: 90, gN: 0.5 },
+        { Au: 0.9604, tajolas: 'Ny', hajlasszog: 90, gN: 0.5 },
+        { Au: 0.6664, tajolas: 'É', hajlasszog: 90, gN: 0.5 },
+      ],
+      96,
+    );
+    expect(r.alkalmazando).toBe(true);
+    expect(r.arany).toBeCloseTo(0.45, 12);
+    expect(r.megfelel).toBe(false);
+  });
+
+  it('KOV-030 északi és kis üvegezésnél nem alkalmazandó; ÉK (45°) és lapostető-ablak beleszámít; redőnnyel teljesül', () => {
+    expect(nyariHovedelem([{ Au: 50, tajolas: 'É', hajlasszog: 90, gN: 0.6 }], 100).alkalmazando).toBe(false);
+    expect(nyariHovedelem([{ Au: 7, tajolas: 'D', hajlasszog: 90, gN: 0.6 }], 100).alkalmazando).toBe(false);
+    expect(nyariHovedelem([{ Au: 9, tajolas: 'ÉK', hajlasszog: 90, gN: 0.6 }], 100).alkalmazando).toBe(true);
+    expect(nyariHovedelem([{ Au: 9, tajolas: 'É', hajlasszog: 30, gN: 0.6 }], 100).alkalmazando).toBe(true);
+    const r = nyariHovedelem([{ Au: 10, tajolas: 'D', hajlasszog: 90, gN: 0.5, gArnyH: 0.1 }], 100);
+    expect(r.arany).toBeCloseTo(0.045, 12);
+    expect(r.megfelel).toBe(true);
   });
 });
