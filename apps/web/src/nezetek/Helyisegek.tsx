@@ -121,6 +121,7 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
   const [hossz, setHossz] = useState<number | undefined>(undefined);
   const r = p.retegrendek.find((x) => x.azon === b.retegrendAzon);
   const fuggoleges = (b.hajlasszog ?? 90) >= 60;
+  const padlo = r?.szerkezet === 'talajon_fekvo_padlo';
   const nyA = b.nyilasok.reduce((s, n) => s + n.szelesseg * n.magassag * n.db, 0);
   // Javaslat a padló kitett kerületére: a helyiség külső levegővel határos falainak hossza (felület / belmagasság).
   const falHossz =
@@ -183,18 +184,18 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
           />
         )}
         <SzamMezo id={`b-${b.azon}-a`} cimke="Bruttó felület" egyseg="m²" ertek={b.felulet} onValtozas={(v) => valtoztat((x) => void (x.felulet = v))} />
-        {r?.szerkezet === 'talajon_fekvo_padlo' && (
+        {padlo && (
           <SzamMezo id={`b-${b.azon}-p`} cimke="Kitett kerület (4.20)" egyseg="m" ertek={b.kitettKerulet} onValtozas={(v) => valtoztat((x) => void (x.kitettKerulet = v))} />
         )}
-        {r?.szerkezet === 'talajon_fekvo_padlo' && falHossz > 0 && Math.abs(falHossz - (b.kitettKerulet ?? 0)) > 0.005 && (
+        {padlo && falHossz > 0 && Math.abs(falHossz - (b.kitettKerulet ?? 0)) > 0.005 && (
           <button type="button" class="meret" onClick={() => valtoztat((x) => void (x.kitettKerulet = falHossz))}>
             = a helyiség külső falainak hossza: {szam(falHossz, 2)} m
           </button>
         )}
-        {r?.szerkezet === 'talajon_fekvo_padlo' && (
+        {padlo && (
           <SzamMezo id={`b-${b.azon}-z`} cimke="Mélység terepszint alatt (pince)" egyseg="m" ertek={b.melyseg ?? 0} onValtozas={(v) => valtoztat((x) => void (x.melyseg = v))} />
         )}
-        {r?.szerkezet === 'talajon_fekvo_padlo' && (b.melyseg ?? 0) > 0.5 && (
+        {padlo && (b.melyseg ?? 0) > 0.5 && (
           <Valaszto
             id={`b-${b.azon}-pf`}
             cimke="Pincefal rétegrendje (z·P felület)"
@@ -206,7 +207,7 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
             onValtozas={(v) => valtoztat((x) => void (v ? (x.pinceFalRetegrendAzon = v) : delete x.pinceFalRetegrendAzon))}
           />
         )}
-        {!fuggoleges && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}
+        {!fuggoleges && !padlo && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}
       </div>
       {b.nyilasok.map((n, k) => (
         <div class="nyilas" key={k}>
@@ -223,7 +224,7 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
           <TorlesGomb kicsi cimke="Nyílás törlése" onTorol={() => valtoztat((x) => void x.nyilasok.splice(k, 1))} />
         </div>
       ))}
-      {p.nyilaszarok.length > 0 && (
+      {p.nyilaszarok.length > 0 && !padlo && (
         <div class="gombok kicsi">
           <button class="masodlagos" onClick={() => valtoztat((x) => void x.nyilasok.push({ nyilaszaroAzon: p.nyilaszarok[0]!.azon, szelesseg: 1.2, magassag: 1.5, db: 1 }))}>
             + Nyílás
