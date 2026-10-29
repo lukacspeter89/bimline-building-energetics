@@ -1,0 +1,563 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_12_1",
+   "cim": "Fényforrások fényhasznosítása",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.1. táblázat",
+    "oldal": 85,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "fenyforras",
+     "cim": "Fényforrás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "FH",
+     "cim": "Fényhasznosítás, FH",
+     "egyseg": "lm/W"
+    }
+   ],
+   "sorok": [
+    {
+     "fenyforras": "Normál izzólámpa",
+     "FH": 15
+    },
+    {
+     "fenyforras": "Halogén izzólámpa",
+     "FH": 20
+    },
+    {
+     "fenyforras": "Fénycső",
+     "FH": 75
+    },
+    {
+     "fenyforras": "Kompakt fénycső",
+     "FH": 70
+    },
+    {
+     "fenyforras": "Higanylámpa",
+     "FH": 50
+    },
+    {
+     "fenyforras": "Fémhalogén lámpa",
+     "FH": 87
+    },
+    {
+     "fenyforras": "LED",
+     "FH": 120
+    }
+   ]
+  },
+  {
+   "id": "tabla_12_2",
+   "cim": "Fényforrások hatásfoka",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.2. táblázat",
+    "oldal": 85,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat lámpatest-kialakítás (búra) szerint ad értéket; más kialakításra (pl. búra nélküli, rácsos) nem ad értéket.",
+   "oszlopok": [
+    {
+     "kulcs": "fenyforras_tipusa",
+     "cim": "Fényforrás típusa",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eta_vil",
+     "cim": "Hatásfok, ηvil",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "fenyforras_tipusa": "Üvegburás, parabolatükrös",
+     "eta_vil": 0.5
+    },
+    {
+     "fenyforras_tipusa": "Opál burás",
+     "eta_vil": 0.3
+    },
+    {
+     "fenyforras_tipusa": "LED esetén minden változatban",
+     "eta_vil": 0.5
+    }
+   ]
+  },
+  {
+   "id": "tabla_12_3",
+   "cim": "A fényerő szabályozhatóságát kifejező tényező értékei",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.3. táblázat",
+    "oldal": 85,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "vilagitasi_rendszer",
+     "cim": "Világítási rendszer",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "F_fe",
+     "cim": "Ffe",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "vilagitasi_rendszer": "Nem dimmelhető világítási rendszer",
+     "F_fe": 1
+    },
+    {
+     "vilagitasi_rendszer": "Dimmelhető halogén fényforrás",
+     "F_fe": 0.9
+    },
+    {
+     "vilagitasi_rendszer": "Dimmelhető fénycső",
+     "F_fe": 0.8
+    },
+    {
+     "vilagitasi_rendszer": "Dimmelhető LED",
+     "F_fe": 0.7
+    }
+   ]
+  },
+  {
+   "id": "tabla_12_4",
+   "cim": "A kihasználtsági mutató értékei",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.4. táblázat",
+    "oldal": 85,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Az épületfunkció-lista nem azonos a 12.6. táblázatéval (pl. 'Kereskedelmi egység' itt hiányzik, 'Múzeum', 'Könyvtár', 'Színház' a 12.6-ban hiányzik).",
+   "oszlopok": [
+    {
+     "kulcs": "epulet_funkcioja",
+     "cim": "Épület funkciója",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "F_kihaszn",
+     "cim": "Fkihaszn",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "epulet_funkcioja": "Múzeum",
+     "F_kihaszn": 0
+    },
+    {
+     "epulet_funkcioja": "Könyvtár",
+     "F_kihaszn": 0
+    },
+    {
+     "epulet_funkcioja": "Üzem",
+     "F_kihaszn": 0
+    },
+    {
+     "epulet_funkcioja": "Hotel, Étterem",
+     "F_kihaszn": 0
+    },
+    {
+     "epulet_funkcioja": "Színház, auditórium",
+     "F_kihaszn": 0
+    },
+    {
+     "epulet_funkcioja": "Iroda",
+     "F_kihaszn": 0.2
+    },
+    {
+     "epulet_funkcioja": "Oktatási intézmény",
+     "F_kihaszn": 0.2
+    },
+    {
+     "epulet_funkcioja": "Kórház",
+     "F_kihaszn": 0.2
+    },
+    {
+     "epulet_funkcioja": "Sportcsarnok",
+     "F_kihaszn": 0.3
+    },
+    {
+     "epulet_funkcioja": "Konferenciaterem, Kiállító terem",
+     "F_kihaszn": 0.5
+    }
+   ]
+  },
+  {
+   "id": "tabla_12_5",
+   "cim": "A szabályozás típusától függő tényező (Fszab) a kihasználtsági mutató (Fkihaszn) függvényében",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.5. táblázat",
+    "oldal": 85,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Oszlopfejek a PDF-en: 0,0 0,10 0,20 0,30 0,40 0,5 0,6 0,7 0,8 0,9 1,0. Az 'Automatikus be- és kikapcsolás' és a 'Kézi bekapcsolás/dimmelhető' sor értékei azonosak. A 12.4. táblázat Fkihaszn értékei (0; 0,2; 0,3; 0,5) mind rácsponton vannak, interpolációra a módszer nem ad szabályt.",
+   "oszlopok": [
+    {
+     "kulcs": "szabalyozas_tipusa",
+     "cim": "Fszab (szabályozás típusa)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "Fk_0_0",
+     "cim": "Fkihaszn = 0.0",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_1",
+     "cim": "Fkihaszn = 0.1",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_2",
+     "cim": "Fkihaszn = 0.2",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_3",
+     "cim": "Fkihaszn = 0.3",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_4",
+     "cim": "Fkihaszn = 0.4",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_5",
+     "cim": "Fkihaszn = 0.5",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_6",
+     "cim": "Fkihaszn = 0.6",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_7",
+     "cim": "Fkihaszn = 0.7",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_8",
+     "cim": "Fkihaszn = 0.8",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_0_9",
+     "cim": "Fkihaszn = 0.9",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Fk_1_0",
+     "cim": "Fkihaszn = 1.0",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "szabalyozas_tipusa": "Kézi be- és kikapcsolás",
+     "Fk_0_0": 1,
+     "Fk_0_1": 1,
+     "Fk_0_2": 1,
+     "Fk_0_3": 0.9,
+     "Fk_0_4": 0.8,
+     "Fk_0_5": 0.7,
+     "Fk_0_6": 0.6,
+     "Fk_0_7": 0.5,
+     "Fk_0_8": 0.4,
+     "Fk_0_9": 0.3,
+     "Fk_1_0": 0
+    },
+    {
+     "szabalyozas_tipusa": "Automatikus bekapcsolás/dimmelhető",
+     "Fk_0_0": 1,
+     "Fk_0_1": 0.975,
+     "Fk_0_2": 0.975,
+     "Fk_0_3": 0.95,
+     "Fk_0_4": 0.85,
+     "Fk_0_5": 0.65,
+     "Fk_0_6": 0.55,
+     "Fk_0_7": 0.45,
+     "Fk_0_8": 0.35,
+     "Fk_0_9": 0.25,
+     "Fk_1_0": 0
+    },
+    {
+     "szabalyozas_tipusa": "Automatikus be- és kikapcsolás",
+     "Fk_0_0": 1,
+     "Fk_0_1": 0.95,
+     "Fk_0_2": 0.9,
+     "Fk_0_3": 0.8,
+     "Fk_0_4": 0.7,
+     "Fk_0_5": 0.6,
+     "Fk_0_6": 0.5,
+     "Fk_0_7": 0.4,
+     "Fk_0_8": 0.3,
+     "Fk_0_9": 0.2,
+     "Fk_1_0": 0
+    },
+    {
+     "szabalyozas_tipusa": "Kézi bekapcsolás/dimmelhető",
+     "Fk_0_0": 1,
+     "Fk_0_1": 0.95,
+     "Fk_0_2": 0.9,
+     "Fk_0_3": 0.8,
+     "Fk_0_4": 0.7,
+     "Fk_0_5": 0.6,
+     "Fk_0_6": 0.5,
+     "Fk_0_7": 0.4,
+     "Fk_0_8": 0.3,
+     "Fk_0_9": 0.2,
+     "Fk_1_0": 0
+    },
+    {
+     "szabalyozas_tipusa": "Kézi bekapcsolás, automatikus kikapcsolás",
+     "Fk_0_0": 1,
+     "Fk_0_1": 0.9,
+     "Fk_0_2": 0.8,
+     "Fk_0_3": 0.7,
+     "Fk_0_4": 0.6,
+     "Fk_0_5": 0.5,
+     "Fk_0_6": 0.4,
+     "Fk_0_7": 0.3,
+     "Fk_0_8": 0.2,
+     "Fk_0_9": 0.1,
+     "Fk_1_0": 0
+    }
+   ]
+  },
+  {
+   "id": "tabla_12_6",
+   "cim": "Évi üzemórák száma",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.6. táblázat",
+    "oldal": 86,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Minden sorban tössz = tnappal + téjjel (ellenőrizve). Múzeum, könyvtár, színház, konferenciaterem (12.4. táblázat) üzemóráját nem adja meg.",
+   "oszlopok": [
+    {
+     "kulcs": "epulettipus",
+     "cim": "Épülettípus",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "t_nappal",
+     "cim": "tnappal",
+     "egyseg": "h/év"
+    },
+    {
+     "kulcs": "t_ejjel",
+     "cim": "téjjel",
+     "egyseg": "h/év"
+    },
+    {
+     "kulcs": "t_ossz",
+     "cim": "tössz",
+     "egyseg": "h/év"
+    }
+   ],
+   "sorok": [
+    {
+     "epulettipus": "Irodaépület",
+     "t_nappal": 2250,
+     "t_ejjel": 250,
+     "t_ossz": 2500
+    },
+    {
+     "epulettipus": "Oktatási épület",
+     "t_nappal": 1800,
+     "t_ejjel": 200,
+     "t_ossz": 2000
+    },
+    {
+     "epulettipus": "Kórház",
+     "t_nappal": 3000,
+     "t_ejjel": 2000,
+     "t_ossz": 5000
+    },
+    {
+     "epulettipus": "Hotel",
+     "t_nappal": 3000,
+     "t_ejjel": 2000,
+     "t_ossz": 5000
+    },
+    {
+     "epulettipus": "Étterem",
+     "t_nappal": 1250,
+     "t_ejjel": 1250,
+     "t_ossz": 2500
+    },
+    {
+     "epulettipus": "Sportközpont",
+     "t_nappal": 2000,
+     "t_ejjel": 2000,
+     "t_ossz": 4000
+    },
+    {
+     "epulettipus": "Kereskedelmi egység",
+     "t_nappal": 3000,
+     "t_ejjel": 2000,
+     "t_ossz": 5000
+    },
+    {
+     "epulettipus": "Üzem",
+     "t_nappal": 2500,
+     "t_ejjel": 1500,
+     "t_ossz": 4000
+    }
+   ]
+  },
+  {
+   "id": "tabla_12_7",
+   "cim": "A természetes megvilágítás szerepét kifejező tényező",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet, 12.7. táblázat",
+    "oldal": 86,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A PDF tizedespontot használ (0.35 stb.). A 40% és 80% határérték hovatartozása nem egyértelmű (min/max arányszámként, 0–1).",
+   "oszlopok": [
+    {
+     "kulcs": "uvegezesi_arany",
+     "cim": "Homlokzati üvegezési arány (teljes homlokzatfelületre vonatkoztatva)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "F_nappal",
+     "cim": "Fnappal",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "uvegezesi_arany": "80% fölött",
+     "eredeti": "80% fölött",
+     "min": 0.8,
+     "max": null,
+     "F_nappal": 0.35
+    },
+    {
+     "uvegezesi_arany": "40% - 80% között",
+     "eredeti": "40% - 80% között",
+     "min": 0.4,
+     "max": 0.8,
+     "F_nappal": 0.45
+    },
+    {
+     "uvegezesi_arany": "40% alatt",
+     "eredeti": "40% alatt",
+     "min": 0.0,
+     "max": 0.4,
+     "F_nappal": 0.55
+    },
+    {
+     "uvegezesi_arany": "Nincs természetes világítás",
+     "eredeti": "Nincs természetes világítás",
+     "min": null,
+     "max": null,
+     "F_nappal": 1.0
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_12",
+   "cim": "Világítás – szövegben megadott alapértékek",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "12.1 fejezet",
+    "oldal": 84,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Lakóépületek esetén a beépített világítás nem számítható be; udvari, utcai, közterületi világítás sem (84. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Mennyiség",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "feltetel",
+     "cim": "Feltétel",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "w_vesz",
+     "feltetel": "nincs vészvilágítás",
+     "ertek": 0,
+     "egyseg": "kWh/(m2 év)"
+    },
+    {
+     "kulcs": "w_vesz",
+     "feltetel": "van vészvilágítás",
+     "ertek": 1,
+     "egyseg": "kWh/(m2 év)"
+    },
+    {
+     "kulcs": "w_standby",
+     "feltetel": "nincs stand-by fogyasztás",
+     "ertek": 0,
+     "egyseg": "kWh/(m2 év)"
+    },
+    {
+     "kulcs": "w_standby",
+     "feltetel": "van stand-by fogyasztás",
+     "ertek": 1.5,
+     "egyseg": "kWh/(m2 év)"
+    },
+    {
+     "kulcs": "osztó_12_1",
+     "feltetel": "(12.1) W→kWh átváltás",
+     "ertek": 1000,
+     "egyseg": "-"
+    }
+   ]
+  }
+ ]
+}

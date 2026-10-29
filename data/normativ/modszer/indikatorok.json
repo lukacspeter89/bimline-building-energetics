@@ -1,0 +1,139 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_14_1",
+   "cim": "A primerenergia és szén-dioxid kibocsátási tényezők meghatározásakor figyelembe vett életciklus szakaszok",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "14.2 fejezet, 14.1. táblázat",
+    "oldal": 90,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Nem számszerű, tájékoztató táblázat. A PDF-en az utolsó előtti sor üres (kihagyva).",
+   "oszlopok": [
+    {
+     "kulcs": "csoport",
+     "cim": "Csoport (összevont cella)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "szakasz",
+     "cim": "Életciklus szakasz",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "primerenergia_tenyezok",
+     "cim": "Primerenergia tényezők",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "emisszios_tenyezok",
+     "cim": "Emissziós tényezők",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "A primerenergiahordozó kitermeléséhez szükséges energia",
+     "primerenergia_tenyezok": "Igen",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "A primerenergiahordozó szállításához szükséges energia",
+     "primerenergia_tenyezok": "Igen",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "Az energiaszolgáltatás egyéb folyamataihoz szükséges energia (pl. tárolás)",
+     "primerenergia_tenyezok": "Igen",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "Az átalakító egységek építéséhez, üzemeltetéséhez és bontásához szükséges energia",
+     "primerenergia_tenyezok": "Nem",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "A szállító hálózat építéséhez, üzemeltetéséhez és bontásához szükséges energia",
+     "primerenergia_tenyezok": "Nem",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "A hulladékkezeléshez szükséges energia",
+     "primerenergia_tenyezok": "Nem",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": "Figyelembe vett életciklus szakaszok",
+     "szakasz": "Az anyagok beépített energiatartalma",
+     "primerenergia_tenyezok": "Nem",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": null,
+     "szakasz": "A szén-dioxidon kívül más üvegházhatású gázok figyelembe vétele (metán, stb)",
+     "primerenergia_tenyezok": "n.a.",
+     "emisszios_tenyezok": "Igen"
+    },
+    {
+     "csoport": null,
+     "szakasz": "A végsőenergia igény",
+     "primerenergia_tenyezok": "fűtőérték alapján",
+     "emisszios_tenyezok": "fűtőérték alapján"
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_14",
+   "cim": "Indikátorok – szövegben megadott korlátok",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "14.3 fejezet",
+    "oldal": 91,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Mennyiség",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "feltetel",
+     "cim": "Feltétel",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "eps_HP_max_megujulo",
+     "ertek": 0.37,
+     "egyseg": "-",
+     "feltetel": "A hőszivattyú által hasznosított megújuló energia akkor vehető figyelembe, ha εF/HMV/LT ≤ 0,37 (felhasználási célonként külön-külön)"
+    }
+   ]
+  }
+ ]
+}

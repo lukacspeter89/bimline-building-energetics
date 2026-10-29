@@ -1,0 +1,185 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_5_1",
+   "cim": "Lakóépületek helyiségeinek besorolása és kezelése az energiamérlegben",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "5. fejezet, 5.1. táblázat",
+    "oldal": "36-37",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Szöveges táblázat; 'hőáromot' elírás szó szerint. Csak lakóépületekre vonatkozik; egyéb rendeltetésű épületekre a módszer nem ad hasonló táblázatot.",
+   "oszlopok": [
+    {
+     "kulcs": "kategoria",
+     "cim": "Helyiség kategória",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "peldak",
+     "cim": "Helyiségek például",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "beszamit_AN",
+     "cim": "Beszámít AN-ba?",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "energiamerleg",
+     "cim": "Energiamérlegbe beleszámít?",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kategoria": "Kondicionált vagy erősen kapcsolt nem kondicionált zóna",
+     "peldak": "- Kondicionált helyiségek (pl. nappali, hálószoba, dolgozószoba, hőleadóval rendelkező helyiségek) - Lakótéren belüli erősen kapcsolt nem kondicionált helyiségek (pl. WC, kamra, közlekedő, hőleadóval nem feltétlenül rendelkező, de a lakótérhez tartozó helyiségek)",
+     "beszamit_AN": "igen",
+     "energiamerleg": "igen, kondicionált térként számítandó"
+    },
+    {
+     "kategoria": "Kondicionált vagy erősen kapcsolt nem kondicionált zóna – közös terek",
+     "peldak": "Közös fűtött lépcsőház, közös fűtött garázs",
+     "beszamit_AN": "Lakás tanúsítása esetén nem, egész épület tanúsítása esetén igen",
+     "energiamerleg": "Lakás tanúsítása esetén adiabatikus felületként kell kezelni (azaz a hőáromot el kell hanyagolni), egész épület tanúsítása esetén igen"
+    },
+    {
+     "kategoria": "Gyengén kapcsolt nem kondicionált terek",
+     "peldak": "Fűtetlen padlás, fűtetlen pince, fűtetlen mélygarázs, fűtetlen közös lépcsőház, fűtetlen saját garázs, egyéb fűtetlen terek",
+     "beszamit_AN": "nem",
+     "energiamerleg": "Egyszerűsített módszer esetén korrekciós tényezővel vesszük figyelembe, részletes módszer esetén szabvány szerinti számítással (lsd. 6.1.3). Az ezen terekhez tartozó egyéb energiafogyasztást nem vesszük figyelembe."
+    },
+    {
+     "kategoria": "Gyengén kapcsolt nem kondicionált zóna jelentős szoláris és/vagy belső hőnyereséggel",
+     "peldak": "Pl. naptér, átrium fűtés, hűtés nélkül",
+     "beszamit_AN": "nem",
+     "energiamerleg": "Egyszerűsített módszer esetén a nyereségek elhanyagolhatóak, részletes módszer esetén szabvány szerinti számítással. Az ezen terekhez tartozó egyéb energiafogyasztást nem vesszük figyelembe."
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_5",
+   "cim": "Az 5. fejezet (termikus zónázás) számszerű küszöbértékei (gyűjtött táblázat)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "5. fejezet, szövegközi értékek",
+    "oldal": "35-37",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Nem a forrásban szereplő táblázat; a folyószöveg konstansainak gyűjtése. A 'hőtároló képesség osztály' fogalmát az 5. fejezet nem definiálja.",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Azonosító",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "leiras",
+     "cim": "Leírás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "hely",
+     "cim": "Hely",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "Oldal",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "gyenge_kapcs_nyilas_arany",
+     "ertek": 0.003,
+     "egyseg": "m2/m2",
+     "leiras": "Gyengén kapcsolt, ha a gyenge légzárású nyílászárók nyílásainak összmérete > 0,003 m2/m2 alapterület",
+     "hely": "5. fejezet, 1. lépés",
+     "oldal": 35
+    },
+    {
+     "kulcs": "gyenge_kapcs_szellozes",
+     "ertek": 3,
+     "egyseg": "dm3/s/m2",
+     "leiras": "Gyengén kapcsolt, ha a tér intenzíven szellőztetve van (> 3 dm3/s/m2 alapterületre vetítve, kb. n = 3 1/h), pl. garázs",
+     "hely": "5. fejezet, 1. lépés",
+     "oldal": 35
+    },
+    {
+     "kulcs": "gyenge_kapcs_szellozes_n",
+     "ertek": 3,
+     "egyseg": "1/h",
+     "leiras": "ugyanaz légcsereszámban ('kb.')",
+     "hely": "5. fejezet, 1. lépés",
+     "oldal": 35
+    },
+    {
+     "kulcs": "osszevonas_homerseklet_kulonbseg_max",
+     "ertek": 4,
+     "egyseg": "K",
+     "leiras": "Hasonló használati feltétel: a fűtési és hűtési parancsolt hőmérsékletek közötti különbség < 4 K",
+     "hely": "5. fejezet, 3. lépés",
+     "oldal": 37
+    },
+    {
+     "kulcs": "osszevonas_menetrend_kulonbseg_max",
+     "ertek": 3,
+     "egyseg": "h",
+     "leiras": "Hasonló használati feltétel: a napi menetrendek legfeljebb 3 órával térnek el",
+     "hely": "5. fejezet, 3. lépés",
+     "oldal": 37
+    },
+    {
+     "kulcs": "hotarolo_osztaly_kulonbseg",
+     "ertek": 2,
+     "egyseg": "osztály",
+     "leiras": "Azonos zóna: hőtároló képességben két osztálynál kisebb különbség",
+     "hely": "5. fejezet, 4. lépés",
+     "oldal": 37
+    },
+    {
+     "kulcs": "felosztas_nem_kotelezo_arany",
+     "ertek": 0.25,
+     "egyseg": "-",
+     "leiras": "Hőegyensúly szerinti felosztás nem kötelező, ha a második zóna alapterülete < az eredeti zóna 25%-a",
+     "hely": "5. fejezet, 4. lépés",
+     "oldal": 37
+    },
+    {
+     "kulcs": "kismeretu_zona_arany",
+     "ertek": 0.05,
+     "egyseg": "-",
+     "leiras": "Kisméretű zóna: alapterülete < az épület összes hasznos alapterületének 5%-a (azonos épülettechnika mellett összevonható)",
+     "hely": "5. fejezet, 5. lépés",
+     "oldal": 37
+    },
+    {
+     "kulcs": "nagyon_kismeretu_zona_arany",
+     "ertek": 0.01,
+     "egyseg": "-",
+     "leiras": "Nagyon kisméretű zóna: < 1% (eltérő épülettechnika mellett is összevonható)",
+     "hely": "5. fejezet, 6. lépés",
+     "oldal": 37
+    }
+   ]
+  }
+ ]
+}

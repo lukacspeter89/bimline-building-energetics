@@ -1,0 +1,1118 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_f2_2_1",
+   "cim": "2.1. táblázat: Különböző funkciójú épületekre vonatkozó ajánlott számítási alapadatok",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet (Épületekre vonatkozó számítási profiladatok), 2.1. táblázat",
+    "oldal": 20,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Bevezető szöveg (20. o.): „Lakó és szállásjellegű épületekre (a továbbiakban együtt: lakóépületekre) a megadott értékek használata kötelező. A lakóépületre vonatkozó adatok használhatók az egyéb szállásjellegű épület esetén is (pl. szanatórium, idősek otthona, diákszálló). Ha a használati idő havi megoszlása markáns eltéréseket mutat, akkor havi használati időket kell meghatározni a napi használati idő figyelembe vételével (ahogy az oktatási funkcióknál látható).” Lábjegyzetek (22. o.): „*Lakóépületekre a megadott értékek alkalmazása kötelező”; „** A megvilágítás értékek új épületekre és korszerűsített rendszerekre vonatkoznak”. A táblázat 3 oldalon folytatódik (20–22. o.), oldalanként ismételt fejléccel. ANOMÁLIA: a térfogatáram oszlop vonatkoztatási felülete a 20. oldalon „V̇LT/Ak”, a 21–22. oldalon „V̇LT/AN” – a jelölés eltér, a felület (A_k vs. A_N) nem egyértelmű. Ellenőrzés: minden számszerű sorban napi h × nap/év = h/év (egyezik); az oktatási sorokban 10 h × 22 nap = 220 h/hó, 7 h × 22 nap = 154 h/hó (egyezik). A „fő funkció szerint” cellák (WC, alárendelt, közlekedő) a napi/éves használati idő három oszlopát fedik le (összevont cella). A „Lakóépület egésze” térfogatáram-cellája nem m3/(m2h), hanem „nszüks=0,5 /h” légcsereszám; megvilágítás „-”.",
+   "oszlopok": [
+    {
+     "kulcs": "funkcio",
+     "cim": "funkció (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "napi_h",
+     "cim": "Napi használati idő",
+     "egyseg": "h/nap"
+    },
+    {
+     "kulcs": "eves_nap",
+     "cim": "Éves használati idő",
+     "egyseg": "nap/év"
+    },
+    {
+     "kulcs": "eves_h",
+     "cim": "Éves használati idő",
+     "egyseg": "h/év"
+    },
+    {
+     "kulcs": "theta_i_F",
+     "cim": "Hőmérséklet fűtési idény",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "theta_i_H",
+     "cim": "Hőmérséklet hűtési idény",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "V_LT_per_A",
+     "cim": "Szükséges szellőzési térfogatáram üzemidőben, V̇_LT/A_k (20. o.) ill. V̇_LT/A_N (21–22. o.)",
+     "egyseg": "m3/(m2h)"
+    },
+    {
+     "kulcs": "MV",
+     "cim": "Megvilágítás ** , MV",
+     "egyseg": "lx"
+    },
+    {
+     "kulcs": "q_b",
+     "cim": "Hőnyereség napi átlag, q_b",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "PDF-oldal",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "funkcio": "Lakóépület egésze*",
+     "napi_h": 24,
+     "eves_nap": 365,
+     "eves_h": 8760,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": null,
+     "MV": null,
+     "q_b": 5,
+     "oldal": 20,
+     "n_szuks_1_per_h": 0.5,
+     "eredeti_V_LT_per_A": "nszüks=0,5 /h",
+     "eredeti_MV": "-",
+     "kotelezo": true
+    },
+    {
+     "funkcio": "Kis iroda (1-5 fő)",
+     "napi_h": 11,
+     "eves_nap": 250,
+     "eves_h": 2750,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 4,
+     "MV": 500,
+     "q_b": 7,
+     "oldal": 20
+    },
+    {
+     "funkcio": "Nagy iroda (>5 fő)",
+     "napi_h": 11,
+     "eves_nap": 250,
+     "eves_h": 2750,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 6,
+     "MV": 500,
+     "q_b": 8,
+     "oldal": 20
+    },
+    {
+     "funkcio": "Tárgyaló",
+     "napi_h": 11,
+     "eves_nap": 250,
+     "eves_h": 2750,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 15,
+     "MV": 500,
+     "q_b": 8,
+     "oldal": 20
+    },
+    {
+     "funkcio": "Osztályterem, óvoda csoportszoba",
+     "napi_h": 10,
+     "eves_nap": null,
+     "eves_h": null,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 10,
+     "MV": 300,
+     "q_b": 9,
+     "oldal": 20,
+     "eredeti_eves_nap": "szept.-jún.: 22 nap/hó júl.- aug.: 0 nap/hó",
+     "eredeti_eves_h": "szept.-jún.: 220 h/hó, júl.- aug.: 0 h/hó",
+     "havi_profil": {
+      "szept_jun_nap_per_ho": 22,
+      "jul_aug_nap_per_ho": 0,
+      "szept_jun_h_per_ho": 220,
+      "jul_aug_h_per_ho": 0
+     }
+    },
+    {
+     "funkcio": "Bölcsőde csoportszoba",
+     "napi_h": 12,
+     "eves_nap": 220,
+     "eves_h": 2640,
+     "theta_i_F": 23,
+     "theta_i_H": 26,
+     "V_LT_per_A": 10,
+     "MV": 300,
+     "q_b": 9,
+     "oldal": 20
+    },
+    {
+     "funkcio": "Előadó",
+     "napi_h": 7,
+     "eves_nap": null,
+     "eves_h": null,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 30,
+     "MV": 500,
+     "q_b": 19,
+     "oldal": 20,
+     "eredeti_eves_nap": "szept.-jún.: 22 nap/hó júl.- aug.: 0 nap/hó",
+     "eredeti_eves_h": "szept.-jún.: 154 h/hó, júl.- aug.: 0 h/hó",
+     "havi_profil": {
+      "szept_jun_nap_per_ho": 22,
+      "jul_aug_nap_per_ho": 0,
+      "szept_jun_h_per_ho": 154,
+      "jul_aug_h_per_ho": 0
+     }
+    },
+    {
+     "funkcio": "WC és mosdó középületben",
+     "napi_h": null,
+     "eves_nap": null,
+     "eves_h": null,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 15,
+     "MV": 200,
+     "q_b": 0,
+     "oldal": 20,
+     "eredeti_hasznalati_ido": "fő funkció szerint"
+    },
+    {
+     "funkcio": "Alárendelt helyiség",
+     "napi_h": null,
+     "eves_nap": null,
+     "eves_h": null,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 0,
+     "MV": 100,
+     "q_b": 0,
+     "oldal": 20,
+     "eredeti_hasznalati_ido": "fő funkció szerint"
+    },
+    {
+     "funkcio": "Közlekedő",
+     "napi_h": null,
+     "eves_nap": null,
+     "eves_h": null,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 0,
+     "MV": 100,
+     "q_b": 0,
+     "oldal": 20,
+     "eredeti_hasznalati_ido": "fő funkció szerint"
+    },
+    {
+     "funkcio": "Kereskedelmi egység / áruház",
+     "napi_h": 12,
+     "eves_nap": 300,
+     "eves_h": 3600,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 4,
+     "MV": 300,
+     "q_b": 9,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Kereskedelmi egység hűtőpultokkal",
+     "napi_h": 12,
+     "eves_nap": 300,
+     "eves_h": 3600,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 4,
+     "MV": 300,
+     "q_b": -2,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Hotelszoba",
+     "napi_h": 11,
+     "eves_nap": 365,
+     "eves_h": 4015,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 3,
+     "MV": 200,
+     "q_b": 5,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Menza",
+     "napi_h": 7,
+     "eves_nap": 250,
+     "eves_h": 1750,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 18,
+     "MV": 200,
+     "q_b": 12,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Étterem",
+     "napi_h": 14,
+     "eves_nap": 300,
+     "eves_h": 4200,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 18,
+     "MV": 200,
+     "q_b": 14,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Főzőkonyha",
+     "napi_h": 13,
+     "eves_nap": 300,
+     "eves_h": 3900,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 90,
+     "MV": 500,
+     "q_b": 77,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Konyhai előkészítő",
+     "napi_h": 13,
+     "eves_nap": 300,
+     "eves_h": 3900,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 15,
+     "MV": 300,
+     "q_b": 10,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Raktár, logisztikai tér",
+     "napi_h": 24,
+     "eves_nap": 365,
+     "eves_h": 8760,
+     "theta_i_F": 12,
+     "theta_i_H": 28,
+     "V_LT_per_A": 1,
+     "MV": 150,
+     "q_b": 2,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Szerverszoba",
+     "napi_h": 24,
+     "eves_nap": 365,
+     "eves_h": 8760,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 1.3,
+     "MV": 500,
+     "q_b": 76,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Színház/mozi nézőtér",
+     "napi_h": 4,
+     "eves_nap": 250,
+     "eves_h": 1000,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 40,
+     "MV": 200,
+     "q_b": 12,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Színház/mozi előtér",
+     "napi_h": 4,
+     "eves_nap": 250,
+     "eves_h": 1000,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 25,
+     "MV": 300,
+     "q_b": 6,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Színház színpad",
+     "napi_h": 10,
+     "eves_nap": 250,
+     "eves_h": 2500,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 0.3,
+     "MV": 1000,
+     "q_b": 0,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Kongresszusi központ, kiállítócsarnok",
+     "napi_h": 9,
+     "eves_nap": 150,
+     "eves_h": 1350,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 7,
+     "MV": 300,
+     "q_b": 8,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Múzeumi kiállítótér",
+     "napi_h": 8,
+     "eves_nap": 250,
+     "eves_h": 2000,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 2,
+     "MV": 200,
+     "q_b": 3,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Könyvtár olvasóterem",
+     "napi_h": 12,
+     "eves_nap": 300,
+     "eves_h": 3600,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 8,
+     "MV": 500,
+     "q_b": 9,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Könyvtár szabadpolcos",
+     "napi_h": 12,
+     "eves_nap": 300,
+     "eves_h": 3600,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 2,
+     "MV": 200,
+     "q_b": 4,
+     "oldal": 21
+    },
+    {
+     "funkcio": "Tornaterem, sportcsarnok (nézőtér nélkül)",
+     "napi_h": 15,
+     "eves_nap": 250,
+     "eves_h": 3750,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 3,
+     "MV": 300,
+     "q_b": 3,
+     "oldal": 22
+    },
+    {
+     "funkcio": "Fitness terem",
+     "napi_h": 15,
+     "eves_nap": 365,
+     "eves_h": 5475,
+     "theta_i_F": 18,
+     "theta_i_H": 26,
+     "V_LT_per_A": 12,
+     "MV": 300,
+     "q_b": 16,
+     "oldal": 22
+    },
+    {
+     "funkcio": "Parkolóház (irodai, magán)",
+     "napi_h": 11,
+     "eves_nap": 250,
+     "eves_h": 2750,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 8,
+     "MV": 75,
+     "q_b": 0,
+     "oldal": 22
+    },
+    {
+     "funkcio": "Parkolóház (nyilvános)",
+     "napi_h": 15,
+     "eves_nap": 365,
+     "eves_h": 5475,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 8,
+     "MV": 75,
+     "q_b": 0,
+     "oldal": 22
+    },
+    {
+     "funkcio": "Folyosók (egészségügyi)",
+     "napi_h": 24,
+     "eves_nap": 365,
+     "eves_h": 8760,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 10,
+     "MV": 125,
+     "q_b": 4,
+     "oldal": 22
+    },
+    {
+     "funkcio": "Orvosi helyiség, terápia helyiség",
+     "napi_h": 10,
+     "eves_nap": 250,
+     "eves_h": 2500,
+     "theta_i_F": 20,
+     "theta_i_H": 26,
+     "V_LT_per_A": 10,
+     "MV": 500,
+     "q_b": 7,
+     "oldal": 22
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_2_2",
+   "cim": "2.2. táblázat: Különböző funkciójú épületekre vonatkozó ajánlott alapadatok a HMV hőigény meghatározásához",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet, 2.2. táblázat",
+    "oldal": 23,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Lábjegyzet szó szerint: „*Lakóépületekre a megadott érték alkalmazása kötelező. A nettó igény 20%-a konyhai fogyasztás, 80%-a fürdőszobai fogyasztás (a megosztás eltérő típusú rendszer esetén releváns).” Utána: „A melegvíz teljes hőigény meghatározása után a qHMV értékét nettó kondicionált alapterületre kell fajlagosítani.” Nyitott kérdések: a „naponta” értékekhez az éves napok száma nincs megadva (pl. a 2.1. táblázat éves használati napja?); a Hotel egyszerű/luxus besorolás kritériuma nincs megadva; az 1. Függelék 9.1 pontja „hasznos alapterület”-re fajlagosít, a 2. Függelék „nettó kondicionált alapterület”-re (terminológiai eltérés).",
+   "oszlopok": [
+    {
+     "kulcs": "funkcio",
+     "cim": "funkció (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "valtozat",
+     "cim": "változat",
+     "egyseg": null
+    },
+    {
+     "kulcs": "hmv_hoigeny",
+     "cim": "HMV hőigény",
+     "egyseg": null
+    },
+    {
+     "kulcs": "vonatkoztatasi_egyseg",
+     "cim": "vonatkoztatási egység (szó szerint)",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "funkcio": "Családi ház*",
+     "valtozat": null,
+     "hmv_hoigeny": 25,
+     "vonatkoztatasi_egyseg": "kWh/m2év",
+     "kotelezo": true
+    },
+    {
+     "funkcio": "Egyéb lakóépület*",
+     "valtozat": null,
+     "hmv_hoigeny": 30,
+     "vonatkoztatasi_egyseg": "kWh/m2év",
+     "kotelezo": true
+    },
+    {
+     "funkcio": "Irodaház",
+     "valtozat": null,
+     "hmv_hoigeny": 0.4,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Kórházi hálóterem",
+     "valtozat": null,
+     "hmv_hoigeny": 6,
+     "vonatkoztatasi_egyseg": "kWh ágyanként, naponta"
+    },
+    {
+     "funkcio": "Iskola, óvoda, bölcsöde",
+     "valtozat": null,
+     "hmv_hoigeny": 0.4,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Kereskedelmi",
+     "valtozat": null,
+     "hmv_hoigeny": 1,
+     "vonatkoztatasi_egyseg": "kWh dolgozónként, naponta"
+    },
+    {
+     "funkcio": "Ipari épület (zuhanyzással)",
+     "valtozat": null,
+     "hmv_hoigeny": 1.8,
+     "vonatkoztatasi_egyseg": "kWh dolgozónként, naponta"
+    },
+    {
+     "funkcio": "Hotel",
+     "valtozat": "egyszerű",
+     "hmv_hoigeny": 2,
+     "vonatkoztatasi_egyseg": "kWh ágyanként, naponta",
+     "eredeti": "2 (egyszerű) 5 (luxus)"
+    },
+    {
+     "funkcio": "Hotel",
+     "valtozat": "luxus",
+     "hmv_hoigeny": 5,
+     "vonatkoztatasi_egyseg": "kWh ágyanként, naponta",
+     "eredeti": "2 (egyszerű) 5 (luxus)"
+    },
+    {
+     "funkcio": "Étterem",
+     "valtozat": null,
+     "hmv_hoigeny": 1.1,
+     "vonatkoztatasi_egyseg": "kWh székenként, naponta"
+    },
+    {
+     "funkcio": "Nyugdíjasotthon",
+     "valtozat": null,
+     "hmv_hoigeny": 2.3,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Laktanya",
+     "valtozat": null,
+     "hmv_hoigeny": 1.8,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Sportlétesítmény",
+     "valtozat": null,
+     "hmv_hoigeny": 1.8,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Menza",
+     "valtozat": null,
+     "hmv_hoigeny": 0.4,
+     "vonatkoztatasi_egyseg": "kWh adagonként"
+    },
+    {
+     "funkcio": "Szaunatér",
+     "valtozat": null,
+     "hmv_hoigeny": 2.8,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Labor",
+     "valtozat": null,
+     "hmv_hoigeny": 0.4,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    },
+    {
+     "funkcio": "Fitnesztér",
+     "valtozat": null,
+     "hmv_hoigeny": 1.5,
+     "vonatkoztatasi_egyseg": "kWh fejenként, naponta"
+    }
+   ]
+  },
+  {
+   "id": "f2_2_2_hmv_megosztas",
+   "cim": "HMV nettó igény megosztása lakóépületeknél (a 2.2. táblázat lábjegyzetéből)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet, 2.2. táblázat * lábjegyzet",
+    "oldal": 23,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "„(a megosztás eltérő típusú rendszer esetén releváns)”",
+   "oszlopok": [
+    {
+     "kulcs": "felhasznalas",
+     "cim": "felhasználási hely",
+     "egyseg": null
+    },
+    {
+     "kulcs": "aranyszam",
+     "cim": "részarány a nettó igényből",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eredeti",
+     "cim": "eredeti szöveg",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "felhasznalas": "konyhai fogyasztás",
+     "aranyszam": 0.2,
+     "eredeti": "20%"
+    },
+    {
+     "felhasznalas": "fürdőszobai fogyasztás",
+     "aranyszam": 0.8,
+     "eredeti": "80%"
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_2_3",
+   "cim": "2.3. táblázat: Légcsereszám számítási adatok természetes szellőztetés esetén a nyári félévben (májustól szeptemberig)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet, 2.3. táblázat",
+    "oldal": 23,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat mértékegységet nem ad; az 1. Függelék (6.11) képlete légcsereszámként (1/h) használja – értelmezés. Felhasználás: 1. Függelék 6.2.3, (6.11) H_szell,H,nyár,éjjel = 0,35·(b_éjjel·7/24·n_éjjel)·V, máj.–szept., ablaknyitásos szellőztetés; gépi éjszakai szellőztetésnél az egyszerűsített módszer nem alkalmazható.",
+   "oszlopok": [
+    {
+     "kulcs": "jellemzo",
+     "cim": "A légcsereszám számítási értékei a nyári félévben, természetes szellőztetéssel",
+     "egyseg": null
+    },
+    {
+     "kulcs": "nyithato_nyilasok",
+     "cim": "Nyitható nyílások",
+     "egyseg": null
+    },
+    {
+     "kulcs": "n_ejjel",
+     "cim": "éjszakai szellőztetés miatti légcsereszám növekmény (néjjel)",
+     "egyseg": "1/h (a táblázatban nincs feltüntetve)"
+    }
+   ],
+   "sorok": [
+    {
+     "jellemzo": "éjszakai szellőztetés miatti légcsereszám növekmény (néjjel)",
+     "nyithato_nyilasok": "egy homlokzaton",
+     "n_ejjel": 3
+    },
+    {
+     "jellemzo": "éjszakai szellőztetés miatti légcsereszám növekmény (néjjel)",
+     "nyithato_nyilasok": "több homlokzaton",
+     "n_ejjel": 6
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_2_4",
+   "cim": "2.4. táblázat: tömítetlenségből származó légcsere növekedés1)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet, 2.4. táblázat",
+    "oldal": 24,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Lábjegyzetek szó szerint: „1) Amennyiben a nyílászárók minősége vegyes, akkor a nyílászárók bruttó felületeivel súlyozott átlagérték alkalmazható a légcsere növekedés meghatározásához.” „2) Szélnek kitett szabadon álló vagy az épített környezetből kiemelkedő magasabb épületek esetében alkalmazandó.” „3) MSZ EN ISO 9972 szabvány szerinti légtömörség mérési eredmény rendelkezésre állása esetén alkalmazható.” A szélvédett érték a gyenge/közepes kategóriában a szintszámtól független (összevont cella a PDF-en). „7-” = 7 vagy több szint (értelmezés). ANOMÁLIA: q50 mértékegysége a forrásban „h-1”, holott a q50 (légáteresztés) szokásosan m3/(m2h) – változatlanul átvéve. Nyitott kérdés: mi a teendő, ha mérés van, de a kiváló feltételei nem teljesülnek (visszaesés a minősítő kategóriákra?).",
+   "oszlopok": [
+    {
+     "kulcs": "legzaras",
+     "cim": "légzárási kategória (értelmezett rövid kulcs)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "nyilaszaro_legatereszte",
+     "cim": "Nyílászáró légáteresztése (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "nyilasok_elhelyezkedese",
+     "cim": "Nyílások elhelyezkedése",
+     "egyseg": null
+    },
+    {
+     "kulcs": "szintek_szama",
+     "cim": "Szintek száma (eredeti + min/max)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "n_filt_szelvedett",
+     "cim": "Tömítetlenségből származó légcsere n_filt – szélvédett",
+     "egyseg": "1/h"
+    },
+    {
+     "kulcs": "n_filt_szelnek_kitett",
+     "cim": "Tömítetlenségből származó légcsere n_filt – szélnek kitett2)",
+     "egyseg": "1/h"
+    }
+   ],
+   "sorok": [
+    {
+     "legzaras": "gyenge",
+     "nyilaszaro_legatereszte": "Gyenge légzárású: vetemedett, rosszul illesztett; vagy falhézagnál hőszigeteltetlen, tömítetlen nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": {
+      "eredeti": "1-2",
+      "min": 1,
+      "max": 2
+     },
+     "n_filt_szelvedett": 0.2,
+     "n_filt_szelnek_kitett": 0.35
+    },
+    {
+     "legzaras": "gyenge",
+     "nyilaszaro_legatereszte": "Gyenge légzárású: vetemedett, rosszul illesztett; vagy falhézagnál hőszigeteltetlen, tömítetlen nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": {
+      "eredeti": "3-6",
+      "min": 3,
+      "max": 6
+     },
+     "n_filt_szelvedett": 0.2,
+     "n_filt_szelnek_kitett": 0.4
+    },
+    {
+     "legzaras": "gyenge",
+     "nyilaszaro_legatereszte": "Gyenge légzárású: vetemedett, rosszul illesztett; vagy falhézagnál hőszigeteltetlen, tömítetlen nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": {
+      "eredeti": "7-",
+      "min": 7,
+      "max": null
+     },
+     "n_filt_szelvedett": 0.2,
+     "n_filt_szelnek_kitett": 0.6
+    },
+    {
+     "legzaras": "gyenge",
+     "nyilaszaro_legatereszte": "Gyenge légzárású: vetemedett, rosszul illesztett; vagy falhézagnál hőszigeteltetlen, tömítetlen nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": {
+      "eredeti": "1-2",
+      "min": 1,
+      "max": 2
+     },
+     "n_filt_szelvedett": 0.4,
+     "n_filt_szelnek_kitett": 0.65
+    },
+    {
+     "legzaras": "gyenge",
+     "nyilaszaro_legatereszte": "Gyenge légzárású: vetemedett, rosszul illesztett; vagy falhézagnál hőszigeteltetlen, tömítetlen nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": {
+      "eredeti": "3-6",
+      "min": 3,
+      "max": 6
+     },
+     "n_filt_szelvedett": 0.4,
+     "n_filt_szelnek_kitett": 0.75
+    },
+    {
+     "legzaras": "gyenge",
+     "nyilaszaro_legatereszte": "Gyenge légzárású: vetemedett, rosszul illesztett; vagy falhézagnál hőszigeteltetlen, tömítetlen nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": {
+      "eredeti": "7-",
+      "min": 7,
+      "max": null
+     },
+     "n_filt_szelvedett": 0.4,
+     "n_filt_szelnek_kitett": 1.0
+    },
+    {
+     "legzaras": "közepes",
+     "nyilaszaro_legatereszte": "Közepes légzárású: kettős jól illeszkedő, de tömítetlen, vagy egyszeres jól illeszkedő öntapadó tok-szárnytömítéssel ellátott; vagy falhézagban csak hőszigeteléssel tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": {
+      "eredeti": "1-2",
+      "min": 1,
+      "max": 2
+     },
+     "n_filt_szelvedett": 0.05,
+     "n_filt_szelnek_kitett": 0.1
+    },
+    {
+     "legzaras": "közepes",
+     "nyilaszaro_legatereszte": "Közepes légzárású: kettős jól illeszkedő, de tömítetlen, vagy egyszeres jól illeszkedő öntapadó tok-szárnytömítéssel ellátott; vagy falhézagban csak hőszigeteléssel tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": {
+      "eredeti": "3-6",
+      "min": 3,
+      "max": 6
+     },
+     "n_filt_szelvedett": 0.05,
+     "n_filt_szelnek_kitett": 0.15
+    },
+    {
+     "legzaras": "közepes",
+     "nyilaszaro_legatereszte": "Közepes légzárású: kettős jól illeszkedő, de tömítetlen, vagy egyszeres jól illeszkedő öntapadó tok-szárnytömítéssel ellátott; vagy falhézagban csak hőszigeteléssel tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": {
+      "eredeti": "7-",
+      "min": 7,
+      "max": null
+     },
+     "n_filt_szelvedett": 0.05,
+     "n_filt_szelnek_kitett": 0.25
+    },
+    {
+     "legzaras": "közepes",
+     "nyilaszaro_legatereszte": "Közepes légzárású: kettős jól illeszkedő, de tömítetlen, vagy egyszeres jól illeszkedő öntapadó tok-szárnytömítéssel ellátott; vagy falhézagban csak hőszigeteléssel tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": {
+      "eredeti": "1-2",
+      "min": 1,
+      "max": 2
+     },
+     "n_filt_szelvedett": 0.1,
+     "n_filt_szelnek_kitett": 0.2
+    },
+    {
+     "legzaras": "közepes",
+     "nyilaszaro_legatereszte": "Közepes légzárású: kettős jól illeszkedő, de tömítetlen, vagy egyszeres jól illeszkedő öntapadó tok-szárnytömítéssel ellátott; vagy falhézagban csak hőszigeteléssel tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": {
+      "eredeti": "3-6",
+      "min": 3,
+      "max": 6
+     },
+     "n_filt_szelvedett": 0.1,
+     "n_filt_szelnek_kitett": 0.25
+    },
+    {
+     "legzaras": "közepes",
+     "nyilaszaro_legatereszte": "Közepes légzárású: kettős jól illeszkedő, de tömítetlen, vagy egyszeres jól illeszkedő öntapadó tok-szárnytömítéssel ellátott; vagy falhézagban csak hőszigeteléssel tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": {
+      "eredeti": "7-",
+      "min": 7,
+      "max": null
+     },
+     "n_filt_szelvedett": 0.1,
+     "n_filt_szelnek_kitett": 0.4
+    },
+    {
+     "legzaras": "jó",
+     "nyilaszaro_legatereszte": "Jó légzárású: körbemenő, gyárilag beépített, alakos-tok-szárnytömítéssel; oldalanként legalább egy ponton záródó; vagy minősítő iratban MSZ EN 12207 szerint 4-es légáteresztési osztályú; és minden esetben falhézagnál légzáróan is tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Egy homlokzaton",
+     "szintek_szama": null,
+     "n_filt_szelvedett": 0.03,
+     "n_filt_szelnek_kitett": 0.03,
+     "eredeti_ertek": "0,03 (a szélvédett és szélnek kitett oszlopra összevont cella, szintszámtól független)"
+    },
+    {
+     "legzaras": "jó",
+     "nyilaszaro_legatereszte": "Jó légzárású: körbemenő, gyárilag beépített, alakos-tok-szárnytömítéssel; oldalanként legalább egy ponton záródó; vagy minősítő iratban MSZ EN 12207 szerint 4-es légáteresztési osztályú; és minden esetben falhézagnál légzáróan is tömített nyílászárók",
+     "nyilasok_elhelyezkedese": "Több homlokzaton vagy szellőzőkürtő",
+     "szintek_szama": null,
+     "n_filt_szelvedett": 0.06,
+     "n_filt_szelnek_kitett": 0.06,
+     "eredeti_ertek": "0,06 (összevont cella)"
+    },
+    {
+     "legzaras": "kiváló",
+     "nyilaszaro_legatereszte": "Kiváló légzárású3)",
+     "nyilasok_elhelyezkedese": null,
+     "szintek_szama": null,
+     "n_filt_szelvedett": 0.0,
+     "n_filt_szelnek_kitett": 0.0,
+     "legterfogat": {
+      "eredeti": "V ≤1500 m3",
+      "max": 1500,
+      "egyseg": "m3"
+     },
+     "gepi_szellozes": false,
+     "legtomorseg_feltetel": {
+      "jellemzo": "n50",
+      "max": 2.0,
+      "egyseg_a_forras_szerint": "h-1",
+      "eredeti": "n50 ≤ 2,0 h-1"
+     },
+     "eredeti_ertek": "0,00 (összevont cella mind a 4 sorra és mindkét oszlopra)"
+    },
+    {
+     "legzaras": "kiváló",
+     "nyilaszaro_legatereszte": "Kiváló légzárású3)",
+     "nyilasok_elhelyezkedese": null,
+     "szintek_szama": null,
+     "n_filt_szelvedett": 0.0,
+     "n_filt_szelnek_kitett": 0.0,
+     "legterfogat": {
+      "eredeti": "V ≤1500 m3",
+      "max": 1500,
+      "egyseg": "m3"
+     },
+     "gepi_szellozes": true,
+     "legtomorseg_feltetel": {
+      "jellemzo": "n50",
+      "max": 1.0,
+      "egyseg_a_forras_szerint": "h-1",
+      "eredeti": "n50 ≤ 1,0 h-1"
+     },
+     "eredeti_ertek": "0,00 (összevont cella mind a 4 sorra és mindkét oszlopra)"
+    },
+    {
+     "legzaras": "kiváló",
+     "nyilaszaro_legatereszte": "Kiváló légzárású3)",
+     "nyilasok_elhelyezkedese": null,
+     "szintek_szama": null,
+     "n_filt_szelvedett": 0.0,
+     "n_filt_szelnek_kitett": 0.0,
+     "legterfogat": {
+      "eredeti": "V >1500 m3",
+      "min_kizart": 1500,
+      "egyseg": "m3"
+     },
+     "gepi_szellozes": false,
+     "legtomorseg_feltetel": {
+      "jellemzo": "q50",
+      "max": 3.0,
+      "egyseg_a_forras_szerint": "h-1",
+      "eredeti": "q50 ≤ 3,0 h-1"
+     },
+     "eredeti_ertek": "0,00 (összevont cella mind a 4 sorra és mindkét oszlopra)"
+    },
+    {
+     "legzaras": "kiváló",
+     "nyilaszaro_legatereszte": "Kiváló légzárású3)",
+     "nyilasok_elhelyezkedese": null,
+     "szintek_szama": null,
+     "n_filt_szelvedett": 0.0,
+     "n_filt_szelnek_kitett": 0.0,
+     "legterfogat": {
+      "eredeti": "V >1500 m3",
+      "min_kizart": 1500,
+      "egyseg": "m3"
+     },
+     "gepi_szellozes": true,
+     "legtomorseg_feltetel": {
+      "jellemzo": "q50",
+      "max": 2.0,
+      "egyseg_a_forras_szerint": "h-1",
+      "eredeti": "q50 ≤ 2,0 h-1"
+     },
+     "eredeti_ertek": "0,00 (összevont cella mind a 4 sorra és mindkét oszlopra)"
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_2_5",
+   "cim": "2.5. táblázat: A szakaszos üzemvitel hatását kifejező korrekciós tényező (fűtési üzem)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet, 2.5. táblázat",
+    "oldal": 25,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Felhasználás: 1. Függelék (6.33) Q_veszt = σF·(Q_tr,F + Q_szell,F), egyszerűsített módszer; részletes: MSZ EN ISO 52016-1. Nyitott kérdés: pontosan 24 óra időállandóra a táblázat nem ad értéket.",
+   "oszlopok": [
+    {
+     "kulcs": "eset",
+     "cim": "eset (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "automatika",
+     "cim": "programozható automatika",
+     "egyseg": null
+    },
+    {
+     "kulcs": "idoallando",
+     "cim": "időállandó feltétel (értelmezett)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "sigma_F_lakoepulet",
+     "cim": "Lakóépületek σF",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "sigma_F_egyeb",
+     "cim": "Egyéb rendeltetés (hétköznap éjjel és hétvégi csökkentett hőmérséklet esetén) σF",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "eset": "nincs automatikával programozható fűtés",
+     "automatika": false,
+     "idoallando": null,
+     "sigma_F_lakoepulet": 1.0,
+     "sigma_F_egyeb": 1.0
+    },
+    {
+     "eset": "fűtés automatikával programozható, időállandó nagyobb mint 24 óra",
+     "automatika": true,
+     "idoallando": {
+      "eredeti": "nagyobb mint 24 óra",
+      "min_kizart": 24,
+      "egyseg": "h"
+     },
+     "sigma_F_lakoepulet": 1.0,
+     "sigma_F_egyeb": 0.95
+    },
+    {
+     "eset": "fűtés automatikával programozható, időállandó kisebb mint 24 óra",
+     "automatika": true,
+     "idoallando": {
+      "eredeti": "kisebb mint 24 óra",
+      "max_kizart": 24,
+      "egyseg": "h"
+     },
+     "sigma_F_lakoepulet": 0.95,
+     "sigma_F_egyeb": 0.9
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_2_6",
+   "cim": "2.6. táblázat: A szakaszos üzemvitel hatását kifejező korrekciós tényező (hűtési üzem)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "2. fejezet, 2.6. táblázat",
+    "oldal": 25,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Felhasználás: 1. Függelék (6.49) Q_H,net,szakaszos = σH·Q_H,net,folyt (51. o.). ANOMÁLIA: az 1. Függelék 6.8.3 pontja a σH egyszerűsített értékére a „2. Függelék 2.5. táblázat”-ra hivatkozik, holott a hűtési σH a 2.6. táblázatban van.",
+   "oszlopok": [
+    {
+     "kulcs": "eset",
+     "cim": "eset (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "leszabalyozas_nap_per_het",
+     "cim": "leszabályozás/kikapcsolás időtartama",
+     "egyseg": "nap/hét"
+    },
+    {
+     "kulcs": "sigma_H",
+     "cim": "σH",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "eset": "a leszabályozás/kikapcsolás időtartama rövidebb, mint 2 nap/hét",
+     "leszabalyozas_nap_per_het": {
+      "eredeti": "rövidebb, mint 2 nap/hét",
+      "max_kizart": 2
+     },
+     "sigma_H": 1.0
+    },
+    {
+     "eset": "a leszabályozás/kikapcsolás időtartama min. 2 nap/hét (pl. egész hétvégére kikapcsolt üzem)",
+     "leszabalyozas_nap_per_het": {
+      "eredeti": "min. 2 nap/hét",
+      "min": 2
+     },
+     "sigma_H": 0.8
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_13_1",
+   "cim": "Tájékoztató adatok napelemek éves energiatermelésének meghatározásához",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "13.2.1 fejezet, 13.1. táblázat",
+    "oldal": 87,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Fajlagos napelem termelés wPV [kWh/év / kWp]. Alkalmazási kör: legfeljebb 20 kWp beépített teljesítményű mono- és polikristályos rendszerek (13.2.1). Északi (É, ÉK, ÉNy) tájolásra és köztes hajlásszögre nem ad értéket; interpolációs szabály nincs. A hajlásszög mértékegységét a táblázat nem írja ki (fok értelmezés).",
+   "oszlopok": [
+    {
+     "kulcs": "hajlasszog",
+     "cim": "Hajlásszög",
+     "egyseg": "°"
+    },
+    {
+     "kulcs": "K_Ny",
+     "cim": "Tájolás: K, Ny",
+     "egyseg": "kWh/év/kWp"
+    },
+    {
+     "kulcs": "DK_DNy",
+     "cim": "Tájolás: DK, DNy",
+     "egyseg": "kWh/év/kWp"
+    },
+    {
+     "kulcs": "D",
+     "cim": "Tájolás: D",
+     "egyseg": "kWh/év/kWp"
+    }
+   ],
+   "sorok": [
+    {
+     "hajlasszog": 0,
+     "K_Ny": 942,
+     "DK_DNy": 942,
+     "D": 942
+    },
+    {
+     "hajlasszog": 10,
+     "K_Ny": 934,
+     "DK_DNy": 988,
+     "D": 1010
+    },
+    {
+     "hajlasszog": 20,
+     "K_Ny": 917,
+     "DK_DNy": 1020,
+     "D": 1050
+    },
+    {
+     "hajlasszog": 30,
+     "K_Ny": 892,
+     "DK_DNy": 1030,
+     "D": 1080
+    },
+    {
+     "hajlasszog": 40,
+     "K_Ny": 858,
+     "DK_DNy": 1020,
+     "D": 1080
+    },
+    {
+     "hajlasszog": 50,
+     "K_Ny": 812,
+     "DK_DNy": 988,
+     "D": 1050
+    },
+    {
+     "hajlasszog": 60,
+     "K_Ny": 755,
+     "DK_DNy": 940,
+     "D": 1010
+    },
+    {
+     "hajlasszog": 70,
+     "K_Ny": 688,
+     "DK_DNy": 873,
+     "D": 935
+    },
+    {
+     "hajlasszog": 80,
+     "K_Ny": 611,
+     "DK_DNy": 787,
+     "D": 842
+    },
+    {
+     "hajlasszog": 90,
+     "K_Ny": 527,
+     "DK_DNy": 686,
+     "D": 727
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_13",
+   "cim": "Nyereségáramok – szövegben megadott korlátok",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "13.2.1 fejezet",
+    "oldal": 87,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Mennyiség",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "feltetel",
+     "cim": "Feltétel",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "P_PV_ossz_max_egyszerusitett",
+     "ertek": 20,
+     "egyseg": "kWp",
+     "feltetel": "A (13.1) egyszerűsített képlet 20 kWp beépített teljesítményt nem meghaladó mono- és polikristályos napelemes rendszerre alkalmazható"
+    }
+   ]
+  }
+ ]
+}
