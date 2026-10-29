@@ -80,6 +80,21 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Forrás:** egyszerűsített módszernél a 6.5. táblázat kategóriái (nehéz épület: 280 kJ/m²K); részletes számítás az MSZ EN ISO 52016-1 / 13786 szerint megengedett.
 - **Program:** jelenleg a 6.5. táblázat (felhasználói kategóriaválasztással). A rétegrend szerinti számítás később választható lesz. Hatás G1-ben: kb. +0,3 % Q_F,net.
 
+### E-14 – Hővisszanyerős szellőzés üzemideje — **E?** (G3 golden teszt)
+- **WinWatt (G3):** a ventilátor-energiánál Δt_LT,a = 5088 h, vagyis a fűtési idény (október–április, 212 nap · 24 h): W = 129,6·150/3600/0,5·5088/1000 = 54,95 kWh/év.
+- **Forrás:** t_LT,a „a szellőzés éves üzemideje” (10.20). Lakóépületnél a 2. függ. 2.1. táblázat 24 h · 365 nap használati időt ad. Hogy a gépi szellőzés nyáron áll-e, a terv adata.
+- **Program:** az üzemidő kötelező bemenet. Ha a rendszer egész évben üzemel, 8760 h (94,6 kWh/év). A G3 összevetése 5088 h-val készült.
+
+### E-15 – b-tényező évszakos alkalmazása — **E** (G3 golden teszt)
+- **WinWatt (G3):** a fűtési zónában minden hónapban b_tél (H_tr,x 16,1 W/K), a hűtési zónában minden hónapban b_nyár (38,6 W/K).
+- **Forrás:** „Októbertől áprilisig b_tél, májustól szeptemberig b_nyár értékeit kell alkalmazni fűtés és hűtés esetén” (1. függ. 6.1.3 b), 41. o.).
+- **Program:** a forrás szerint havonta váltó b (D-111).
+
+### E-16 – Nyári szellőzési tényező hűtésre — **E** (G3 és G1 golden teszt)
+- **WinWatt:** H_szell,H minden hónapban 216–337 W/K (G1, G3: januárban 218,2, júliusban 337,3). Az éjszakai többletszellőzést egész évben, havonta változó b_éjjel-lel (6.9) veszi figyelembe.
+- **Forrás:** az éjszakai többletszellőzés „májustól szeptemberig” vehető figyelembe (6.11), 45. o.; egyszerűsített számításnál b_éjjel = 1,5.
+- **Program:** május–szeptember, b_éjjel = 1,5. Hatás G3-ban: Q_H,net 346,9 kWh/év a 292,5 helyett (+19 %). A WinWatt H_szell,H és egész éves b_nyár bemenetével a mérleg ±2 %-on belül egyezik.
+
 ## 2. Egyezések (rögzítve, hogy ne kerüljenek vissza „eltérésként”)
 
 | # | Tétel | WinWatt | Forrás | Hivatkozás |
@@ -155,3 +170,17 @@ A K-007 szerinti WinWatt-exportok és OÉNY XML-ek beérkezése után minden E? 
   - fűtés (ε 0,30 ≤ 0,37): a környezeti hő 3359 kWh/év megújulóként számít;
   - HMV (ε 0,45 > 0,37): nem számít megújulónak (IND-028).
 - **G2, napelem:** a WinWatt a teljes termelést (4710 kWh/év) exportáltnak veszi. Az önfogyasztás kezelését a napelem-modulnál (13. fejezet) kell a módszerrel összevetni.
+
+### G3 – fűtetlen pince és garázs, hővisszanyerős szellőzés, split hűtés
+- **Egyezik:**
+  - pincefödém U 0,234, garázsfal U 0,252;
+  - H_tr,x 16,1 (tél) és 38,6 W/K (nyár);
+  - H_szell,F 12,2 W/K (6.12, η 85 %).
+- **Fűtés:** a WinWatt H_tr,D és C_m bemenetével Q_F,net ±2 %-on belül.
+- **Hűtés:** az E-15 és E-16 eltérések miatt a saját bemenettel +19 %. A WinWatt bemeneteivel ±2 %-on belül egyezik.
+- **Gépészet és indikátorok** (a WinWatt nettó igényeivel), mind egyezik:
+  - E_F,vég 346 kWh/év, W 138,24 kWh/év;
+  - E_HMV,vég 1447 kWh/év;
+  - ventilátor 54,95 kWh/év (5088 h, E-14);
+  - Q_H,vég 479 kWh/év (191,7 villamos);
+  - E_nren 52,19 kWh/m²év, E_CO2 10,55 kg/m²év.
