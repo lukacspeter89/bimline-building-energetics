@@ -18,15 +18,20 @@ export interface Jelolt<T> {
 export function alapteruletTablaErtek(hiv: TablaHivatkozas, oszlop: string, aRszr: number): Jelolt<number> {
   if (!(aRszr > 0)) throw new ErvenytelenBemenet(`Érvénytelen rendszer-alapterület: ${aRszr}`, 'RA-021');
   const sorok = tabla(hiv).sorok;
-  const nyitott = sorok.find((s) => s['A_rszr'] === null && typeof s['A_rszr_min'] === 'number');
-  if (nyitott && aRszr > (nyitott['A_rszr_min'] as number)) {
+  // A táblázatok az alapterületet „A_rszr” vagy („Alapterületig” fejlécnél) „A_rszr_max” kulccsal adják meg (D-122).
+  const pont = (s: NormativSor): number | null =>
+    typeof s['A_rszr'] === 'number' ? s['A_rszr'] : typeof s['A_rszr_max'] === 'number' ? s['A_rszr_max'] : null;
+  const nyitottHatar = (s: NormativSor): number | null =>
+    pont(s) !== null ? null : typeof s['A_rszr_min'] === 'number' ? s['A_rszr_min'] : typeof s['A_rszr_min_kizart'] === 'number' ? s['A_rszr_min_kizart'] : null;
+  const nyitott = sorok.find((s) => nyitottHatar(s) !== null);
+  if (nyitott && aRszr > nyitottHatar(nyitott)!) {
     const v = nyitott[oszlop];
     if (typeof v === 'number') return { ertek: v, jelzesek: [] };
   }
-  const szamos = sorok.filter((s): s is NormativSor => typeof s['A_rszr'] === 'number');
+  const szamos = sorok.filter((s) => pont(s) !== null);
   const kitoltott = szamos.filter((s) => typeof s[oszlop] === 'number');
   if (kitoltott.length === 0) throw new NormativAdatHiba(`A(z) ${hiv} „${oszlop}” oszlopa üres.`, hiv);
-  const a = (s: NormativSor): number => s['A_rszr'] as number;
+  const a = (s: NormativSor): number => pont(s)!;
   // A keresett alapterületet közrefogó sorok (a tartományon kívül a szélső sor).
   const also = [...szamos].reverse().find((s) => a(s) <= aRszr) ?? szamos[0]!;
   const felso = szamos.find((s) => a(s) >= aRszr) ?? szamos[szamos.length - 1]!;

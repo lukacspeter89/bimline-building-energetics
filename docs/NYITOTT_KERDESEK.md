@@ -233,6 +233,8 @@ az 1. melléklet 1.1. táblázatának 22. sorából hiányzó nyitó zárójel) 
 26. **10.2, 81. o.** Részletes módszer szabványlistájában az „MSZ EN 16798-5-2” kétszer szerepel (valószínűleg az egyik 16798-5-1 lenne).
 27. **0,35 szorzó, (10.3)–(10.14).** Mértékegysége (Wh/(m³·K)) a forrásban nincs kiírva; az értelmezés a képlet szerkezetéből adódik.
 
+28. **9.3.2.1, 71. o.** A szöveg szerint az elektromos ErP készülék teljesítménytényezője a szezonális hatásfok „reciprokának 2,5-szerese” (2,5/η_s), a (9.9) képlet viszont ε = 1/(2,5·η_s). A program a képletet követi (D-123).
+
 ### B.5 1. Függelék 11–14. fejezet (hűtés, világítás, nyereségáramok, indikátorok)
 
 - **A-HUT-1** (83. o., 11.2. táblázat): földgáz üzemű HP, hulladékhő hasznosítva: SEER 1,7 → ε_H 0,58, holott 1/1,7 = 0,588 (két tizedesre 0,59). A többi sor kerekítve egyezik. Átvéve 0,58-ként.
