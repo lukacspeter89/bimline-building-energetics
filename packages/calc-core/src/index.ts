@@ -23,3 +23,5 @@ export * from './netto/transzmisszio.js';
 export * from './netto/szellozes.js';
 export * from './netto/nyereseg.js';
 export * from './netto/merleg.js';
+export * from './rendszer/kozos.js';
+export * from './rendszer/futes.js';

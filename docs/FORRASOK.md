@@ -71,3 +71,5 @@ daafc79908f50231d2056d476a7b34b7b9ab3c86353d260755f47f761db37511  jogszabaly/176
 a665c01b1562646b1ad347af2132a434606376daf99e644e96e59d787f8ed976  modszer/9_2023_EKM_szamitasi_modszer_2_fuggelek.pdf
 dfb4cbe5fc97c87b9b8291e915272776d98fae5f5404802400d5c4097a064494  (nincs a repóban) Meteo háttéradat PDF, F-05
 ```
+
+**A TE segédlet feldolgozása (2026-10-29):** a Drive-connector a PDF szövegét csak a 6.2.4 pontig (kb. 81. oldal, a 232-ből) adta vissza. Ebben a részben kidolgozott, tesztnek alkalmas számpélda nincs. Az értelmezései közül a programban figyelembe vett pontok (mind összhangban a módszerrel): talajon fekvő padlónál B = A/(0,5P) a kondicionált tér padlójára; ismeretlen talaj 2. típus; b_tél október–április, b_nyár május–szeptember; a megújuló részarány csak informatív indikátor. A segédlet saját belső ellentmondása (4.5. ábra: „fűtött” a képlet „fűtetlen” szövegével szemben) a programot nem érinti, a módszer szövegét követjük. A 82. oldaltól a PDF-et más úton kell beolvasni.
