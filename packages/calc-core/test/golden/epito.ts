@@ -3,14 +3,27 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import {
+  HONAPOK,
+  direktTranszmisszio,
   egyhejuNyilaszaroU,
+  ejszakaiTobbletSzellozes,
+  hotaroloKepesseg,
+  psiPf,
+  talajHoatvitel,
+  termeszetesSzellozes,
   feluletiEllenallas,
   homogenRtot,
   hoatbocsatasiTenyezo,
   retegEllenallas,
   talajonFekvoPadlo,
+  type FutetlenHatarolo,
+  type FutetlenTerTipus,
   type HoaramIrany,
+  type HotaroloKategoria,
+  type NettoZonaBemenet,
+  type PsiPfBemenet,
   type Tajolas,
+  type Transzparens,
 } from '../../src/index.js';
 
 const GYOKER = fileURLToPath(new URL('../../../../tests/golden/', import.meta.url));
@@ -111,3 +124,95 @@ export function padloU(be: GoldenBemenet, panel: string, A: number, P: number, d
 }
 
 export const TAJOLAS: Record<GoldenFal['side'], Tajolas> = { N: 'É', E: 'K', S: 'D', W: 'Ny' };
+
+export interface ZonaEpitesOpciok {
+  /** Feltevés a 6.4. táblázathoz: a lábazati fal kialakítása (a golden bemenet nem adja meg). */
+  labazatiFal: PsiPfBemenet['labazatiFal'];
+  /** A 6.5. táblázat kategóriája. */
+  cmKategoria: HotaroloKategoria;
+}
+
+export interface ZonaEpites {
+  zona: NettoZonaBemenet;
+  elemek: { A: number; U: number }[];
+  /** A fűtött teret határoló összes felület [m²] (A/V-hez). */
+  Aossz: number;
+  padlo?: ReturnType<typeof padloU>;
+}
+
+/**
+ * A golden bemenet összes helyiségéből egyetlen zóna (lakóépület, 20/26 °C, n = 0,5 1/h, n_filt = 0,06 1/h,
+ * q_b = 5 W/m², σ = 1; 2. függ. 2.1., 2.4. táblázat). Hőhíd-korrekció nincs (README: dU_tb = 0).
+ */
+export function zonaEpit(be: GoldenBemenet, o: ZonaEpitesOpciok): ZonaEpites {
+  const elemek: { A: number; U: number }[] = [];
+  const transzparens: Transzparens[] = [];
+  const futetlen: FutetlenHatarolo[] = [];
+  let Aossz = 0;
+  let V = 0;
+  let padlo: ReturnType<typeof padloU> | undefined;
+  let hTrT = 0;
+  const falazat = be.materials_used['Kerámia falazóblokk 30 (teszt)']!.lambda;
+  const uFal = retegtervU(be, 'R1./ Külső fal', 'vizszintes');
+  for (const h of be.rooms) {
+    V += h.area * h.height;
+    for (const fal of h.walls) {
+      let nyilasok = 0;
+      for (const [x, y, db] of h.windows[fal.side] ?? []) {
+        const a = ablakU(be, x, y);
+        elemek.push({ A: x * y * db, U: a.U });
+        transzparens.push({ Au: a.Au * db, gN: be.window.g, tajolas: TAJOLAS[fal.side], hajlasszog: 90, fArny: { F: 1, H: 1 } });
+        nyilasok += x * y * db;
+      }
+      if (h.door && h.door[0] === fal.side) {
+        elemek.push({ A: h.door[1] * h.door[2], U: be.door.U });
+        nyilasok += h.door[1] * h.door[2];
+      }
+      elemek.push({ A: fal.A - nyilasok, U: uFal });
+      Aossz += fal.A;
+    }
+    if (h.roof) {
+      elemek.push({ A: h.roof.A, U: retegtervU(be, h.roof.panel, 'felfele') });
+      Aossz += h.roof.A;
+    }
+    const fut = (panel: string, A: number, irany: HoaramIrany, tipus: FutetlenTerTipus): void => {
+      futetlen.push({ hTrIx: A * retegtervU(be, panel, irany, true), b: { tipus } });
+      Aossz += A;
+    };
+    if (h.attic) fut(h.attic.panel, h.attic.A, 'felfele', 'Padlástérrel határos födém vagy fal');
+    if (h.basement) fut(h.basement.panel, h.basement.A, 'lefele', 'Zárt, fűtetlen pincével határos födém vagy fal');
+    if (h.garage_wall) fut(h.garage_wall.panel, h.garage_wall.A, 'vizszintes', 'Zárt, fűtetlen garázzsal határos födém vagy fal');
+    if (h.floor) {
+      padlo = padloU(be, h.floor.panel, h.floor.A, h.floor.P, be.iso!.w);
+      const psi = psiPf({
+        lambdaFalazat: falazat,
+        kulsoFalKialakitasa: 'külső oldali, megszakítatlan hőszigeteléssel',
+        labazatiFal: o.labazatiFal,
+        padloHoszigetelesR: retegekR(be, h.floor.panel),
+      });
+      hTrT += talajHoatvitel(h.floor.A, padlo.U, h.floor.P, psi);
+      Aossz += h.floor.A;
+    }
+  }
+  const hTrD = direktTranszmisszio({ elemek });
+  const hSzF = termeszetesSzellozes(0.5, 1, 0.06, V);
+  const ej = { zajPorRendben: true, nincsVagyonvedelmiKockazat: true, automatikusNyitasVagyLako: true };
+  const zona: NettoZonaBemenet = {
+    aN: be.heated_area,
+    V,
+    thetaIF: 20,
+    thetaIH: 26,
+    cmEff: hotaroloKepesseg(o.cmKategoria, be.heated_area),
+    hTrD: { F: hTrD, H: hTrD },
+    futetlen,
+    hTrT,
+    hSzell: { F: hSzF, H: HONAPOK.map((m) => hSzF + ejszakaiTobbletSzellozes(m, 6, V, ej)) },
+    transzparens,
+    qb: 5,
+    sigmaF: 1,
+    sigmaH: 1,
+  };
+  return padlo ? { zona, elemek, Aossz, padlo } : { zona, elemek, Aossz };
+}
+
+export const relativ = (a: number, b: number): number => Math.abs(a - b) / Math.abs(b);

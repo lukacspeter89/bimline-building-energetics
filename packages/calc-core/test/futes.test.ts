@@ -40,6 +40,13 @@ describe('Közös táblázatkezelés (7. fejezet)', () => {
     expect(v.jelzesek[0]).toMatch(/D-020/);
   });
 
+  it('RA-022 üres cellánál a két oldali kitöltött cellák között interpoláció (D-131)', () => {
+    // 8.15. táblázat, fűtött tér, 35/28: 100 m² → 0,1; 150–200 m² üres; 300 m² → 0,0
+    const v = alapteruletTablaErtek('modszer/futes#tabla_8_15', 'Q_tar_futott_ter_35_28', 160);
+    expect(v.ertek).toBeCloseTo(0.07, 12);
+    expect(v.jelzesek[0]).toMatch(/D-131/);
+  });
+
   it('RA-024 hőfoklépcső-interpoláció a közepes hőmérsékletre (D-119)', () => {
     expect(kozepHomerseklet({ elore: 70, vissza: 55 })).toBe(62.5);
     expect(() => kozepHomerseklet({ elore: 40, vissza: 50 })).toThrow(ErvenytelenBemenet);

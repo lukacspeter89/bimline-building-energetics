@@ -125,3 +125,24 @@ A K-007 szerinti WinWatt-exportok és OÉNY XML-ek beérkezése után minden E? 
   - W_F,vég 214,08 kWh/év;
   - HMV: q 25 kWh/m²év, 24 % + 10 %, ε 1,17, Q_HMV,vég 3763 kWh/év, W 28,8 kWh/év.
 - **Primerenergia (kézi ellenőrzés):** a gáz Q_vég·0,9 (F_fé/éh)·1,1 + W·2,3 = 48,71 kWh/m²év fűtésre, egyezik. Ez megerősíti, hogy a súlyozás fűtőérték alapon történik (D-129).
+
+### G2 – kétszintes ház hideg padlással, levegő-víz hőszivattyú, HMV-hőszivattyú, napelem
+- **Egyezik:**
+  - padlásfödém U 0,141;
+  - b = 0,9 (H_tr,x 10,2 W/K);
+  - A/V 0,82;
+  - H_szell 84,7 W/K;
+  - szoláris nyereség.
+- **A havi mérleg** a WinWatt H és C_m bemenetével: éves 4623 kWh/év a 4608 kWh/év helyett (+0,3 %).
+- **Gépészet**, mind egyezik:
+  - ε_F 0,30;
+  - ε_F,szab 1,018;
+  - q_F,száll 0,60 kWh/m²év;
+  - q_F,tár 0,07 kWh/m²év;
+  - W_F,vég 202,56 kWh/év;
+  - Q_F,vég 1439 kWh/év;
+  - HMV: tárolás 16,4 %, ε 0,45, Q_HMV,vég 2275 kWh/év.
+- **A WinWatt a táblázatok sorai között lineárisan interpolál:** w_sziv 0,854, w_tár 0,412 kWh/m²év, HMV-tárolás 16,4 % 160 m²-nél. Ez a D-122 értelmezést igazolja.
+- **Üres cellánál** a WinWatt a szomszédos kitöltött cellák között interpolál (8.15. táblázat: 0,07). A program ezt átvette (D-131).
+- **Eltérés:** H_tr,D +2,3 % (E-12, ablak U*). Az ablakoknál U* ≈ 1/(1/U + 0,085), vagyis kb. 0,085 m²K/W állandó többlet-hőellenállásnak felel meg, árnyékoló nélkül is.
+- **Napelem:** a WinWatt két különböző értéket ad. A PDF-ben 4320 kWh/év „éves energiahozam” szerepel, a mérlegben viszont 4710 kWh/év exportált energia. A napelem-modul elkészülte után kell összevetni.

@@ -13,7 +13,8 @@ export interface Jelolt<T> {
  * Alapterület szerinti táblázat egy oszlopának értéke a rendszer-alapterületnél (RA-021, RA-022; 1. függ. 7. fej., 55. o.):
  * - a számszerű A_rszr sorok között lineáris interpoláció, a tartományon kívül a szélső érték (D-021);
  * - a „> X” sor (A_rszr = null, A_rszr_min = X) X felett állandó érték (D-118);
- * - üres (null) cellánál az oszlop legközelebbi kitöltött értéke, jelöléssel (D-020).
+ * - üres (null) cellánál interpoláció a két oldali kitöltött cellák között (D-131), ha csak egy oldalon van kitöltött
+ *   cella, az oszlop legközelebbi kitöltött értéke (D-020); mindkettő jelöléssel.
  */
 export function alapteruletTablaErtek(hiv: TablaHivatkozas, oszlop: string, aRszr: number): Jelolt<number> {
   if (!(aRszr > 0)) throw new ErvenytelenBemenet(`Érvénytelen rendszer-alapterület: ${aRszr}`, 'RA-021');
@@ -36,6 +37,15 @@ export function alapteruletTablaErtek(hiv: TablaHivatkozas, oszlop: string, aRsz
   const also = [...szamos].reverse().find((s) => a(s) <= aRszr) ?? szamos[0]!;
   const felso = szamos.find((s) => a(s) >= aRszr) ?? szamos[szamos.length - 1]!;
   if (typeof also[oszlop] !== 'number' || typeof felso[oszlop] !== 'number') {
+    const pontok = kitoltott.map((s) => [a(s), s[oszlop] as number] as const);
+    // Ha a keresett alapterület két oldalán is van kitöltött cella, azok között interpolálunk (D-131);
+    // egyébként az oszlop legközelebbi kitöltött értéke (D-020).
+    if (pontok[0]![0] < aRszr && pontok[pontok.length - 1]![0] > aRszr) {
+      return {
+        ertek: linearisInterpolacio(pontok, aRszr),
+        jelzesek: [`D-131: a ${hiv} táblázat „${oszlop}” oszlopa ${aRszr} m²-nél üres; interpoláció a szomszédos kitöltött cellák között.`],
+      };
+    }
     const legkozelebbi = [...kitoltott].sort((x, y) => Math.abs(a(x) - aRszr) - Math.abs(a(y) - aRszr))[0]!;
     return {
       ertek: szamMezo(legkozelebbi, oszlop, hiv),
