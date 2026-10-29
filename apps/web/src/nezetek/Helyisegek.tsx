@@ -122,6 +122,11 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
   const r = p.retegrendek.find((x) => x.azon === b.retegrendAzon);
   const fuggoleges = (b.hajlasszog ?? 90) >= 60;
   const nyA = b.nyilasok.reduce((s, n) => s + n.szelesseg * n.magassag * n.db, 0);
+  // Javaslat a padló kitett kerületére: a helyiség külső levegővel határos falainak hossza (felület / belmagasság).
+  const falHossz =
+    h.belmagassag > 0
+      ? Math.round((h.hatarolok.filter((x) => x.tuloldal.fajta === 'külső' && (x.hajlasszog ?? 90) >= 60).reduce((s, x) => s + x.felulet, 0) / h.belmagassag) * 100) / 100
+      : 0;
   // Gyakori ablakméretek a projektből – egy érintéssel újra felvehetők.
   const meretek = [...new Set(p.helyisegek.flatMap((x) => x.hatarolok.flatMap((y) => y.nyilasok.map((n) => `${n.nyilaszaroAzon}|${n.szelesseg}|${n.magassag}`))))].slice(0, 6);
   return (
@@ -180,6 +185,11 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
         <SzamMezo id={`b-${b.azon}-a`} cimke="Bruttó felület" egyseg="m²" ertek={b.felulet} onValtozas={(v) => valtoztat((x) => void (x.felulet = v))} />
         {r?.szerkezet === 'talajon_fekvo_padlo' && (
           <SzamMezo id={`b-${b.azon}-p`} cimke="Kitett kerület (4.20)" egyseg="m" ertek={b.kitettKerulet} onValtozas={(v) => valtoztat((x) => void (x.kitettKerulet = v))} />
+        )}
+        {r?.szerkezet === 'talajon_fekvo_padlo' && falHossz > 0 && Math.abs(falHossz - (b.kitettKerulet ?? 0)) > 0.005 && (
+          <button type="button" class="meret" onClick={() => valtoztat((x) => void (x.kitettKerulet = falHossz))}>
+            = a helyiség külső falainak hossza: {szam(falHossz, 2)} m
+          </button>
         )}
         {!fuggoleges && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}
       </div>

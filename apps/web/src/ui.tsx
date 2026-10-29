@@ -1,6 +1,6 @@
 // Közös beviteli elemek: magyar tizedesvessző, mobil billentyűzet, mértékegység a mezőben.
 import type { ComponentChildren } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 export const szam = (x: number, tized = 1): string =>
   Number.isFinite(x) ? x.toLocaleString('hu-HU', { minimumFractionDigits: tized, maximumFractionDigits: tized }).replace(/\u00a0/g, '\u202f') : '–';
@@ -48,11 +48,15 @@ export function SzamMezo(p: {
   );
 }
 
-export function SzovegMezo(p: { id: string; cimke: string; ertek: string; onValtozas: (s: string) => void; hely?: string }) {
+export function SzovegMezo(p: { id: string; cimke: string; ertek: string; onValtozas: (s: string) => void; hely?: string; fokusz?: boolean }) {
+  const ref = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (p.fokusz) ref.current?.select();
+  }, [p.fokusz]);
   return (
     <label class="mezo">
       <span class="cimke">{p.cimke}</span>
-      <input id={p.id} class="szoveg" value={p.ertek} placeholder={p.hely} onInput={(e) => p.onValtozas((e.target as HTMLInputElement).value)} />
+      <input ref={ref} id={p.id} class="szoveg" value={p.ertek} placeholder={p.hely} onInput={(e) => p.onValtozas((e.target as HTMLInputElement).value)} />
     </label>
   );
 }

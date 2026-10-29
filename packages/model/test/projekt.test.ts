@@ -62,6 +62,14 @@ describe('Ellenőrzés', () => {
     expect(uzenetek.some((u) => u.includes('hővezetési tényező'))).toBe(true);
   });
 
+  it('HT-088 a talajon fekvő padló 0 kitett kerületét a beviteli ellenőrzés jelzi (nem a számítás dobja)', () => {
+    const p = goldenProjekt('G1');
+    const padlo = p.helyisegek.flatMap((h) => h.hatarolok).find((b) => b.tuloldal.fajta === 'talaj')!;
+    padlo.kitettKerulet = 0;
+    const h = ellenoriz(p).filter((x) => x.sulyossag === 'hiba');
+    expect(h.some((x) => x.uzenet.includes('kitett kerülete'))).toBe(true);
+  });
+
   it('a feltételezett (nem termékadatlapos) anyagot és a kikapcsolt hőhíd-korrekciót figyelmeztetésként jelzi', () => {
     const f = ellenoriz(goldenProjekt('G1')).filter((h) => h.sulyossag === 'figyelmeztetés');
     expect(f.some((h) => h.uzenet.startsWith('Feltételezett érték'))).toBe(true);

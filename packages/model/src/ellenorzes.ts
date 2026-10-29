@@ -60,10 +60,10 @@ export function ellenoriz(p: Projekt): Hiany[] {
         else nyA += n.szelesseg * n.magassag * n.db;
         if (t?.fajta === 'ablak' && b.tuloldal.fajta === 'külső' && !b.tajolas) hiba(hely, 'Ablakos külső határolónál a tájolás szükséges (szoláris nyereség).', b.azon);
       }
-      if (nyA > b.felulet + 1e-9) hiba(hely, `A nyílások (${nyA.toFixed(2)} m²) nagyobbak a határolónál (${b.felulet.toFixed(2)} m²).`, b.azon);
+      if (nyA > b.felulet + 1e-9) hiba(hely, `A nyílások (${nyA.toFixed(2).replace('.', ',')} m²) nagyobbak a határolónál (${b.felulet.toFixed(2).replace('.', ',')} m²).`, b.azon);
       if (r.szerkezet === 'talajon_fekvo_padlo') {
         if (b.tuloldal.fajta !== 'talaj') hiba(hely, 'Talajon fekvő padló túloldala a talaj.', b.azon);
-        if (b.kitettKerulet === undefined) hiba(hely, 'A talajon fekvő padló kitett kerülete szükséges (4.20).', b.azon);
+        if (!pozitiv(b.kitettKerulet)) hiba(hely, 'A talajon fekvő padló kitett kerülete szükséges (4.20).', b.azon);
       }
       if (b.tuloldal.fajta === 'talaj' && r.szerkezet !== 'talajon_fekvo_padlo') {
         hiba(hely, 'Talajjal érintkező falat és pincepadlót a bemutató még nem kezel (4.4.3–4.4.4).', b.azon);

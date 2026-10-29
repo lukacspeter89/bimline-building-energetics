@@ -1,3 +1,4 @@
+import { useState } from 'preact/hooks';
 import { ujAzon, type Anyag, type Forras, type NyilaszaroTipus, type Projekt, type SzerkezetTipus } from '@bimline/model';
 import type { Valtoztat } from '../App.js';
 import { Kartya, SzamMezo, SzovegMezo, TorlesGomb, Valaszto, szam } from '../ui.js';
@@ -40,6 +41,13 @@ function ForrasMezo({ forras, onValtozas, id }: { forras: Forras; onValtozas: (f
 
 export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtoztat }) {
   const anyagNev = new Map(p.anyagok.map((a) => [a.azon, a]));
+  // Az épp felvett elem nyitva jelenik meg, a neve kijelölve – rögtön felülírható.
+  const [friss, setFriss] = useState<string | null>(null);
+  const uj = (elotag: string): string => {
+    const azon = ujAzon(elotag);
+    setFriss(azon);
+    return azon;
+  };
   return (
     <>
       <Kartya
@@ -47,7 +55,7 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
         jobb={
           <button
             class="masodlagos"
-            onClick={() => valtoztat((x) => void x.anyagok.push({ azon: ujAzon('a'), nev: 'Új anyag', lambda: 1, forras: { tipus: 'termekadatlap', hivatkozas: '' } }))}
+            onClick={() => valtoztat((x) => void x.anyagok.push({ azon: uj('a'), nev: 'Új anyag', lambda: 1, forras: { tipus: 'termekadatlap', hivatkozas: '' } }))}
           >
             + Anyag
           </button>
@@ -55,12 +63,12 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
       >
         <p class="halk">A λ csak termékadatlapról vehető fel; ha nincs adatlap, „feltevés” jelöléssel (ezt az eredmény jelzi).</p>
         {p.anyagok.map((a: Anyag, i) => (
-          <details key={a.azon} class="elem">
+          <details key={a.azon} class="elem" open={a.azon === friss}>
             <summary>
               <b>{a.nev}</b> <span class="halk">λ = {szam(a.lambda, 3)} W/mK{a.forras.tipus === 'feltevés' ? ' · feltevés' : ''}</span>
             </summary>
             <div class="racs">
-              <SzovegMezo id={`a-${a.azon}-nev`} cimke="Név" ertek={a.nev} onValtozas={(s) => valtoztat((x) => void (x.anyagok[i]!.nev = s))} />
+              <SzovegMezo fokusz={a.azon === friss} id={`a-${a.azon}-nev`} cimke="Név" ertek={a.nev} onValtozas={(s) => valtoztat((x) => void (x.anyagok[i]!.nev = s))} />
               <SzamMezo id={`a-${a.azon}-l`} cimke="Hővezetési tényező λ" egyseg="W/mK" ertek={a.lambda} onValtozas={(v) => valtoztat((x) => void (x.anyagok[i]!.lambda = v))} />
             </div>
             <ForrasMezo id={`a-${a.azon}`} forras={a.forras} onValtozas={(f) => valtoztat((x) => void (x.anyagok[i]!.forras = f))} />
@@ -74,7 +82,7 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
         jobb={
           <button
             class="masodlagos"
-            onClick={() => valtoztat((x) => void x.retegrendek.push({ azon: ujAzon('r'), nev: `R${x.retegrendek.length + 1}./ Új szerkezet`, szerkezet: 'homlokzati_fal', retegek: [] }))}
+            onClick={() => valtoztat((x) => void x.retegrendek.push({ azon: uj('r'), nev: `R${x.retegrendek.length + 1}./ Új szerkezet`, szerkezet: 'homlokzati_fal', retegek: [] }))}
           >
             + Rétegrend
           </button>
@@ -82,12 +90,12 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
       >
         <p class="halk">A név a tervben szereplő jelölés legyen. A rétegek kívülről befelé.</p>
         {p.retegrendek.map((r, i) => (
-          <details key={r.azon} class="elem">
+          <details key={r.azon} class="elem" open={r.azon === friss}>
             <summary>
               <b>{r.nev}</b> <span class="halk">{SZERKEZET_NEV[r.szerkezet]} · {r.retegek.length} réteg</span>
             </summary>
             <div class="racs">
-              <SzovegMezo id={`r-${r.azon}-nev`} cimke="Név (terv szerint)" ertek={r.nev} onValtozas={(s) => valtoztat((x) => void (x.retegrendek[i]!.nev = s))} />
+              <SzovegMezo fokusz={r.azon === friss} id={`r-${r.azon}-nev`} cimke="Név (terv szerint)" ertek={r.nev} onValtozas={(s) => valtoztat((x) => void (x.retegrendek[i]!.nev = s))} />
               <Valaszto
                 id={`r-${r.azon}-sz`}
                 cimke="Szerkezettípus (elemi követelmény)"
@@ -119,7 +127,7 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
               >
                 + Réteg
               </button>
-              <button class="masodlagos" onClick={() => valtoztat((x) => void x.retegrendek.push({ ...structuredClone(r), azon: ujAzon('r'), nev: `${r.nev} (másolat)` }))}>
+              <button class="masodlagos" onClick={() => valtoztat((x) => void x.retegrendek.push({ ...structuredClone(r), azon: uj('r'), nev: `${r.nev} (másolat)` }))}>
                 Másolat
               </button>
               <TorlesGomb cimke="Rétegrend törlése" onTorol={() => valtoztat((x) => void x.retegrendek.splice(i, 1))} />
@@ -136,7 +144,7 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
             onClick={() =>
               valtoztat((x) =>
                 void x.nyilaszarok.push({
-                  azon: ujAzon('ny'),
+                  azon: uj('ny'),
                   nev: 'Új ablak',
                   fajta: 'ablak',
                   osszetevok: { Ug: 1.1, g: 0.6, Uf: 1.3, keretSzelesseg: 0.11, psiG: 0.06 },
@@ -150,12 +158,12 @@ export function SzerkezetekNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valt
         }
       >
         {p.nyilaszarok.map((t: NyilaszaroTipus, i) => (
-          <details key={t.azon} class="elem">
+          <details key={t.azon} class="elem" open={t.azon === friss}>
             <summary>
               <b>{t.nev}</b> <span class="halk">{t.fajta === 'ablak' ? `U_g ${szam(t.osszetevok?.Ug ?? NaN, 2)} · U_f ${szam(t.osszetevok?.Uf ?? NaN, 2)}` : `U ${szam(t.U ?? NaN, 2)} W/m²K`}</span>
             </summary>
             <div class="racs">
-              <SzovegMezo id={`ny-${t.azon}-nev`} cimke="Név" ertek={t.nev} onValtozas={(s) => valtoztat((x) => void (x.nyilaszarok[i]!.nev = s))} />
+              <SzovegMezo fokusz={t.azon === friss} id={`ny-${t.azon}-nev`} cimke="Név" ertek={t.nev} onValtozas={(s) => valtoztat((x) => void (x.nyilaszarok[i]!.nev = s))} />
               <Valaszto
                 id={`ny-${t.azon}-f`}
                 cimke="Fajta"

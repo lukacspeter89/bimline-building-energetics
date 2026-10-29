@@ -250,7 +250,7 @@ function szamol(p: Projekt): ProjektEredmeny {
             : 0;
         hTrT += talajHoatvitel(b.felulet, padlo.U, P, psi);
         talajA += b.felulet;
-        const o = szerkOssz.get(r.azon) ?? { A: 0, UA: 0, r, megj: `B = ${padlo.B.toFixed(2)} m; Ψ_p,f = ${psi} W/mK` };
+        const o = szerkOssz.get(r.azon) ?? { A: 0, UA: 0, r, megj: `B = ${padlo.B.toFixed(2).replace('.', ',')} m; Ψ_p,f = ${String(psi).replace('.', ',')} W/mK` };
         o.A += b.felulet;
         o.UA += b.felulet * padlo.U;
         szerkOssz.set(r.azon, o);
