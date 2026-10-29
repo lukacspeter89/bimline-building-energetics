@@ -2,6 +2,8 @@
 
 **Állapot:** 0. fázis, előzetes lista (2026-10-29). Az alap a `docs/winwatt/SKILL_winwatt.md` (WinWatt 9.58, 2026.06.08, GUI-feltérképezés és export/import körök) és a hatályos forrás (`FORRASOK.md`). Valós projektek összevetése (golden tesztek) még nem volt, ezért a tételek egy része **„ellenőrizendő”**: a WinWatt-exportból látszik a beállítás, de hogy a WinWatt a számításban valóban így használja-e, azt a golden teszt dönti el.
 
+**Péter döntése (2026-10-29): minden a rendelet szerint számol.** A WinWatt nem rendelet szerinti pontjainak összefoglalója: `docs/WINWATT_NEM_RENDELETI.md`.
+
 Szabály: ahol a WinWatt (vagy a WinWatt-ban kialakult munkamód) és a jogszabály / módszer ütközik, **a program a jogszabályt követi**. A WinWatt-kompatibilis importnál a program jelzi az eltérést, és a felhasználói felületen is jelöli.
 
 Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő eltérés, **=** = egyezés (a forrás és a WinWatt azonos; a félreértések elkerülése végett rögzítve).
@@ -47,8 +49,8 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 ### E-07 – Szellőzés ventilátor-energiája: Δp/η képlet ErP-készüléknél is; η = 50% alapérték — **E?**
 - **WinWatt-gyakorlat:** ventilátor-teljesítmény = dpVent · légmennyiség / VentEfficiency (pl. 150 Pa, 50%) (SKILL 6.4, Péter sablonja: dpVent 150, VentEfficiency 50).
 - **Forrás:** az ErP (1253/2014/EU) hatálya alá eső szellőzőkészüléknél a (10.17) képlet: `W_vent = V̇ · MISC · SPI · Δt / CTRL^x`, az SPI a gyártói adatlapról, és 2018.01.01. után forgalomba hozott készüléknél kötelező (1. függ. 10.1.4.1, 78. o.). A Δp/η képlet (10.20) az egyszerűsített módszeré; ott a ventilátor-összhatásfok alapértéke pontosabb adat hiányában V̇ < 1000 m³/h esetén **0,40** (1. függ. 10.8. táblázat, 81. o.).
-- **Eltérés:** a 2018 utáni lakossági hővisszanyerős szellőzőknél az SPI-alapú számítás az előírt. A 0,50-es hatásfok sem a táblázati alapérték, és termékadat nélkül nem vehető fel (Péter szabálya is).
-- **Program:** az ErP-készüléknél SPI kötelező (adatlap forrással). Termékadat nélkül a 10.8. táblázat értéke alkalmazandó, „alapérték” jelöléssel.
+- **Eltérés:** a 0,50-es hatásfok nem a táblázati alapérték, és termékadat nélkül nem vehető fel (Péter szabálya is). Pontosítás (2026-10-29): a módszer szerint az ErP-képlet (10.17) alkalmazása nem kötelező (LT-026), a Δp/η képlet (10.20) is rendeleti.
+- **Program:** (10.20) az adatlap szerinti η-val; termékadat nélkül a 10.8. táblázat értéke, figyelmeztetéssel.
 
 ### E-08 – Fűtött téren belüli kondenzációs kazán 100 m² felett — **E?** (forráshiány)
 - **WinWatt-érték:** kondenzációs kazán fűtött térben Ck 1,01, qkv 0,79 (21,87 m²-es tesztprojekt, SKILL 6.4).
@@ -101,7 +103,7 @@ Jelölés: **E** = eltérés (a forrás egyértelmű), **E?** = ellenőrizendő 
 - **Program:** 4320 kWh/év → E_nren = −5,79 kWh/m²év.
 - **Megoldva (Péter, 2026-10-29):** sablonból maradt érték volt; a napelem-párbeszédablak OK-zása után a WinWatt is 4320 kWh/év-vel számol (E_nren −5,79; E_CO2 1,42), a G2 fájlok újragenerálva. A program és a WinWatt egyezik.
 
-### E-18 – Referencia épülettechnikai rendszer és rendszerminősítés — **E** (G1 golden teszt)
+### E-18 – Referencia épülettechnikai rendszer és rendszerminősítés — **E** (G1 golden teszt; Péter döntése 2026-10-29: a rendelet szerint)
 - **WinWatt (G1):** a referencia-adatlap szerint „hőtermelő a fűtött téren kívül, elosztóvezetékek a fűtött téren kívül”, HMV-elosztás a fűtött téren kívül. A tárgyi épületben mindkettő a fűtött térben van. A referenciarendszert a tárgyi épület nettó igényére (3912 kWh/év) számolja: E_F,nren,REF = 5385,9, E_HMV,nren,REF = 4525,8 kWh/év. A program ezeket a WinWatt feltevéseivel pontosan visszaadja. A minősítés: fűtés 86,8 % („jó”), HMV 83,8 % („jó”).
 - **Forrás:**
   - 9/2023 ÉKM 5. melléklet 2.1.1.: a hőtermelő helye „a tárgyi épület állapotának megfelelően adottságként veendő figyelembe”;

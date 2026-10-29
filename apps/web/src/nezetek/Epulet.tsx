@@ -53,8 +53,7 @@ export function EpuletNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtoztat
           />
         </div>
         <Kapcsolo id="uj" cimke="Új épület (a talajjal érintkező szerkezetek követelménye)" ertek={e.ujEpulet} onValtozas={(v) => valtoztat((x) => void (x.epulet.ujEpulet = v))} />
-        <Kapcsolo id="hohid" cimke="Csatlakozási hőhidak korrekciója (ζ, 6.1. tábla)" ertek={e.hohidKorrekcio} onValtozas={(v) => valtoztat((x) => void (x.epulet.hohidKorrekcio = v))} />
-        <p class="halk">A golden mintákban a hőhíd-korrekció a WinWatt-összevetés miatt ki van kapcsolva; valós projektnél kapcsold be.</p>
+        <p class="halk">A csatlakozási hőhidakat a program mindig a módszer szerinti ζ-val veszi figyelembe (6.1–6.2. táblázat).</p>
       </Kartya>
     </>
   );

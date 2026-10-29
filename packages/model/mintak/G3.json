@@ -17,8 +17,7 @@
   "szakaszosFutes": false,
   "labazatiFal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
   "kulsoFalKialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
-  "hohidassag": "erősen hőhidas",
-  "hohidKorrekcio": false
+  "hohidassag": "erősen hőhidas"
  },
  "anyagok": [
   {
@@ -440,8 +439,7 @@
    "legcsere": 0.5,
    "etaR": 0.85,
    "dp": 150,
-   "etaVent": 0.5,
-   "uzemido": 5088
+   "uzemido": 8760
   },
   "hutes": {
    "hutogep": "Kompresszoros léghűtés (split)",

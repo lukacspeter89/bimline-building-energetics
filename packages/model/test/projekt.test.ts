@@ -11,32 +11,33 @@ const eredmeny = (eset: 'G1' | 'G2' | 'G3'): ProjektEredmeny => {
 };
 
 describe('Projekt-adatmodell – golden esetek', () => {
-  it('TAN-005 G1: Q_F,net 4046,5 kWh/év; B2023; E_nren 89,63; A/V 1,157', () => {
+  // A minták a rendelet szerint számolnak: csatlakozási hőhidak ζ-val (a WinWatt-golden dU_tb = 0, W-01).
+  it('TAN-005 G1: Q_F,net 4608,0 kWh/év; B2023; E_nren 95,58; A/V 1,157', () => {
     const e = eredmeny('G1');
-    expect(e.QFnet).toBeCloseTo(4046.51, 1);
+    expect(e.QFnet).toBeCloseTo(4607.96, 1);
     expect(e.av).toBeCloseTo(1.157, 3);
     expect(e.besorolasEp).toBe('B2023');
-    expect(e.Ep).toBeCloseTo(89.63, 2);
-    expect(e.futesMinosites.minosites).toBe('gyenge');
+    expect(e.Ep).toBeCloseTo(95.58, 2);
+    expect(e.futesMinosites.minosites).toBe('kozepes');
     expect(e.hmvMinosites.minosites).toBe('jo');
     // KOV-031: WinWatt 0,450 > 0,3 – nem teljesül
     expect(e.nyariHovedelem.arany).toBeCloseTo(0.45, 3);
     expect(e.nyariHovedelem.megfelel).toBe(false);
   });
 
-  it('TAN-005 MEG-004 G2: A+++2023; napelem 4320 kWh/év; E_nren −4,31', () => {
+  it('TAN-005 MEG-004 G2: A+++2023; napelem 4320 kWh/év; E_nren −1,32', () => {
     const e = eredmeny('G2');
     expect(e.besorolasEp).toBe('A+++2023');
     expect(e.vegso.find((v) => v.cel === 'PV')!.Q).toBe(4320);
-    expect(e.Ep).toBeCloseTo(-4.31, 2);
+    expect(e.Ep).toBeCloseTo(-1.32, 2);
   });
 
-  it('TAN-005 LT-041 HUT-001 G3: A+2023; ventilátor 54,95 kWh/év; hűtés villamos', () => {
+  it('TAN-005 LT-041 LT-051 HUT-001 G3: A+2023; ventilátor 129,6·150/(3600·0,40)·8,76 = 118,26 kWh/év; hűtés villamos', () => {
     const e = eredmeny('G3');
     expect(e.besorolasEp).toBe('A+2023');
-    expect(e.vegso.find((v) => v.cel === 'LT')!.W).toBeCloseTo(54.95, 2);
+    expect(e.vegso.find((v) => v.cel === 'LT')!.W).toBeCloseTo(118.26, 2);
     expect(e.vegso.some((v) => v.cel === 'H')).toBe(true);
-    expect(e.Ep).toBeCloseTo(56.5, 1);
+    expect(e.Ep).toBeCloseTo(60.78, 2);
   });
 
   it('KOV-020 szerkezetek az elemi követelménnyel: fal 0,176 ≤ 0,24; ablak méretenként súlyozott U', () => {
@@ -70,10 +71,10 @@ describe('Ellenőrzés', () => {
     expect(h.some((x) => x.uzenet.includes('kitett kerülete'))).toBe(true);
   });
 
-  it('a feltételezett (nem termékadatlapos) anyagot és a kikapcsolt hőhíd-korrekciót figyelmeztetésként jelzi', () => {
+  it('a feltételezett (nem termékadatlapos) anyagot figyelmeztetésként jelzi', () => {
     const f = ellenoriz(goldenProjekt('G1')).filter((h) => h.sulyossag === 'figyelmeztetés');
     expect(f.some((h) => h.uzenet.startsWith('Feltételezett érték'))).toBe(true);
-    expect(f.some((h) => h.uzenet.includes('hőhidak'))).toBe(true);
+    expect(ellenoriz(goldenProjekt('G3')).some((h) => h.uzenet.includes('10.8. táblázat'))).toBe(true);
   });
 });
 

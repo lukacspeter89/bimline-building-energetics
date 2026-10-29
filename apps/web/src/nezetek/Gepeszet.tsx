@@ -317,15 +317,15 @@ function EgyebKartya({ p, valtoztat }: { p: Projekt; valtoztat: Valtoztat }) {
           id="lt"
           cimke="Hővisszanyerős gépi szellőzés"
           ertek={sz.fajta === 'hővisszanyerős'}
-          onValtozas={(v) => valtoztat((x) => void (x.rendszerek.szellozes = v ? { fajta: 'hővisszanyerős', legcsere: 0.5, etaR: 0.8, dp: 150, etaVent: 0.5, uzemido: 8760 } : { fajta: 'természetes' }))}
+          onValtozas={(v) => valtoztat((x) => void (x.rendszerek.szellozes = v ? { fajta: 'hővisszanyerős', legcsere: 0.5, etaR: 0, dp: 0, uzemido: 8760 } : { fajta: 'természetes' }))}
         />
         {sz.fajta === 'hővisszanyerős' && (
           <div class="racs">
-            <SzamMezo id="lt-n" cimke="Légcsere" egyseg="1/h" ertek={sz.legcsere} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).legcsere = v))} />
-            <SzamMezo id="lt-eta" cimke="Hővisszanyerés η_r" ertek={sz.etaR} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).etaR = v))} />
-            <SzamMezo id="lt-dp" cimke="Nyomásesés Δp" egyseg="Pa" ertek={sz.dp} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).dp = v))} />
-            <SzamMezo id="lt-ev" cimke="Ventilátor összhatásfok" ertek={sz.etaVent} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).etaVent = v))} />
-            <SzamMezo id="lt-t" cimke="Éves üzemidő (fűtési idény: 5088)" egyseg="h" ertek={sz.uzemido} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).uzemido = v))} />
+            <SzamMezo id="lt-n" cimke="Légcsere (lakó: 0,5)" egyseg="1/h" ertek={sz.legcsere} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).legcsere = v))} />
+            <SzamMezo id="lt-eta" cimke="Hővisszanyerés η_r (adatlap)" ertek={sz.etaR} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).etaR = v))} />
+            <SzamMezo id="lt-dp" cimke="Nyomásesés Δp (terv)" egyseg="Pa" ertek={sz.dp} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).dp = v))} />
+            <SzamMezo id="lt-ev" cimke="Ventilátor összhatásfok (adatlap; üresen 10.8. tábla)" ertek={sz.etaVent} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).etaVent = v))} />
+            <SzamMezo id="lt-t" cimke="Éves üzemidő (terv; egész évben 8760)" egyseg="h" ertek={sz.uzemido} onValtozas={(v) => valtoztat((x) => void ((x.rendszerek.szellozes as typeof sz).uzemido = v))} />
           </div>
         )}
       </Kartya>

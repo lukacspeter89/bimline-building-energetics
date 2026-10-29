@@ -30,7 +30,7 @@ export function ujProjekt(): Projekt {
     retegrendek: [],
     nyilaszarok: [{ azon: 'ny-ajto', nev: 'Bejárati ajtó', fajta: 'ajto', U: 1.4, forras: { tipus: 'jogszabaly', hivatkozas: '9/2023 ÉKM 1. melléklet 1.1. 16. sor (terv nélkül)' } }],
     helyisegek: [],
-    epulet: { ...g.epulet, hohidKorrekcio: true },
+    epulet: structuredClone(g.epulet),
     rendszerek: { ...structuredClone(g.rendszerek), napelemek: [] },
   };
 }

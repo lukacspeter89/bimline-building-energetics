@@ -86,6 +86,13 @@ export function ellenoriz(p: Projekt): Hiany[] {
     }
   }
   if (!falVan) figy('Épület', 'Nincs homlokzati fal; a padló Ψ_p,f-je és a falvastagság nem határozható meg.');
-  if (!p.epulet.hohidKorrekcio) figy('Épület', 'A csatlakozási hőhidak korrekciója ki van kapcsolva (csak összevetéshez).');
+  const sz = p.rendszerek.szellozes;
+  if (sz.fajta === 'hővisszanyerős') {
+    if (!pozitiv(sz.legcsere)) hiba('Szellőzés', 'A légcsere hiányzik (lakóépületnél n_szüks = 0,5 1/h).');
+    if (!(sz.etaR > 0 && sz.etaR < 1)) hiba('Szellőzés', 'A hővisszanyerési hatásfok hiányzik (termékadatlapról).');
+    if (!pozitiv(sz.dp)) hiba('Szellőzés', 'A rendszer áramlási ellenállása (Δp) hiányzik (tervből).');
+    if (!(sz.uzemido > 0 && sz.uzemido <= 8760)) hiba('Szellőzés', 'Az éves üzemidő 0 és 8760 h között adandó meg.');
+    if (sz.etaVent === undefined) figy('Szellőzés', 'Ventilátor-összhatásfok termékadat nélkül: a 10.8. táblázat alapértéke.');
+  }
   return h;
 }

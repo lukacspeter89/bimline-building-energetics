@@ -136,7 +136,19 @@ export interface HmvRendszer {
 
 export type Szellozes =
   | { fajta: 'természetes' }
-  | { fajta: 'hővisszanyerős'; legcsere: number; etaR: number; dp: number; etaVent: number; uzemido: number };
+  | {
+      fajta: 'hővisszanyerős';
+      /** Légcsere [1/h] (terv; lakóépületnél a 2. függ. 2.1. táblázat n_szüks = 0,5). */
+      legcsere: number;
+      /** Hővisszanyerési hatásfok [-] – termékadatlapról. */
+      etaR: number;
+      /** A rendszer áramlási ellenállása Δp_LT [Pa] – tervből. */
+      dp: number;
+      /** Ventilátor-összhatásfok [-] termékadatlapról; ha nincs, a 10.8. táblázat alapértéke (LT-051). */
+      etaVent?: number;
+      /** Éves üzemidő [h] a terv szerint; egész éves üzemnél 8760 (2. függ. 2.1. táblázat). */
+      uzemido: number;
+    };
 
 export type Hutes = null | { hutogep: string; hutokozeg: string; szabalyozas: string };
 
@@ -165,8 +177,6 @@ export interface Projekt {
     kulsoFalKialakitasa: 'külső oldali, megszakítatlan hőszigeteléssel' | 'hőszigetelés nélkül';
     /** A csatlakozási hőhidak hőhidassága (6.2. táblázat; a referenciaépülethez is). */
     hohidassag: Hohidassag;
-    /** Csatlakozási hőhidak a tárgyi épületben (az egyszerűsített ζ szerint), vagy nélküle (golden összevetés). */
-    hohidKorrekcio: boolean;
   };
   anyagok: Anyag[];
   retegrendek: Retegrend[];

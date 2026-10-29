@@ -14,6 +14,10 @@ const WINWATT: Record<string, { Ep: number; CO2: number; besorolas: string; QFne
   G3: { Ep: 52.19, CO2: 10.55, besorolas: 'A+', QFnet: 1068 },
 };
 
+/** A hiány helyéből a javításhoz tartozó fül. */
+const hianyFul = (hely: string): Ful =>
+  /^(Anyag|Rétegrend|Nyílászáró)/.test(hely) ? 'szerkezetek' : /^(Szellőzés|Fűtés|HMV|Hűtés|Napelem)/.test(hely) ? 'gepeszet' : hely === 'Épület' ? 'epulet' : 'helyisegek';
+
 export function OsszegzoSav({ kimenet, onHianyok }: { kimenet: SzamitasKimenet | null; onHianyok: () => void }) {
   if (!kimenet) return null;
   if (!kimenet.rendben)
@@ -125,7 +129,7 @@ export function EredmenyNezet({ kimenet, minta, onUgras }: { p: Projekt; kimenet
           {kimenet.hianyok.map((h, i) => (
             <li key={i}>
               <b>{h.hely}</b>: {h.uzenet}
-              <button class="link" onClick={() => onUgras(h.hely.startsWith('Anyag') || h.hely.startsWith('Rétegrend') || h.hely.startsWith('Nyílászáró') ? 'szerkezetek' : 'helyisegek')}>
+              <button class="link" onClick={() => onUgras(hianyFul(h.hely))}>
                 Javítás ›
               </button>
             </li>
@@ -146,7 +150,7 @@ export function EredmenyNezet({ kimenet, minta, onUgras }: { p: Projekt; kimenet
   const celMax = Math.max(1, ...Object.values(e.celonkent).map((v) => Math.abs(v!.nren)));
   return (
     <>
-      {ww && <p class="figyelem">A(z) {minta} minta: a jobb oszlop a WinWatt fecske 9.58 eredménye. Az eltérések okai a docs/ELTERESEK_WINWATT.md-ben.</p>}
+      {ww && <p class="figyelem">A(z) {minta} minta: a jobb oszlop a WinWatt fecske 9.58 eredménye. A program mindenben a rendelet szerint számol; a WinWatt rendelettől eltérő pontjai: docs/WINWATT_NEM_RENDELETI.md.</p>}
       <Kartya cim="Összesítő">
         <div class="tablazat">
           <table>

@@ -303,7 +303,7 @@ function szamol(p: Projekt): ProjektEredmeny {
       o.A += Anetto;
       o.UA += Anetto * U;
       szerkOssz.set(r.azon, o);
-      if (p.epulet.hohidKorrekcio && j.hohid) U = hohiddalKorrigaltU(U, zeta(j.hohid(p)));
+      if (j.hohid) U = hohiddalKorrigaltU(U, zeta(j.hohid(p)));
       if (b.tuloldal.fajta === 'külső') elemek.push({ A: Anetto, U });
       else if (b.tuloldal.fajta === 'fűtetlen') futetlen.push({ hTrIx: Anetto * U, b: { tipus: b.tuloldal.ter } });
       if (b.tuloldal.fajta === 'külső' || b.tuloldal.fajta === 'fűtetlen') {
@@ -400,7 +400,7 @@ function szamol(p: Projekt): ProjektEredmeny {
   const hmvW = hmvBase.WHMVveg;
 
   // Légtechnika, hűtés, napelem
-  const ltW = sz.fajta === 'hővisszanyerős' ? ventilatorEnergia({ VLT: sz.legcsere * V, dpLT: sz.dp, etaVent: sz.etaVent, tLTa: sz.uzemido }) : 0;
+  const ltW = sz.fajta === 'hővisszanyerős' ? ventilatorEnergia({ VLT: sz.legcsere * V, dpLT: sz.dp, tLTa: sz.uzemido, ...(sz.etaVent !== undefined ? { etaVent: sz.etaVent } : {}) }) : 0;
   const hu = p.rendszerek.hutes;
   const hut = hu
     ? hutesiRendszer({

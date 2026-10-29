@@ -17,8 +17,7 @@
   "szakaszosFutes": false,
   "labazatiFal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
   "kulsoFalKialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
-  "hohidassag": "erősen hőhidas",
-  "hohidKorrekcio": false
+  "hohidassag": "erősen hőhidas"
  },
  "anyagok": [
   {

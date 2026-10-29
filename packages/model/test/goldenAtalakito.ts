@@ -57,7 +57,6 @@ export function goldenProjekt(eset: 'G1' | 'G2' | 'G3'): Projekt {
       labazatiFal: 'Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt',
       kulsoFalKialakitasa: 'külső oldali, megszakítatlan hőszigeteléssel',
       hohidassag: 'erősen hőhidas',
-      hohidKorrekcio: false,
     },
     anyagok: Object.entries(g.materials_used).map(([nev, a]) => ({ azon: anyagAzon(nev), nev, lambda: a.lambda, rho: a.rho, c: a.c_kJkgK * 1000, forras: tesztForras })),
     retegrendek,
@@ -129,7 +128,9 @@ export function goldenProjekt(eset: 'G1' | 'G2' | 'G3'): Projekt {
         cirkulacio: false,
       },
       szellozes: g.systems.airing
-        ? { fajta: 'hővisszanyerős', legcsere: g.systems.airing.n, etaR: g.systems.airing.eta / 100, dp: g.systems.airing.dp, etaVent: g.systems.airing.fan_eff / 100, uzemido: 5088 }
+        ? // A WinWatt-sablon 50 %-os ventilátor-hatásfoka és fűtési idényre szóló üzemideje (5088 h) nem rendeleti (W-07, W-08):
+          // termékadat nélkül a 10.8. táblázat értéke, lakóépület egész éves üzemével 8760 h.
+          { fajta: 'hővisszanyerős', legcsere: g.systems.airing.n, etaR: g.systems.airing.eta / 100, dp: g.systems.airing.dp, uzemido: 8760 }
         : { fajta: 'természetes' },
       hutes: g.systems.cooling ? { hutogep: 'Kompresszoros léghűtés (split)', hutokozeg: 'Közvetlen elpárologtatós rendszer (5 oC)', szabalyozas: 'Direkt elpárologtatás' } : null,
       napelemek: g.systems.pv ? [{ azon: 'pv-1', kWp: g.systems.pv.kWp, tajolas: 'D', hajlasszog: g.systems.pv.gradient }] : [],
