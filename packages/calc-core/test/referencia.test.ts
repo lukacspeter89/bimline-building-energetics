@@ -1,6 +1,13 @@
 // Referenciaépület – 9/2023 ÉKM 5. melléklet; rendszerminősítés – 176/2008 5. melléklet.
 import { describe, expect, it } from 'vitest';
-import { ErvenytelenBemenet, referenciaInfiltracio, rendszerMinositesiArany, uvegezesiAranyKorlat } from '../src/index.js';
+import {
+  ErvenytelenBemenet,
+  referenciaGepiSzellozesF,
+  referenciaHutes,
+  referenciaInfiltracio,
+  rendszerMinositesiArany,
+  uvegezesiAranyKorlat,
+} from '../src/index.js';
 
 describe('Referenciaépület', () => {
   it('REF-006 üvegezési arány: 70 %-os déli homlokzat → 50 %, a különbözet a falhoz kerül', () => {
@@ -34,5 +41,19 @@ describe('Referenciaépület', () => {
     expect(rendszerMinositesiArany(1000, 1250)).toBeCloseTo(80, 12);
     expect(rendszerMinositesiArany(1000, 1500, 4000, 5000)).toBeCloseTo(((1000 / 4000) / (1500 / 5000)) * 100, 12);
     expect(() => rendszerMinositesiArany(1, 0)).toThrow(ErvenytelenBemenet);
+  });
+});
+
+describe('Referencia szellőzés és hűtés', () => {
+  it('REF-016 REF-017 hővisszanyerő 50 %: 0,35·(129,6·0,5 + 0,06·259,2)', () => {
+    expect(referenciaGepiSzellozesF(129.6, 0.06, 259.2)).toBeCloseTo(0.35 * (64.8 + 15.552), 9);
+  });
+
+  it('REF-018 egyéb rendeltetés, levegő–víz 120 kW → SEER 3,8; 6/12 °C fan coil; lakóépületnél nincs referencia-hűtés', () => {
+    const r = referenciaHutes({ lakoVagySzallas: false, QHnet: 10000, hutogep: 'Komfort hűtőgép (levegő–víz)', PnevlegesKW: 120, WsegTargy: 50 })!;
+    expect(r.Qveg).toBeCloseTo((10000 * 1.25 * 1.13) / 3.8, 9);
+    expect(r.sulyozott.nren).toBeCloseTo(((10000 * 1.25 * 1.13) / 3.8 + 50) * 2.3, 9);
+    expect(referenciaHutes({ lakoVagySzallas: false, QHnet: 1, hutogep: 'Komfort hűtőgép (víz–víz)', PnevlegesKW: 1500, WsegTargy: 0 })!.Qveg).toBeCloseTo((1.25 * 1.13) / 6.33, 12);
+    expect(referenciaHutes({ lakoVagySzallas: true, QHnet: 1, hutogep: 'Komfort hűtőgép (levegő–víz)', PnevlegesKW: 5, WsegTargy: 0 })).toBeNull();
   });
 });

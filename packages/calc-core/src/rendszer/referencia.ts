@@ -227,3 +227,41 @@ export function rendszerMinositesiArany(E: number, Eref: number, Q?: number, Qre
   if (!(Q > 0) || !(Qref > 0)) throw new ErvenytelenBemenet('Érvénytelen nettó igény.', 'TAN-009');
   return (100 * (E / Q)) / (Eref / Qref);
 }
+
+/**
+ * Referencia szellőzés fűtési idényben (REF-016, REF-017; 5. melléklet 2.3.–2.5.): lakó és szállás jellegű épületnél
+ * természetes szellőzés (`null`); ha van szellőzőrendszer, a tárgyi térfogatárammal, 50 %-os, csak a fűtési
+ * időszakban működő hővisszanyerővel, léghevítő és előfűtés nélkül: H = 0,35·(V̇·(1 − 0,5) + n_filt·V), (6.12).
+ * A ventilátor-energia és a segédenergia a tárgyi épületével azonos (2.5.2., 2.5.5.).
+ */
+export function referenciaGepiSzellozesF(VLT: number, nFiltRef: number, V: number): number {
+  if (!(VLT >= 0) || !(nFiltRef >= 0) || !(V > 0)) throw new ErvenytelenBemenet('Érvénytelen szellőzési adat.', 'REF-017');
+  return 0.35 * (VLT * (1 - refParam('hovisszanyero_hatasfok')) + nFiltRef * V);
+}
+
+/**
+ * Referencia gépi hűtés egyéb rendeltetésű épületben (REF-018; 5. melléklet 2.6.–2.7.): csak a tárgyi épület hűtött
+ * zónáiban; 6/12 °C fan coil (c_H = 1,25; ε_H,szab „hűtött víz 6/12 °C”), SEER a tárgyi hűtőgép névleges
+ * teljesítménye szerint; a segédenergia a tárgyi épületével azonos. Lakó és szállás jellegű épületben nincs (`null`).
+ */
+export function referenciaHutes(b: {
+  lakoVagySzallas: boolean;
+  QHnet: number;
+  hutogep: 'Komfort hűtőgép (levegő–víz)' | 'Komfort hűtőgép (víz–víz)';
+  PnevlegesKW: number;
+  WsegTargy: number;
+}): ReferenciaRendszerEredmeny | null {
+  if (b.lakoVagySzallas) return null;
+  if (!(b.QHnet >= 0) || !(b.PnevlegesKW > 0) || !(b.WsegTargy >= 0)) throw new ErvenytelenBemenet('Érvénytelen hűtési adat.', 'REF-018');
+  const hiv: TablaHivatkozas = 'rendelet/9_2023_EKM_2_3_5_melleklet_kovetelmenyek#referencia_hutogep_seer';
+  const sor = sorKeres(hiv, (s) => {
+    const min = s['p_min_kW'] as number | null;
+    const max = s['p_max_kW'] as number | null;
+    return s['tipus'] === b.hutogep && (min === null || b.PnevlegesKW >= min) && (max === null || b.PnevlegesKW < max);
+  });
+  const seer = szamMezo(sor, 'seer', hiv);
+  const cH = szamMezo(sorKeres('modszer/hutes#tabla_11_1', (s) => s['hutokozeg'] === '6/12 oC (pl. fan-coil készülék)'), 'c_H', 'modszer/hutes#tabla_11_1');
+  const szab = szamMezo(sorKeres('modszer/hutes#tabla_11_3', (s) => s['rendszer'] === 'Hűtött víz 6 °C / 12 °C (pl. fan coil)'), 'eps_H_szab', 'modszer/hutes#tabla_11_3');
+  const Qveg = b.QHnet * cH * szab * (1 / seer);
+  return { Qveg, W: b.WsegTargy, sulyozott: celSulyozottEnergia({ ho: [{ Qveg, hordozo: 'villamos' }], W: b.WsegTargy }).sulyozott };
+}
