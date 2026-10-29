@@ -73,3 +73,9 @@ dfb4cbe5fc97c87b9b8291e915272776d98fae5f5404802400d5c4097a064494  (nincs a repó
 ```
 
 **A TE segédlet feldolgozása (2026-10-29):** a Drive-connector a PDF szövegét csak a 6.2.4 pontig (kb. 81. oldal, a 232-ből) adta vissza. Ebben a részben kidolgozott, tesztnek alkalmas számpélda nincs. Az értelmezései közül a programban figyelembe vett pontok (mind összhangban a módszerrel): talajon fekvő padlónál B = A/(0,5P) a kondicionált tér padlójára; ismeretlen talaj 2. típus; b_tél október–április, b_nyár május–szeptember; a megújuló részarány csak informatív indikátor. A segédlet saját belső ellentmondása (4.5. ábra: „fűtött” a képlet „fűtetlen” szövegével szemben) a programot nem érinti, a módszer szövegét követjük. A 82. oldaltól a PDF-et más úton kell beolvasni.
+
+**Második Drive-mappa (1-7VKoTuhFlsd0_Z7Ngx_18bBQQWnbSue, átnézve 2026-10-29):** nem normatív segédanyag.
+- Golden tesztre alkalmas WinWatt-export (bemenet és eredmény együtt) nincs benne. Az „Új nyaraló épület” (Balatonalmádi) projektnek csak az adminisztratív `ProjektData` része van meg.
+- UX-forrás: Bausoft „9_2023_EKM_szerinti_tanusitas.pptx” munkafolyamat, „Winwatt UI” HTML-makett, a korábbi React-frontend komponensei.
+- A korábbi „Winwatt-alternativa” kód konstansait **nem vesszük át**, mert ellentmondanak a jogszabálynak: a villamos 2,5 és a gáz 1,0 súlyozó tényező a 7/2006 TNM-ből való (a 9/2023 7. melléklet érvényes); az „AA++…HH” osztályok helyett a 176/2008 3. melléklete érvényes; a novemberi és decemberi középhőmérséklet hibás; több táblázat forrás nélküli.
+- Anyagkönyvtár-jelölt: 40 WinWatt anyag-XML. Átvétel csak tisztázott licenccel, és csak termékadatlap-forrással (Péter szabálya).
