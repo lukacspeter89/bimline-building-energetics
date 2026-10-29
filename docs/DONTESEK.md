@@ -50,3 +50,5 @@ Péter 2026-10-29-én jóváhagyta a követelménymátrixot és a `NYITOTT_KERDE
 | D-115 | Hőhidasság-besorolás (6.2.) határai | A 0,8 / 1,0 (és a lapostető, tetőtér határai) a közepes sávba esnek | A „0,8 - 1,0” jelölés zárt intervallum. |
 | D-116 | (6.6) képletben a z tényező | A fűtött pince padlójának terepszint alatti mélysége [m] | A 4.4.4 (4.28) z-jelölésével azonos; a (6.6) dimenzióhelyes így. |
 | D-117 | Árnyékolásvizsgálat nélkül (6.3.1) | Fűtésnél az északi tájolás sugárzása, hűtésnél a saját tájolásé, F_árny = 1 | 1. függ. 6.3.1, 47. o. (NY-015). |
+| D-027 | Forráshierarchia: a tanúsítói felkészülési segédlet (kamarai kiadás, 2024) | Nem normatív: mintapéldákhoz és értelmezéshez használható; ellentmondás esetén a jogszabály és a 7. § (1) a) szerinti módszer az erősebb | Péter, 2026-10-29 |
+| D-028 | K-008 órai meteorológiai adat | A forrás a Meteo PDF (F-05); a Drive-on lévő xlsx feldolgozást figyelmen kívül hagyjuk | Péter, 2026-10-29 |

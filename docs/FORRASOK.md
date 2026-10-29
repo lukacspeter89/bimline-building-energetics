@@ -48,6 +48,9 @@ A 9/2023. ÉKM rendelet a következő szabványokat nevezi meg közvetlenül: MS
 
 ## 6. Nem normatív segédlet
 
+- **Segédlet az Épületenergetikai Tanúsítói Jogosultság megszerzéséhez a 9/2023 ÉKM rendelet alapján** (Dr. Csoknyai Tamás, Dr. Szalay Zsuzsa, Dr. Nagy Balázs, Dr. Horváth Miklós: Alkalmazott Épületenergetika c. kézikönyv alapján; szerk. Nagy Péter; Budapest, 2024. január). Kamarai kiadás, **nem jogszabály**. Péter Google Drive-ján (`Felkeszulesi_segedlet_TE_2024_01.pdf`, 2026-10-29). Felhasználás: kidolgozott mintapéldák a tesztekhez és értelmezési segítség. Ellentmondás esetén a jogszabály és a 7. § (1) a) szerinti módszer az irányadó; az eltérést a DONTESEK.md rögzíti (Péter, 2026-10-29).
+- Péter Drive-mappájában lévő további anyagok: a két rendelet CompLex-nyomata (9/2023: „Hatály: 2023.XI.2. –”, 176/2008: „Hatály: 2026.I.6. –”) – ugyanaz az időállapot, mint az F-01 és F-02; az 1. és 2. Függelék és a Meteo PDF – bájtra azonos az F-03 … F-05-tel. A „9_2023 ÉKM órai havi adatsorok.xlsx” a Meteo adatsor feldolgozása; Péter kérésére figyelmen kívül hagyjuk (2026-10-29), az órai adat forrása az F-05.
+
 - `docs/winwatt/SKILL_winwatt.md` – a WinWatt projekt-XML és az OÉNY `UploadRequest` leírása (Péter, 2026-10-29). Csak import/export-kompatibilitáshoz és a WinWatt-eltérések felméréséhez.
 - `docs/FELADAT.md` – a projekt feladatleírása.
 

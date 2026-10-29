@@ -45,7 +45,7 @@ feltölteni a listát. Addig a program a 7. melléklet 10–11. sorának tartal�
 tartozó OÉNY `UploadRequest` XML-eket és a WinWatt-hibrid (Python/FastAPI) motor forráskódját. Az ELTERESEK_WINWATT.md
 „E?” tételei ezekkel dönthetők el.
 
-**K-008 – Órai meteorológiai adat.** A részletes módszerhez az órai klímaadat (F-05) csak PDF-ként érhető el
+**K-008 – Órai meteorológiai adat.** — *lezárva (2026-10-29, D-028): a forrás a Meteo PDF.* A részletes módszerhez az órai klímaadat (F-05) csak PDF-ként érhető el
 („Meteo_hatteradat.xlsx” nyomtatási képe, 630 oldal). *Javaslat:* a PDF-ből gépi kinyerés, ellenőrzőösszegekkel a 2. függ.
 1.5–1.6. táblázat havi értékeihez. *Kérdés:* megvan-e Péternek az eredeti xlsx?
 
