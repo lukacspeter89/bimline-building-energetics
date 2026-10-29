@@ -7,6 +7,8 @@ közül a számítást érdemben befolyásolókat az A. rész kiemeli.
 
 ## A. Döntést vagy közreműködést igénylő kérdések
 
+> **2026-10-29: Péter jóváhagyta a javaslatokat** – a döntéseket a `DONTESEK.md` rögzíti (D-0xx). A források beszerzését igénylő tételek (K-002 szabványszöveg, K-006, K-007, K-008) továbbra is nyitottak.
+
 ### Források és bemenetek
 
 **K-001 – Hálózati hozzáférés a jogszabályokhoz** — *lezárva (2026-10-29).* Péter engedélyezte; az `njt.jog.gov.hu`,

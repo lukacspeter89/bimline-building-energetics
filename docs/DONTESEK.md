@@ -1,0 +1,44 @@
+# Döntésnapló
+
+Minden olyan döntés, amelyet a források nem döntenek el egyértelműen. Minden sorban: azonosító, a döntés, ki és mikor
+hozta, és hol érvényesül a kódban vagy az adatban. A program felülete és a számítási dokumentáció ezekre hivatkozik.
+
+## 2026-10-29 – Péter jóváhagyása a 0. fázisra
+
+Péter 2026-10-29-én jóváhagyta a követelménymátrixot és a `NYITOTT_KERDESEK.md` A. részében szereplő javaslatokat
+(„Jóváhagyom”). Az alábbi döntések ennek alapján érvényesek; bármelyik felülvizsgálható, ha Péter másként dönt.
+
+| ID | Kérdés | Döntés | Érvényesül |
+|----|--------|--------|------------|
+| D-002 | K-002 szabványok | Az ISO 13370 (elemelt padló, fűtetlen pince), ISO 6946 F (fordított tető), ISO 52016-1 (csatolt zónák), szél és kapcsolt termelés esetén a program „részletes módszer szükséges” hibát ad, és csak kézi, forrással ellátott értéket fogad el. | `calc-core`: `ReszletesModszerSzukseges` hiba |
+| D-003 | K-003 EPBD | A követelmények és a skála verziózott adatfájlok; új rendeletnél adatcsere + új verzió. | `data/normativ/rendelet` |
+| D-004 | K-004 módszerverzió | A projekt rögzíti a módszer verzióját (jelenleg: „2023-07-27”). | `calc-core`: `MODSZER_VERZIO` |
+| D-005 | K-005 OÉNY séma | A validációs szabályokból és a mintából épített séma (4. fázis). | – |
+| D-006 | K-006 távhő | Lechner-adat nélkül a 7. melléklet tartalék értéke, figyelmeztetéssel. | 3. fázis |
+| D-010 | K-010 KNZ qm-tábla | A lineáris képlet 0,3 ≤ A/V ≤ 1,3 között (az 1.3. pont grafikonja szerint). | `rendelet/9_2023_EKM_2_3_5_melleklet_kovetelmenyek.json#knze_qm_max`, `av_max = 1,3` |
+| D-011 | K-011 nyári hővédelem | A súlyozó felület az üvegezés mérete szerinti A_ü (a képlet jelmagyarázata szerint), a 8%-os feltételnél is. | `calc-core/kovetelmeny` |
+| D-012 | K-012 szerkezetminősítés | Ferde tetőtéri határoló → „magastető, lapostető”; árkád feletti és lefelé hűlő födém → „pincefödém”; ajtó, kapu, fűtött–fűtetlen fal → nincs minősítés. | `calc-core/kovetelmeny/minosites` |
+| D-013 | K-013 csőszigetelés | „Az 1–4 sorok értékeinek fele” = a 2–5. sor (négy átmérő-kategória) értékének fele. | 3. fázis |
+| D-014 | K-014 belső hőmérséklet | Lakó funkciónál az energetikai számításban 20 °C (2. függ. 2.1.), nem szerkeszthető; a helyiség-hőmérséklet csak a hőszükséglethez. | 2. fázis |
+| D-015 | K-015 feltevés-értékek | Forrás nélküli érték csak „feltevés” jelöléssel és kötelező indoklással menthető; a tanúsítványban kiemelten látszik. | adatmodell, 3. fázis |
+| D-016 | K-016 tájékoztató táblázatok | A 2. függ. 4.6. (panelos) táblázat kötelező alkalmazásként elérhető; a 4.1–4.5. csak meglévő épületnél, „módszer szerinti tájékoztató érték” forrással. | adatmodell |
+| D-020 | K-020 hiányos táblák | Üres cellánál az ugyanabban az oszlopban legközelebbi kitöltött érték, „forráshiány – helyettesítő érték” jelöléssel; golden teszttel ellenőrizendő. | 2. fázis |
+| D-021 | K-021 interpoláció | Lineáris interpoláció a táblázaton belül, a tartományon kívül a szélső érték (extrapoláció nélkül). | `calc-core/kozos/interpolacio` |
+| D-022 | K-022 fűtőérték/égéshő | Végsőenergia égéshő alapon, indikátornál F_fé/éh szorzó. | 2. fázis |
+| D-023 | K-023 PV-export | A 14. fejezet szerint; havi mérleg, ha van havi adat. | 2. fázis |
+| D-024 | K-024 RER | E_ren / E_tot (súlyozott), WinWatt-exportokkal kalibrálva. | 2. fázis |
+| D-025 | K-025 pince b_nyár | 1,5 – átvéve. | adat |
+| D-026 | K-026 éghajlati adatok | Változatlanul. | adat |
+
+## Kódolás közben hozott értelmezések (1. fázis)
+
+| ID | Kérdés | Döntés | Indoklás / forrás |
+|----|--------|--------|-------------------|
+| D-101 | A (4.21) képletben az R_si és R_se értéke talajon fekvő padlónál | R_si a 4.1. táblázat „lefelé” értéke (0,17), R_se = 0,04 | A padlón a hőáram lefelé irányul (1. függ. 4.1.2, 4.1. táblázat). |
+| D-102 | ΔU elhanyagolása, ha < 3% (4.1.6) | A program nem hanyagolja el, mindig a teljes korrekcióval számol | A módszer csak megengedi az elhanyagolást; a teljes korrekció a pontosabb. |
+| D-103 | Árnyékoló légáteresztési osztálya (4.3. táblázat, 4. osztály „b_eth ≥ 8” átfed) | Az 1–3. osztály elsőbbséget kap; 3 < b_eth < 8 esetén a program nem sorol be, a felhasználónak kell az osztályt megadnia | A táblázat a 3–8 mm-t nem fedi le (NYITOTT_KERDESEK B.1/2). |
+| D-104 | Függönyfal elem (4.15) képlete | Nem valósítjuk meg, amíg a „g” index nincs tisztázva; csak a (4.14) súlyozás és a kézzel megadott elem-U | NYITOTT_KERDESEK B.1/1. |
+| D-105 | (4.24) feltétele: „legalább m > 0,5 m” | `m > 0,5` (szigorú) | A képletes jelölés a konkrétabb. |
+| D-106 | Lineáris interpoláció a 4.2. táblázatban 300 mm felett | Nem alkalmazható: d > 0,3 m légréteg nem vehető figyelembe a U-ban (4.1.3 a)) | 1. függ. 4.1.3, 24. o. |
+| D-107 | Inhomogén réteg alsó határértéke (4.9): beleszámít-e R_si és R_se | Igen: R_tot,alsó = R_si + Σ R_j + R_se | A (4.5) az alsó és a felső határértéket átlagolja; a felső határértékben (4.6) az R_tot,q a felületi ellenállásokat tartalmazza, így az összevethetőséghez az alsóban is szerepelniük kell (NYITOTT_KERDESEK B.1/5). |
+| D-108 | Fűtött pincefal (4.27) R_si és R_se értéke | A 4.1. táblázat vízszintes hőáramhoz tartozó értéke (0,13 / 0,04) | Falról van szó, a hőáram vízszintes (1. függ. 4.1.2). |
