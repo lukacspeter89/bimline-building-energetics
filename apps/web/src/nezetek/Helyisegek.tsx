@@ -116,12 +116,16 @@ function HelyisegKartya(props: { p: Projekt; h: Helyiseg; i: number; nyitott: bo
   );
 }
 
+type PadloHelyzet = 'terepszinten' | 'pince' | 'terepszint felett';
+const PADLO_HELYZETEK: readonly PadloHelyzet[] = ['terepszinten', 'pince', 'terepszint felett'];
+
 function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: string | undefined; valtoztat: (f: (b: Hatarolo) => void) => void; onTorol: () => void }) {
   const { p, h, b, valtoztat } = props;
   const [hossz, setHossz] = useState<number | undefined>(undefined);
   const r = p.retegrendek.find((x) => x.azon === b.retegrendAzon);
   const fuggoleges = (b.hajlasszog ?? 90) >= 60;
   const padlo = r?.szerkezet === 'talajon_fekvo_padlo';
+  const [helyzet, setHelyzet] = useState<PadloHelyzet>((b.melyseg ?? 0) > 0 ? 'pince' : (b.melyseg ?? 0) < 0 ? 'terepszint felett' : 'terepszinten');
   const nyA = b.nyilasok.reduce((s, n) => s + n.szelesseg * n.magassag * n.db, 0);
   // Javaslat a padló kitett kerületére: a helyiség külső levegővel határos falainak hossza (felület / belmagasság).
   const falHossz =
@@ -169,6 +173,21 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
           onValtozas={(v) => valtoztat((x) => void (x.tuloldal = tuloldalbol(v)))}
         />
       </div>
+      {padlo && (
+        <Gombsor
+          cimke="Padló helyzete (±0,5 m-en belül terepszinten)"
+          ertek={helyzet}
+          opciok={PADLO_HELYZETEK}
+          onValtozas={(h) => {
+            setHelyzet(h);
+            valtoztat((x) => {
+              const z = Math.abs(x.melyseg ?? 0);
+              if (h === 'terepszinten') delete x.melyseg;
+              else x.melyseg = h === 'pince' ? z : -z;
+            });
+          }}
+        />
+      )}
       {fuggoleges && <Gombsor cimke="Tájolás" ertek={b.tajolas} opciok={TAJOLASOK} onValtozas={(t) => valtoztat((x) => void (x.tajolas = t))} />}
       <div class="racs">
         {fuggoleges && (
@@ -192,10 +211,16 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
             = a helyiség külső falainak hossza: {szam(falHossz, 2)} m
           </button>
         )}
-        {padlo && (
-          <SzamMezo id={`b-${b.azon}-z`} cimke="Mélység terepszint alatt (pince)" egyseg="m" ertek={b.melyseg ?? 0} onValtozas={(v) => valtoztat((x) => void (x.melyseg = v))} />
+        {padlo && helyzet !== 'terepszinten' && (
+          <SzamMezo
+            id={`b-${b.azon}-z`}
+            cimke={helyzet === 'pince' ? 'Pincepadló mélysége terepszint alatt' : 'Padló magassága terepszint felett'}
+            egyseg="m"
+            ertek={Math.abs(b.melyseg ?? 0)}
+            onValtozas={(v) => valtoztat((x) => void (x.melyseg = helyzet === 'pince' ? Math.abs(v) : -Math.abs(v)))}
+          />
         )}
-        {padlo && (b.melyseg ?? 0) > 0.5 && (
+        {padlo && helyzet === 'pince' && (
           <Valaszto
             id={`b-${b.azon}-pf`}
             cimke="Pincefal rétegrendje (z·P felület)"
@@ -205,6 +230,18 @@ function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev: strin
               ...p.retegrendek.filter((x) => x.szerkezet === 'talajjal_erintkezo_fal').map((x) => ({ ertek: x.azon, nev: x.nev })),
             ]}
             onValtozas={(v) => valtoztat((x) => void (v ? (x.pinceFalRetegrendAzon = v) : delete x.pinceFalRetegrendAzon))}
+          />
+        )}
+        {padlo && helyzet === 'terepszint felett' && (
+          <Valaszto
+            id={`b-${b.azon}-lf`}
+            cimke="Lábazati fal rétegrendje (4.4.3)"
+            ertek={b.labazatiFalRetegrendAzon ?? ''}
+            opciok={[
+              ...(b.labazatiFalRetegrendAzon ? [] : [{ ertek: '', nev: '— válassz lábazati falat —' }]),
+              ...p.retegrendek.filter((x) => x.szerkezet === 'homlokzati_fal' || x.szerkezet === 'talajjal_erintkezo_fal').map((x) => ({ ertek: x.azon, nev: x.nev })),
+            ]}
+            onValtozas={(v) => valtoztat((x) => void (v ? (x.labazatiFalRetegrendAzon = v) : delete x.labazatiFalRetegrendAzon))}
           />
         )}
         {!fuggoleges && !padlo && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}

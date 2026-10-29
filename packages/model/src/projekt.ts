@@ -96,6 +96,8 @@ export interface Hatarolo {
   melyseg?: number;
   /** Fűtött pincénél (z > 0,5 m): a talajjal érintkező pincefal rétegrendje; felülete z·P (4.4.4, 6.6). */
   pinceFalRetegrendAzon?: string;
+  /** Terepszint feletti padlónál (negatív mélység, a padló felső síkja 0,5 m-nél magasabban): a lábazati fal rétegrendje (4.4.3). */
+  labazatiFalRetegrendAzon?: string;
 }
 
 export interface Helyiseg {

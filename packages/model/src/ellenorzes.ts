@@ -67,7 +67,11 @@ export function ellenoriz(p: Projekt): Hiany[] {
         if (!pozitiv(b.kitettKerulet)) hiba(hely, 'A talajon fekvő padló kitett kerülete szükséges (4.20).', b.azon);
         // ±0,5 m-en belül z = 0 (HT-096); negatív: terepszint feletti padló.
         const z = Number.isFinite(b.melyseg) ? szamitasiMelyseg(b.melyseg ?? 0) : 0;
-        if (z < 0) hiba(hely, 'Terepszint feletti padlót (4.4.3) a program még nem kezel; a mélység nem lehet negatív.', b.azon);
+        if (z < 0) {
+          const lf = b.labazatiFalRetegrendAzon === undefined ? undefined : p.retegrendek.find((x) => x.azon === b.labazatiFalRetegrendAzon);
+          if (!lf) hiba(hely, 'Terepszint feletti padlónál (4.4.3) a lábazati fal rétegrendje szükséges.', b.azon);
+          if (b.felulet > 250) hiba(hely, 'Terepszint feletti padlóra a (4.24) csak 250 m²-ig alkalmazható; nagyobb padlónál MSZ EN ISO 13370 (HT-098).', b.azon);
+        }
         if (z > 0) {
           const fal = b.pinceFalRetegrendAzon === undefined ? undefined : p.retegrendek.find((x) => x.azon === b.pinceFalRetegrendAzon);
           if (!fal) hiba(hely, 'Fűtött pincénél (z > 0,5 m) a talajjal érintkező pincefal rétegrendje szükséges (4.4.4).', b.azon);

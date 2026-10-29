@@ -52,6 +52,9 @@ import {
   talajHoatvitel,
   talajonFekvoPadlo,
   futottPinceFal,
+  terepszintFelettiPadlo,
+  karakterisztikusMeret,
+  szamitasiMelyseg,
   termeszetesSzellozes,
   ventilatorEnergia,
   vizesSzabalyozasiTenyezo,
@@ -245,7 +248,24 @@ function szamol(p: Projekt): ProjektEredmeny {
 
       if (r.szerkezet === 'talajon_fekvo_padlo') {
         const P = b.kitettKerulet ?? 0;
-        const padlo = talajonFekvoPadlo({ A: padloAossz, P: padloPossz, df: falVastagsag, rP: Rretegek(r), melyseg: b.melyseg ?? 0 });
+        const zSzam = szamitasiMelyseg(b.melyseg ?? 0);
+        // Terepszint feletti padló (4.4.3): (4.24)–(4.26), m = a padló felső síkjának magassága a terepszint felett.
+        const lf = zSzam < 0 ? rr.get(b.labazatiFalRetegrendAzon!)! : undefined;
+        const padlo = lf
+          ? {
+              B: karakterisztikusMeret(padloAossz, padloPossz),
+              z: 0,
+              dp: 0,
+              U: terepszintFelettiPadlo({
+                A: padloAossz,
+                P: padloPossz,
+                Up: hoatbocsatasiTenyezo(homogenRtot(feluletiEllenallas({ irany: 'lefele' }), retegek(r))),
+                Ulf: hoatbocsatasiTenyezo(homogenRtot(feluletiEllenallas({ irany: 'vizszintes' }), retegek(lf))),
+                dlf: lf.retegek.reduce((s, x) => s + x.d, 0),
+                m: -zSzam,
+              }),
+            }
+          : talajonFekvoPadlo({ A: padloAossz, P: padloPossz, df: falVastagsag, rP: Rretegek(r), melyseg: b.melyseg ?? 0 });
         // Fűtött pince (4.4.4): a pincefal U_T,pf-je (4.28) a pincepadló d_p-jével; hőátvitele z·P·U_T,pf (6.6).
         let pince: { z: number; uTpf: number } | undefined;
         if (padlo.z > 0) {
@@ -270,7 +290,7 @@ function szamol(p: Projekt): ProjektEredmeny {
             : 0;
         hTrT += talajHoatvitel(b.felulet, padlo.U, P, psi, pince);
         talajA += b.felulet;
-        const o = szerkOssz.get(r.azon) ?? { A: 0, UA: 0, r, megj: `B = ${padlo.B.toFixed(2).replace('.', ',')} m; Ψ_p,f = ${String(psi).replace('.', ',')} W/mK${padlo.z > 0 ? `; z = ${String(padlo.z).replace('.', ',')} m` : ''}` };
+        const o = szerkOssz.get(r.azon) ?? { A: 0, UA: 0, r, megj: `B = ${padlo.B.toFixed(2).replace('.', ',')} m; Ψ_p,f = ${String(psi).replace('.', ',')} W/mK${padlo.z > 0 ? `; z = ${String(padlo.z).replace('.', ',')} m` : ''}${lf ? `; terepszint felett ${String(-zSzam).replace('.', ',')} m (4.24)` : ''}` };
         o.A += b.felulet;
         o.UA += b.felulet * padlo.U;
         szerkOssz.set(r.azon, o);

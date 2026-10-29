@@ -121,6 +121,21 @@ describe('Talajjal érintkező szerkezetek a modellben', () => {
     expect(k.eredmeny.hTrT).toBeCloseTo(eredmeny('G1').hTrT, 9);
   });
 
+  it('HT-098 HT-099 terepszint feletti padló m = 0,8 m, lábazat = R1 fal: U_p 0,2168; U_lf 0,1763; U_T,p 0,16461', () => {
+    // Kézi számítás: U_p = 1/(0,17 + 4,4026 + 0,04) = 0,21680; U_lf = 1/(0,13 + 5,5010 + 0,04) = 0,17634; d_lf = 0,47 m; B = 4,8 m;
+    // (4.25) U_talaj = 4/(π·4,8 + 1,27)·ln(π·4,8/1,27 + 1) = 0,62514; (4.26) U_T,lf = 2·0,8·0,17634/4,8 = 0,05878;
+    // (4.24) U_T,p = 1/(1/0,21680 + 1/0,68392) = 0,16461 (talajon fekvőként 0,16823): ΔH = 96·(−0,00362) = −0,3466 W/K.
+    const p = goldenProjekt('G1');
+    const padlo = p.helyisegek[0]!.hatarolok.find((b) => b.tuloldal.fajta === 'talaj')!;
+    padlo.melyseg = -0.8;
+    expect(ellenoriz(p).some((h) => h.sulyossag === 'hiba' && h.uzenet.includes('lábazati fal'))).toBe(true);
+    padlo.labazatiFalRetegrendAzon = 'r-R1./ Külső fal';
+    const k = szamolProjekt(p);
+    if (!k.rendben) throw new Error(JSON.stringify(k.hianyok));
+    expect(k.eredmeny.szerkezetek.find((s) => s.szerkezet === 'talajon_fekvo_padlo')!.U).toBeCloseTo(0.164615, 5);
+    expect(k.eredmeny.hTrT - eredmeny('G1').hTrT).toBeCloseTo(-0.34658, 4);
+  });
+
   it('a talajjal érintkező falat önálló határolóként nem fogadja el (a (6.6) z·P-vel számol)', () => {
     const p = goldenProjekt('G1');
     p.retegrendek.push({ azon: 'pf', nev: 'PF1', szerkezet: 'talajjal_erintkezo_fal', retegek: [{ anyagAzon: 'a-Vasbeton', d: 0.3 }] });
