@@ -1,0 +1,1627 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "jelolesek",
+   "cim": "Jelölések és mértékegységek",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "2. fejezet (Jelölések és mértékegységek)",
+    "oldal": "5-19",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A jelölések indexeit '_' választja el (pl. R_si = Rsi). A forrás sorrendje megtartva, ismétlődő jelölések (A_k, U_p, U_T,pf) a forrásnak megfelelően kétszer szerepelnek eltérő jelentéssel. Üres egyseg = a forrásban üres cella (C_h, b_éjjel, b_szell,k, ε_LT,UF). Az E_súlyozott és E_exp,súlyozott mértékegysége a forrásban két sorban: 'kWh/év' és 'CO2/év' (ill. m2-re fajlagosítva) – itt '; '-vel elválasztva. A Symbol-betűs görög jelöléseket (γ, θ, λ, τ, ζ, χ, Δt) a PDF-képről azonosítottuk. ϑ_e,o mértékegysége a forrásban '-' (°C helyett) – anomália. A 'kihsználtsági', 'általt', 'leghevítő', 'Pesterzsébert' stb. elírások szó szerint megtartva.",
+   "oszlopok": [
+    {
+     "kulcs": "jeloles",
+     "cim": "Jelölés",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "megnevezes",
+     "cim": "A mennyiség megnevezése",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "jeloles": "A",
+     "megnevezes": "felület, a belméretek alapján számolva",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_b",
+     "megnevezes": "a borda felülete",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_FF,elem",
+     "megnevezes": "a függönyfalat alkotó elemek felülete",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_j",
+     "megnevezes": "a zóna nettó alapterülete (világítás)",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_k",
+     "megnevezes": "a k szellőzési mód által ellátott alapterület a zónában",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_k",
+     "megnevezes": "a keret felülete",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_l",
+     "megnevezes": "a lizéna felülete",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_N",
+     "megnevezes": "az épületek energetikai jellemzőinek tanúsításáról szóló kormányrendelet szerinti hasznos alapterület",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_nyz",
+     "megnevezes": "nyílászáró területe",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_p",
+     "megnevezes": "az átlátszatlan panel felülete",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_rögz",
+     "megnevezes": "egy rögzítőelem keresztmetszeti területe",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_rszr",
+     "megnevezes": "hőellátó rendszerhez tartozó alapterület",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_szell",
+     "megnevezes": "a nyílások területe légréteg hővezetési ellenállásának számításához",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "A_ü",
+     "megnevezes": "az üvegezés felülete, az üvegezés mérete alapján számolva",
+     "egyseg": "m2"
+    },
+    {
+     "jeloles": "B",
+     "megnevezes": "talajon fekvő padló karakterisztikus mérete",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "C_h",
+     "megnevezes": "a hűtőgép teljesítménytényezője",
+     "egyseg": ""
+    },
+    {
+     "jeloles": "C_m,eff",
+     "megnevezes": "effektív hőtároló képesség",
+     "egyseg": "kJ/K"
+    },
+    {
+     "jeloles": "CTRL",
+     "megnevezes": "szellőztetés szabályozási tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "D",
+     "megnevezes": "a lábazati hőszigetelés szélessége vagy mélysége a terepszint alatt",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "EEI",
+     "megnevezes": "keringetőszivattyúk energiahatékonysági mutatója",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "E_súlyozott",
+     "megnevezes": "az épület súlyozott energetikai teljesítménye",
+     "egyseg": "kWh/év; CO2/év"
+    },
+    {
+     "jeloles": "E_súlyozott,fajl",
+     "megnevezes": "az épület súlyozott energetikai teljesítményének fajlagos értéke",
+     "egyseg": "kWh/m2év; CO2/m2év"
+    },
+    {
+     "jeloles": "E_F/H/HMV/LT/vil,nren",
+     "megnevezes": "a fűtés/hűtés/melegvízellátás/ szellőzés/világítás éves nem megújuló primerenergia igénye",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "E_F/H/HMV/LT/vil,nren,fajl",
+     "megnevezes": "a fűtés/hűtés/melegvízellátás/ szellőzés/világítás fajlagos éves nem megújuló primerenergiaigénye",
+     "egyseg": "kWh/m2 év"
+    },
+    {
+     "jeloles": "E_F/H/HMV/LT/vil,CO2",
+     "megnevezes": "a fűtés/hűtés/melegvízellátás/ szellőzés/világítás éves szén- dioxid kibocsátása",
+     "egyseg": "kg/ év"
+    },
+    {
+     "jeloles": "E_F/H/HMV/LT/vil,CO2,fajl",
+     "megnevezes": "a fűtés/hűtés/melegvízellátás/ szellőzés/világítás fajlagos éves szén-dioxid kibocsátása",
+     "egyseg": "kg/m2év"
+    },
+    {
+     "jeloles": "E_exp,súlyozott",
+     "megnevezes": "a helyben megtermelt és más helyi, az épületek energetikai jellemzőinek meghatározásáról szóló rendelet által nem szabályozott fogyasztóknak átadott vagy a hálózatba exportált, súlyozott energia",
+     "egyseg": "kWh/év; CO2/év"
+    },
+    {
+     "jeloles": "E_exp,súlyozott,fajl",
+     "megnevezes": "a helyben megtermelt és más helyi, az épületek energetikai jellemzőinek meghatározásáról szóló rendelet által nem szabályozott fogyasztóknak átadott vagy a hálózatba exportált, súlyozott energia fajlagos értéke",
+     "egyseg": "kWh/m2év; CO2/m2év"
+    },
+    {
+     "jeloles": "E_nren",
+     "megnevezes": "az épület(rész) éves nem megújuló primerenergia igénye",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "E_nren,fajl",
+     "megnevezes": "összesített energetikai jellemző (az épület(rész) éves nem megújuló primerenergia igénye)",
+     "egyseg": "kWh/m2 év"
+    },
+    {
+     "jeloles": "E_ren",
+     "megnevezes": "az épület(rész) éves megújuló primerenergia igénye",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "E_ren,fajl",
+     "megnevezes": "az épület(rész) éves megújuló primerenergia igénye",
+     "egyseg": "kWh/m2 év"
+    },
+    {
+     "jeloles": "E_tot",
+     "megnevezes": "az épület(rész) éves teljes primerenergia igénye",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "E_tot,fajl",
+     "megnevezes": "az épület(rész) éves teljes primerenergia igénye",
+     "egyseg": "kWh/m2 év"
+    },
+    {
+     "jeloles": "E_CO2",
+     "megnevezes": "az épület(rész) éves szén-dioxid kibocsátása",
+     "egyseg": "kg/év"
+    },
+    {
+     "jeloles": "E_CO2,fajl",
+     "megnevezes": "az épület(rész) éves fajlagos szén-dioxid kibocsátása",
+     "egyseg": "kg/ m2év"
+    },
+    {
+     "jeloles": "F_árny,i",
+     "megnevezes": "a külső akadályok miatti összesített árnyékoltsági tényező adott i tájolás és hajlásszög esetén",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_f",
+     "megnevezes": "nyílászáró melletti függőleges árnyékvető szerkezet miatti árnyékoltsági tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_fe",
+     "megnevezes": "a fényerő szabályozhatóságát kifejező tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_h",
+     "megnevezes": "a horizont miatti árnyékoltsági tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "FH",
+     "megnevezes": "fényforrások fényhasznosítása",
+     "egyseg": "lm/W"
+    },
+    {
+     "jeloles": "F_keret",
+     "megnevezes": "a nyílászáró keretaránya",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_kihaszn",
+     "megnevezes": "kihsználtsági mutató",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_nappal",
+     "megnevezes": "természetes megvilágítás szerepét kifejező tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_szab",
+     "megnevezes": "szabályozás típusát kifejező tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_ü",
+     "megnevezes": "az üvegezés beesési szögtől függő korrekciós tényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "F_v",
+     "megnevezes": "nyílászáró feletti vízszintes árnyékvető szerkezet miatti árnyékoltsági tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "H",
+     "megnevezes": "hőátviteli tényező",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_d",
+     "megnevezes": "a deresedés szempontjából kritikus órákban az éves fűtési hőfokhíd ezredrésze",
+     "egyseg": "khK/év"
+    },
+    {
+     "jeloles": "H_LT,1/2,F",
+     "megnevezes": "szellőzési hőátviteli tényező, gépi szellőzés, 1./2. fokozat esetén (fűtési idényben)",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_LT,filt,F",
+     "megnevezes": "szellőzési hőátviteli tényező, filtráció (fűtési idényben)",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_szell,F/H",
+     "megnevezes": "szellőzési hőátviteli tényező fűtés/hűtés esetén",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_term,F",
+     "megnevezes": "szellőzési hőátviteli tényező, természetes szellőzés (fűtési idényben)",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr",
+     "megnevezes": "transzmissziós hőátviteli tényező",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,D,F/H",
+     "megnevezes": "külső környezettel határos szerkezetek direkt transzmissziós hőátviteli tényezője fűtés/hűtés esetén",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,F/H",
+     "megnevezes": "transzmissziós hőátviteli tényező a fűtés/hűtés esetén",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,ix",
+     "megnevezes": "transzmissziós hőátviteli tényező a belső tér és a nem kondicionált tér között",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,T",
+     "megnevezes": "talajjal érintkező szerkezetek transzmissziós hőátviteli tényezője",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,T,p",
+     "megnevezes": "fűtött pince transzmissziós hőátviteli tényezője",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,T,tp",
+     "megnevezes": "a terepszint közelében vagy felett fekvő padló transzmissziós hőátviteli tényezője",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "H_tr,x,F/H",
+     "megnevezes": "nem kondicionált térrel határos szerkezetek transzmissziós hőátviteli tényezője fűtés/hűtés esetén",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "G_s,i",
+     "megnevezes": "az adott i tájolású és Hajlásszögű felületre érkező napsugárzási energiahozam az adott időszakra",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "jeloles": "MISC",
+     "megnevezes": "a szellőztetés hatékonyságát, a légcsatornák szivárgását és a járulékos infiltrációt kifejező összesített általános típustényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "MV",
+     "megnevezes": "a helyiségre / zónára előírt megvilágítás",
+     "egyseg": "lx"
+    },
+    {
+     "jeloles": "P",
+     "megnevezes": "talajon fekvő padló kitett kerülete",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "P_psz",
+     "megnevezes": "a perem hőszigetelés hossza a kerület mentén",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "P_j",
+     "megnevezes": "a beépített világítás fajlagos névleges elektromos teljesítménye a j zónában",
+     "egyseg": "W/m2"
+    },
+    {
+     "jeloles": "P_koll,sziv",
+     "megnevezes": "szolárköri szivattyú névleges teljesítménye",
+     "egyseg": "W"
+    },
+    {
+     "jeloles": "P_PV,össz",
+     "megnevezes": "a napelem mező beépített teljesítménye",
+     "egyseg": "W"
+    },
+    {
+     "jeloles": "Q",
+     "megnevezes": "hőenergia",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_b,F/H",
+     "megnevezes": "belső hőnyereség fűtés vagy hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,o",
+     "megnevezes": "a méretezési fűtési hőszükséglet becsült értéke a lefedési arányok meghatározásához",
+     "egyseg": "W"
+    },
+    {
+     "jeloles": "Q_F,EF,1/2",
+     "megnevezes": "az előfűtés nettó hőenergia igénye (1. és 2. fokozatban)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,LT; Q_F,LT,1/2",
+     "megnevezes": "A nettó fűtési hőigény leghevítő által fedezett része (1. és 2. fokozatban)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,LT,1/2,friss",
+     "megnevezes": "friss levegőre vonatkoztatott hőigény",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,LT,lcs",
+     "megnevezes": "a levegő elosztás éves hővesztesége",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,LT,recirk,1/2",
+     "megnevezes": "a recirkuláció nettó hőenergia igénye (1. és 2. fokozatban)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,net",
+     "megnevezes": "nettó fűtési energiaigény,",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,net,FR",
+     "megnevezes": "a nettó fűtési energiaigényének nem léghevítés által fedezett hányada",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,net,folyt",
+     "megnevezes": "nettó fűtési energiaigény, folytonos üzem esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,szab",
+     "megnevezes": "a teljesítmény és a hőigény illesztésének pontatlansága miatti éves veszteségek",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,szakaszos",
+     "megnevezes": "nettó fűtési energiaigény szakaszos üzem esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,száll",
+     "megnevezes": "az elosztóvezeték éves vesztesége",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,tár",
+     "megnevezes": "a hőtárolás éves vesztesége",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,thcs,1/2",
+     "megnevezes": "a talajhőcserélős levegőelőmelegítés által fedezett energiaigény (1. és 2. fokozatban)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,UF,1/2",
+     "megnevezes": "az utófűtés nettó hőenergia igénye (1. és 2. fokozatban)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,UF,1/2,friss",
+     "megnevezes": "az utófűtés nettó hőenergia igénye (1. és 2. fokozatban) friss levegőre vonatkoztatva",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_F,vég,j",
+     "megnevezes": "a j. energiahordozóhoz tartozó éves bruttó fűtési hőenergiafelhasználás",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_GM,át",
+     "megnevezes": "a gázmotor által termelt, de az épületben fel nem használt, más fogyasztóknak átadott éves hőmennyiség",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_H,net",
+     "megnevezes": "a gépi hűtés éves nettó energiaigénye",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_H,net,folyt",
+     "megnevezes": "a gépi hűtés éves nettó energiaigénye folytonos üzem esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_H,net,szakaszos",
+     "megnevezes": "a gépi hűtés éves nettó energiaigénye szakaszos üzem esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_HMV,vég,j",
+     "megnevezes": "a j. energiahordozóhoz tartozó fajlagos éves bruttó HMV hőenergiaigény",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_HMV,net",
+     "megnevezes": "a melegvíz készítés nettó éves energiaigénye",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_HMV,száll",
+     "megnevezes": "a melegvíz elosztás éves vesztesége",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_HMV,tár",
+     "megnevezes": "a melegvíz tárolás éves vesztesége",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_koll",
+     "megnevezes": "napkollektoros rendszer általt termelt és hasznosított hő éves mennyisége (a más fogyasztóknak átadott hő nélkül)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_koll,át",
+     "megnevezes": "napkollektoros rendszer általt termelt, az épületben fel nem használt de más fogyasztóknak átadott hő éves mennyisége",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_lead",
+     "megnevezes": "teljes hőleadás hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_lead,26",
+     "megnevezes": "a teljes transzmissziós és szellőzési hőleadás hűtési módban 26 °C-os belső hőmérsékletre",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_net,norm,F/H",
+     "megnevezes": "fűtés/ hűtés energiaigénye a számítási időszak alatt végig normál nyitvatartást feltételezve",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_net,szün,F/H",
+     "megnevezes": "a fűtés/ hűtés energiaigénye a számítási időszak alatt végig szünetet feltételezve",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_nyer",
+     "megnevezes": "teljes hőnyereség fűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_terh",
+     "megnevezes": "teljes hőterhelés hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_s,F/H",
+     "megnevezes": "teljes sugárzási hőnyereség fűtés vagy hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_sd,F/H",
+     "megnevezes": "a direkt sugárzási hőnyereség fűtés vagy hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_sid,F/H",
+     "megnevezes": "az indirekt sugárzási hőnyereség fűtés vagy hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_szell,F/H",
+     "megnevezes": "szellőzési hőátvitel érezhető hányada fűtés/ hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_tr,F/H",
+     "megnevezes": "transzmissziós hőátvitel fűtés vagy hűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_veszt",
+     "megnevezes": "teljes hőveszteség fűtés esetén",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "Q_végső",
+     "megnevezes": "az i energiahordozóval kiszolgált együttes végsőenergia igény energiahordozónként (fűtés, hűtés, HMV, szellőzés, stb.)",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "R",
+     "megnevezes": "hővezetési ellenállás",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R’",
+     "megnevezes": "a lábazati hőszigetelés miatti többlet hővezetési ellenállás",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_árny",
+     "megnevezes": "árnyékoló szerkezet hővezetési ellenállása",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_l",
+     "megnevezes": "légréteg egyenértékű hővezetési ellenállása",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_psz",
+     "megnevezes": "a lábazati hőszigetelés hővezetési ellenállása",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_p",
+     "megnevezes": "a padlószerkezet hővezetési ellenállása, figyelembe véve a padlón, padló alatt vagy a padlóban elhelyezett teljes felületű hőszigetelést",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_pf",
+     "megnevezes": "a pince falszerkezet hővezetési ellenállása",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_si és R_se",
+     "megnevezes": "belső és külső felületi hőátadási ellenállás",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_tot",
+     "megnevezes": "eredő hővezetési ellenállás",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_tot,alsó",
+     "megnevezes": "az eredő hővezetési ellenállás alsó határértéke",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_tot,felső",
+     "megnevezes": "az eredő hővezetési ellenállás felső határértéke",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_tot,zárt",
+     "megnevezes": "a zárt légréteg eredő hővezetési ellenállása",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "R_tot,szell",
+     "megnevezes": "az intenzíven kiszellőztetett légréteg eredő hővezetési ellenállása",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "RER",
+     "megnevezes": "megújuló energia részarány",
+     "egyseg": "%"
+    },
+    {
+     "jeloles": "SCOP, SPF",
+     "megnevezes": "hőszivattyú szezonális jósági foka",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "SEER",
+     "megnevezes": "hűtőgép szezonális teljesítménytényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "SPI",
+     "megnevezes": "ventilátoroknál: fajlagos felvett villamos teljesítmény, a gyártói információs adatlapon feltüntetett érték",
+     "egyseg": "kW/(m3/h)"
+    },
+    {
+     "jeloles": "T_túl",
+     "megnevezes": "a túlmelegedés mértéke 26 °C belső hőmérséklet fölött (túlmelegedési belső hőfokhíd)",
+     "egyseg": "Kh"
+    },
+    {
+     "jeloles": "U",
+     "megnevezes": "hőátbocsátási tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_0",
+     "megnevezes": "a korrekciók nélküli hőátbocsátási tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_b",
+     "megnevezes": "a borda hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_FF",
+     "megnevezes": "a függönyfal hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_FF,elem",
+     "megnevezes": "a függönyfalat alkotó elemek hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_T,pf",
+     "megnevezes": "fűtött pince falának egyenértékű hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_k",
+     "megnevezes": "a keret hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_kör",
+     "megnevezes": "körkeresztmetszetű légcsatorna hosszegységre vonatkozó hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "U_l",
+     "megnevezes": "a lizéna hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_lf",
+     "megnevezes": "a lábazati fal hőátbocsátási tényezője (felületi ellenállásokkal)",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_nsz",
+     "megnevezes": "négyszög keresztmetszetű légcsatorna hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_ny",
+     "megnevezes": "nyílászáró hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_ny,e",
+     "megnevezes": "egyszárnyú nyílászáró hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_ny,k",
+     "megnevezes": "kapcsolt nyílászáró hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_ny,t",
+     "megnevezes": "társított árnyékoló szerkezettel ellátott nyílászáró hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_p",
+     "megnevezes": "az átlátszatlan panel hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_p",
+     "megnevezes": "a padlószerkezet hőátbocsátási tényezője (felületi ellenállásokkal)",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_R",
+     "megnevezes": "csatlakozási hőhidak hatását is figyelembe vevő szorzóval korrigált („eredő”) hőátbocsátási tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_T,p",
+     "megnevezes": "a talajon fekvő padló a talaj hatását is tartalmazó egyenértékű hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_T,pf",
+     "megnevezes": "fűtött pince talajjal érintkező falának egyenértékű hőátbocsátási tényezője, mely tartalmazza a talaj hatását is",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_talaj",
+     "megnevezes": "a padlószerkezet alatti talaj hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_T,lf",
+     "megnevezes": "a lábazati fal hőátbocsátási tényezője, mely tartalmazza a talaj hatásást is",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "U_ü",
+     "megnevezes": "az üvegezés hőátbocsátási tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "V",
+     "megnevezes": "a kondicionált térfogat, belméretek szerint számolva",
+     "egyseg": "m3"
+    },
+    {
+     "jeloles": "V_LT,1/2",
+     "megnevezes": "a levegő térfogatárama recirkuláció nélkül (1. vagy 2. fokozaton)",
+     "egyseg": "m3/h"
+    },
+    {
+     "jeloles": "V_LT,recirk,1/2",
+     "megnevezes": "a recirkuláltatott levegő térfogatárama (1. vagy 2. fokozaton)",
+     "egyseg": "m3/h"
+    },
+    {
+     "jeloles": "W_exp",
+     "megnevezes": "a helyben megtermelt és más fogyasztóknak vagy a hálózatnak átadott energiaigény",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "W_F,vég",
+     "megnevezes": "fűtés villamos segédenergia igénye (végsőenergia)",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_F,sziv",
+     "megnevezes": "a fűtési keringtetés éves energiaigénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_F,sziv_talaj",
+     "megnevezes": "talajköri szivattyú éves segédenergiaigénye (fűtésre eső hányad)",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_F,tár",
+     "megnevezes": "a fűtési hőtárolás éves segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_F,term",
+     "megnevezes": "a fűtési hőtermelés éves segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_GM",
+     "megnevezes": "a gázmotor által termelt éves villamos energia",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "W_GM,át",
+     "megnevezes": "a gázmotor által termelt, de az épületben fel nem használt, más fogyasztóknak átadott éves villamos energia",
+     "egyseg": "kWh/év"
+    },
+    {
+     "jeloles": "W_H,seg",
+     "megnevezes": "hűtés villamos segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_H,vég",
+     "megnevezes": "hűtés villamos segédenergia igénye (végsőenergia)",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,tár",
+     "megnevezes": "HMV tároló éves villamos segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,term",
+     "megnevezes": "hőtermelő éves villamos segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,sziv",
+     "megnevezes": "a HMV szivattyú(k) éves villamos segédenergiaigénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,sziv_cirk",
+     "megnevezes": "a HMV cirkuláció éves villamos segédenergiaigénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,sziv_szol",
+     "megnevezes": "a szolárköri szivattyú éves segédenergiaigénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,sziv_talaj",
+     "megnevezes": "talajköri szivattyú éves segédenergiaigénye (HMV-re eső hányad)",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_HMV,vég",
+     "megnevezes": "a melegvíztermelés éves segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_i",
+     "megnevezes": "a nem hőtermelési célú villamos energia igények",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_LT,s",
+     "megnevezes": "a szellőző rendszer éves villamos segédenergia igénye",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_PV",
+     "megnevezes": "napelemek által termelt éves villamos energia",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_PV,át",
+     "megnevezes": "napelemek által termelt, de az épületben fel nem használt, más fogyasztóknak átadott éves villamos energia",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_vent,1/2",
+     "megnevezes": "a szellőző rendszerbe épített ventilátorok éves villamos energiaigénye (1. és 2. fokozatban)",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "W_vill,vég",
+     "megnevezes": "a beépített világítás éves végső villamosenergia felhasználása",
+     "egyseg": "kWh/ év"
+    },
+    {
+     "jeloles": "a és b",
+     "megnevezes": "a négyszög keresztmetszetű légcsatorna belső élméretei",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "a_F és a_H",
+     "megnevezes": "fűtési/ hűtési numerikus tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "b",
+     "megnevezes": "a nem kondicionált terek miatti módosító tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "b_éjjel",
+     "megnevezes": "az alacsonyabb hőmérsékletű éjszakai szellőző levegő miatti módosító tényező",
+     "egyseg": ""
+    },
+    {
+     "jeloles": "b_nyár",
+     "megnevezes": "a nem kondicionált terek miatti módosító tényező a nyári hónapokban",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "b_szell,k",
+     "megnevezes": "hőmérséklet korrekciós tényező a k szellőzési mód esetén",
+     "egyseg": ""
+    },
+    {
+     "jeloles": "b_eth",
+     "megnevezes": "effektív teljes hézagosság",
+     "egyseg": "mm"
+    },
+    {
+     "jeloles": "b_ha",
+     "megnevezes": "átlagos hézag mérete alul",
+     "egyseg": "mm"
+    },
+    {
+     "jeloles": "b_ho",
+     "megnevezes": "átlagos hézag mérete oldalt",
+     "egyseg": "mm"
+    },
+    {
+     "jeloles": "b_hf",
+     "megnevezes": "átlagos hézag mérete felül",
+     "egyseg": "mm"
+    },
+    {
+     "jeloles": "c",
+     "megnevezes": "fajhő",
+     "egyseg": "J/kgK"
+    },
+    {
+     "jeloles": "c_hü",
+     "megnevezes": "hűtési célú berendezés teljes és érezhető hűtőteljesítményének aránya",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "d",
+     "megnevezes": "rétegvastagság",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d’",
+     "megnevezes": "a lábazati hőszigetelés miatti többlet egyenértékű vastagság",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_0",
+     "megnevezes": "a rögzítőelemet tartalmazó hőszigetelés vastagsága",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_1",
+     "megnevezes": "a hőszigetelő réteget átszúró rögzítőelem hosszúsága a hőszigetelő rétegben",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_f",
+     "megnevezes": "a talajon fekvő padlóhoz csatlakozó fal teljes vastagsága",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_lf",
+     "megnevezes": "lábazati fal teljes vastagsága",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_n",
+     "megnevezes": "lábazati hőszigetelés vastagsága",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_p",
+     "megnevezes": "talajon fekvő padló egyenértékű vastagsága",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "d_pf",
+     "megnevezes": "talajjal érintkező pincefal egyenértékű vastagsága",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "f_a, f_b, …, f_q",
+     "megnevezes": "a különböző anyagokhoz tartozó felületek részaránya a homlokfelülethez képest",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f",
+     "megnevezes": "tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_CO2",
+     "megnevezes": "szén-dioxid kibocsátás egyenérték",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_éjjel",
+     "megnevezes": "az éjszakai szellőztetés időaránya nyáron",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_LT",
+     "megnevezes": "a teljesítmény és a hőigény illesztésének pontatlanságából származó veszteség",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_nren",
+     "megnevezes": "nem megújuló primerenergia átalakítási tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_ren",
+     "megnevezes": "megújuló primerenergia átalakítási tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_tot",
+     "megnevezes": "teljes primerenergia átalakítási tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_súly",
+     "megnevezes": "az energiahordozó súlyozó tényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_súly,exp",
+     "megnevezes": "az átadott (exportált) energia súlyozó tényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_szün",
+     "megnevezes": "a szünet időaránya a számítási időszakhoz képest",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "f_v",
+     "megnevezes": "a légcsatorna hőveszteségi tényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "g_árny,i",
+     "megnevezes": "az i tájolású és dőlésszögű nyílászáró társított (napvédő) szerkezetének sugárzásátbocsátási képessége",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "g_n",
+     "megnevezes": "az üveg sugárzásátbocsátási képessége merőlegesen beeső napsugárzás esetén",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "k",
+     "megnevezes": "napkollektor teljesítménycsökkentő tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "l",
+     "megnevezes": "a csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_b,k",
+     "megnevezes": "A borda-keret csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_b,p",
+     "megnevezes": "A borda-átlátszatlan panel csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_b,ü",
+     "megnevezes": "A borda-üvegezés csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_k,p",
+     "megnevezes": "A keret-átlátszatlan panel csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_k,ü",
+     "megnevezes": "A keret-üvegezés csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_l,k",
+     "megnevezes": "A lizéna-keret csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_l,p",
+     "megnevezes": "A lizéna-átlátszatlan panel csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_l,ü",
+     "megnevezes": "A lizéna-üvegezés csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_m,ü",
+     "megnevezes": "A merevítőprofil-üvegezés csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_p,f",
+     "megnevezes": "a padló-fal csatlakozási hőhíd hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_psz",
+     "megnevezes": "a perem hőszigetelés hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "l_v",
+     "megnevezes": "a légcsatorna hossza",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "m",
+     "megnevezes": "a padlószerkezet felső szintjének magassága a külső terepszint felett",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "n",
+     "megnevezes": "légcsereszám",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_éjjel",
+     "megnevezes": "az éjszakai többlet-légcsereszám",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_filt",
+     "megnevezes": "tömítetlenségből származó légcsere növekedés",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_LT",
+     "megnevezes": "légcsereszám a szellőző rendszer üzemidejében, a recirkuláltatott légmennyiség nélkül",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_rögz",
+     "megnevezes": "a rögzítőelemek száma négyzetméterenként",
+     "egyseg": "db/m2"
+    },
+    {
+     "jeloles": "n_szüks",
+     "megnevezes": "átlagos szükséges légcsereszám a használati idő figyelembevételével (ha nincs gépi szellőztetés)",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_term",
+     "megnevezes": "légcsereszám természetes szellőzés esetén",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_term,nyár",
+     "megnevezes": "a természetes szellőztetés légcsereszáma a nyári hónapokban",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "n_üsz",
+     "megnevezes": "légcsereszám a légtecnikai rendszer üzemszünete alatt",
+     "egyseg": "1/h"
+    },
+    {
+     "jeloles": "q",
+     "megnevezes": "fajlagos hőveszteség tényező",
+     "egyseg": "W/m3K"
+    },
+    {
+     "jeloles": "q_b",
+     "megnevezes": "a belső hőterhelés fajlagos értéke",
+     "egyseg": "W/m2"
+    },
+    {
+     "jeloles": "q_F,net",
+     "megnevezes": "a fűtés fajlagos nettó hőenergia igénye",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "jeloles": "q_F,vég,j",
+     "megnevezes": "a j. energiahordozóhoz tartozó fajlagos éves bruttó fűtési hőenergiaigény",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "jeloles": "q_H,net",
+     "megnevezes": "a hűtés fajlagos nettó hőenergia igénye",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "jeloles": "t",
+     "megnevezes": "idő",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "t_l,átl",
+     "megnevezes": "a légcsatorna körüli átlagos környezeti hőmérséklet",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "t_éjjel",
+     "megnevezes": "éjszakai órák száma",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "t_l,köz",
+     "megnevezes": "a légcsatornában áramló levegő közepes hőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "t_nappal",
+     "megnevezes": "nappali órák száma",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "w_lev",
+     "megnevezes": "a levegő áramlási sebessége légcsatornában",
+     "egyseg": "m/s"
+    },
+    {
+     "jeloles": "w_PV",
+     "megnevezes": "fajlagos napelem termelés",
+     "egyseg": "kWh/év,kWp"
+    },
+    {
+     "jeloles": "w_standby",
+     "megnevezes": "világítás vezérlésének készenléti energiaigénye",
+     "egyseg": "kWh/m2,év"
+    },
+    {
+     "jeloles": "w_vész",
+     "megnevezes": "vészvilágítás energiaigénye",
+     "egyseg": "kWh/m2,év"
+    },
+    {
+     "jeloles": "z",
+     "megnevezes": "a padlószerkezet felső szintjének mélysége a külső terepszint alatt",
+     "egyseg": "m"
+    },
+    {
+     "jeloles": "z_t",
+     "megnevezes": "árnyékolási tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "x",
+     "megnevezes": "gépi szellőzésnél: a hőenergia és az elektromos áram- megtakarítás közötti nem lineáris viszony figyelembevételére szolgáló kitevő (a motor és a meghajtó szerkezet jellemzőitől függően)",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "Δp_LT",
+     "megnevezes": "a rendszer áramlási ellenállása",
+     "egyseg": "Pa"
+    },
+    {
+     "jeloles": "ΔR",
+     "megnevezes": "többlet hővezetési ellenállás",
+     "egyseg": "m2K/W"
+    },
+    {
+     "jeloles": "Δt_term",
+     "megnevezes": "a szellőzés üzemszüneti ideje a fűtési idényben",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "Δt_LT,a,1/2",
+     "megnevezes": "a szellőző rendszer egész évi működési ideje",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "Δt_LT,1/2",
+     "megnevezes": "a szellőző rendszer működési ideje 1. vagy 2. fokozatban a fűtési idényben",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "Δt_LT,1/2,e<−4C",
+     "megnevezes": "a szellőző rendszer működési ideje 1. vagy 2. fokozatban a fűtési idény azon részében, amikor a külső hőmérséklet -4 C alatt van",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "Δt_EF,1/2,e<−4C",
+     "megnevezes": "a szellőző rendszer működési ideje 1. vagy 2. fokozatban a fűtési idény azon részében, amikor a külső hőmérséklet -4 C alatt van és fagyvédelmi előfűtés működik,",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "Δt",
+     "megnevezes": "számítási időszak hossza",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "ΔU",
+     "megnevezes": "a hőátbocsátás korrekciós tényezője",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "ΔU’’",
+     "megnevezes": "a légüreg típusától függő korrekciós tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "ΔU_ford",
+     "megnevezes": "a fordított tetőkre vonatkozó korrekciós tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "ΔU_légüreg",
+     "megnevezes": "a légüregekre vonatkozó korrekciós tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "ΔU_rögz",
+     "megnevezes": "a mechanikus rögzítőelemekre vonatkozó korrekciós tényező",
+     "egyseg": "W/m2K"
+    },
+    {
+     "jeloles": "α",
+     "megnevezes": "a hőszigetelés mechanikai rögzítésétől függő tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_F",
+     "megnevezes": "a fűtési hőtermelő teljesítménytényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_F,szab",
+     "megnevezes": "fűtési szabályozási hőátviteli veszteségtényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_H",
+     "megnevezes": "a hűtési hőtermelő teljesítménytényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_H,szab",
+     "megnevezes": "hűtési szabályozási hőátviteli veszteségtényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_HMV",
+     "megnevezes": "a HMV hőtermelő teljesítménytényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_LT,EF",
+     "megnevezes": "a légtechnika (gépi szellőzés) előfűtés teljesítménytényezője",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ε_LT,UF",
+     "megnevezes": "a légtechnika (gépi szellőzés) utófűtés teljesítménytényezője",
+     "egyseg": ""
+    },
+    {
+     "jeloles": "γ_F/H",
+     "megnevezes": "nyereség-veszteség arány fűtés/ hűtés esetén",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_F",
+     "megnevezes": "nyereség hasznosítási tényező fűtés esetén",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_H",
+     "megnevezes": "hőátviteli hasznosítási tényező hűtés esetén",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_r",
+     "megnevezes": "a szellőző rendszerbe épített hővisszanyerő működési hatásfoka",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_ra",
+     "megnevezes": "a szellőző rendszerbe épített hővisszanyerő közölt hatásfoka",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_s",
+     "megnevezes": "hőtermelő szezonális hatásfoka",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_thcs",
+     "megnevezes": "a szellőző rendszerbe épített talajhőcserélő hőkinyerési foka",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_vent,1/2",
+     "megnevezes": "a ventilátor összhatásfoka (1. és 2. fokozaton)",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "η_vil",
+     "megnevezes": "fényforrások hatásfoka",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "θ_bef,F/H",
+     "megnevezes": "a szellőző levegő átlagos befúvási hőmérséklete fűtés/ hűtés esetén",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_e",
+     "megnevezes": "külső hőmérséklet",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_e<−4C",
+     "megnevezes": "átlagos külső hőmérséklet azon időszakban, akikor a külső hőmérséklet -4 C alatt van",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_e,o",
+     "megnevezes": "méretezési külső hőmérséklet a lefedési arányok meghatározásához",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_e,átlag",
+     "megnevezes": "a külső hőmérséklet átlagértéke",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_e;év",
+     "megnevezes": "a külső tér éves átlaghőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_i",
+     "megnevezes": "belső hőmérséklet",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_i,F/H",
+     "megnevezes": "a belső parancsolt hőmérséklet fűtés/ hűtés esetén",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_lev",
+     "megnevezes": "szállított levegő hőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_thcs,F",
+     "megnevezes": "a talajhőcserélőből kilépő levegő átlaghőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "θ_x",
+     "megnevezes": "a szomszédos tér hőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "jeloles": "ϑ_e,o",
+     "megnevezes": "méretezési külső hőmérséklet",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "λ",
+     "megnevezes": "hővezetési tényező",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "λ_eq",
+     "megnevezes": "egyenértékű hővezetési tényező",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "λ_rögz",
+     "megnevezes": "a rögzítőelem hővezetési tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "λ_talaj",
+     "megnevezes": "talaj hővezetési tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ρ",
+     "megnevezes": "sűrűség",
+     "egyseg": "kg/m3"
+    },
+    {
+     "jeloles": "σ_F/H",
+     "megnevezes": "a szakaszos üzemvitel hatását kifejező korrekciós tényező a fűtési/ hűtési üzemmódban",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "τ_F/H",
+     "megnevezes": "az épület/ zóna időállandója",
+     "egyseg": "h"
+    },
+    {
+     "jeloles": "υ",
+     "megnevezes": "a szabályozás hatását kifejező korrekciós tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "ζ",
+     "megnevezes": "a csatlakozási hőhidak hatását kifejező korrekciós tényező",
+     "egyseg": "-"
+    },
+    {
+     "jeloles": "χ",
+     "megnevezes": "pontszerű hőhíd hőátbocsátási tényezője",
+     "egyseg": "W/K"
+    },
+    {
+     "jeloles": "ψ",
+     "megnevezes": "a csatlakozási hőhíd vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_b,p",
+     "megnevezes": "A borda-átlátszatlan panel csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_b,k",
+     "megnevezes": "A borda-keret csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_b,ü",
+     "megnevezes": "A borda-üvegezés csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_k,p",
+     "megnevezes": "A keret-átlátszatlan panel csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_k,ü",
+     "megnevezes": "A keret-üvegezés csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_l,k",
+     "megnevezes": "A lizéna-keret csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_l,p",
+     "megnevezes": "A lizéna-átlátszatlan panel csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_l,ü",
+     "megnevezes": "A lizéna-üvegezés csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_m,ü",
+     "megnevezes": "A merevítőprofil-üvegezés csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_p,f",
+     "megnevezes": "a padló-fal csatlakozás vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    },
+    {
+     "jeloles": "ψ_psz",
+     "megnevezes": "a perem hőszigetelés vonalmenti hőátbocsátási tényezője",
+     "egyseg": "W/mK"
+    }
+   ]
+  }
+ ]
+}

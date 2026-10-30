@@ -1,0 +1,6450 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "f2_1_1_reszletes_adatfajl_parameterek",
+   "cim": "Részletes módszer és szimuláció – az órai bontású klíma-adatfile paraméterei (felsorolás)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.1 pont",
+    "oldal": 1,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Szöveg: „Részletes módszerhez a klíma adatok elektronikus formában, letölthető formátumban állnak rendelkezésre. Az adatfile órai bontásban tartalmaz adatokat a következő paraméterekre:” – Maga az adatfile és letöltési helye a 2. Függelékben NINCS megadva (nyitott kérdés).",
+   "oszlopok": [
+    {
+     "kulcs": "sorszam",
+     "cim": "sorszám",
+     "egyseg": null
+    },
+    {
+     "kulcs": "parameter",
+     "cim": "paraméter (szó szerint)",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "sorszam": 1,
+     "parameter": "külső léghőmérséklet"
+    },
+    {
+     "sorszam": 2,
+     "parameter": "külső abszolút és relatív nedvességtartalom, parciális vízgőznyomás, légnyomás"
+    },
+    {
+     "sorszam": 3,
+     "parameter": "szélsebesség és irány"
+    },
+    {
+     "sorszam": 4,
+     "parameter": "sugárzási adatok vízszintes felületre (globál, direkt, diffúz, infravörös) és 8 féle tájolásra"
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_1_1",
+   "cim": "1.1. táblázat: Havi külső hőmérséklet átlagértékek",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.2.1 pont, 1.1. táblázat",
+    "oldal": 1,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Bevezető szöveg (1.2.1): „Az éves fűtési hőszükséglet számítása során a hőfokhidat és a fűtési idény hosszát az egyensúlyi hőmérsékletkülönbség függvényében az alábbi értékekkel kell figyelembe venni.” ANOMÁLIA (PDF-képen ellenőrizve, a forrás valóban így írja, változatlanul átvéve): február −0,1 °C hidegebb, mint január 2,1 °C; december −0,1 °C; október 8,3 °C és november 7,6 °C szokatlanul közel van egymáshoz. Ellenőrzés: a 12 havi érték számtani átlaga 10,875 → 10,9 (egyezik), órasúlyozott átlaga 10,93. Megjegyzés: az 1.4. táblázat pv,t sora (telítési gőznyomásnak megfelelő értékek) ugyanezt a havi menetet követi (feb. 629 Pa, dec. 622 Pa), tehát a hőmérsékletsor belsőleg konzisztens az 1.4. táblázattal. Hőfokhíd-táblázatot (egyensúlyi hőmérsékletkülönbség függvényében) a 2. Függelék NEM tartalmaz, csak havi átlagokat.",
+   "oszlopok": [
+    {
+     "kulcs": "jellemzo",
+     "cim": "jellemző",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m01",
+     "cim": "1. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m02",
+     "cim": "2. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m03",
+     "cim": "3. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m04",
+     "cim": "4. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m05",
+     "cim": "5. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m06",
+     "cim": "6. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m07",
+     "cim": "7. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m08",
+     "cim": "8. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m09",
+     "cim": "9. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m10",
+     "cim": "10. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m11",
+     "cim": "11. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "m12",
+     "cim": "12. hónap",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "eves",
+     "cim": "Éves",
+     "egyseg": "°C"
+    }
+   ],
+   "sorok": [
+    {
+     "jellemzo": "Átlagos külső hőmérséklet [°C]",
+     "m01": 2.1,
+     "m02": -0.1,
+     "m03": 3.5,
+     "m04": 10.9,
+     "m05": 16.8,
+     "m06": 20.8,
+     "m07": 21.9,
+     "m08": 21.0,
+     "m09": 17.8,
+     "m10": 8.3,
+     "m11": 7.6,
+     "m12": -0.1,
+     "eves": 10.9
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_1_2",
+   "cim": "1.2. táblázat: Szezonális külső hőmérséklet átlagértékek",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.2.1 pont, 1.2. táblázat",
+    "oldal": 1,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Ellenőrzés: okt. 15.–ápr. 15. (mindkét nap beleértve) = 183 nap × 24 h = 4392 h; máj. 15.–szept. 15. = 124 nap × 24 h = 2976 h – egyezik. A kezdet/vég mezők értelmezett bontások, a forrás az `idoszak` szöveget adja.",
+   "oszlopok": [
+    {
+     "kulcs": "szezon",
+     "cim": "szezon",
+     "egyseg": null
+    },
+    {
+     "kulcs": "idoszak",
+     "cim": "időszak (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "kezdet",
+     "cim": "kezdet (HH-NN)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "veg",
+     "cim": "vég (HH-NN)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "theta_e_atlag",
+     "cim": "Átlagos külső hőmérséklet",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "hossz_h",
+     "cim": "Szezon hossza",
+     "egyseg": "h"
+    }
+   ],
+   "sorok": [
+    {
+     "szezon": "Fűtési szezon",
+     "idoszak": "okt. 15. - ápr. 15.",
+     "kezdet": "10-15",
+     "veg": "04-15",
+     "theta_e_atlag": 3.6,
+     "hossz_h": 4392
+    },
+    {
+     "szezon": "Hűtési szezon",
+     "idoszak": "máj. 15. - szept. 15.",
+     "kezdet": "05-15",
+     "veg": "09-15",
+     "theta_e_atlag": 20.6,
+     "hossz_h": 2976
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_1_3",
+   "cim": "1.3. táblázat: Külső átlaghőmérsékletek és időtartamok -4C külső hőmérsékletekhez",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.2.2 pont (Alapadatok a fagyvédelmi előfűtéshez), 1.3. táblázat",
+    "oldal": 1,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A fel nem sorolt hónapokra (ápr.–okt.) a táblázat nem ad sort; értelmezés: 0 h (nyitott kérdés, a forrás nem mondja ki). Ellenőrzés: 72+110+24+1+82 = 289 h (egyezik). Az órákkal súlyozott átlag −5,714 °C, ami −5,71-re kerekedne; a táblázat −5,72-t ad (0,01 °C kerekítési eltérés, anomáliaként jelezve). A fejléc jelölése a PDF-en Δt_EF,n,e<−4C (h).",
+   "oszlopok": [
+    {
+     "kulcs": "idoszak",
+     "cim": "időszak",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma (értelmezett)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "t_EF_e_lt_m4C_h",
+     "cim": "időtartam, amikor a külső levegő hőmérséklete -4 oC alatt van, Δt_EF,n,e<−4C",
+     "egyseg": "h"
+    },
+    {
+     "kulcs": "theta_e_lt_m4C",
+     "cim": "átlagos külső hőmérséklet azon időszakban, amikor a külső levegő hőmérséklete -4 oC alatt van, θ_e<−4C",
+     "egyseg": "°C"
+    }
+   ],
+   "sorok": [
+    {
+     "idoszak": "január",
+     "honap": 1,
+     "t_EF_e_lt_m4C_h": 72,
+     "theta_e_lt_m4C": -5.82
+    },
+    {
+     "idoszak": "február",
+     "honap": 2,
+     "t_EF_e_lt_m4C_h": 110,
+     "theta_e_lt_m4C": -5.75
+    },
+    {
+     "idoszak": "március",
+     "honap": 3,
+     "t_EF_e_lt_m4C_h": 24,
+     "theta_e_lt_m4C": -6.0
+    },
+    {
+     "idoszak": "november",
+     "honap": 11,
+     "t_EF_e_lt_m4C_h": 1,
+     "theta_e_lt_m4C": -4.08
+    },
+    {
+     "idoszak": "december",
+     "honap": 12,
+     "t_EF_e_lt_m4C_h": 82,
+     "theta_e_lt_m4C": -5.51
+    },
+    {
+     "idoszak": "Teljes év",
+     "honap": null,
+     "t_EF_e_lt_m4C_h": 289,
+     "theta_e_lt_m4C": -5.72,
+     "eredeti_theta": "-5,72 oC"
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_1_4",
+   "cim": "1.4. táblázat: Páratartalom havi adatok",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.2.3 pont (Páratartalom), 1.4. táblázat",
+    "oldal": 2,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A jelölések (plev, pv,t, x) feloldását a 2. Függelék nem adja meg. Ellenőrzés alapján pv,t a telítési vízgőznyomásnak felel meg (pl. jan.: x ≈ 622·0,844·736/(100100−0,844·736) = 3,88 g/kg ≈ 3,91), tehát NEM a parciális gőznyomás – értelmezési kérdés. Éves értékek ellenőrzése: RH 74,03 (egyezik), plev 99,90 (egyezik), x órasúlyozott 6,63 (egyezik), pv,t számtani átlag 1526,75, órasúlyozott 1531,4 → 1531 (az éves érték órasúlyozott átlag).",
+   "oszlopok": [
+    {
+     "kulcs": "jellemzo",
+     "cim": "jellemző (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "egység",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m01",
+     "cim": "1. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m02",
+     "cim": "2. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m03",
+     "cim": "3. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m04",
+     "cim": "4. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m05",
+     "cim": "5. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m06",
+     "cim": "6. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m07",
+     "cim": "7. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m08",
+     "cim": "8. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m09",
+     "cim": "9. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m10",
+     "cim": "10. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m11",
+     "cim": "11. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "m12",
+     "cim": "12. hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "eves",
+     "cim": "Éves",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "jellemzo": "RH",
+     "egyseg": "%",
+     "m01": 84.4,
+     "m02": 75.3,
+     "m03": 77.8,
+     "m04": 69.7,
+     "m05": 61.0,
+     "m06": 69.7,
+     "m07": 62.1,
+     "m08": 71.9,
+     "m09": 66.8,
+     "m10": 79.5,
+     "m11": 86.1,
+     "m12": 84.1,
+     "eves": 74.0
+    },
+    {
+     "jellemzo": "plev",
+     "egyseg": "kPa",
+     "m01": 100.1,
+     "m02": 100.4,
+     "m03": 99.3,
+     "m04": 100.1,
+     "m05": 100.2,
+     "m06": 99.7,
+     "m07": 99.7,
+     "m08": 99.7,
+     "m09": 100.1,
+     "m10": 100.2,
+     "m11": 99.3,
+     "m12": 100.0,
+     "eves": 99.9
+    },
+    {
+     "jellemzo": "pv,t",
+     "egyseg": "Pa",
+     "m01": 736,
+     "m02": 629,
+     "m03": 825,
+     "m04": 1358,
+     "m05": 2006,
+     "m06": 2537,
+     "m07": 2710,
+     "m08": 2556,
+     "m09": 2126,
+     "m10": 1131,
+     "m11": 1085,
+     "m12": 622,
+     "eves": 1531
+    },
+    {
+     "jellemzo": "x",
+     "egyseg": "g/kg",
+     "m01": 3.91,
+     "m02": 2.94,
+     "m03": 4.08,
+     "m04": 5.61,
+     "m05": 7.39,
+     "m06": 10.67,
+     "m07": 10.11,
+     "m08": 11.27,
+     "m09": 8.66,
+     "m10": 5.53,
+     "m11": 5.86,
+     "m12": 3.31,
+     "eves": 6.63
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_1_5",
+   "cim": "1.5. táblázat: Átlagos havi sugárzási energiahozam adatok (Gs,i )",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.2.4 pont (A napsugárzásra vonatkozó adatok), 1.5. táblázat",
+    "oldal": 3,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Táblázatfejléc: „Átlagos sugárzásintenzitás [W/m2]”. A cím „energiahozam”-ot mond, de a cellák átlagos intenzitások W/m2-ben (cím–egység ellentmondás, jelezve). A 0° (vízszintes) sorhoz nem tartozik tájolás. Ellenőrzés: mind a 33 sorban az Éves érték = a havi értékek órasúlyozott átlaga (eltérés ≤ 0,05 W/m2), nem a számtani átlaga. Keresztellenőrzés az 1.6. táblázattal: minden havi cellára Gs[kWh/m2] = Gs[W/m2] × hónap órái / 1000 (396 cella, eltérés ≤ 0,15). Február 672 h-val (nem szökőév).",
+   "oszlopok": [
+    {
+     "kulcs": "tajolas",
+     "cim": "tájolás (É, ÉK, K, DK, D, DNy, Ny, ÉNy; 0°-nál vízszintes)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "hajlasszog",
+     "cim": "Hajlásszög",
+     "egyseg": "°"
+    },
+    {
+     "kulcs": "m01",
+     "cim": "1. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m02",
+     "cim": "2. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m03",
+     "cim": "3. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m04",
+     "cim": "4. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m05",
+     "cim": "5. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m06",
+     "cim": "6. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m07",
+     "cim": "7. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m08",
+     "cim": "8. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m09",
+     "cim": "9. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m10",
+     "cim": "10. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m11",
+     "cim": "11. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "m12",
+     "cim": "12. hónap",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "eves",
+     "cim": "Éves",
+     "egyseg": "W/m2"
+    },
+    {
+     "kulcs": "_ell_eves_orasulyozott_atlag",
+     "cim": "ELLENŐRZŐ (nem forrásadat): havi értékek órákkal súlyozott átlaga",
+     "egyseg": "W/m2"
+    }
+   ],
+   "sorok": [
+    {
+     "tajolas": "vízszintes",
+     "hajlasszog": 0,
+     "m01": 44.4,
+     "m02": 75.4,
+     "m03": 89.5,
+     "m04": 189.5,
+     "m05": 264.9,
+     "m06": 254.2,
+     "m07": 232.6,
+     "m08": 224.2,
+     "m09": 156.6,
+     "m10": 108.2,
+     "m11": 60.6,
+     "m12": 31.5,
+     "eves": 144.6,
+     "_ell_eves_orasulyozott_atlag": 144.64
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 30,
+     "m01": 22.7,
+     "m02": 36.0,
+     "m03": 52.9,
+     "m04": 133.5,
+     "m05": 205.3,
+     "m06": 211.8,
+     "m07": 187.5,
+     "m08": 161.9,
+     "m09": 92.8,
+     "m10": 42.3,
+     "m11": 25.9,
+     "m12": 19.5,
+     "eves": 99.7,
+     "_ell_eves_orasulyozott_atlag": 99.68
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 45,
+     "m01": 21.7,
+     "m02": 33.8,
+     "m03": 40.5,
+     "m04": 95.9,
+     "m05": 159.0,
+     "m06": 174.3,
+     "m07": 150.5,
+     "m08": 118.2,
+     "m09": 56.6,
+     "m10": 35.2,
+     "m11": 25.3,
+     "m12": 18.4,
+     "eves": 77.7,
+     "_ell_eves_orasulyozott_atlag": 77.69
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 60,
+     "m01": 20.4,
+     "m02": 31.9,
+     "m03": 37.8,
+     "m04": 67.4,
+     "m05": 106.2,
+     "m06": 129.0,
+     "m07": 107.2,
+     "m08": 76.8,
+     "m09": 48.2,
+     "m10": 34.4,
+     "m11": 24.2,
+     "m12": 17.0,
+     "eves": 58.5,
+     "_ell_eves_orasulyozott_atlag": 58.5
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 90,
+     "m01": 17.0,
+     "m02": 26.9,
+     "m03": 31.5,
+     "m04": 57.1,
+     "m05": 76.2,
+     "m06": 83.3,
+     "m07": 71.8,
+     "m08": 63.2,
+     "m09": 44.3,
+     "m10": 31.6,
+     "m11": 21.1,
+     "m12": 13.6,
+     "eves": 44.9,
+     "_ell_eves_orasulyozott_atlag": 44.87
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 30,
+     "m01": 25.8,
+     "m02": 46.1,
+     "m03": 64.2,
+     "m04": 147.1,
+     "m05": 215.6,
+     "m06": 213.4,
+     "m07": 190.4,
+     "m08": 171.1,
+     "m09": 110.6,
+     "m10": 63.0,
+     "m11": 33.1,
+     "m12": 20.7,
+     "eves": 108.7,
+     "_ell_eves_orasulyozott_atlag": 108.74
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 45,
+     "m01": 23.0,
+     "m02": 39.9,
+     "m03": 53.7,
+     "m04": 123.8,
+     "m05": 180.7,
+     "m06": 180.9,
+     "m07": 159.4,
+     "m08": 141.3,
+     "m09": 90.4,
+     "m10": 50.6,
+     "m11": 28.1,
+     "m12": 18.7,
+     "eves": 91.1,
+     "_ell_eves_orasulyozott_atlag": 91.13
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 60,
+     "m01": 21.1,
+     "m02": 35.8,
+     "m03": 46.2,
+     "m04": 105.1,
+     "m05": 150.5,
+     "m06": 151.4,
+     "m07": 131.8,
+     "m08": 117.7,
+     "m09": 76.5,
+     "m10": 44.1,
+     "m11": 25.6,
+     "m12": 17.2,
+     "eves": 77.1,
+     "_ell_eves_orasulyozott_atlag": 77.12
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 90,
+     "m01": 17.1,
+     "m02": 28.9,
+     "m03": 35.0,
+     "m04": 77.4,
+     "m05": 108.5,
+     "m06": 107.7,
+     "m07": 92.9,
+     "m08": 86.0,
+     "m09": 58.1,
+     "m10": 35.9,
+     "m11": 21.5,
+     "m12": 13.6,
+     "eves": 57.0,
+     "_ell_eves_orasulyozott_atlag": 57.01
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 30,
+     "m01": 42.7,
+     "m02": 67.3,
+     "m03": 84.4,
+     "m04": 178.7,
+     "m05": 248.0,
+     "m06": 233.1,
+     "m07": 211.4,
+     "m08": 205.4,
+     "m09": 147.3,
+     "m10": 100.5,
+     "m11": 57.2,
+     "m12": 29.9,
+     "eves": 134.1,
+     "_ell_eves_orasulyozott_atlag": 134.15
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 45,
+     "m01": 41.2,
+     "m02": 63.4,
+     "m03": 79.3,
+     "m04": 167.7,
+     "m05": 229.8,
+     "m06": 215.1,
+     "m07": 194.0,
+     "m08": 190.5,
+     "m09": 138.6,
+     "m10": 95.1,
+     "m11": 54.8,
+     "m12": 28.8,
+     "eves": 125.2,
+     "_ell_eves_orasulyozott_atlag": 125.15
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 60,
+     "m01": 38.8,
+     "m02": 59.0,
+     "m03": 72.4,
+     "m04": 153.3,
+     "m05": 207.0,
+     "m06": 192.9,
+     "m07": 172.9,
+     "m08": 172.2,
+     "m09": 127.1,
+     "m10": 88.0,
+     "m11": 50.9,
+     "m12": 26.8,
+     "eves": 113.7,
+     "_ell_eves_orasulyozott_atlag": 113.7
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 90,
+     "m01": 31.3,
+     "m02": 46.9,
+     "m03": 54.7,
+     "m04": 116.4,
+     "m05": 153.0,
+     "m06": 141.0,
+     "m07": 124.7,
+     "m08": 128.4,
+     "m09": 97.1,
+     "m10": 68.6,
+     "m11": 40.3,
+     "m12": 21.3,
+     "eves": 85.5,
+     "_ell_eves_orasulyozott_atlag": 85.48
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 30,
+     "m01": 62.7,
+     "m02": 92.6,
+     "m03": 102.7,
+     "m04": 203.4,
+     "m05": 271.5,
+     "m06": 248.2,
+     "m07": 229.4,
+     "m08": 233.8,
+     "m09": 179.2,
+     "m10": 138.8,
+     "m11": 84.6,
+     "m12": 41.6,
+     "eves": 157.7,
+     "_ell_eves_orasulyozott_atlag": 157.67
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 45,
+     "m01": 67.3,
+     "m02": 95.0,
+     "m03": 102.9,
+     "m04": 198.4,
+     "m05": 258.4,
+     "m06": 232.0,
+     "m07": 214.9,
+     "m08": 225.3,
+     "m09": 178.4,
+     "m10": 144.1,
+     "m11": 90.7,
+     "m12": 44.0,
+     "eves": 154.5,
+     "_ell_eves_orasulyozott_atlag": 154.54
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 60,
+     "m01": 68.6,
+     "m02": 92.7,
+     "m03": 98.4,
+     "m04": 184.9,
+     "m05": 234.7,
+     "m06": 207.7,
+     "m07": 192.7,
+     "m08": 207.4,
+     "m09": 169.9,
+     "m10": 142.3,
+     "m11": 91.9,
+     "m12": 44.3,
+     "eves": 144.8,
+     "_ell_eves_orasulyozott_atlag": 144.84
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 90,
+     "m01": 60.9,
+     "m02": 76.5,
+     "m03": 77.5,
+     "m04": 137.3,
+     "m05": 163.7,
+     "m06": 142.1,
+     "m07": 132.0,
+     "m08": 149.8,
+     "m09": 130.9,
+     "m10": 117.1,
+     "m11": 79.7,
+     "m12": 38.8,
+     "eves": 109.0,
+     "_ell_eves_orasulyozott_atlag": 108.97
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 30,
+     "m01": 73.3,
+     "m02": 109.1,
+     "m03": 111.3,
+     "m04": 213.4,
+     "m05": 278.1,
+     "m06": 252.9,
+     "m07": 237.1,
+     "m08": 247.8,
+     "m09": 193.7,
+     "m10": 159.7,
+     "m11": 100.0,
+     "m12": 49.0,
+     "eves": 169.1,
+     "_ell_eves_orasulyozott_atlag": 169.04
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 45,
+     "m01": 82.4,
+     "m02": 118.0,
+     "m03": 114.2,
+     "m04": 208.9,
+     "m05": 262.9,
+     "m06": 233.8,
+     "m07": 221.7,
+     "m08": 240.0,
+     "m09": 197.0,
+     "m10": 172.8,
+     "m11": 112.0,
+     "m12": 54.4,
+     "eves": 168.4,
+     "_ell_eves_orasulyozott_atlag": 168.37
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 60,
+     "m01": 86.9,
+     "m02": 120.5,
+     "m03": 111.5,
+     "m04": 193.8,
+     "m05": 234.7,
+     "m06": 203.8,
+     "m07": 195.3,
+     "m08": 219.4,
+     "m09": 189.5,
+     "m10": 176.0,
+     "m11": 117.7,
+     "m12": 57.0,
+     "eves": 159.0,
+     "_ell_eves_orasulyozott_atlag": 158.97
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 90,
+     "m01": 81.5,
+     "m02": 106.4,
+     "m03": 90.1,
+     "m04": 136.5,
+     "m05": 147.9,
+     "m06": 122.8,
+     "m07": 120.6,
+     "m08": 148.3,
+     "m09": 145.2,
+     "m10": 152.6,
+     "m11": 108.9,
+     "m12": 53.2,
+     "eves": 117.8,
+     "_ell_eves_orasulyozott_atlag": 117.81
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 30,
+     "m01": 65.0,
+     "m02": 103.6,
+     "m03": 103.9,
+     "m04": 205.2,
+     "m05": 271.1,
+     "m06": 252.2,
+     "m07": 235.7,
+     "m08": 243.2,
+     "m09": 182.6,
+     "m10": 146.6,
+     "m11": 89.9,
+     "m12": 45.0,
+     "eves": 162.3,
+     "_ell_eves_orasulyozott_atlag": 162.26
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 45,
+     "m01": 70.7,
+     "m02": 110.3,
+     "m03": 104.3,
+     "m04": 199.4,
+     "m05": 256.5,
+     "m06": 235.6,
+     "m07": 221.5,
+     "m08": 235.7,
+     "m09": 182.5,
+     "m10": 154.6,
+     "m11": 97.9,
+     "m12": 48.7,
+     "eves": 160.0,
+     "_ell_eves_orasulyozott_atlag": 160.01
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 60,
+     "m01": 72.6,
+     "m02": 111.3,
+     "m03": 99.8,
+     "m04": 185.7,
+     "m05": 232.7,
+     "m06": 211.1,
+     "m07": 199.0,
+     "m08": 218.1,
+     "m09": 174.1,
+     "m10": 154.7,
+     "m11": 100.4,
+     "m12": 49.9,
+     "eves": 150.9,
+     "_ell_eves_orasulyozott_atlag": 150.92
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 90,
+     "m01": 65.1,
+     "m02": 97.0,
+     "m03": 78.7,
+     "m04": 138.2,
+     "m05": 163.5,
+     "m06": 145.3,
+     "m07": 137.4,
+     "m08": 159.8,
+     "m09": 134.9,
+     "m10": 130.5,
+     "m11": 89.1,
+     "m12": 45.1,
+     "eves": 115.4,
+     "_ell_eves_orasulyozott_atlag": 115.41
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 30,
+     "m01": 45.0,
+     "m02": 80.2,
+     "m03": 85.4,
+     "m04": 180.9,
+     "m05": 248.9,
+     "m06": 241.7,
+     "m07": 221.6,
+     "m08": 218.2,
+     "m09": 151.2,
+     "m10": 109.1,
+     "m11": 62.1,
+     "m12": 32.7,
+     "eves": 140.0,
+     "_ell_eves_orasulyozott_atlag": 140.03
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 45,
+     "m01": 44.0,
+     "m02": 79.9,
+     "m03": 80.4,
+     "m04": 170.4,
+     "m05": 230.8,
+     "m06": 224.5,
+     "m07": 205.1,
+     "m08": 206.0,
+     "m09": 143.4,
+     "m10": 106.2,
+     "m11": 61.1,
+     "m12": 32.3,
+     "eves": 132.2,
+     "_ell_eves_orasulyozott_atlag": 132.24
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 60,
+     "m01": 42.2,
+     "m02": 77.0,
+     "m03": 73.9,
+     "m04": 157.2,
+     "m05": 209.7,
+     "m06": 204.0,
+     "m07": 185.2,
+     "m08": 189.7,
+     "m09": 133.2,
+     "m10": 100.9,
+     "m11": 58.2,
+     "m12": 31.3,
+     "eves": 122.1,
+     "_ell_eves_orasulyozott_atlag": 122.07
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 90,
+     "m01": 34.6,
+     "m02": 63.7,
+     "m03": 57.8,
+     "m04": 123.0,
+     "m05": 159.1,
+     "m06": 154.7,
+     "m07": 138.8,
+     "m08": 147.8,
+     "m09": 104.7,
+     "m10": 81.4,
+     "m11": 48.1,
+     "m12": 26.2,
+     "eves": 95.1,
+     "_ell_eves_orasulyozott_atlag": 95.11
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 30,
+     "m01": 26.5,
+     "m02": 52.3,
+     "m03": 64.9,
+     "m04": 149.4,
+     "m05": 218.5,
+     "m06": 222.5,
+     "m07": 199.8,
+     "m08": 182.4,
+     "m09": 113.6,
+     "m10": 67.7,
+     "m11": 34.8,
+     "m12": 21.3,
+     "eves": 113.1,
+     "_ell_eves_orasulyozott_atlag": 113.12
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 45,
+     "m01": 23.5,
+     "m02": 45.2,
+     "m03": 55.2,
+     "m04": 126.8,
+     "m05": 183.8,
+     "m06": 192.3,
+     "m07": 170.9,
+     "m08": 154.6,
+     "m09": 94.4,
+     "m10": 55.6,
+     "m11": 30.1,
+     "m12": 19.4,
+     "eves": 96.2,
+     "_ell_eves_orasulyozott_atlag": 96.24
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 60,
+     "m01": 21.5,
+     "m02": 40.2,
+     "m03": 48.8,
+     "m04": 110.3,
+     "m05": 155.3,
+     "m06": 164.5,
+     "m07": 144.5,
+     "m08": 133.0,
+     "m09": 82.0,
+     "m10": 49.2,
+     "m11": 27.6,
+     "m12": 17.8,
+     "eves": 83.1,
+     "_ell_eves_orasulyozott_atlag": 83.1
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 90,
+     "m01": 17.6,
+     "m02": 32.1,
+     "m03": 38.2,
+     "m04": 85.7,
+     "m05": 117.3,
+     "m06": 123.9,
+     "m07": 107.5,
+     "m08": 103.3,
+     "m09": 65.0,
+     "m10": 40.6,
+     "m11": 23.2,
+     "m12": 14.2,
+     "eves": 64.2,
+     "_ell_eves_orasulyozott_atlag": 64.2
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_1_6",
+   "cim": "1.6. táblázat: Átlagos havi sugárzási energiahozam adatok (Gs,i )",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.2.4 pont (A napsugárzásra vonatkozó adatok), 1.6. táblázat",
+    "oldal": 4,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Táblázatfejléc: „Havi sugárzási energiahozam [kWh/m2]”. Ezt használja az 1. Függelék (6.22) képlete (Gs,i, kWh/m2 az adott időszakra). Ellenőrzés (Éves = Σ havi): 31 sorban egyezik (±0,1), 2 eltérés: ÉK 45°: Σ = 798,5 vs. Éves 798,3 (−0,2); D 30°: Σ = 1480,7 vs. Éves 1480,9 (+0,2) – kerekítési eltérések, a forrás értékei változatlanul átvéve. Keresztellenőrzés az 1.5. táblázattal: minden cella egyezik (W/m2 × óra/1000, ±0,15).",
+   "oszlopok": [
+    {
+     "kulcs": "tajolas",
+     "cim": "tájolás (É, ÉK, K, DK, D, DNy, Ny, ÉNy; 0°-nál vízszintes)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "hajlasszog",
+     "cim": "Hajlásszög",
+     "egyseg": "°"
+    },
+    {
+     "kulcs": "m01",
+     "cim": "1. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m02",
+     "cim": "2. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m03",
+     "cim": "3. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m04",
+     "cim": "4. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m05",
+     "cim": "5. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m06",
+     "cim": "6. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m07",
+     "cim": "7. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m08",
+     "cim": "8. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m09",
+     "cim": "9. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m10",
+     "cim": "10. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m11",
+     "cim": "11. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "m12",
+     "cim": "12. hónap",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "eves",
+     "cim": "Éves",
+     "egyseg": "kWh/m2"
+    },
+    {
+     "kulcs": "_ell_havi_osszeg",
+     "cim": "ELLENŐRZŐ (nem forrásadat): havi értékek összege",
+     "egyseg": "kWh/m2"
+    }
+   ],
+   "sorok": [
+    {
+     "tajolas": "vízszintes",
+     "hajlasszog": 0,
+     "m01": 33.0,
+     "m02": 50.6,
+     "m03": 66.6,
+     "m04": 136.4,
+     "m05": 197.1,
+     "m06": 183.0,
+     "m07": 173.0,
+     "m08": 166.8,
+     "m09": 112.7,
+     "m10": 80.5,
+     "m11": 43.7,
+     "m12": 23.4,
+     "eves": 1266.9,
+     "_ell_havi_osszeg": 1266.8
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 30,
+     "m01": 16.9,
+     "m02": 24.2,
+     "m03": 39.3,
+     "m04": 96.1,
+     "m05": 152.7,
+     "m06": 152.5,
+     "m07": 139.5,
+     "m08": 120.5,
+     "m09": 66.8,
+     "m10": 31.5,
+     "m11": 18.6,
+     "m12": 14.5,
+     "eves": 873.2,
+     "_ell_havi_osszeg": 873.1
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 45,
+     "m01": 16.2,
+     "m02": 22.7,
+     "m03": 30.1,
+     "m04": 69.0,
+     "m05": 118.3,
+     "m06": 125.5,
+     "m07": 112.0,
+     "m08": 88.0,
+     "m09": 40.7,
+     "m10": 26.2,
+     "m11": 18.2,
+     "m12": 13.7,
+     "eves": 680.6,
+     "_ell_havi_osszeg": 680.6
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 60,
+     "m01": 15.2,
+     "m02": 21.4,
+     "m03": 28.1,
+     "m04": 48.5,
+     "m05": 79.0,
+     "m06": 92.9,
+     "m07": 79.7,
+     "m08": 57.2,
+     "m09": 34.7,
+     "m10": 25.6,
+     "m11": 17.4,
+     "m12": 12.7,
+     "eves": 512.5,
+     "_ell_havi_osszeg": 512.4
+    },
+    {
+     "tajolas": "É",
+     "hajlasszog": 90,
+     "m01": 12.6,
+     "m02": 18.1,
+     "m03": 23.4,
+     "m04": 41.1,
+     "m05": 56.7,
+     "m06": 60.0,
+     "m07": 53.4,
+     "m08": 47.0,
+     "m09": 31.9,
+     "m10": 23.5,
+     "m11": 15.2,
+     "m12": 10.1,
+     "eves": 393.0,
+     "_ell_havi_osszeg": 393.0
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 30,
+     "m01": 19.2,
+     "m02": 31.0,
+     "m03": 47.8,
+     "m04": 105.9,
+     "m05": 160.4,
+     "m06": 153.7,
+     "m07": 141.7,
+     "m08": 127.3,
+     "m09": 79.6,
+     "m10": 46.8,
+     "m11": 23.9,
+     "m12": 15.4,
+     "eves": 952.6,
+     "_ell_havi_osszeg": 952.7
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 45,
+     "m01": 17.1,
+     "m02": 26.8,
+     "m03": 40.0,
+     "m04": 89.2,
+     "m05": 134.4,
+     "m06": 130.3,
+     "m07": 118.6,
+     "m08": 105.2,
+     "m09": 65.1,
+     "m10": 37.6,
+     "m11": 20.3,
+     "m12": 13.9,
+     "eves": 798.3,
+     "_ell_havi_osszeg": 798.5
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 60,
+     "m01": 15.7,
+     "m02": 24.1,
+     "m03": 34.3,
+     "m04": 75.7,
+     "m05": 112.0,
+     "m06": 109.0,
+     "m07": 98.1,
+     "m08": 87.5,
+     "m09": 55.1,
+     "m10": 32.8,
+     "m11": 18.4,
+     "m12": 12.8,
+     "eves": 675.4,
+     "_ell_havi_osszeg": 675.5
+    },
+    {
+     "tajolas": "ÉK",
+     "hajlasszog": 90,
+     "m01": 12.8,
+     "m02": 19.4,
+     "m03": 26.1,
+     "m04": 55.8,
+     "m05": 80.8,
+     "m06": 77.5,
+     "m07": 69.1,
+     "m08": 64.0,
+     "m09": 41.8,
+     "m10": 26.7,
+     "m11": 15.5,
+     "m12": 10.1,
+     "eves": 499.5,
+     "_ell_havi_osszeg": 499.6
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 30,
+     "m01": 31.7,
+     "m02": 45.2,
+     "m03": 62.8,
+     "m04": 128.7,
+     "m05": 184.5,
+     "m06": 167.8,
+     "m07": 157.3,
+     "m08": 152.8,
+     "m09": 106.0,
+     "m10": 74.8,
+     "m11": 41.2,
+     "m12": 22.3,
+     "eves": 1175.1,
+     "_ell_havi_osszeg": 1175.1
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 45,
+     "m01": 30.6,
+     "m02": 42.6,
+     "m03": 59.0,
+     "m04": 120.8,
+     "m05": 171.0,
+     "m06": 154.9,
+     "m07": 144.4,
+     "m08": 141.7,
+     "m09": 99.8,
+     "m10": 70.7,
+     "m11": 39.4,
+     "m12": 21.4,
+     "eves": 1096.4,
+     "_ell_havi_osszeg": 1096.3
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 60,
+     "m01": 28.8,
+     "m02": 39.6,
+     "m03": 53.9,
+     "m04": 110.4,
+     "m05": 154.0,
+     "m06": 138.9,
+     "m07": 128.6,
+     "m08": 128.1,
+     "m09": 91.5,
+     "m10": 65.5,
+     "m11": 36.7,
+     "m12": 20.0,
+     "eves": 996.0,
+     "_ell_havi_osszeg": 996.0
+    },
+    {
+     "tajolas": "K",
+     "hajlasszog": 90,
+     "m01": 23.3,
+     "m02": 31.5,
+     "m03": 40.7,
+     "m04": 83.8,
+     "m05": 113.8,
+     "m06": 101.5,
+     "m07": 92.8,
+     "m08": 95.6,
+     "m09": 69.9,
+     "m10": 51.0,
+     "m11": 29.0,
+     "m12": 15.8,
+     "eves": 748.7,
+     "_ell_havi_osszeg": 748.7
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 30,
+     "m01": 46.6,
+     "m02": 62.2,
+     "m03": 76.4,
+     "m04": 146.5,
+     "m05": 202.0,
+     "m06": 178.7,
+     "m07": 170.7,
+     "m08": 174.0,
+     "m09": 129.0,
+     "m10": 103.3,
+     "m11": 60.9,
+     "m12": 30.9,
+     "eves": 1381.2,
+     "_ell_havi_osszeg": 1381.2
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 45,
+     "m01": 50.1,
+     "m02": 63.8,
+     "m03": 76.6,
+     "m04": 142.8,
+     "m05": 192.3,
+     "m06": 167.1,
+     "m07": 159.9,
+     "m08": 167.6,
+     "m09": 128.5,
+     "m10": 107.2,
+     "m11": 65.3,
+     "m12": 32.7,
+     "eves": 1353.8,
+     "_ell_havi_osszeg": 1353.9
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 60,
+     "m01": 51.1,
+     "m02": 62.3,
+     "m03": 73.2,
+     "m04": 133.1,
+     "m05": 174.6,
+     "m06": 149.5,
+     "m07": 143.4,
+     "m08": 154.3,
+     "m09": 122.3,
+     "m10": 105.9,
+     "m11": 66.1,
+     "m12": 33.0,
+     "eves": 1268.9,
+     "_ell_havi_osszeg": 1268.8
+    },
+    {
+     "tajolas": "DK",
+     "hajlasszog": 90,
+     "m01": 45.3,
+     "m02": 51.4,
+     "m03": 57.7,
+     "m04": 98.8,
+     "m05": 121.8,
+     "m06": 102.3,
+     "m07": 98.2,
+     "m08": 111.5,
+     "m09": 94.3,
+     "m10": 87.1,
+     "m11": 57.4,
+     "m12": 28.9,
+     "eves": 954.6,
+     "_ell_havi_osszeg": 954.7
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 30,
+     "m01": 54.5,
+     "m02": 73.3,
+     "m03": 82.8,
+     "m04": 153.6,
+     "m05": 206.9,
+     "m06": 182.1,
+     "m07": 176.4,
+     "m08": 184.3,
+     "m09": 139.5,
+     "m10": 118.8,
+     "m11": 72.0,
+     "m12": 36.5,
+     "eves": 1480.9,
+     "_ell_havi_osszeg": 1480.7
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 45,
+     "m01": 61.3,
+     "m02": 79.3,
+     "m03": 85.0,
+     "m04": 150.4,
+     "m05": 195.6,
+     "m06": 168.3,
+     "m07": 165.0,
+     "m08": 178.6,
+     "m09": 141.8,
+     "m10": 128.6,
+     "m11": 80.7,
+     "m12": 40.5,
+     "eves": 1475.0,
+     "_ell_havi_osszeg": 1475.1
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 60,
+     "m01": 64.7,
+     "m02": 81.0,
+     "m03": 83.0,
+     "m04": 139.5,
+     "m05": 174.6,
+     "m06": 146.8,
+     "m07": 145.3,
+     "m08": 163.3,
+     "m09": 136.4,
+     "m10": 130.9,
+     "m11": 84.7,
+     "m12": 42.4,
+     "eves": 1392.6,
+     "_ell_havi_osszeg": 1392.6
+    },
+    {
+     "tajolas": "D",
+     "hajlasszog": 90,
+     "m01": 60.6,
+     "m02": 71.5,
+     "m03": 67.0,
+     "m04": 98.3,
+     "m05": 110.0,
+     "m06": 88.4,
+     "m07": 89.7,
+     "m08": 110.4,
+     "m09": 104.5,
+     "m10": 113.5,
+     "m11": 78.4,
+     "m12": 39.6,
+     "eves": 1032.0,
+     "_ell_havi_osszeg": 1031.9
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 30,
+     "m01": 48.4,
+     "m02": 69.6,
+     "m03": 77.3,
+     "m04": 147.8,
+     "m05": 201.7,
+     "m06": 181.6,
+     "m07": 175.3,
+     "m08": 180.9,
+     "m09": 131.5,
+     "m10": 109.1,
+     "m11": 64.8,
+     "m12": 33.4,
+     "eves": 1421.3,
+     "_ell_havi_osszeg": 1421.4
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 45,
+     "m01": 52.6,
+     "m02": 74.1,
+     "m03": 77.6,
+     "m04": 143.6,
+     "m05": 190.8,
+     "m06": 169.6,
+     "m07": 164.8,
+     "m08": 175.3,
+     "m09": 131.4,
+     "m10": 115.0,
+     "m11": 70.5,
+     "m12": 36.2,
+     "eves": 1401.6,
+     "_ell_havi_osszeg": 1401.5
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 60,
+     "m01": 54.0,
+     "m02": 74.8,
+     "m03": 74.2,
+     "m04": 133.7,
+     "m05": 173.1,
+     "m06": 152.0,
+     "m07": 148.0,
+     "m08": 162.3,
+     "m09": 125.4,
+     "m10": 115.1,
+     "m11": 72.3,
+     "m12": 37.2,
+     "eves": 1322.1,
+     "_ell_havi_osszeg": 1322.1
+    },
+    {
+     "tajolas": "DNy",
+     "hajlasszog": 90,
+     "m01": 48.5,
+     "m02": 65.2,
+     "m03": 58.5,
+     "m04": 99.5,
+     "m05": 121.7,
+     "m06": 104.6,
+     "m07": 102.2,
+     "m08": 118.9,
+     "m09": 97.1,
+     "m10": 97.1,
+     "m11": 64.2,
+     "m12": 33.5,
+     "eves": 1011.1,
+     "_ell_havi_osszeg": 1011.0
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 30,
+     "m01": 33.4,
+     "m02": 53.9,
+     "m03": 63.5,
+     "m04": 130.2,
+     "m05": 185.2,
+     "m06": 174.0,
+     "m07": 164.8,
+     "m08": 162.4,
+     "m09": 108.9,
+     "m10": 81.2,
+     "m11": 44.7,
+     "m12": 24.3,
+     "eves": 1226.6,
+     "_ell_havi_osszeg": 1226.5
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 45,
+     "m01": 32.7,
+     "m02": 53.7,
+     "m03": 59.8,
+     "m04": 122.7,
+     "m05": 171.7,
+     "m06": 161.6,
+     "m07": 152.6,
+     "m08": 153.3,
+     "m09": 103.2,
+     "m10": 79.0,
+     "m11": 44.0,
+     "m12": 24.1,
+     "eves": 1158.4,
+     "_ell_havi_osszeg": 1158.4
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 60,
+     "m01": 31.4,
+     "m02": 51.7,
+     "m03": 55.0,
+     "m04": 113.2,
+     "m05": 156.0,
+     "m06": 146.9,
+     "m07": 137.8,
+     "m08": 141.2,
+     "m09": 95.9,
+     "m10": 75.0,
+     "m11": 41.9,
+     "m12": 23.3,
+     "eves": 1069.2,
+     "_ell_havi_osszeg": 1069.3
+    },
+    {
+     "tajolas": "Ny",
+     "hajlasszog": 90,
+     "m01": 25.8,
+     "m02": 42.8,
+     "m03": 43.0,
+     "m04": 88.6,
+     "m05": 118.3,
+     "m06": 111.4,
+     "m07": 103.3,
+     "m08": 109.9,
+     "m09": 75.4,
+     "m10": 60.6,
+     "m11": 34.6,
+     "m12": 19.5,
+     "eves": 833.1,
+     "_ell_havi_osszeg": 833.2
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 30,
+     "m01": 19.7,
+     "m02": 35.2,
+     "m03": 48.3,
+     "m04": 107.5,
+     "m05": 162.6,
+     "m06": 160.2,
+     "m07": 148.6,
+     "m08": 135.7,
+     "m09": 81.8,
+     "m10": 50.3,
+     "m11": 25.1,
+     "m12": 15.9,
+     "eves": 990.8,
+     "_ell_havi_osszeg": 990.9
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 45,
+     "m01": 17.5,
+     "m02": 30.3,
+     "m03": 41.1,
+     "m04": 91.3,
+     "m05": 136.8,
+     "m06": 138.5,
+     "m07": 127.1,
+     "m08": 115.0,
+     "m09": 68.0,
+     "m10": 41.4,
+     "m11": 21.6,
+     "m12": 14.5,
+     "eves": 843.1,
+     "_ell_havi_osszeg": 843.1
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 60,
+     "m01": 16.0,
+     "m02": 27.0,
+     "m03": 36.3,
+     "m04": 79.4,
+     "m05": 115.5,
+     "m06": 118.4,
+     "m07": 107.5,
+     "m08": 99.0,
+     "m09": 59.0,
+     "m10": 36.6,
+     "m11": 19.9,
+     "m12": 13.2,
+     "eves": 727.8,
+     "_ell_havi_osszeg": 727.8
+    },
+    {
+     "tajolas": "ÉNy",
+     "hajlasszog": 90,
+     "m01": 13.1,
+     "m02": 21.6,
+     "m03": 28.4,
+     "m04": 61.7,
+     "m05": 87.3,
+     "m06": 89.2,
+     "m07": 79.9,
+     "m08": 76.8,
+     "m09": 46.8,
+     "m10": 30.2,
+     "m11": 16.7,
+     "m12": 10.6,
+     "eves": 562.4,
+     "_ell_havi_osszeg": 562.3
+    }
+   ]
+  },
+  {
+   "id": "arnyek_Fh_10_hajl90",
+   "cim": "Árnyékvető szög: 10 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 6,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.93,
+     "D": 0.87
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.95,
+     "D": 0.91
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.98
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.94,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 1.0
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.94,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.97,
+     "D": 1.0
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.95,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 1.0
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.97,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.93,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 1.0
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 0.99
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.94,
+     "D": 0.91
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.94,
+     "D": 0.89
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.92,
+     "D": 0.85
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 10,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_10_hajl30",
+   "cim": "Árnyékvető szög: 10 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 6,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.92,
+     "D": 0.89
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 0.93
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 0.98
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.96,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.98,
+     "D": 1.0
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.97,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.96,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.98,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.99,
+     "DNy_DK": 1.0,
+     "D": 1.0
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.96,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.98,
+     "D": 1.0
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.97,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.97,
+     "D": 0.99
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 0.94
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.95,
+     "D": 0.91
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.92,
+     "D": 0.88
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 10,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fh_20_hajl90",
+   "cim": "Árnyékvető szög: 20 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 7,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.75,
+     "D": 0.65
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.88,
+     "DNy_DK": 0.87,
+     "D": 0.77
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.95,
+     "D": 0.93
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.92,
+     "D": 0.98
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.86,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.92,
+     "DNy_DK": 0.92,
+     "D": 1.0
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.88,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.94,
+     "D": 1.0
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.91,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.96,
+     "D": 1.0
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.91,
+     "D": 1.0
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.91,
+     "D": 0.92
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.87,
+     "D": 0.78
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.8,
+     "D": 0.68
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.72,
+     "D": 0.61
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 20,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_20_hajl30",
+   "cim": "Árnyékvető szög: 20 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 7,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.74,
+     "D": 0.7
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.9,
+     "DNy_DK": 0.85,
+     "D": 0.8
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 0.99,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.95,
+     "D": 0.94
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.9,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.93,
+     "D": 0.93
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.89,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.95,
+     "D": 0.94
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.89,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.95,
+     "D": 0.98
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.92,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.97,
+     "D": 0.98
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.92,
+     "DNy_DK": 0.93,
+     "D": 0.93
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.92,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.92,
+     "DNy_DK": 0.92,
+     "D": 0.92
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 0.99,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.85,
+     "D": 0.82
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.86,
+     "DNy_DK": 0.79,
+     "D": 0.73
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.75,
+     "D": 0.69
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 20,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fh_30_hajl90",
+   "cim": "Árnyékvető szög: 30 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 8,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.61,
+     "D": 0.48
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.71,
+     "D": 0.57
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.91,
+     "D": 0.87
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.87,
+     "D": 0.93
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.84,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.88,
+     "D": 0.99
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.83,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.9,
+     "D": 1.0
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.88,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.93,
+     "D": 1.0
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.86,
+     "DNy_DK": 0.87,
+     "D": 0.95
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.85,
+     "D": 0.83
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.75,
+     "D": 0.61
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.55,
+     "D": 0.41
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.65,
+     "D": 0.53
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 30,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_30_hajl30",
+   "cim": "Árnyékvető szög: 30 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 8,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.75,
+     "DNy_DK": 0.61,
+     "D": 0.56
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.86,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.68,
+     "D": 0.62
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 0.97,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.92,
+     "DNy_DK": 0.9,
+     "D": 0.87
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.83,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.88,
+     "DNy_DK": 0.88,
+     "D": 0.86
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.81,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.89,
+     "D": 0.87
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.82,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.9,
+     "DNy_DK": 0.91,
+     "D": 0.92
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.87,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.92,
+     "DNy_DK": 0.93,
+     "D": 0.93
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.81,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.86,
+     "D": 0.85
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.86,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.84,
+     "D": 0.82
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 0.96,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.78,
+     "DNy_DK": 0.7,
+     "D": 0.66
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.68,
+     "DNy_DK": 0.55,
+     "D": 0.48
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.69,
+     "D": 0.63
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 30,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fv_30_hajl90",
+   "cim": "Árnyékvető szög: 30 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 9,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 1.0,
+     "DNy_DK": 1.0,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.99,
+     "DNy_DK": 1.0,
+     "D": 1.0
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.98,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.98
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.98,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.95
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.98,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.94
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.99,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.95
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.96,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.97,
+     "D": 0.96
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.99,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.97,
+     "D": 1.0
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 0.99
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 1.0,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 1.0,
+     "DNy_DK": 1.0,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 30,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_30_hajl90",
+   "cim": "Árnyékvető szög: 30 fok – Függőleges árnyékvető, Ff – Függőleges (90 fokos) pozíció",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 9,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek. A fejléc itt eltérően „Függőleges (90 fokos) pozíció” (a többi Ff táblában „90 fokos hajlásszög (függőleges)”).",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.94,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.95,
+     "D": 0.99
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.97,
+     "D": 0.98
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.96
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.95
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 0.97
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.99,
+     "D": 0.97
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.98,
+     "D": 0.95
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.93
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 0.92
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.93,
+     "D": 1.0
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.95,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 30,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_40_hajl90",
+   "cim": "Árnyékvető szög: 40 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 10,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.61,
+     "D": 0.48
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.62,
+     "D": 0.48
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.86,
+     "DNy_DK": 0.82,
+     "D": 0.75
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.82,
+     "D": 0.85
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.84,
+     "ENy_EK": 0.83,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.83,
+     "D": 0.95
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.82,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.86,
+     "D": 0.99
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.88,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.89,
+     "D": 0.98
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.81,
+     "DNy_DK": 0.82,
+     "D": 0.88
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.77,
+     "D": 0.71
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.57,
+     "D": 0.4
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.55,
+     "D": 0.41
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.65,
+     "D": 0.53
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 40,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_40_hajl30",
+   "cim": "Árnyékvető szög: 40 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 10,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.75,
+     "DNy_DK": 0.61,
+     "D": 0.56
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 0.99,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.71,
+     "DNy_DK": 0.6,
+     "D": 0.53
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 0.91,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.79,
+     "D": 0.76
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.76,
+     "ENy_EK": 0.83,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.79,
+     "D": 0.77
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.74,
+     "ENy_EK": 0.81,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.81,
+     "D": 0.79
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.75,
+     "ENy_EK": 0.81,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.84,
+     "D": 0.85
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.81,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.88,
+     "DNy_DK": 0.87,
+     "D": 0.87
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.72,
+     "ENy_EK": 0.8,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.77,
+     "D": 0.76
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.77,
+     "ENy_EK": 0.8,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.72,
+     "D": 0.7
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 0.88,
+     "ENy_EK": 0.72,
+     "Ny_K": 0.61,
+     "DNy_DK": 0.5,
+     "D": 0.45
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.67,
+     "DNy_DK": 0.55,
+     "D": 0.47
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.69,
+     "D": 0.63
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 40,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fv_40_hajl90",
+   "cim": "Árnyékvető szög: 40 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 11,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.99,
+     "DNy_DK": 1.0,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.97,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.95
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.97,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.95,
+     "D": 0.89
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.97,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.89
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.98,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.9
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.95,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.95,
+     "D": 0.91
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.99,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.99
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.99
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 1.0,
+     "DNy_DK": 1.0,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 40,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_40_hajl90",
+   "cim": "Árnyékvető szög: 40 fok – Függőleges árnyékvető, Ff – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 11,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.91,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.94,
+     "D": 0.97
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.97,
+     "D": 0.96
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.98,
+     "D": 0.93
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.98,
+     "D": 0.93
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.95
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.95
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.97,
+     "D": 0.93
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 0.91
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.92,
+     "D": 0.88
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.89,
+     "D": 0.99
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.91,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 40,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_50_hajl90",
+   "cim": "Árnyékvető szög: 50 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 12,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.61,
+     "D": 0.48
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.62,
+     "D": 0.48
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.77,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.76,
+     "DNy_DK": 0.74,
+     "D": 0.74
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.84,
+     "ENy_EK": 0.8,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.78,
+     "D": 0.88
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.82,
+     "ENy_EK": 0.81,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.83,
+     "D": 0.94
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.88,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.85,
+     "D": 0.93
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.75,
+     "DNy_DK": 0.76,
+     "D": 0.78
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.64,
+     "D": 0.55
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.56,
+     "D": 0.4
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.55,
+     "D": 0.41
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.65,
+     "D": 0.53
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 50,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_50_hajl30",
+   "cim": "Árnyékvető szög: 50 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 12,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.75,
+     "DNy_DK": 0.61,
+     "D": 0.56
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 0.99,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.71,
+     "DNy_DK": 0.6,
+     "D": 0.53
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 0.89,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.75,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.67,
+     "ENy_EK": 0.73,
+     "Ny_K": 0.71,
+     "DNy_DK": 0.67,
+     "D": 0.64
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.65,
+     "ENy_EK": 0.72,
+     "Ny_K": 0.74,
+     "DNy_DK": 0.72,
+     "D": 0.69
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.68,
+     "ENy_EK": 0.74,
+     "Ny_K": 0.78,
+     "DNy_DK": 0.76,
+     "D": 0.77
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.73,
+     "ENy_EK": 0.78,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.79,
+     "D": 0.78
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.62,
+     "ENy_EK": 0.69,
+     "Ny_K": 0.69,
+     "DNy_DK": 0.66,
+     "D": 0.64
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.64,
+     "ENy_EK": 0.66,
+     "Ny_K": 0.61,
+     "DNy_DK": 0.55,
+     "D": 0.52
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 0.87,
+     "ENy_EK": 0.72,
+     "Ny_K": 0.6,
+     "DNy_DK": 0.49,
+     "D": 0.44
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.67,
+     "DNy_DK": 0.55,
+     "D": 0.47
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.69,
+     "D": 0.63
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 50,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fv_50_hajl90",
+   "cim": "Árnyékvető szög: 50 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 13,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.97,
+     "D": 1.0
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 0.99
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.97,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.94,
+     "D": 0.88
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.97,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.92,
+     "D": 0.81
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.96,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.93,
+     "D": 0.83
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.97,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.93,
+     "D": 0.84
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.94,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.92,
+     "D": 0.84
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.99,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.94,
+     "D": 0.94
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.95,
+     "D": 0.99
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.98,
+     "D": 1.0
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.99,
+     "DNy_DK": 0.99,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 50,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_50_hajl90",
+   "cim": "Árnyékvető szög: 50 fok – Függőleges árnyékvető, Ff – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 13,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.88,
+     "D": 0.97
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.91,
+     "D": 0.93
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.94,
+     "D": 0.94
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.95,
+     "D": 0.91
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.95,
+     "D": 0.91
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.96,
+     "D": 0.94
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.94
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.94,
+     "D": 0.9
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.93,
+     "D": 0.88
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.9,
+     "DNy_DK": 0.9,
+     "D": 0.84
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.86,
+     "D": 0.96
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.89,
+     "D": 0.99
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 50,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_60_hajl90",
+   "cim": "Árnyékvető szög: 60 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 14,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.61,
+     "D": 0.48
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.62,
+     "D": 0.48
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.77,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.66,
+     "D": 0.63
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.84,
+     "ENy_EK": 0.78,
+     "Ny_K": 0.72,
+     "DNy_DK": 0.71,
+     "D": 0.76
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.82,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.76,
+     "DNy_DK": 0.78,
+     "D": 0.88
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.88,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.78,
+     "DNy_DK": 0.8,
+     "D": 0.85
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.7,
+     "DNy_DK": 0.65,
+     "D": 0.64
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.72,
+     "DNy_DK": 0.62,
+     "D": 0.52
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.56,
+     "D": 0.4
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.55,
+     "D": 0.41
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.65,
+     "D": 0.53
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 60,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_60_hajl30",
+   "cim": "Árnyékvető szög: 60 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 14,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.75,
+     "DNy_DK": 0.61,
+     "D": 0.56
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 0.99,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.71,
+     "DNy_DK": 0.6,
+     "D": 0.53
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 0.89,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.75,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.57,
+     "ENy_EK": 0.63,
+     "Ny_K": 0.6,
+     "DNy_DK": 0.55,
+     "D": 0.52
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.52,
+     "ENy_EK": 0.59,
+     "Ny_K": 0.6,
+     "DNy_DK": 0.57,
+     "D": 0.54
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.59,
+     "ENy_EK": 0.65,
+     "Ny_K": 0.68,
+     "DNy_DK": 0.67,
+     "D": 0.67
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.64,
+     "ENy_EK": 0.69,
+     "Ny_K": 0.71,
+     "DNy_DK": 0.69,
+     "D": 0.68
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.48,
+     "ENy_EK": 0.55,
+     "Ny_K": 0.54,
+     "DNy_DK": 0.49,
+     "D": 0.47
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.62,
+     "ENy_EK": 0.64,
+     "Ny_K": 0.58,
+     "DNy_DK": 0.52,
+     "D": 0.49
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 0.87,
+     "ENy_EK": 0.72,
+     "Ny_K": 0.6,
+     "DNy_DK": 0.49,
+     "D": 0.44
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.67,
+     "DNy_DK": 0.55,
+     "D": 0.47
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.69,
+     "D": 0.63
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 60,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fv_60_hajl90",
+   "cim": "Árnyékvető szög: 60 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 15,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.97,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.95,
+     "D": 1.0
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 0.96
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.96,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.9,
+     "D": 0.79
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.95,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.92,
+     "DNy_DK": 0.87,
+     "D": 0.72
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.94,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.88,
+     "D": 0.77
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.96,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.89,
+     "D": 0.77
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.93,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.88,
+     "D": 0.74
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.99,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.9,
+     "D": 0.85
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.92,
+     "D": 0.98
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.96,
+     "D": 1.0
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.98,
+     "DNy_DK": 0.98,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 60,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_60_hajl90",
+   "cim": "Árnyékvető szög: 60 fok – Függőleges árnyékvető, Ff – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 15,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.81,
+     "DNy_DK": 0.84,
+     "D": 0.91
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.89,
+     "D": 0.88
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.94,
+     "D": 0.92
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.86,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.94,
+     "D": 0.89
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.86,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.94,
+     "D": 0.9
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.96,
+     "DNy_DK": 0.96,
+     "D": 0.92
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.96,
+     "D": 0.92
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.83,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.94,
+     "D": 0.89
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.91,
+     "D": 0.84
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.86,
+     "D": 0.8
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.82,
+     "D": 0.9
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.86,
+     "D": 0.94
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 60,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_70_hajl90",
+   "cim": "Árnyékvető szög: 70 fok – Horizont árnyékvető, Fh – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 16,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek. ANOMÁLIA: cellánként azonos a „Vízszintes árnyékvető, Fv – 90 fok” táblázattal (19. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.61,
+     "D": 0.48
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.62,
+     "D": 0.48
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.77,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.66,
+     "D": 0.63
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.84,
+     "ENy_EK": 0.78,
+     "Ny_K": 0.69,
+     "DNy_DK": 0.63,
+     "D": 0.67
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.82,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.72,
+     "DNy_DK": 0.7,
+     "D": 0.77
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.88,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.76,
+     "DNy_DK": 0.72,
+     "D": 0.76
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.69,
+     "DNy_DK": 0.63,
+     "D": 0.62
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.72,
+     "DNy_DK": 0.62,
+     "D": 0.52
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.56,
+     "D": 0.4
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.55,
+     "D": 0.41
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.65,
+     "D": 0.53
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 70,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fh_70_hajl30",
+   "cim": "Árnyékvető szög: 70 fok – Horizont árnyékvető, Fh – 30 fokos hajlásszög",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 16,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.75,
+     "DNy_DK": 0.61,
+     "D": 0.56
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 0.99,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.71,
+     "DNy_DK": 0.6,
+     "D": 0.53
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 0.89,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.75,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.57,
+     "ENy_EK": 0.63,
+     "Ny_K": 0.59,
+     "DNy_DK": 0.55,
+     "D": 0.51
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.42,
+     "ENy_EK": 0.49,
+     "Ny_K": 0.5,
+     "DNy_DK": 0.46,
+     "D": 0.43
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.46,
+     "ENy_EK": 0.52,
+     "Ny_K": 0.55,
+     "DNy_DK": 0.53,
+     "D": 0.53
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.53,
+     "ENy_EK": 0.57,
+     "Ny_K": 0.59,
+     "DNy_DK": 0.56,
+     "D": 0.55
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.46,
+     "ENy_EK": 0.53,
+     "Ny_K": 0.52,
+     "DNy_DK": 0.47,
+     "D": 0.45
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.62,
+     "ENy_EK": 0.64,
+     "Ny_K": 0.58,
+     "DNy_DK": 0.52,
+     "D": 0.49
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 0.87,
+     "ENy_EK": 0.72,
+     "Ny_K": 0.6,
+     "DNy_DK": 0.49,
+     "D": 0.44
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.67,
+     "DNy_DK": 0.55,
+     "D": 0.47
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.69,
+     "D": 0.63
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fh",
+    "arnyekveto_szog_fok": 70,
+    "hajlasszog_fok": 30
+   }
+  },
+  {
+   "id": "arnyek_Fv_70_hajl90",
+   "cim": "Árnyékvető szög: 70 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 17,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.93,
+     "D": 1.0
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.9,
+     "D": 0.94
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.95,
+     "DNy_DK": 0.92,
+     "D": 0.89
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.95,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.84,
+     "D": 0.66
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.92,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.79,
+     "D": 0.67
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.92,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.81,
+     "D": 0.77
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.94,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.9,
+     "DNy_DK": 0.82,
+     "D": 0.76
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.92,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.8,
+     "D": 0.63
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.99,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.9,
+     "DNy_DK": 0.84,
+     "D": 0.68
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.95,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.85,
+     "D": 0.88
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.9,
+     "D": 0.98
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 1.0,
+     "Ny_K": 0.97,
+     "DNy_DK": 0.95,
+     "D": 1.0
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 70,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_70_hajl90",
+   "cim": "Árnyékvető szög: 70 fok – Függőleges árnyékvető, Ff – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 17,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.8,
+     "D": 0.86
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.78,
+     "DNy_DK": 0.86,
+     "D": 0.85
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.91,
+     "D": 0.9
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.92,
+     "D": 0.86
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.94,
+     "D": 0.86
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.83,
+     "Ny_K": 0.94,
+     "DNy_DK": 0.96,
+     "D": 0.91
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.95,
+     "D": 0.9
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.81,
+     "Ny_K": 0.89,
+     "DNy_DK": 0.92,
+     "D": 0.86
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.88,
+     "D": 0.82
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.81,
+     "D": 0.76
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.74,
+     "DNy_DK": 0.76,
+     "D": 0.83
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.82,
+     "D": 0.88
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 70,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fv_80_hajl90",
+   "cim": "Árnyékvető szög: 80 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 18,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.9,
+     "DNy_DK": 0.81,
+     "D": 0.87
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.88,
+     "DNy_DK": 0.79,
+     "D": 0.72
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.85,
+     "D": 0.73
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.93,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.74,
+     "D": 0.63
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.9,
+     "ENy_EK": 0.86,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.69,
+     "D": 0.67
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.88,
+     "ENy_EK": 0.87,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.72,
+     "D": 0.77
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.91,
+     "ENy_EK": 0.89,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.75,
+     "D": 0.76
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.9,
+     "ENy_EK": 0.86,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.69,
+     "D": 0.62
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.98,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.72,
+     "D": 0.52
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.92,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.72,
+     "D": 0.57
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.88,
+     "DNy_DK": 0.76,
+     "D": 0.79
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.99,
+     "Ny_K": 0.93,
+     "DNy_DK": 0.86,
+     "D": 0.92
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 80,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_80_hajl90",
+   "cim": "Árnyékvető szög: 80 fok – Függőleges árnyékvető, Ff – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 18,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.74,
+     "D": 0.81
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.8,
+     "D": 0.82
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.88,
+     "DNy_DK": 0.89,
+     "D": 0.88
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.91,
+     "D": 0.85
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.9,
+     "D": 0.86
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.93,
+     "D": 0.91
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.83,
+     "Ny_K": 0.91,
+     "DNy_DK": 0.93,
+     "D": 0.9
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.81,
+     "Ny_K": 0.84,
+     "DNy_DK": 0.9,
+     "D": 0.85
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.87,
+     "D": 0.79
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.79,
+     "D": 0.69
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.74,
+     "DNy_DK": 0.7,
+     "D": 0.76
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.77,
+     "D": 0.83
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 80,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Fv_90_hajl90",
+   "cim": "Árnyékvető szög: 90 fok – Vízszintes árnyékvető, Fv – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 19,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek. ANOMÁLIA: ez a táblázat cellánként azonos a „Horizont árnyékvető, Fh – 70 fok – 90 fokos hajlásszög” táblázattal (16. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.8,
+     "DNy_DK": 0.61,
+     "D": 0.48
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.93,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.62,
+     "D": 0.48
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.85,
+     "DNy_DK": 0.77,
+     "D": 0.71
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 0.91,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.66,
+     "D": 0.63
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 0.84,
+     "ENy_EK": 0.78,
+     "Ny_K": 0.69,
+     "DNy_DK": 0.63,
+     "D": 0.67
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 0.82,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.72,
+     "DNy_DK": 0.7,
+     "D": 0.77
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 0.88,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.76,
+     "DNy_DK": 0.72,
+     "D": 0.76
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 0.88,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.69,
+     "DNy_DK": 0.63,
+     "D": 0.62
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 0.96,
+     "ENy_EK": 0.84,
+     "Ny_K": 0.72,
+     "DNy_DK": 0.62,
+     "D": 0.52
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.56,
+     "D": 0.4
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.55,
+     "D": 0.41
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.98,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.65,
+     "D": 0.53
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Fv",
+    "arnyekveto_szog_fok": 90,
+    "hajlasszog_fok": 90
+   }
+  },
+  {
+   "id": "arnyek_Ff_90_hajl90",
+   "cim": "Árnyékvető szög: 90 fok – Függőleges árnyékvető, Ff – 90 fokos hajlásszög (függőleges)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "1.3 pont, számozatlan segédtáblázat",
+    "oldal": 19,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Számozatlan segédtáblázat (1.3 pont, Segédtáblázatok a benapozás vizsgálatához). A szög értelmezése: 1.1–1.3. ábra (5. o.). Felhasználás: 1. Függelék (6.25) F_árny = Fh · Fv · Ff. A forrás csak a megadott árnyékvető szögekre és hajlásszögekre ad értéket, interpolációs szabályt nem ad (nyitott kérdés). Az ÉNy/ÉK, Ny/K, DNy/DK oszlopok tükörszimmetrikus tájoláspárokra közösek.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "hónap sorszáma",
+     "egyseg": null
+    },
+    {
+     "kulcs": "honap_nev",
+     "cim": "hónap",
+     "egyseg": null
+    },
+    {
+     "kulcs": "E",
+     "cim": "É",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "ENy_EK",
+     "cim": "ÉNy/ÉK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "Ny_K",
+     "cim": "Ny/K",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "DNy_DK",
+     "cim": "DNy/DK",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "D",
+     "cim": "D",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "honap_nev": "január",
+     "E": 1.0,
+     "ENy_EK": 0.97,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.67,
+     "D": 0.74
+    },
+    {
+     "honap": 2,
+     "honap_nev": "február",
+     "E": 1.0,
+     "ENy_EK": 0.9,
+     "Ny_K": 0.73,
+     "DNy_DK": 0.74,
+     "D": 0.77
+    },
+    {
+     "honap": 3,
+     "honap_nev": "március",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.83,
+     "DNy_DK": 0.88,
+     "D": 0.85
+    },
+    {
+     "honap": 4,
+     "honap_nev": "április",
+     "E": 1.0,
+     "ENy_EK": 0.85,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.86,
+     "D": 0.81
+    },
+    {
+     "honap": 5,
+     "honap_nev": "május",
+     "E": 1.0,
+     "ENy_EK": 0.82,
+     "Ny_K": 0.82,
+     "DNy_DK": 0.89,
+     "D": 0.82
+    },
+    {
+     "honap": 6,
+     "honap_nev": "június",
+     "E": 1.0,
+     "ENy_EK": 0.79,
+     "Ny_K": 0.87,
+     "DNy_DK": 0.93,
+     "D": 0.87
+    },
+    {
+     "honap": 7,
+     "honap_nev": "július",
+     "E": 1.0,
+     "ENy_EK": 0.83,
+     "Ny_K": 0.86,
+     "DNy_DK": 0.92,
+     "D": 0.87
+    },
+    {
+     "honap": 8,
+     "honap_nev": "augusztus",
+     "E": 1.0,
+     "ENy_EK": 0.81,
+     "Ny_K": 0.78,
+     "DNy_DK": 0.86,
+     "D": 0.81
+    },
+    {
+     "honap": 9,
+     "honap_nev": "szeptember",
+     "E": 1.0,
+     "ENy_EK": 0.88,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.82,
+     "D": 0.74
+    },
+    {
+     "honap": 10,
+     "honap_nev": "október",
+     "E": 1.0,
+     "ENy_EK": 0.91,
+     "Ny_K": 0.77,
+     "DNy_DK": 0.74,
+     "D": 0.67
+    },
+    {
+     "honap": 11,
+     "honap_nev": "november",
+     "E": 1.0,
+     "ENy_EK": 0.94,
+     "Ny_K": 0.74,
+     "DNy_DK": 0.63,
+     "D": 0.74
+    },
+    {
+     "honap": 12,
+     "honap_nev": "december",
+     "E": 1.0,
+     "ENy_EK": 0.96,
+     "Ny_K": 0.79,
+     "DNy_DK": 0.7,
+     "D": 0.78
+    }
+   ],
+   "parameterek": {
+    "tenyezo": "Ff",
+    "arnyekveto_szog_fok": 90,
+    "hajlasszog_fok": 90
+   }
+  }
+ ]
+}

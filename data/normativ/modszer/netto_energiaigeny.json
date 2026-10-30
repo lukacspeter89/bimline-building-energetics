@@ -1,0 +1,1185 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_6_1",
+   "cim": "A csatlakozási hőhidak hatását kifejező korrekciós tényező",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6.1.2 fejezet, 6.1. táblázat",
+    "oldal": 39,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Alkalmazás: U_R = U·(1+ζ) (6.3), H_tr = Σ A_i·U_R,i (6.2), egyszerűsített módszer. A ζ korrekciós tényező nem használható szerkezetek belső oldalán elhelyezett hőszigetelések esetén (39. o.). Lábjegyzetek (40. o.) szó szerint: 1) Besorolás a pozitív falsarkok, a falazatokba beépített, az elemen belüli hőhidak közé nem sorolt acél vagy vasbeton pillérek, a homlokzatsíkból kinyúló falak, a nyílászáró-kerületek, a csatlakozó födémek és belső falak, erkélyek, lodzsák, függőfolyosók hosszának fajlagos mennyisége alapján (a külső falak nyílászárókkal együtt vett felületéhez viszonyítva). 2) Besorolás az attikafalak, a mellvédfalak, a fal-, felülvilágító- és felépítmény-szegélyek hosszának fajlagos mennyisége alapján a (tető felületéhez viszonyítva, a tetőfödém kerülete a külső falaknál (belső méretekkel) figyelembe véve). 3) Besorolás a tetőélek és élszaruk, a felépítmény szegélyek, a nyílászáró-kerületek hosszának, valamint a térd- és oromfalak és a tető csatlakozási hosszának fajlagos mennyisége alapján (a födém kerülete a külső falaknál (belső méretekkel) figyelembe véve). 4) A födém kerülete a külső falaknál figyelembe véve. A besoroláshoz a 6.2. táblázat ad tájékoztató adatokat.",
+   "oszlopok": [
+    {
+     "kulcs": "szerkezet",
+     "cim": "Határoló szerkezetek",
+     "egyseg": null
+    },
+    {
+     "kulcs": "alcsoport",
+     "cim": "Hőszigetelés módja / alcsoport",
+     "egyseg": null
+    },
+    {
+     "kulcs": "besorolas",
+     "cim": "Hőhidasság szerinti besorolás",
+     "egyseg": null
+    },
+    {
+     "kulcs": "zeta",
+     "cim": "A csatlakozási hőhidak hatását kifejező korrekciós tényező ζ",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "labjegyzet",
+     "cim": "Lábjegyzet száma",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "szerkezet": "Külső falak",
+     "alcsoport": "külső oldali, vagy szerkezeten belüli megszakítatlan hőszigeteléssel",
+     "besorolas": "gyengén hőhidas",
+     "zeta": 0.15,
+     "labjegyzet": 1
+    },
+    {
+     "szerkezet": "Külső falak",
+     "alcsoport": "külső oldali, vagy szerkezeten belüli megszakítatlan hőszigeteléssel",
+     "besorolas": "közepesen hőhidas",
+     "zeta": 0.2,
+     "labjegyzet": 1
+    },
+    {
+     "szerkezet": "Külső falak",
+     "alcsoport": "külső oldali, vagy szerkezeten belüli megszakítatlan hőszigeteléssel",
+     "besorolas": "erősen hőhidas",
+     "zeta": 0.3,
+     "labjegyzet": 1
+    },
+    {
+     "szerkezet": "Külső falak",
+     "alcsoport": "egyéb külső falak",
+     "besorolas": "gyengén hőhidas",
+     "zeta": 0.25,
+     "labjegyzet": 1
+    },
+    {
+     "szerkezet": "Külső falak",
+     "alcsoport": "egyéb külső falak",
+     "besorolas": "közepesen hőhidas",
+     "zeta": 0.3,
+     "labjegyzet": 1
+    },
+    {
+     "szerkezet": "Külső falak",
+     "alcsoport": "egyéb külső falak",
+     "besorolas": "erősen hőhidas",
+     "zeta": 0.4,
+     "labjegyzet": 1
+    },
+    {
+     "szerkezet": "Lapostetők",
+     "alcsoport": null,
+     "besorolas": "gyengén hőhidas",
+     "zeta": 0.1,
+     "labjegyzet": 2
+    },
+    {
+     "szerkezet": "Lapostetők",
+     "alcsoport": null,
+     "besorolas": "közepesen hőhidas",
+     "zeta": 0.15,
+     "labjegyzet": 2
+    },
+    {
+     "szerkezet": "Lapostetők",
+     "alcsoport": null,
+     "besorolas": "erősen hőhidas",
+     "zeta": 0.2,
+     "labjegyzet": 2
+    },
+    {
+     "szerkezet": "Beépített tetőteret határoló szerkezetek",
+     "alcsoport": null,
+     "besorolas": "gyengén hőhidas",
+     "zeta": 0.1,
+     "labjegyzet": 3
+    },
+    {
+     "szerkezet": "Beépített tetőteret határoló szerkezetek",
+     "alcsoport": null,
+     "besorolas": "közepesen hőhidas",
+     "zeta": 0.15,
+     "labjegyzet": 3
+    },
+    {
+     "szerkezet": "Beépített tetőteret határoló szerkezetek",
+     "alcsoport": null,
+     "besorolas": "erősen hőhidas",
+     "zeta": 0.2,
+     "labjegyzet": 3
+    },
+    {
+     "szerkezet": "Padlásfödémek",
+     "alcsoport": null,
+     "besorolas": null,
+     "zeta": 0.1,
+     "labjegyzet": 4
+    },
+    {
+     "szerkezet": "Árkádfödémek",
+     "alcsoport": null,
+     "besorolas": null,
+     "zeta": 0.1,
+     "labjegyzet": 4
+    },
+    {
+     "szerkezet": "Pincefödémek",
+     "alcsoport": "szerkezeten belüli hőszigeteléssel",
+     "besorolas": null,
+     "zeta": 0.2,
+     "labjegyzet": 4
+    },
+    {
+     "szerkezet": "Pincefödémek",
+     "alcsoport": "alsó oldali hőszigeteléssel",
+     "besorolas": null,
+     "zeta": 0.1,
+     "labjegyzet": 4
+    },
+    {
+     "szerkezet": "Fűtött és fűtetlen terek közötti falak, fűtött pincetereket határoló, külső oldalon hőszigetelt falak",
+     "alcsoport": null,
+     "besorolas": null,
+     "zeta": 0.05,
+     "labjegyzet": null
+    }
+   ]
+  },
+  {
+   "id": "tabla_6_2",
+   "cim": "Tájékoztató adatok a ζ korrekciós tényező kiválasztásához",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6.1.2 fejezet, 6.2. táblázat",
+    "oldal": 40,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A hőhidak hosszának fajlagos mennyisége (fm/m2). Tájékoztató adat. A határértékek (pontosan 0,8 / 1,0 stb.) zártsága a forrásban: '< 0,8', '0,8 - 1,0', '> 1,0'; a min_zart/max_zart mezők ebből levezetett értelmezés (a közepes sávba sorolva a határt).",
+   "oszlopok": [
+    {
+     "kulcs": "szerkezet",
+     "cim": "Határoló szerkezetek",
+     "egyseg": null
+    },
+    {
+     "kulcs": "besorolas",
+     "cim": "Határoló szerkezet besorolása",
+     "egyseg": null
+    },
+    {
+     "kulcs": "min",
+     "cim": "A hőhidak hosszának fajlagos mennyisége – alsó határ",
+     "egyseg": "fm/m2"
+    },
+    {
+     "kulcs": "max",
+     "cim": "felső határ",
+     "egyseg": "fm/m2"
+    },
+    {
+     "kulcs": "eredeti",
+     "cim": "eredeti cellaszöveg",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "szerkezet": "Külső falak",
+     "besorolas": "gyengén hőhidas",
+     "min": null,
+     "max": 0.8,
+     "max_zart": false,
+     "eredeti": "< 0,8"
+    },
+    {
+     "szerkezet": "Külső falak",
+     "besorolas": "közepesen hőhidas",
+     "min": 0.8,
+     "max": 1.0,
+     "min_zart": true,
+     "max_zart": true,
+     "eredeti": "0,8 - 1,0"
+    },
+    {
+     "szerkezet": "Külső falak",
+     "besorolas": "erősen hőhidas",
+     "min": 1.0,
+     "max": null,
+     "min_zart": false,
+     "eredeti": "> 1,0"
+    },
+    {
+     "szerkezet": "Lapostetők",
+     "besorolas": "gyengén hőhidas",
+     "min": null,
+     "max": 0.2,
+     "max_zart": false,
+     "eredeti": "< 0,2"
+    },
+    {
+     "szerkezet": "Lapostetők",
+     "besorolas": "közepesen hőhidas",
+     "min": 0.2,
+     "max": 0.3,
+     "min_zart": true,
+     "max_zart": true,
+     "eredeti": "0,2 - 0,3"
+    },
+    {
+     "szerkezet": "Lapostetők",
+     "besorolas": "erősen hőhidas",
+     "min": 0.3,
+     "max": null,
+     "min_zart": false,
+     "eredeti": "> 0,3"
+    },
+    {
+     "szerkezet": "Beépített tetőtereket határoló szerkezetek",
+     "besorolas": "gyengén hőhidas",
+     "min": null,
+     "max": 0.4,
+     "max_zart": false,
+     "eredeti": "< 0,4"
+    },
+    {
+     "szerkezet": "Beépített tetőtereket határoló szerkezetek",
+     "besorolas": "közepesen hőhidas",
+     "min": 0.4,
+     "max": 0.5,
+     "min_zart": true,
+     "max_zart": true,
+     "eredeti": "0,4 - 0,5"
+    },
+    {
+     "szerkezet": "Beépített tetőtereket határoló szerkezetek",
+     "besorolas": "erősen hőhidas",
+     "min": 0.5,
+     "max": null,
+     "min_zart": false,
+     "eredeti": "> 0,5"
+    }
+   ]
+  },
+  {
+   "id": "tabla_6_3",
+   "cim": "Gyengén kapcsolt fűtetlen terek miatti b módosító tényezők (októbertől áprilisig btél, májustól szeptemberig bnyár értékek alkalmazandók)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6.1.3 fejezet, 6.3. táblázat",
+    "oldal": 41,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Alkalmazás: H_tr,x = b·H_tr,ix (6.4), egyszerűsített módszer. Októbertől áprilisig b_tél, májustól szeptemberig b_nyár értékeit kell alkalmazni fűtés és hűtés esetén; csak ha a zóna parancsolt hőmérséklete fűtésnél 18-22 °C, hűtésnél 24-28 °C (40. o.). Napterek b_nyár = 0,0 egy közös cellában szerepel a három üvegezési típusra. Lábjegyzetek szó szerint: 1 napterek esetén, ha a b tényező jelen egyszerűsített módszerrel kerül kiszámításra, az indirekt sugárzási nyereség nem vehető figyelembe; 2 hőszigetelő üvegezés: legalább kétrétegű, legalább egy low-e bevonattal ellátott és argon nemesgázzal töltött üvegezés. ANOMÁLIA: zárt fűtetlen pince b_nyár = 1,5 (>1) – a forrás szerint így, nem javítottuk.",
+   "oszlopok": [
+    {
+     "kulcs": "szerkezet",
+     "cim": "A gyengén kapcsolt nem kondicionált térrel határos szerkezet",
+     "egyseg": null
+    },
+    {
+     "kulcs": "uvegezes",
+     "cim": "üvegezett szerkezet (naptér esetén)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "b_tel",
+     "cim": "btél",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "b_nyar",
+     "cim": "bnyár",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "szerkezet": "Padlástérrel határos födém vagy fal",
+     "uvegezes": null,
+     "b_tel": 0.9,
+     "b_nyar": 0.0
+    },
+    {
+     "szerkezet": "Zárt, fűtetlen pincével határos födém vagy fal",
+     "uvegezes": null,
+     "b_tel": 0.5,
+     "b_nyar": 1.5
+    },
+    {
+     "szerkezet": "Zárt, fűtetlen mélygarázzsal határos födém vagy fal",
+     "uvegezes": null,
+     "b_tel": 0.8,
+     "b_nyar": 0.8
+    },
+    {
+     "szerkezet": "Zárt, fűtetlen garázzsal határos födém vagy fal",
+     "uvegezes": null,
+     "b_tel": 0.9,
+     "b_nyar": 0.9
+    },
+    {
+     "szerkezet": "Fűtetlen/ hűtés nélküli helyiséggel határos födém vagy fal",
+     "uvegezes": null,
+     "b_tel": 0.5,
+     "b_nyar": 0.5
+    },
+    {
+     "szerkezet": "Fűtetlen, külső homlokzattal rendelkező lépcsőházzal határos fal",
+     "uvegezes": null,
+     "b_tel": 0.7,
+     "b_nyar": 0.7
+    },
+    {
+     "szerkezet": "Naptérrel vagy fűtetlen átriummal határos fal, ha az üvegezett szerkezet",
+     "uvegezes": "egyrétegű",
+     "b_tel": 0.8,
+     "b_nyar": 0.0,
+     "labjegyzet": [
+      1
+     ]
+    },
+    {
+     "szerkezet": "Naptérrel vagy fűtetlen átriummal határos fal, ha az üvegezett szerkezet",
+     "uvegezes": "kétrétegű",
+     "b_tel": 0.7,
+     "b_nyar": 0.0,
+     "labjegyzet": [
+      1
+     ]
+    },
+    {
+     "szerkezet": "Naptérrel vagy fűtetlen átriummal határos fal, ha az üvegezett szerkezet",
+     "uvegezes": "hőszigetelő üvegezésű",
+     "b_tel": 0.5,
+     "b_nyar": 0.0,
+     "labjegyzet": [
+      1,
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tabla_6_4",
+   "cim": "Ψp,f padló-fal csatlakozási hőhíd hatását kifejező vonalmenti hőátbocsátási tényező",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6.1.4.3 fejezet, 6.4. táblázat",
+    "oldal": 42,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Első oszlop: Külső falat alkotó vakolatlan falazat egyenértékű hővezetési tényezője. Egyszerűsített számítás esetén (6.1.4.3 b). Lábjegyzet szó szerint: '1 Tartalmaz legalább egy R = 1,25 m2K/W hővezetési ellenállású hőszigetelő réteget.' (a 'hőszigetelt' lábazati és padló oszlopokra vonatkozik). A λ = 0,15 és 0,45 W/mK határértékek besorolása a forrásban nem egyértelmű. Széles formátum helyett hosszú formátum: soronként egy cella.",
+   "oszlopok": [
+    {
+     "kulcs": "falazat_lambda_eredeti",
+     "cim": "Külső falat alkotó vakolatlan falazat egyenértékű hővezetési tényezője (eredeti)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "lambda_min",
+     "cim": "λ alsó határ",
+     "egyseg": "W/mK"
+    },
+    {
+     "kulcs": "lambda_max",
+     "cim": "λ felső határ",
+     "egyseg": "W/mK"
+    },
+    {
+     "kulcs": "kulso_fal_kialakitasa",
+     "cim": "Külső fal kialakítása",
+     "egyseg": null
+    },
+    {
+     "kulcs": "labazati_fal",
+     "cim": "Lábazati fal",
+     "egyseg": null
+    },
+    {
+     "kulcs": "padlo",
+     "cim": "Padló",
+     "egyseg": null
+    },
+    {
+     "kulcs": "psi_pf",
+     "cim": "Ψp,f",
+     "egyseg": "W/mK"
+    }
+   ],
+   "sorok": [
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.25
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.45
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.25
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.3
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.2
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.25
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.25
+    },
+    {
+     "falazat_lambda_eredeti": "0,45 W/mK-nél nagyobb",
+     "lambda_min": 0.45,
+     "lambda_max": null,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.2
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.2
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK és 0,45 W/mK közötti",
+     "lambda_min": 0.15,
+     "lambda_max": 0.45,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.15
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "külső oldali, megszakítatlan hőszigeteléssel",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal hőszigeteletlen",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal csak a terepszintig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.1
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigeteletlen",
+     "psi_pf": 0.05
+    },
+    {
+     "falazat_lambda_eredeti": "0,15 W/mK-nél kisebb",
+     "lambda_min": null,
+     "lambda_max": 0.15,
+     "kulso_fal_kialakitasa": "hőszigetelés nélkül",
+     "labazati_fal": "Lábazati fal a terepszint alatt 0,5 m-ig hőszigetelt",
+     "padlo": "Padló hőszigetelt",
+     "psi_pf": 0.1
+    }
+   ]
+  },
+  {
+   "id": "tabla_6_5",
+   "cim": "A hőtároló képesség alapértékei",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6.6 fejezet, 6.5. táblázat",
+    "oldal": 49,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Egyszerűsített módszer. A táblázat értékeit a zóna/ épület hasznos alapterületével szorozni kell (C_m,eff = érték · A_N, kJ/K).",
+   "oszlopok": [
+    {
+     "kulcs": "kategoria",
+     "cim": "sorszám",
+     "egyseg": null
+    },
+    {
+     "kulcs": "cm_eff_per_an",
+     "cim": "Cm,eff / AN",
+     "egyseg": "kJ/m2K"
+    },
+    {
+     "kulcs": "besorolas",
+     "cim": "Besorolás",
+     "egyseg": null
+    },
+    {
+     "kulcs": "jellemzok",
+     "cim": "Jellemzők",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "kategoria": 1,
+     "cm_eff_per_an": 95,
+     "besorolas": "könnyű épület",
+     "jellemzok": "Könnyűszerkezetes épület nehéz belső szerkezetek nélkül"
+    },
+    {
+     "kategoria": 2,
+     "cm_eff_per_an": 190,
+     "besorolas": "közepesen nehéz épület",
+     "jellemzok": "- Vegyes építési mód vagy nehéz szerkezetű épület álmennyezettel és/vagy álpadlóval és túlnyomórészt könnyű válaszfalakkal - vagy nagy belmagasságú terek (pl. tornacsarnok, múzeum)."
+    },
+    {
+     "kategoria": 3,
+     "cm_eff_per_an": 280,
+     "besorolas": "nehéz épület",
+     "jellemzok": "Jellemzően nehéz külső és belső szerkezetek (vasbeton födém, külső és belső épületszerkezetek átlagos testsűrűsége ≥ 600 kg/m3), álmennyezet és álpadló nélkül, belső hőszigetelés nélkül. Normál belmagasságú terek (< 4,5 m).",
+     "testsuruseg_min_kg_m3": 600,
+     "belmagassag_max_m": 4.5
+    },
+    {
+     "kategoria": 4,
+     "cm_eff_per_an": 560,
+     "besorolas": "nagyon nehéz épület",
+     "jellemzok": "Nagyon nehéz külső és belső szerkezetek (vasbeton födém, külső és belső épületszerkezetek átlagos testsűrűsége ≥ 1600 kg/m3), álmennyezet és álpadló nélkül, belső hőszigetelés nélkül. Normál belmagasságú terek (< 4,5 m).",
+     "testsuruseg_min_kg_m3": 1600,
+     "belmagassag_max_m": 4.5
+    }
+   ]
+  },
+  {
+   "id": "keretarany_alapertekek",
+   "cim": "Nyílászárók keretaránya pontosabb adatok hiányában",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6.3.1 fejezet, szöveg a (6.23) után",
+    "oldal": 46,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Szó szerint: 'A keretarány az adott nyílászáró geometriája alapján vehető fel. Pontosabb adatok hiányában a keretarány általában 30%, régi (1990 előtti) nyílászárók esetén 25%, felülvilágítók és vékony télikert szerkezetek esetén 10%, míg kisméretű (< 0,5 m2) nyílászárók esetén 50%.' Az esetek közötti elsőbbséget (pl. régi és kisméretű) a forrás nem rendezi.",
+   "oszlopok": [
+    {
+     "kulcs": "eset",
+     "cim": "nyílászáró eset",
+     "egyseg": null
+    },
+    {
+     "kulcs": "f_keret",
+     "cim": "Fkeret",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eredeti",
+     "cim": "eredeti szöveg",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "eset": "általában",
+     "f_keret": 0.3,
+     "eredeti": "30%"
+    },
+    {
+     "eset": "régi (1990 előtti) nyílászárók",
+     "f_keret": 0.25,
+     "eredeti": "25%",
+     "gyartas_ev_max_kizaro": 1990
+    },
+    {
+     "eset": "felülvilágítók és vékony télikert szerkezetek",
+     "f_keret": 0.1,
+     "eredeti": "10%"
+    },
+    {
+     "eset": "kisméretű (< 0,5 m2) nyílászárók",
+     "f_keret": 0.5,
+     "eredeti": "50%",
+     "terulet_max_m2": 0.5,
+     "terulet_max_zart": false
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_6_fejezet",
+   "cim": "A 6. fejezet szövegében megadott számszerű alapértékek és konstansok (összegyűjtve, nem eredeti táblázat)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "6. fejezet, több hely (soronként)",
+    "oldal": 38,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Nem eredeti táblázat; minden sorhoz külön hely és oldal tartozik.",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "azonosító",
+     "egyseg": null
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "érték",
+     "egyseg": null
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "mértékegység",
+     "egyseg": null
+    },
+    {
+     "kulcs": "szoveg",
+     "cim": "forrásszöveg",
+     "egyseg": null
+    },
+    {
+     "kulcs": "hely",
+     "cim": "hely",
+     "egyseg": null
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "oldal",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "levego_terfogati_hokapacitas",
+     "ertek": 0.35,
+     "egyseg": "Wh/m3K",
+     "szoveg": "a levegő térfogatra vonatkoztatott hőkapacitása",
+     "hely": "6.2.1, (6.8)",
+     "oldal": 43
+    },
+    {
+     "kulcs": "b_szell_alapertek_egyszerusitett",
+     "ertek": 1,
+     "egyseg": "-",
+     "szoveg": "egyszerűsített módszer esetén általában b=1 átlagértéket kell alkalmazni",
+     "hely": "6.2.1",
+     "oldal": 43
+    },
+    {
+     "kulcs": "b_ejjel_egyszerusitett",
+     "ertek": 1.5,
+     "egyseg": "-",
+     "szoveg": "egyszerűsített számítás esetén béjjel = 1,5-nek vehető fel",
+     "hely": "6.2.3",
+     "oldal": 44
+    },
+    {
+     "kulcs": "ejszakai_szellozes_idoarany",
+     "ertek": 0.2916666666666667,
+     "egyseg": "-",
+     "szoveg": "7/24: az éjszakai szellőztetés időaránya nyáron, 23 – 6 óra közötti éjszakai szellőztetés feltételezve",
+     "hely": "6.2.3, (6.11)",
+     "oldal": 44
+    },
+    {
+     "kulcs": "ejszakai_szellozes_kezdete_ora",
+     "ertek": 23,
+     "egyseg": "h",
+     "szoveg": "éjszakai órák (23-06)",
+     "hely": "6.2.3",
+     "oldal": 44
+    },
+    {
+     "kulcs": "ejszakai_szellozes_vege_ora",
+     "ertek": 6,
+     "egyseg": "h",
+     "szoveg": "éjszakai órák (23-06)",
+     "hely": "6.2.3",
+     "oldal": 44
+    },
+    {
+     "kulcs": "ejszakai_szellozes_honapok",
+     "ertek": [
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "egyseg": null,
+     "szoveg": "májustól szeptemberig",
+     "hely": "6.2.3",
+     "oldal": 44
+    },
+    {
+     "kulcs": "fagyvedelmi_elofutes_hatar",
+     "ertek": -4,
+     "egyseg": "°C",
+     "szoveg": "-4 C alatti külső hőmérséklet / előfűtés -4 °C-ra, (6.17)",
+     "hely": "6.2.4, (6.17)",
+     "oldal": 45
+    },
+    {
+     "kulcs": "F_u_beesesi_szog_korrekcio_alapertek",
+     "ertek": 0.9,
+     "egyseg": "-",
+     "szoveg": "Fü az üvegezés beesési szögtől függő korrekciós tényezője, alapértéke 0,9",
+     "hely": "6.3.1, (6.24)",
+     "oldal": 46
+    },
+    {
+     "kulcs": "g_arny_F",
+     "ertek": 1,
+     "egyseg": "-",
+     "szoveg": "Fűtés esetén gárny,F = 1",
+     "hely": "6.3.1",
+     "oldal": 47
+    },
+    {
+     "kulcs": "b_tel_honapok",
+     "ertek": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+     ],
+     "egyseg": null,
+     "szoveg": "Októbertől áprilisig btél",
+     "hely": "6.1.3",
+     "oldal": 40
+    },
+    {
+     "kulcs": "b_nyar_honapok",
+     "ertek": [
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "egyseg": null,
+     "szoveg": "májustól szeptemberig bnyár",
+     "hely": "6.1.3",
+     "oldal": 40
+    },
+    {
+     "kulcs": "b_egyszerusitett_theta_i_F_min",
+     "ertek": 18,
+     "egyseg": "°C",
+     "szoveg": "parancsolt hőmérséklet fűtés esetén 18-22 C",
+     "hely": "6.1.3",
+     "oldal": 40
+    },
+    {
+     "kulcs": "b_egyszerusitett_theta_i_F_max",
+     "ertek": 22,
+     "egyseg": "°C",
+     "szoveg": "parancsolt hőmérséklet fűtés esetén 18-22 C",
+     "hely": "6.1.3",
+     "oldal": 40
+    },
+    {
+     "kulcs": "b_egyszerusitett_theta_i_H_min",
+     "ertek": 24,
+     "egyseg": "°C",
+     "szoveg": "hűtés esetén 24-28 C",
+     "hely": "6.1.3",
+     "oldal": 40
+    },
+    {
+     "kulcs": "b_egyszerusitett_theta_i_H_max",
+     "ertek": 28,
+     "egyseg": "°C",
+     "szoveg": "hűtés esetén 24-28 C",
+     "hely": "6.1.3",
+     "oldal": 40
+    },
+    {
+     "kulcs": "psi_pf_hoszigetelt_R_min",
+     "ertek": 1.25,
+     "egyseg": "m2K/W",
+     "szoveg": "Tartalmaz legalább egy R = 1,25 m2K/W hővezetési ellenállású hőszigetelő réteget (6.4. táblázat 1. lábjegyzet)",
+     "hely": "6.1.4.3, 6.4. táblázat",
+     "oldal": 42
+    },
+    {
+     "kulcs": "cm_eff_kJ_per_Wh",
+     "ertek": 3.6,
+     "egyseg": "kJ/Wh",
+     "szoveg": "Cm,eff/3,6 a (6.34) képletben",
+     "hely": "6.6, (6.34)",
+     "oldal": 49
+    },
+    {
+     "kulcs": "a_F0",
+     "ertek": 1.0,
+     "egyseg": "-",
+     "szoveg": "fűtési referencia érték havi számítási időszak esetén aF,0 = 1,0",
+     "hely": "6.7.1",
+     "oldal": 50
+    },
+    {
+     "kulcs": "tau_F0",
+     "ertek": 15,
+     "egyseg": "h",
+     "szoveg": "τF,0 = 15 h",
+     "hely": "6.7.1",
+     "oldal": 50
+    },
+    {
+     "kulcs": "gamma_F_max_futesi_igenyhez",
+     "ertek": 2.0,
+     "egyseg": "-",
+     "szoveg": "A havi fűtési energiaigény nulla, ha γF > 2,0",
+     "hely": "6.7.2",
+     "oldal": 50
+    },
+    {
+     "kulcs": "a_H0",
+     "ertek": 1.0,
+     "egyseg": "-",
+     "szoveg": "hűtési referencia érték havi számítási időszak esetén aH,0 = 1,0",
+     "hely": "6.8.1",
+     "oldal": 51
+    },
+    {
+     "kulcs": "tau_H0",
+     "ertek": 15,
+     "egyseg": "h",
+     "szoveg": "τH,0 = 15 h",
+     "hely": "6.8.1",
+     "oldal": 51
+    },
+    {
+     "kulcs": "inv_gamma_H_max_hutesi_igenyhez",
+     "ertek": 2.0,
+     "egyseg": "-",
+     "szoveg": "A havi hűtési energiaigény nulla, ha (1/γH) > 2,0",
+     "hely": "6.8.2",
+     "oldal": 51
+    },
+    {
+     "kulcs": "idenyhossz_szelso_honap_napok",
+     "ertek": 15,
+     "egyseg": "nap",
+     "szoveg": "a legelső és a legutolsó hónapot csak 15 nappal vesszük figyelembe",
+     "hely": "6.10.1",
+     "oldal": 52
+    },
+    {
+     "kulcs": "hosszu_szunet_min_hossz",
+     "ertek": "min. egy hét",
+     "egyseg": null,
+     "szoveg": "hosszú ideig (min. egy hétig) nem használják",
+     "hely": "6.10.2",
+     "oldal": 52
+    },
+    {
+     "kulcs": "qm_osszegzes_honapok",
+     "ertek": [
+      11,
+      12,
+      1,
+      2,
+      3
+     ],
+     "egyseg": null,
+     "szoveg": "november - március hónapok",
+     "hely": "6.11, (6.53)",
+     "oldal": 52
+    },
+    {
+     "kulcs": "qm_delta_t",
+     "ertek": 3624,
+     "egyseg": "h",
+     "szoveg": "Δt = 3624 h",
+     "hely": "6.11, (6.53)",
+     "oldal": 52
+    },
+    {
+     "kulcs": "theta_e_o",
+     "ertek": -13,
+     "egyseg": "°C",
+     "szoveg": "ϑe,o = −13 ℃",
+     "hely": "6.12, (6.55)",
+     "oldal": 53
+    }
+   ]
+  }
+ ]
+}
