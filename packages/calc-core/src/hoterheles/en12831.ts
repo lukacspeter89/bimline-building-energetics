@@ -296,7 +296,7 @@ export interface HlSzellozesZona {
 
 export interface SzellozesEredmeny {
   /** Φ_V,i [W], (17). */
-  helyisegek: { Phi: number; qEnv: number; qLeakAtd: number; qTechn: number }[];
+  helyisegek: { Phi: number; qEnv: number; qLeakAtd: number; qTechn: number; qKulsoZona: number }[];
   /** Φ_V,z [W], (16). */
   zona: number;
   qEnvZ: number;
@@ -338,8 +338,9 @@ export function szellozesAltalanos(z: HlSzellozesZona): SzellozesEredmeny {
     const befuvas = qSup * (h.thetaStar - (z.thetaRec ?? 0));
     const atadas = (h.atadas ?? []).reduce((s, a) => s + a.q * (h.thetaStar - a.theta), 0);
     const Phi = rc * (Math.max(qEnv + (h.qOpen ?? 0), h.qMin - qTechn) * (h.thetaStar - z.thetaE) + befuvas + atadas); // (17)
-    zona += Math.max(qLeakAtd + (h.qOpen ?? 0), fiz * h.qMin - qTechn) * (h.thetaStar - z.thetaE) + befuvas + atadas; // (16)
-    return { Phi, qEnv, qLeakAtd, qTechn };
+    const qKulsoZona = Math.max(qLeakAtd + (h.qOpen ?? 0), fiz * h.qMin - qTechn);
+    zona += qKulsoZona * (h.thetaStar - z.thetaE) + befuvas + atadas; // (16)
+    return { Phi, qEnv, qLeakAtd, qTechn, qKulsoZona };
   });
   return { helyisegek: eredmeny, zona: rc * zona, qEnvZ, qInfAdd };
 }

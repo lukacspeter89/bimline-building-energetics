@@ -161,6 +161,29 @@ export function szamolProjekt(p: Projekt): SzamitasKimenet {
   }
 }
 
+/** Nyílászáró U (4.16): keret körben, Ψ_g az üvegezés kerülete mentén; összetevők nélkül a megadott U. */
+export function nyilaszaroU(t: NyilaszaroTipus, x: number, y: number): { U: number; Au: number } {
+  if (t.osszetevok) {
+    const o = t.osszetevok;
+    const ux = Math.max(0, x - 2 * o.keretSzelesseg);
+    const uy = Math.max(0, y - 2 * o.keretSzelesseg);
+    const Au = ux * uy;
+    return {
+      U: egyhejuNyilaszaroU({ uvegezes: [{ A: Au, U: o.Ug }], keret: [{ A: x * y - Au, U: o.Uf }], keretUveg: [{ l: 2 * (ux + uy), psi: o.psiG }] }),
+      Au,
+    };
+  }
+  return { U: t.U!, Au: 0 };
+}
+
+/** Átlátszatlan határoló U-ja a rétegrendből, a hőáram iránya szerinti felületi ellenállásokkal, hőhíd-korrekció nélkül. */
+export function hataroloU(p: Projekt, b: Hatarolo): number {
+  const anyag = new Map(p.anyagok.map((a) => [a.azon, a]));
+  const r = p.retegrendek.find((x) => x.azon === b.retegrendAzon)!;
+  const retegek = r.retegek.map((x) => ({ tipus: 'homogen' as const, d: x.d, lambda: anyag.get(x.anyagAzon)!.lambda }));
+  return hoatbocsatasiTenyezo(homogenRtot(feluletiEllenallas({ irany: SZERKEZETEK[r.szerkezet].irany(b), mindketOldalBelso: b.tuloldal.fajta !== 'külső' }), retegek));
+}
+
 function szamol(p: Projekt): ProjektEredmeny {
   const jelzesek: string[] = [];
   const anyag = new Map(p.anyagok.map((a) => [a.azon, a]));
@@ -172,20 +195,7 @@ function szamol(p: Projekt): ProjektEredmeny {
   const AN = p.helyisegek.reduce((s, h) => s + h.alapterulet, 0);
   const V = p.helyisegek.reduce((s, h) => s + h.alapterulet * h.belmagassag, 0);
 
-  // Nyílászáró U (4.16): keret körben, Ψ_g az üvegezés kerülete mentén.
-  const nyU = (t: NyilaszaroTipus, x: number, y: number): { U: number; Au: number } => {
-    if (t.osszetevok) {
-      const o = t.osszetevok;
-      const ux = Math.max(0, x - 2 * o.keretSzelesseg);
-      const uy = Math.max(0, y - 2 * o.keretSzelesseg);
-      const Au = ux * uy;
-      return {
-        U: egyhejuNyilaszaroU({ uvegezes: [{ A: Au, U: o.Ug }], keret: [{ A: x * y - Au, U: o.Uf }], keretUveg: [{ l: 2 * (ux + uy), psi: o.psiG }] }),
-        Au,
-      };
-    }
-    return { U: t.U!, Au: 0 };
-  };
+  const nyU = nyilaszaroU;
 
   const elemek: { A: number; U: number }[] = [];
   const transzparens: Transzparens[] = [];

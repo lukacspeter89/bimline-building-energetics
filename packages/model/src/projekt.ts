@@ -1,6 +1,14 @@
 // Projekt-adatmodell (1. változat). A tárolt formátum JSON; minden mennyiség SI-ben (m, m², W/mK), a rétegvastagság
 // méterben. A gépészeti hőtermelők a számítási mag bemeneti típusait használják, hogy a modell és a mag ne térjen el.
 import type {
+  Arnyekoltsag,
+  BelsoTipus12831,
+  FutetlenF1,
+  HoleadoMagas,
+  HohidKategoria,
+  HotaroloKat12831,
+  LegtomorsegiOsztaly,
+  NMinTipus,
   Elhelyezes,
   Energiahordozo,
   FutesiHotermelo,
@@ -125,6 +133,51 @@ export interface Helyiseg {
   hatarolok: Hatarolo[];
   /** Rajzolt alaprajz: a nettó (belméretű) kontúr pontjai, zárt sokszög (JEL-004, MOD-006). */
   alaprajz?: { pontok: Pont[] };
+  /** Méretezési hőterhelés (MSZ EN 12831-1) helyiségadatai; hiányzó mezőnél a nevből / nyílásokból adódó javaslat. */
+  hoterheles?: HelyisegHoterheles;
+}
+
+export interface HelyisegHoterheles {
+  /** B.14. táblázat sora a θ_int,i-hez. */
+  tipus?: BelsoTipus12831;
+  /** Közvetlenül megadott belső méretezési hőmérséklet [°C] (terv). */
+  thetaInt?: number;
+  /** B.7. táblázat sora az n_min-hez. */
+  nMinTipus?: NMinTipus;
+  /** Épületrész (pl. lakás) azonosítója: egy épületrész egy szellőzési zóna. */
+  egyseg?: string;
+  /** Gépi elszívás és befúvás [m³/h] (terv). */
+  qExh?: number;
+  qSup?: number;
+  /** Hőleadó rendszer (csak ≥ 4 m belmagasságnál, B.3. táblázat). */
+  holeado?: HoleadoMagas;
+}
+
+/** A méretezési hőterhelés (MSZ EN 12831-1) épületszintű bemenetei. */
+export interface HoterhelesBeallitas {
+  /** Külső méretezési hőmérséklet θ_e,Ref [°C] forrással (nemzeti melléklet; a B melléklet nem ad értéket). */
+  thetaERef?: { ertek: number; forras: string };
+  /** Éves átlagos külső hőmérséklet θ_e,m [°C] forrással. */
+  thetaEm?: { ertek: number; forras: string };
+  /** Magassági korrekció (46): G_θ,Ref [K/m], h_build és h_Ref [m], forrással. */
+  magassag?: { G: number; hBuild: number; hRef: number; forras: string };
+  hohid: HohidKategoria;
+  legtomorseg: { osztaly: LegtomorsegiOsztaly } | { n50: number; forras: string };
+  tobbHomlokzat: boolean;
+  arnyekoltsag: Arnyekoltsag;
+  /** A zóna magassága a terep felett 50 m felett van (B.8). */
+  magasEpulet: boolean;
+  /** A zóna függőleges kiterjedése Δh_z [m] (B.8). */
+  dhz: number;
+  /** A talajvíz 1 m-en belül van a padlólemez alatt (B.2.3). */
+  talajvizKozel: boolean;
+  hotarolo: HotaroloKat12831;
+  /** Külső (bruttó) épülettérfogat V_e [m³] az időállandóhoz (41); nélküle nincs időállandó-korrekció. */
+  Ve?: number;
+  /** Fűtetlen tértípusonként a B.2. táblázat sora (f_1). */
+  futetlenF1: Partial<Record<FutetlenTerTipus, FutetlenF1>>;
+  /** Belső fal rétegrendje a különböző hőmérsékletű szomszédos helyiségek közti H_T,ia-hoz (rajzolt közös falak). */
+  belsoFalRetegrendAzon?: string;
 }
 
 export interface FutesiRendszer {
@@ -202,6 +255,8 @@ export interface Projekt {
   nyilaszarok: NyilaszaroTipus[];
   helyisegek: Helyiseg[];
   rendszerek: { futes: FutesiRendszer; hmv: HmvRendszer; szellozes: Szellozes; hutes: Hutes; napelemek: Napelem[] };
+  /** Méretezési hőterhelés (MSZ EN 12831-1) beállításai; hiányában az alapbeállítás. */
+  hoterheles?: HoterhelesBeallitas;
 }
 
 export const ujAzon = (elotag: string): string => `${elotag}-${Math.random().toString(36).slice(2, 9)}`;
