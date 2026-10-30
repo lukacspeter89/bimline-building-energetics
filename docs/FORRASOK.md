@@ -79,3 +79,9 @@ dfb4cbe5fc97c87b9b8291e915272776d98fae5f5404802400d5c4097a064494  (nincs a repó
 - UX-forrás: Bausoft „9_2023_EKM_szerinti_tanusitas.pptx” munkafolyamat, „Winwatt UI” HTML-makett, a korábbi React-frontend komponensei.
 - A korábbi „Winwatt-alternativa” kód konstansait **nem vesszük át**, mert ellentmondanak a jogszabálynak: a villamos 2,5 és a gáz 1,0 súlyozó tényező a 7/2006 TNM-ből való (a 9/2023 7. melléklet érvényes); az „AA++…HH” osztályok helyett a 176/2008 3. melléklete érvényes; a novemberi és decemberi középhőmérséklet hibás; több táblázat forrás nélküli.
 - Anyagkönyvtár-jelölt: 40 WinWatt anyag-XML. Átvétel csak tisztázott licenccel, és csak termékadatlap-forrással (Péter szabálya).
+
+## 4. MSZ EN 12831-1:2017 (méretezési hőterhelés)
+
+- **F-12: `docs/szabvany/EN12831-1_implementacios_spec.md`** – Péter implementációs specifikációja a szabvány oldalképei alapján (6–9. fejezet, A–G melléklet): képletek egyenletszámmal, a B, D, E, F, G melléklet táblázatai. Bizonytalan leolvasások `[?]`-lel, programozói javaslatok `[javaslat]`-tal jelölve. Ez a hőterhelés-modul elsődleges forrása (2026-10-30).
+- **F-13: `docs/szabvany/MSZ_EN_12831-1_2017_OCR_kivonat.txt`** – a szabvány rövid OCR-kivonata (Péter, 2026-10-30). Független ellenőrzésként: az (1)–(4), (6), (8), (14), (40), (41), (53)–(55) képlet és a ΔU_TB (B.1), f_θ,ann, ρ·c_p, n_min alapérték egyezik az F-12-vel.
+- A **magyar nemzeti melléklet** (A melléklet kitöltése: θ_e,Ref, θ_e,m, referenciahelyek stb.) nem áll rendelkezésre. Klímaadatra a B melléklet nem ad értéket, ezért a külső méretezési és az éves középhőmérséklet kötelező, forrással megadandó bemenet; a többi tételnél a B melléklet tájékoztató alapértékei érvényesek (D-146).

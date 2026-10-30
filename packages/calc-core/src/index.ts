@@ -31,3 +31,4 @@ export * from './rendszer/legtechnika.js';
 export * from './rendszer/hutes.js';
 export * from './rendszer/napelem.js';
 export * from './rendszer/referencia.js';
+export * from './hoterheles/en12831.js';

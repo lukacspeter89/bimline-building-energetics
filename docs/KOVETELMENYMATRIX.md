@@ -1188,3 +1188,51 @@ a módszer kötelezővé teszi, vagy Péter kéri (`NYITOTT_KERDESEK.md`).
 | NYZ-018 | Ellenőrzés: azonos rétegrendű sorok egyezése | – | Budapest III. 1984-1994: U_12 = 0,276 vs. Debrecen 1987-1994 és Szeged 1982-1987: 0,278 (többi oszlop azonos) | 2. függ. 4.6 tábl., 29–30. o. | `modszer/nyilaszarok.json#tabla_f2_4_6` | Anomália jelezve |
 | NYZ-019 | Zárójeles rétegértékek értelmezése | – | pl. „265 (210)”, „100 (75)” – jelentés nincs megadva | 2. függ. 4.6 tábl., 29. o. | `modszer/nyilaszarok.json#tabla_f2_4_6` (_zarojeles) | NYITOTT |
 | NYZ-020 | Panel-U kiválasztása: házgyár + gyártási idő alapján, átfedő időszakoknál | házgyár, év | ugyanazon házgyárnál átfedő időszakok (pl. Budapest I. 1975-1983 / 1982-1990; Győr 1974-1985 / 1984-1990) – választási szabály nincs | 2. függ. 4.6 tábl., 29–30. o. | `modszer/nyilaszarok.json#tabla_f2_4_6` | NYITOTT: 1983-as Budapest I. panel → 1,612 vagy 1,041? |
+
+## M7. Méretezési hőterhelés – MSZ EN 12831-1:2017 (szabványos módszer)
+
+Forrás: F-12 (implementációs specifikáció a szabvány oldalképeiből), ellenőrzés: F-13 (OCR-kivonat). Normatív adat: `szabvany/msz_en_12831_1.json` (B, E melléklet tájékoztató értékei; magyar nemzeti melléklet nincs, D-146).
+
+| ID | Számítási lépés / ellenőrzés | Bemenetek | Képlet vagy konstans | Forrás | Normatív adat | Teszt-példa |
+|----|----|----|----|----|----|----|
+| HL-001 | Épület méretezési hőterhelése | Φ_T,ie, Φ_T,iae, Φ_T,ig, Φ_V,build, Φ_hu, Φ_gain W | Φ_HL,build = Σ_i(Φ_T,ie + Φ_T,iae + Φ_T,ig) + Φ_V,build + ΣΦ_hu,i − ΣΦ_gain,i | MSZ EN 12831-1:2017 6.3.1.1, (1) | – | – |
+| HL-002 | Épületrész méretezési hőterhelése | + Φ_T,iaBE, Φ_V,BE | Φ_HL,BE = Σ_i(Φ_T,ie + Φ_T,iae + Φ_T,iaBE + Φ_T,ig) + Φ_V,BE + ΣΦ_hu − ΣΦ_gain | MSZ EN 12831-1:2017 6.3.1.2, (2) | – | – |
+| HL-003 | Helyiség méretezési hőterhelése | Φ_T,i, Φ_V,i, Φ_hu,i, Φ_gain,i W | Φ_HL,i = Φ_T,i + Φ_V,i + Φ_hu,i − Φ_gain,i | MSZ EN 12831-1:2017 6.3.1.3, (3) | – | – |
+| HL-004 | Transzmissziós hőveszteség | H_T,ix W/K, θ_int,i, θ_e °C | Φ_T,i = (H_T,ie + H_T,ia + H_T,iae + H_T,iaBE + H_T,ig)·(θ_int,i − θ_e); Φ_T,ix = H_T,ix·(θ_int,i − θ_e) | MSZ EN 12831-1:2017 6.3.2.1, (4), (5) | – | – |
+| HL-005 | Hőmérséklet-korrekciós tényező | θ_int,i, θ_x, θ_e, θ*_int,k °C | f_ix,k = f_1 + f_2; f_1 = (θ_int,i − θ_x)/(θ_int,i − θ_e); f_2 = (θ*_int,k − θ_int,i)/(θ_int,i − θ_e); θ_x a 7. táblázat szerint | MSZ EN 12831-1:2017 6.3.2.5, (9)–(11), 7–8. táblázat | – | – |
+| HL-006 | Közvetlenül a külső tér felé | A_k, U_k, ΔU_TB, f_U,k, f_ie,k | H_T,ie = Σ_k A_k·(U_k + ΔU_TB)·f_U,k·f_ie,k | MSZ EN 12831-1:2017 6.3.2.2, (6) | – | – |
+| HL-007 | Szomszédos terek felé (a, aBE, ae) | A_k, U_k, f_ia,k | H_T,ia(...) = Σ_k A_k·U_k·f_ia,k; szomszéd épület: θ_x = max(θ_e,m; 5 °C) | MSZ EN 12831-1:2017 6.3.2.3, (7), 7. táblázat | – | – |
+| HL-008 | Talaj felé | f_θ,ann, A_k, U_equiv,k, f_ig,k, f_GW,k | H_T,ig = f_θ,ann·Σ_k A_k·U_equiv,k·f_ig,k·f_GW,k; f_ig-ben θ_x = θ_e,m | MSZ EN 12831-1:2017 6.3.2.4, (8) | – | – |
+| HL-009 | Lebegő padló és fűtetlen pince feletti födém | – | a 6.3.2.2/6.3.2.3 szerint, nem a talajképlettel | MSZ EN 12831-1:2017 6.3.2.2, 6.3.2.4 | – | – |
+| HL-010 | Külső méretezési hőmérséklet | θ_e,0, Δθ_e,τ | θ_e = θ_e,0 + Δθ_e,τ | MSZ EN 12831-1:2017 6.3.7, (45) | – | – |
+| HL-011 | Helyszíni külső méretezési hőmérséklet | θ_e,Ref, G_θ,Ref, h_build, h_Ref | θ_e,0 = θ_e,Ref + G_θ,Ref·(h_build − h_Ref); nemzeti adat nélkül G = 0 | MSZ EN 12831-1:2017 6.3.7, (46) | – | – |
+| HL-012 | Időállandó szerinti korrekció | k_τ, τ, Δθ_e,τ,0, Δθ_e,τ,min, Δθ_e,τ,max | Δθ_e,τ = max(min(k_τ·τ + Δθ_e,τ,0; Δθ_e,τ,max); Δθ_e,τ,min); B.13: −0,800; 0,016; 0,000; 4,000 | MSZ EN 12831-1:2017 6.3.7, (47); B.4.1, B.13. táblázat | – | – |
+| HL-013 | Időállandó | c_eff Wh/(m³K), V_e m³, H W/K | τ = C_eff/H; C_eff = c_eff·V_e; H a (42)–(44) szerint, hőmérséklet-korrekció nélkül | MSZ EN 12831-1:2017 6.3.5, (40), (41); 6.3.6 | – | – |
+| HL-014 | Magas helyiség: átlagos belső felületi hőmérséklet | θ_int,i, G_θ,air, h_k, h_occup, Δθ_surf | θ*_int,k = θ_int,i + G_θ,air,i·(h_k − h_occup,i) + Δθ_surf,k (h ≥ 4 m) | MSZ EN 12831-1:2017 6.3.8.2, (48) | – | – |
+| HL-015 | Magas helyiség: átlagos belső léghőmérséklet | θ_int,i, G_θ,air, h_i, h_occup, Δθ_rad | θ*_int,i = θ_int,i + G_θ,air,i·(h_i/2 − h_occup,i) − Δθ_rad (h ≥ 4 m) | MSZ EN 12831-1:2017 6.3.8.3, (49) | – | – |
+| HL-016 | Szellőzési hőveszteség, zóna | q-k, θ*_int,i, θ_e, θ_rec,z, θ_transfer | Φ_V,z = ρc_p·Σ_i[max(q_leak+ATD,i + q_open,i; f_i-z·q_min,i − q_techn,i)·(θ*_int,i − θ_e) + q_sup,i·(θ*_int,i − θ_rec,z) + q_transfer·(θ*_int,i − θ_transfer)]; Φ_V,build = Σ_z Φ_V,z | MSZ EN 12831-1:2017 6.3.3.3.1, (15), (16) | – | – |
+| HL-017 | Szellőzési hőveszteség, helyiség | q_env,i, q_open, q_min, q_techn, q_sup, q_transfer | Φ_V,i = ρc_p·[max(q_env,i + q_open,i; q_min,i − q_techn,i)·(θ*_int,i − θ_e) + q_sup,i·(θ*_int,i − θ_rec,z) + q_transfer·(θ*_int,i − θ_transfer)] | MSZ EN 12831-1:2017 6.3.3.3.1, (17) | – | – |
+| HL-018 | Helyiség külső légárama a burkon át | q_inf-add,z, q_env,z, q_leak+ATD,i, f_dir | q_env,i = (q_inf-add,z/q_env,z)·min(q_env,z; q_leak+ATD,i·f_dir) + ((q_env,z − q_inf-add,z)/q_env,z)·q_leak+ATD,i | MSZ EN 12831-1:2017 6.3.3.3.2, (18) | – | – |
+| HL-019 | Helyiségre jutó rés- és ATD-légáram | q_leak,z, A_env,i/A_env,z, q_ATD,z, q_ATD,design | q_leak+ATD,i = q_leak,z·A_env,i/A_env,z + q_ATD,z·q_ATD,design,i/q_ATD,design,z | MSZ EN 12831-1:2017 6.3.3.3.2, (19) | – | – |
+| HL-020 | Rés és ATD szétosztása | a_ATD,z, q_env,z, q_ATD,50,z, q_env,50, A_env,z | q_leak,z = (1 − a_ATD)·q_env,z; q_ATD,z = a_ATD·q_env,z; a_ATD = q_ATD,50/(q_ATD,50 + q_env,50·A_env,z) | MSZ EN 12831-1:2017 6.3.3.3.2, (20)–(22) | – | – |
+| HL-021 | Technológiai légáram | q_sup, q_transfer, q_exh, q_comb | q_techn,i = max(q_sup,i + q_transfer,ij; q_exh,i + q_comb,i) | MSZ EN 12831-1:2017 6.3.3.3.3, (23) | – | – |
+| HL-022 | Zóna külső légárama | q_exh,z, q_comb,z, q_sup,z, q_inf-add,z | q_env,z = max(q_exh,z + q_comb,z − q_sup,z; 0) + q_inf-add,z; q_x,z = Σ_i q_x,i | MSZ EN 12831-1:2017 6.3.3.3.4, (24)–(27) | – | – |
+| HL-023 | Többlet-infiltráció | q_env,50, A_env,z, q_ATD,50,z, f_qv,z, f_e,z, f_fac,z | q_inf-add,z = (q_env,50·A_env,z + q_ATD,50,z)·f_qv,z·f_e,z; f_e,z = 1/(1 + (f_fac/f_qv)·((q_exh + q_comb − q_sup)/(q_env,50·A_env + q_ATD,50))²) | MSZ EN 12831-1:2017 6.3.3.3.5, (28), (29) | – | – |
+| HL-024 | ATD-légáram 50 Pa-on | q_ATD,design,z, Δp_ATD,design, v_leak | q_ATD,50,z = q_ATD,design,z·(50/Δp)^v_leak; B: Δp = 4 Pa, v_leak = 0,67 | MSZ EN 12831-1:2017 6.3.3.3.5, (30); B.2.12, B.2.13 | – | – |
+| HL-025 | Minimális légáram | n_min,i 1/h, V_i m³ | q_v,min,i = n_min,i·V_i; B.7: 0,5 / 0,5 / 0,0 | MSZ EN 12831-1:2017 6.3.3.5, (33); B.7. táblázat | – | – |
+| HL-026 | Légtömörség n50-ből | n_50, V_build, A_env,build | q_env,50 = n_50·V_build/A_env,build; B.6: I 2, II 3, III 6, IV 12 m³/(m²h) | MSZ EN 12831-1:2017 6.3.3.4, (31); B.6. táblázat | – | – |
+| HL-027 | Befújt levegő hőmérséklete | θ_e,0, η_rec,z, θ_exh,z, q_exh,i, θ*_int,i | θ_rec,z = θ_e,0 + η_rec,z·(θ_exh,z − θ_e,0); θ_exh,z = Σ q_exh,i·θ*_int,i/Σ q_exh,i | MSZ EN 12831-1:2017 6.3.3.7, (37), (38) | – | – |
+| HL-028 | Burokfelület | A_k a külső / fűtetlen tér felé | A_env,i = Σ_k A_k; A_env,z = Σ_i A_env,i | MSZ EN 12831-1:2017 6.3.3.6, (34)–(36) | – | – |
+| HL-029 | Felfűtési többletteljesítmény | A_i m², φ_hu,i W/m² | Φ_hu,i = A_i·φ_hu,i (opcionális, alapértelmezés 0) | MSZ EN 12831-1:2017 6.3.4, (39) | – | – |
+| HL-030 | Hőhíd-pótlék | kategória | B.1: 0,02 / 0,05 / 0,15 / 0,10 W/(m²K) | MSZ EN 12831-1:2017 B.2.1, B.1. táblázat | – | – |
+| HL-031 | f_1 fűtetlen tér felé (< 4 m) | tértípus | B.2. táblázat (0,0 … 1,0) | MSZ EN 12831-1:2017 B.2.4, B.2. táblázat | – | – |
+| HL-032 | Hőleadási jellemzők magas helyiségben | hőleadó | B.3. táblázat; h_occup = 1 m | MSZ EN 12831-1:2017 B.2.6, B.3. táblázat | – | – |
+| HL-033 | Fajlagos hőtároló képesség | kategória | c_eff = 15 / 50 Wh/(m³K) | MSZ EN 12831-1:2017 B.2.7, B.4. táblázat | – | – |
+| HL-034 | f_i-z | helyiségek száma | 1 helyiség: 1; ≥ 2: 0,5 | MSZ EN 12831-1:2017 B.2.9, B.5. táblázat | – | – |
+| HL-035 | Légtömörségi osztály | osztály | B.6. táblázat | MSZ EN 12831-1:2017 B.2.10, B.6. táblázat | – | – |
+| HL-036 | Minimális légcsereszám | helyiségtípus | B.7. táblázat | MSZ EN 12831-1:2017 B.2.10, B.7. táblázat | – | – |
+| HL-037 | f_qv,z | homlokzatszám, h_g,z, árnyékoltság, Δh_z | B.8. táblázat | MSZ EN 12831-1:2017 B.2.11, B.8. táblázat | – | – |
+| HL-038 | f_fac,z | homlokzatszám | 1: 12; > 1: 8 | MSZ EN 12831-1:2017 B.2.15, B.9. táblázat | – | – |
+| HL-039 | Belső méretezési hőmérséklet | helyiségtípus | B.14. táblázat (lakás 20, fürdő 24 °C …) | MSZ EN 12831-1:2017 B.4.2, B.14. táblázat | – | – |
+| HL-040 | Talaj: geometriai paraméter | A_G, P | B′ = A_G/(0,5·P); helyiségnél az épületé, ha nincs külső fala vagy U_padló ≤ 0,5 | MSZ EN 12831-1:2017 E melléklet, (E.2) | – | – |
+| HL-041 | Talaj: egyenértékű U | B′, z, U_k, ΔU_TB | U_equiv,k = a/(b + (c1 + B′)^n1 + (c2 + z)^n2 + (c3 + U_k + ΔU_TB)^n3) + d; E.1. táblázat; érvényesség: U ≤ 4 (pincefal ≤ 3), 2 ≤ B′ ≤ 50, 0 ≤ z ≤ 5 | MSZ EN 12831-1:2017 E melléklet, (E.1), E.1. táblázat | – | – |

@@ -16,6 +16,7 @@ import d_modszer_profilok from '../../../../data/normativ/modszer/profilok.json'
 import d_modszer_szellozes from '../../../../data/normativ/modszer/szellozes.json';
 import d_modszer_vilagitas from '../../../../data/normativ/modszer/vilagitas.json';
 import d_modszer_zonazas from '../../../../data/normativ/modszer/zonazas.json';
+import d_szabvany_msz_en_12831_1 from '../../../../data/normativ/szabvany/msz_en_12831_1.json';
 import d_rendelet_176_2008_Korm_besorolas from '../../../../data/normativ/rendelet/176_2008_Korm_besorolas.json';
 import d_rendelet_9_2023_EKM_1_melleklet from '../../../../data/normativ/rendelet/9_2023_EKM_1_melleklet.json';
 import d_rendelet_9_2023_EKM_2_3_5_melleklet_kovetelmenyek from '../../../../data/normativ/rendelet/9_2023_EKM_2_3_5_melleklet_kovetelmenyek.json';
@@ -37,6 +38,7 @@ export const NORMATIV_FAJLOK = {
   'modszer/szellozes': d_modszer_szellozes as unknown as NormativFajlTartalom,
   'modszer/vilagitas': d_modszer_vilagitas as unknown as NormativFajlTartalom,
   'modszer/zonazas': d_modszer_zonazas as unknown as NormativFajlTartalom,
+  'szabvany/msz_en_12831_1': d_szabvany_msz_en_12831_1 as unknown as NormativFajlTartalom,
   'rendelet/176_2008_Korm_besorolas': d_rendelet_176_2008_Korm_besorolas as unknown as NormativFajlTartalom,
   'rendelet/9_2023_EKM_1_melleklet': d_rendelet_9_2023_EKM_1_melleklet as unknown as NormativFajlTartalom,
   'rendelet/9_2023_EKM_2_3_5_melleklet_kovetelmenyek': d_rendelet_9_2023_EKM_2_3_5_melleklet_kovetelmenyek as unknown as NormativFajlTartalom,
