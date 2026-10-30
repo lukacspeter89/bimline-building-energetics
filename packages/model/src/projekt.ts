@@ -100,8 +100,13 @@ export interface Hatarolo {
   labazatiFalRetegrendAzon?: string;
   /** Rajzból: a helyiség alaprajzának ezen éle (0-tól); a felület és a tájolás az élből számít (alaprajz.ts). */
   rajzEl?: number;
-  /** Rajzból: padló vagy födém, felülete a helyiség alaprajzi területe; padlónál a kitett kerület is. */
-  rajzAlap?: boolean;
+  /**
+   * Rajzból: a helyiség alatti vagy feletti szerkezet része. Felülete az alaprajzi területrész, ferde tetőnél
+   * ennek a hajlásszög koszinuszával osztott értéke (alaprajz.ts). `true`: régi mentés, a szerkezettípusból dől el.
+   */
+  rajzAlap?: 'alatta' | 'felette' | true;
+  /** A rész alaprajzi (vízszintes vetületi) területe [m²]; ha nincs megadva, a helyiség maradék területe. */
+  alaprajziTerulet?: number;
 }
 
 /** Alaprajzi pont [m]; x kelet felé (ha az északi irány 0°), y észak felé. */

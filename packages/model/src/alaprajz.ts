@@ -2,7 +2,7 @@
 // területe, a fal felülete a szabad (más fűtött helyiséggel nem közös) élhossz × belmagasság, a tájolás az él kifelé
 // mutató normálisából és az északi irányból.
 import type { Tajolas } from '@bimline/calc-core';
-import type { Helyiseg, Pont, Projekt } from './projekt.js';
+import type { Hatarolo, Helyiseg, Pont, Projekt, Retegrend } from './projekt.js';
 
 const EPS = 0.01;
 
@@ -81,6 +81,39 @@ export function helyisegElek(p: Projekt, h: Helyiseg): ElAllapot[] {
 
 const kerek = (x: number): number => Math.round(x * 1e4) / 1e4;
 
+const ALATTI_TIPUSOK = new Set(['talajon_fekvo_padlo', 'also_zarofodem_futetlen_felett', 'arkad_athajto_feletti_fodem']);
+
+/** Az alaprajzi szerkezetrész oldala; a régi (`true`) jelölésnél a szerkezettípusból. */
+export function alapOldal(b: Hatarolo, r: Retegrend | undefined): 'alatta' | 'felette' | null {
+  if (!b.rajzAlap) return null;
+  if (b.rajzAlap !== true) return b.rajzAlap;
+  return r && ALATTI_TIPUSOK.has(r.szerkezet) ? 'alatta' : 'felette';
+}
+
+export interface AlapReszek {
+  /** A megadott alaprajzi területek összege [m²]. */
+  megadott: number;
+  /** A terület nélküli részek közt egyenlően elosztott maradék [m²] (egy részre). */
+  maradekResz: number;
+  /** A területet nem fedi le teljesen (nincs maradékot átvevő rész, és a megadott összeg kisebb). */
+  hiany: number;
+  /** A megadott területek összege nagyobb az alapterületnél. */
+  tobblet: number;
+}
+
+/** Az alatta vagy felette lévő részek területmérlege. */
+export function alapReszek(h: Helyiseg, reszek: readonly Hatarolo[]): AlapReszek {
+  const megadott = reszek.reduce((s, b) => s + (b.alaprajziTerulet ?? 0), 0);
+  const szabadok = reszek.filter((b) => b.alaprajziTerulet === undefined).length;
+  const maradek = Math.max(0, h.alapterulet - megadott);
+  return {
+    megadott,
+    maradekResz: szabadok ? maradek / szabadok : 0,
+    hiany: szabadok || reszek.length === 0 ? 0 : maradek,
+    tobblet: Math.max(0, megadott - h.alapterulet),
+  };
+}
+
 /**
  * A rajzból származó értékek beírása (helyben): alapterület; élhez kötött határoló felülete, tájolása, hajlásszöge;
  * alaprajzi padló / födém felülete; padlónál a kitett kerület = a helyiség külső levegővel vagy fűtetlen térrel
@@ -94,6 +127,16 @@ export function rajzSzinkron(p: Projekt): void {
     const kitett = h.hatarolok
       .filter((b) => b.rajzEl !== undefined && (b.tuloldal.fajta === 'külső' || b.tuloldal.fajta === 'fűtetlen'))
       .reduce((s, b) => s + (el[b.rajzEl!]?.szabad ?? 0), 0);
+    const rr = new Map(p.retegrendek.map((r) => [r.azon, r]));
+    const oldal = { alatta: [] as Hatarolo[], felette: [] as Hatarolo[] };
+    for (const b of h.hatarolok) {
+      const o = alapOldal(b, rr.get(b.retegrendAzon));
+      if (o) {
+        b.rajzAlap = o;
+        oldal[o].push(b);
+      }
+    }
+    const resz = { alatta: alapReszek(h, oldal.alatta), felette: alapReszek(h, oldal.felette) };
     for (const b of h.hatarolok) {
       if (b.rajzEl !== undefined) {
         const e = el[b.rajzEl];
@@ -101,9 +144,13 @@ export function rajzSzinkron(p: Projekt): void {
         b.felulet = kerek(e.szabad * h.belmagassag);
         b.hajlasszog = 90;
         b.tajolas = tajolasAzimutbol(e.azimut);
-      } else if (b.rajzAlap) {
-        b.felulet = h.alapterulet;
-        if (b.tuloldal.fajta === 'talaj') b.kitettKerulet = kerek(kitett);
+      } else if (b.rajzAlap === 'alatta' || b.rajzAlap === 'felette') {
+        // Ferde tető: a felület a vízszintes vetület / cos α.
+        const vetulet = b.alaprajziTerulet ?? resz[b.rajzAlap].maradekResz;
+        const a = b.rajzAlap === 'felette' ? (b.hajlasszog ?? 0) : 0;
+        b.felulet = kerek(a > 0 && a < 90 ? vetulet / Math.cos((a * Math.PI) / 180) : vetulet);
+        // Kitett kerület csak akkor a rajzból, ha a padló egyetlen, talajon fekvő rész; vegyes padlónál kézzel adandó.
+        if (b.rajzAlap === 'alatta' && b.tuloldal.fajta === 'talaj' && oldal.alatta.length === 1) b.kitettKerulet = kerek(kitett);
       }
     }
     // Törölt élre mutató határoló nem maradhat.

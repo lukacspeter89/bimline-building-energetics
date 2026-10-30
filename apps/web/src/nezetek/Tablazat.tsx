@@ -172,7 +172,7 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
             </thead>
             <tbody>
               {hatSorok.map(({ h, i, b, j }, s) => {
-                const rajz = b.rajzEl !== undefined || b.rajzAlap === true;
+                const rajz = b.rajzEl !== undefined || b.rajzAlap !== undefined;
                 const padlo = p.retegrendek.find((r) => r.azon === b.retegrendAzon)?.szerkezet === 'talajon_fekvo_padlo';
                 const nyA = b.nyilasok.reduce((t, n) => t + n.szelesseg * n.magassag * n.db, 0);
                 return (
@@ -211,7 +211,7 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
                       <CellaSzam cimke="Hajlásszög" ertek={b.hajlasszog ?? 90} tiltott={rajz} tized={0} onValtozas={(v) => vb(i, j, (x) => void (x.hajlasszog = v))} />
                     </td>
                     <td data-s={s} data-o="p">
-                      {padlo ? <CellaSzam cimke="Kitett kerület" ertek={b.kitettKerulet} tiltott={b.rajzAlap === true} onValtozas={(v) => vb(i, j, (x) => void (x.kitettKerulet = v))} /> : <span class="cella-ro">–</span>}
+                      {padlo ? <CellaSzam cimke="Kitett kerület" ertek={b.kitettKerulet} tiltott={b.rajzAlap !== undefined && h.hatarolok.filter((x) => x.rajzAlap === 'alatta').length === 1} onValtozas={(v) => vb(i, j, (x) => void (x.kitettKerulet = v))} /> : <span class="cella-ro">–</span>}
                     </td>
                     <td class="halk">{nyA > 0 ? szam(nyA, 2) : ''}</td>
                   </tr>

@@ -1,5 +1,6 @@
 // A projekt adatainak ellenőrzése a számítás előtt: hiányzó, ellentmondó vagy forrás nélküli adatok listája.
 import { szamitasiMelyseg } from '@bimline/calc-core';
+import { alapOldal, alapReszek } from './alaprajz.js';
 import type { Projekt } from './projekt.js';
 
 export interface Hiany {
@@ -44,6 +45,16 @@ export function ellenoriz(p: Projekt): Hiany[] {
   for (const hs of p.helyisegek) {
     if (!pozitiv(hs.alapterulet)) hiba(hs.nev, 'Az alapterület hiányzik.', hs.azon);
     if (!pozitiv(hs.belmagassag)) hiba(hs.nev, 'A belmagasság hiányzik.', hs.azon);
+    for (const o of ['alatta', 'felette'] as const) {
+      const reszek = hs.hatarolok.filter((b) => alapOldal(b, rr.get(b.retegrendAzon)) === o);
+      const m = alapReszek(hs, reszek);
+      const t = (x: number): string => x.toFixed(2).replace('.', ',');
+      if (m.tobblet > 0.01) hiba(hs.nev, `${o === 'alatta' ? 'Az alatta' : 'A felette'} lévő részek területe (${t(m.megadott)} m²) nagyobb az alapterületnél (${t(hs.alapterulet)} m²).`, hs.azon);
+      for (const x of reszek)
+        if (o === 'felette' && rr.get(x.retegrendAzon)?.szerkezet === 'futott_tetoter_hatarolo' && !((x.hajlasszog ?? 0) > 0))
+          hiba(hs.nev, 'A ferde tető dőlésszöge szükséges (a felület a vetület / cos α).', x.azon);
+      if (m.hiany > 0.01) figy(hs.nev, `${o === 'alatta' ? 'Az alatta' : 'A felette'} lévő részek ${t(m.hiany)} m²-t nem fednek le (ott fűtött tér van?).`, hs.azon);
+    }
     for (const b of hs.hatarolok) {
       const r = rr.get(b.retegrendAzon);
       const hely = `${hs.nev} › ${r?.nev ?? 'ismeretlen szerkezet'}${b.tajolas ? ` (${b.tajolas})` : ''}`;

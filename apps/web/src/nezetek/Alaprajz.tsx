@@ -1,11 +1,12 @@
 // Rajzolt alaprajz: helyiségek belméretű kontúrja ujjal vagy egérrel (téglalap, sokszög), rácsra és csúcsokra igazítva.
 // A rajzból számít az alapterület, a falak felülete és tájolása, a közös falak és a padló kitett kerülete (model/alaprajz.ts).
 import type { Tajolas } from '@bimline/calc-core';
-import { elojelesTerulet, helyisegElek, ujAzon, type Hatarolo, type Helyiseg, type Pont, type Projekt, type SzerkezetTipus, type Tuloldal } from '@bimline/model';
+import { alapOldal, alapReszek, elojelesTerulet, helyisegElek, ujAzon, type Helyiseg, type Pont, type Projekt, type SzerkezetTipus, type Tuloldal } from '@bimline/model';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import type { Valtoztat } from '../App.js';
 import { Gombsor, Kartya, SzamMezo, SzovegMezo, TorlesGomb, Valaszto, szam } from '../ui.js';
 import { FUTETLEN, HataroloSor } from './Helyisegek.js';
+import { SZERKEZET_NEV } from './Szerkezetek.js';
 
 type Eszkoz = 'kijelöl' | 'téglalap' | 'sokszög';
 const ESZKOZOK: readonly Eszkoz[] = ['kijelöl', 'téglalap', 'sokszög'];
@@ -22,20 +23,6 @@ interface Kijeloles {
 }
 
 const FAL_TIPUSOK: readonly SzerkezetTipus[] = ['homlokzati_fal', 'futott_futetlen_kozotti_fal', 'szomszed_futott_epulet_fal'];
-type PadloMod = 'nincs' | 'talajon' | 'pince felett';
-type FelulMod = 'nincs' | 'lapostető' | 'padlásfödém' | 'tetőtér';
-const PADLO_MODOK: readonly PadloMod[] = ['nincs', 'talajon', 'pince felett'];
-const FELUL_MODOK: readonly FelulMod[] = ['nincs', 'lapostető', 'padlásfödém', 'tetőtér'];
-const PADLO_DEF: Record<Exclude<PadloMod, 'nincs'>, { sz: SzerkezetTipus; t: Tuloldal }> = {
-  talajon: { sz: 'talajon_fekvo_padlo', t: { fajta: 'talaj' } },
-  'pince felett': { sz: 'also_zarofodem_futetlen_felett', t: { fajta: 'fűtetlen', ter: 'Zárt, fűtetlen pincével határos födém vagy fal' } },
-};
-const FELUL_DEF: Record<Exclude<FelulMod, 'nincs'>, { sz: SzerkezetTipus; t: Tuloldal }> = {
-  lapostető: { sz: 'lapos_teto', t: { fajta: 'külső' } },
-  padlásfödém: { sz: 'padlasfodem', t: { fajta: 'fűtetlen', ter: 'Padlástérrel határos födém vagy fal' } },
-  tetőtér: { sz: 'futott_tetoter_hatarolo', t: { fajta: 'külső' } },
-};
-
 const vanRajz = (h: Helyiseg): boolean => !!h.alaprajz && h.alaprajz.pontok.length >= 3;
 const kozeppont = (p: readonly Pont[]): Pont => {
   const A = elojelesTerulet(p);
@@ -158,7 +145,11 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
           if (e.szabad > 0.01) h.hatarolok.push({ azon: ujAzon('h'), retegrendAzon: fal.azon, tuloldal: { fajta: 'külső' }, felulet: 0, nyilasok: [], rajzEl: e.i });
       // A szint padló- és födémbeállítása az előző helyiségé.
       for (const b of elozo?.hatarolok ?? [])
-        if (b.rajzAlap) h.hatarolok.push({ ...structuredClone(b), azon: ujAzon('h'), nyilasok: [] });
+        if (b.rajzAlap) {
+          const masolat = { ...structuredClone(b), azon: ujAzon('h'), nyilasok: [] };
+          delete masolat.alaprajziTerulet;
+          h.hatarolok.push(masolat);
+        }
     });
     setKij({ hs: azon });
     setEszkoz('kijelöl');
@@ -488,55 +479,86 @@ function TeglalapElonezet({ a, b, kepre }: { a: Pont; b: Pont; kepre: (q: Pont) 
   );
 }
 
+interface ReszDef {
+  cimke: string;
+  sz: SzerkezetTipus;
+  t: Tuloldal;
+  hajlasszog?: number;
+}
+const ALATTA: readonly ReszDef[] = [
+  { cimke: 'talajon', sz: 'talajon_fekvo_padlo', t: { fajta: 'talaj' } },
+  { cimke: 'fűtetlen pince felett', sz: 'also_zarofodem_futetlen_felett', t: { fajta: 'fűtetlen', ter: 'Zárt, fűtetlen pincével határos födém vagy fal' } },
+  { cimke: 'kültér (árkád)', sz: 'arkad_athajto_feletti_fodem', t: { fajta: 'külső' } },
+];
+const FELETTE: readonly ReszDef[] = [
+  { cimke: 'lapostető', sz: 'lapos_teto', t: { fajta: 'külső' }, hajlasszog: 0 },
+  { cimke: 'padlásfödém', sz: 'padlasfodem', t: { fajta: 'fűtetlen', ter: 'Padlástérrel határos födém vagy fal' }, hajlasszog: 0 },
+  { cimke: 'ferde tető', sz: 'futott_tetoter_hatarolo', t: { fajta: 'külső' } },
+];
+
 function HelyisegPanel({ p, h, valtoztat, onTorolve }: { p: Projekt; h: Helyiseg; valtoztat: Valtoztat; onTorolve: () => void }) {
   const vh = (f: (x: Helyiseg) => void): void => valtoztat((x) => f(x.helyisegek.find((y) => y.azon === h.azon)!));
   const rr = new Map(p.retegrendek.map((r) => [r.azon, r]));
-  const alap = h.hatarolok.filter((b) => b.rajzAlap);
-  const padlo = alap.find((b) => b.hajlasszog === 0 && ['talajon_fekvo_padlo', 'also_zarofodem_futetlen_felett'].includes(rr.get(b.retegrendAzon)?.szerkezet ?? ''));
-  const felul = alap.find((b) => b !== padlo);
-  const padloMod: PadloMod = !padlo ? 'nincs' : rr.get(padlo.retegrendAzon)?.szerkezet === 'talajon_fekvo_padlo' ? 'talajon' : 'pince felett';
-  const felulSz = felul ? rr.get(felul.retegrendAzon)?.szerkezet : undefined;
-  const felulMod: FelulMod = !felul ? 'nincs' : felulSz === 'lapos_teto' ? 'lapostető' : felulSz === 'padlasfodem' ? 'padlásfödém' : 'tetőtér';
   const [uzenet, setUzenet] = useState('');
-  const beallit = (regi: Hatarolo | undefined, def: { sz: SzerkezetTipus; t: Tuloldal } | null): void => {
+  const hozzaad = (oldal: 'alatta' | 'felette', d: ReszDef): void => {
     setUzenet('');
-    const r = def ? p.retegrendek.find((x) => x.szerkezet === def.sz) : undefined;
-    if (def && !r) return setUzenet(`Ehhez előbb vegyél fel egy „${def.sz.replace(/_/g, ' ')}” típusú rétegrendet a Szerkezetek fülön.`);
+    const r = p.retegrendek.find((x) => x.szerkezet === d.sz);
+    if (!r) return setUzenet(`Ehhez előbb vegyél fel egy „${SZERKEZET_NEV[d.sz]}” típusú rétegrendet a Szerkezetek fülön.`);
     vh((x) => {
-      x.hatarolok = x.hatarolok.filter((b) => b.azon !== regi?.azon);
-      if (def && r)
-        x.hatarolok.push({
-          azon: ujAzon('h'),
-          retegrendAzon: r.azon,
-          tuloldal: structuredClone(def.t),
-          hajlasszog: 0,
-          felulet: x.alapterulet,
-          nyilasok: [],
-          rajzAlap: true,
-          ...(def.sz === 'talajon_fekvo_padlo' ? { kitettKerulet: 0 } : {}),
-        });
+      // Az új rész a maradékot kapja; a korábbi „maradék” rész a mostani területét megtartja.
+      for (const b of x.hatarolok) if (b.rajzAlap === oldal && b.alaprajziTerulet === undefined) b.alaprajziTerulet = b.felulet;
+      x.hatarolok.push({
+        azon: ujAzon('h'),
+        retegrendAzon: r.azon,
+        tuloldal: structuredClone(d.t),
+        ...(d.hajlasszog !== undefined ? { hajlasszog: d.hajlasszog } : {}),
+        felulet: 0,
+        nyilasok: [],
+        rajzAlap: oldal,
+        ...(d.sz === 'talajon_fekvo_padlo' ? { kitettKerulet: 0 } : {}),
+      });
     });
   };
+  const oldalak = (['alatta', 'felette'] as const).map((o) => {
+    const reszek = h.hatarolok.filter((b) => alapOldal(b, rr.get(b.retegrendAzon)) === o);
+    return { o, reszek, m: alapReszek(h, reszek) };
+  });
   return (
     <Kartya cim={h.nev} jobb={<span class="halk">{szam(h.alapterulet, 2)} m²</span>}>
       <div class="racs">
         <SzovegMezo id={`ap-${h.azon}-nev`} cimke="Név" ertek={h.nev} onValtozas={(s) => vh((x) => void (x.nev = s))} />
         <SzamMezo id={`ap-${h.azon}-m`} cimke="Belmagasság" egyseg="m" ertek={h.belmagassag} onValtozas={(v) => vh((x) => void (x.belmagassag = v))} />
       </div>
-      <Gombsor cimke="Alatta (padló)" ertek={padloMod} opciok={PADLO_MODOK} onValtozas={(m) => beallit(padlo, m === 'nincs' ? null : PADLO_DEF[m])} />
-      <Gombsor cimke="Felette" ertek={felulMod} opciok={FELUL_MODOK} onValtozas={(m) => beallit(felul, m === 'nincs' ? null : FELUL_DEF[m])} />
-      {uzenet && <p class="figyelem">{uzenet}</p>}
-      {alap.map((b) => (
-        <HataroloSor
-          key={b.azon}
-          p={p}
-          h={h}
-          b={b}
-          rrNev={rr.get(b.retegrendAzon)?.nev}
-          valtoztat={(f) => vh((x) => f(x.hatarolok.find((y) => y.azon === b.azon)!))}
-          onTorol={() => vh((x) => void (x.hatarolok = x.hatarolok.filter((y) => y.azon !== b.azon)))}
-        />
+      {oldalak.map(({ o, reszek, m }) => (
+        <section key={o} class="alap-oldal">
+          <div class="kartya-fej">
+            <h3>{o === 'alatta' ? 'Alatta (padló)' : 'Felette (födém, tető)'}</h3>
+            <span class={`halk${m.tobblet > 0.01 ? ' hiba' : ''}`}>
+              {reszek.length === 0 ? 'fűtött tér' : `lefedve ${szam(reszek.reduce((t, b) => t + (b.alaprajziTerulet ?? m.maradekResz), 0), 2)} / ${szam(h.alapterulet, 2)} m²`}
+            </span>
+          </div>
+          {reszek.map((b) => (
+            <div key={b.azon} class="alap-resz">
+              <HataroloSor
+                p={p}
+                h={h}
+                b={b}
+                rrNev={rr.get(b.retegrendAzon)?.nev}
+                valtoztat={(f) => vh((x) => f(x.hatarolok.find((y) => y.azon === b.azon)!))}
+                onTorol={() => vh((x) => void (x.hatarolok = x.hatarolok.filter((y) => y.azon !== b.azon)))}
+              />
+            </div>
+          ))}
+          <div class="gombok kicsi">
+            {(o === 'alatta' ? ALATTA : FELETTE).map((d) => (
+              <button key={d.cimke} class="masodlagos" onClick={() => hozzaad(o, d)}>
+                + {d.cimke}
+              </button>
+            ))}
+          </div>
+        </section>
       ))}
+      {uzenet && <p class="figyelem">{uzenet}</p>}
       <TorlesGomb cimke="Helyiség törlése" onTorol={() => (valtoztat((x) => void (x.helyisegek = x.helyisegek.filter((y) => y.azon !== h.azon))), onTorolve())} />
     </Kartya>
   );

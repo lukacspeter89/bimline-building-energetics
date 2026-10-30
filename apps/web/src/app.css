@@ -190,3 +190,4 @@ select.cella { font-family: var(--test); min-width: 120px }
 .cella:focus { background: var(--felulet); border-color: var(--akcent); outline: none }
 .cella.rovid { min-width: 48px; width: 64px }
 .cella-ro { display: block; padding: 6px; font: 500 .9rem var(--szam); color: var(--halk) }
+.alap-oldal { display: grid; gap: 8px; border-top: 1px solid var(--vonal); padding-top: 10px }

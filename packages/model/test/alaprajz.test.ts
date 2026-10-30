@@ -1,6 +1,6 @@
 // Rajzolt alaprajz → helyiségadatok (belméret, JEL-004, MOD-006; kitett kerület 4.20).
 import { describe, expect, it } from 'vitest';
-import { elek, elojelesTerulet, helyisegElek, kozosHossz, rajzSzinkron, szamolProjekt, tajolasAzimutbol, type Helyiseg, type Projekt } from '../src/index.js';
+import { ellenoriz, elek, elojelesTerulet, helyisegElek, kozosHossz, rajzSzinkron, szamolProjekt, tajolasAzimutbol, type Helyiseg, type Projekt } from '../src/index.js';
 import { goldenProjekt } from './goldenAtalakito.js';
 
 const tegla = (x0: number, y0: number, w: number, d: number) => [
@@ -97,5 +97,66 @@ describe('Rajz szinkron a projektbe', () => {
     if (!k.rendben) throw new Error(JSON.stringify(k.hianyok));
     expect(k.eredmeny.AN).toBe(36);
     expect(k.eredmeny.szerkezetek.find((x) => x.szerkezet === 'talajon_fekvo_padlo')!.megjegyzes).toContain('B = 2,77 m');
+  });
+});
+
+describe('Vegyes padló és födém, ferde tető', () => {
+  const projekt = (): Projekt => {
+    const p = goldenProjekt('G1');
+    const fal = p.retegrendek.find((r) => r.szerkezet === 'homlokzati_fal')!.azon;
+    const padlo = p.retegrendek.find((r) => r.szerkezet === 'talajon_fekvo_padlo')!.azon;
+    const teto = p.retegrendek.find((r) => r.szerkezet === 'lapos_teto')!.azon;
+    p.retegrendek.push({ ...structuredClone(p.retegrendek.find((r) => r.azon === padlo)!), azon: 'arkad', nev: 'Á1 árkádfödém', szerkezet: 'arkad_athajto_feletti_fodem' });
+    p.helyisegek = [
+      {
+        azon: 'hs',
+        nev: 'Nappali',
+        szint: 'fsz',
+        alapterulet: 0,
+        belmagassag: 2.7,
+        alaprajz: { pontok: tegla(0, 0, 6, 4) },
+        hatarolok: [
+          ...[0, 1, 2, 3].map((i) => ({ azon: `f${i}`, retegrendAzon: fal, tuloldal: { fajta: 'külső' as const }, felulet: 0, nyilasok: [], rajzEl: i })),
+          { azon: 'p1', retegrendAzon: padlo, tuloldal: { fajta: 'talaj' as const }, hajlasszog: 0, felulet: 0, nyilasok: [], rajzAlap: 'alatta' as const, alaprajziTerulet: 14, kitettKerulet: 9 },
+          { azon: 'p2', retegrendAzon: 'arkad', tuloldal: { fajta: 'külső' as const }, hajlasszog: 0, felulet: 0, nyilasok: [], rajzAlap: 'alatta' as const },
+          { azon: 't', retegrendAzon: teto, tuloldal: { fajta: 'külső' as const }, hajlasszog: 30, tajolas: 'D' as const, felulet: 0, nyilasok: [], rajzAlap: 'felette' as const },
+        ],
+      },
+    ];
+    return p;
+  };
+
+  it('MOD-006 alatta 14 m² talajon + 10 m² árkád (maradék); ferde tető 30°: 24 / cos 30° = 27,7128 m²', () => {
+    const p = projekt();
+    rajzSzinkron(p);
+    const f = (azon: string) => p.helyisegek[0]!.hatarolok.find((b) => b.azon === azon)!.felulet;
+    expect(f('p1')).toBe(14);
+    expect(f('p2')).toBe(10);
+    expect(f('t')).toBeCloseTo(24 / Math.cos(Math.PI / 6), 3);
+  });
+
+  it('HT-088 vegyes padlónál a kitett kerületet nem írja felül a rajz (kézi 9 m marad)', () => {
+    const p = projekt();
+    rajzSzinkron(p);
+    expect(p.helyisegek[0]!.hatarolok.find((b) => b.azon === 'p1')!.kitettKerulet).toBe(9);
+  });
+
+  it('a megadott területek összege nem lehet nagyobb az alapterületnél; régi (true) jelölés a szerkezettípusból', () => {
+    const p = projekt();
+    p.helyisegek[0]!.hatarolok.find((b) => b.azon === 'p2')!.alaprajziTerulet = 12;
+    rajzSzinkron(p);
+    expect(ellenoriz(p).some((h) => h.sulyossag === 'hiba' && h.uzenet.startsWith('Az alatta lévő részek területe (26,00 m²)'))).toBe(true);
+    const q = projekt();
+    for (const b of q.helyisegek[0]!.hatarolok) if (b.rajzAlap) b.rajzAlap = true;
+    rajzSzinkron(q);
+    expect(q.helyisegek[0]!.hatarolok.filter((b) => b.rajzAlap).map((b) => b.rajzAlap)).toEqual(['alatta', 'alatta', 'felette']);
+  });
+
+  it('a számítás vegyes padlóval és ferde tetővel lefut; az árkád a külső levegő felé számít', () => {
+    const p = projekt();
+    rajzSzinkron(p);
+    const k = szamolProjekt(p);
+    if (!k.rendben) throw new Error(JSON.stringify(k.hianyok));
+    expect(k.eredmeny.szerkezetek.find((s) => s.nev === 'Á1 árkádfödém')!.A).toBe(10);
   });
 });

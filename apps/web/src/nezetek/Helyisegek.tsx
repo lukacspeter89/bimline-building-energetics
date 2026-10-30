@@ -123,10 +123,12 @@ export function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev
   const { p, h, b, valtoztat } = props;
   const [hossz, setHossz] = useState<number | undefined>(undefined);
   const r = p.retegrendek.find((x) => x.azon === b.retegrendAzon);
-  const fuggoleges = (b.hajlasszog ?? 90) >= 60;
+  const fuggoleges = (b.hajlasszog ?? (b.rajzAlap ? 0 : 90)) >= 60;
   const padlo = r?.szerkezet === 'talajon_fekvo_padlo';
   // Rajzolt élhez vagy alaprajzhoz kötött határolónál a felület, a tájolás és a kerület a rajzból jön.
-  const rajz = b.rajzEl !== undefined || b.rajzAlap === true;
+  const rajz = b.rajzEl !== undefined || b.rajzAlap !== undefined;
+  // Vegyes (több részből álló) padlónál a kitett kerület kézzel adandó.
+  const kezikerulet = !b.rajzAlap || h.hatarolok.filter((x) => x.rajzAlap === 'alatta').length > 1;
   const [helyzet, setHelyzet] = useState<PadloHelyzet>((b.melyseg ?? 0) > 0 ? 'pince' : (b.melyseg ?? 0) < 0 ? 'terepszint felett' : 'terepszinten');
   const nyA = b.nyilasok.reduce((s, n) => s + n.szelesseg * n.magassag * n.db, 0);
   // Javaslat a padló kitett kerületére: a helyiség külső levegővel határos falainak hossza (felület / belmagasság).
@@ -190,7 +192,7 @@ export function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev
           }}
         />
       )}
-      {fuggoleges && !rajz && <Gombsor cimke="Tájolás" ertek={b.tajolas} opciok={TAJOLASOK} onValtozas={(t) => valtoztat((x) => void (x.tajolas = t))} />}
+      {b.rajzEl === undefined && (fuggoleges ? !rajz : b.tuloldal.fajta === 'külső' && (b.hajlasszog ?? 0) > 0) && <Gombsor cimke="Tájolás" ertek={b.tajolas} opciok={TAJOLASOK} onValtozas={(t) => valtoztat((x) => void (x.tajolas = t))} />}
       <div class="racs">
         {fuggoleges && !rajz && (
           <SzamMezo
@@ -207,12 +209,12 @@ export function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev
         {rajz ? (
           <div class="mezo">
             <span class="cimke">Felület (rajzból)</span>
-            <b>{szam(b.felulet, 2)} m²{padlo && b.rajzAlap ? ` · kitett kerület ${szam(b.kitettKerulet ?? 0, 2)} m` : ''}</b>
+            <b>{szam(b.felulet, 2)} m²{padlo && !kezikerulet ? ` · kitett kerület ${szam(b.kitettKerulet ?? 0, 2)} m` : ''}</b>
           </div>
         ) : (
         <SzamMezo id={`b-${b.azon}-a`} cimke="Bruttó felület" egyseg="m²" ertek={b.felulet} onValtozas={(v) => valtoztat((x) => void (x.felulet = v))} />
         )}
-        {padlo && !b.rajzAlap && (
+        {padlo && kezikerulet && (
           <SzamMezo id={`b-${b.azon}-p`} cimke="Kitett kerület (4.20)" egyseg="m" ertek={b.kitettKerulet} onValtozas={(v) => valtoztat((x) => void (x.kitettKerulet = v))} />
         )}
         {padlo && !b.rajzAlap && falHossz > 0 && Math.abs(falHossz - (b.kitettKerulet ?? 0)) > 0.005 && (
@@ -253,7 +255,11 @@ export function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev
             onValtozas={(v) => valtoztat((x) => void (v ? (x.labazatiFalRetegrendAzon = v) : delete x.labazatiFalRetegrendAzon))}
           />
         )}
-        {!fuggoleges && !padlo && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}
+        {b.rajzAlap === 'alatta' && (
+          <AlaprajziResz b={b} valtoztat={valtoztat} />
+        )}
+        {b.rajzAlap === 'felette' && <AlaprajziResz b={b} valtoztat={valtoztat} />}
+        {!fuggoleges && !padlo && b.rajzAlap !== 'alatta' && <SzamMezo id={`b-${b.azon}-hs`} cimke="Hajlásszög" egyseg="°" ertek={b.hajlasszog} onValtozas={(v) => valtoztat((x) => void (x.hajlasszog = v))} />}
       </div>
       {b.nyilasok.map((n, k) => (
         <div class="nyilas" key={k}>
@@ -287,6 +293,22 @@ export function HataroloSor(props: { p: Projekt; h: Helyiseg; b: Hatarolo; rrNev
             );
           })}
         </div>
+      )}
+    </div>
+  );
+}
+
+/** Alaprajzi szerkezetrész vetületi területe; üresen a helyiség maradék területe. */
+function AlaprajziResz({ b, valtoztat }: { b: Hatarolo; valtoztat: (f: (b: Hatarolo) => void) => void }) {
+  return (
+    <div class="mezo">
+      <SzamMezo id={`b-${b.azon}-ar`} cimke="Alaprajzi terület" egyseg="m²" ertek={b.alaprajziTerulet} onValtozas={(v) => valtoztat((x) => void (x.alaprajziTerulet = v))} />
+      {b.alaprajziTerulet === undefined ? (
+        <span class="halk">a maradék terület</span>
+      ) : (
+        <button type="button" class="link" onClick={() => valtoztat((x) => void delete x.alaprajziTerulet)}>
+          legyen a maradék
+        </button>
       )}
     </div>
   );
