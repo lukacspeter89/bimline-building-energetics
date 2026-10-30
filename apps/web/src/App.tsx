@@ -11,6 +11,7 @@ import { HelyisegekNezet } from './nezetek/Helyisegek.js';
 import { ProjektLista } from './nezetek/ProjektLista.js';
 import { SzerkezetekNezet } from './nezetek/Szerkezetek.js';
 import { TablazatNezet } from './nezetek/Tablazat.js';
+import { HoigenyNezet } from './nezetek/Hoigeny.js';
 import * as tarolo from './tarolo.js';
 
 export const MINTAK: readonly { azon: string; cim: string; projekt: Projekt }[] = [
@@ -39,7 +40,7 @@ export function ujProjekt(): Projekt {
 
 export const mintabol = (m: Projekt): Projekt => ({ ...structuredClone(m), azon: ujAzon('p'), modositva: new Date().toISOString() });
 
-export type Ful = 'alaprajz' | 'tablazat' | 'epulet' | 'szerkezetek' | 'helyisegek' | 'gepeszet' | 'eredmeny';
+export type Ful = 'alaprajz' | 'tablazat' | 'hoigeny' | 'epulet' | 'szerkezetek' | 'helyisegek' | 'gepeszet' | 'eredmeny';
 const FULEK: { azon: Ful; nev: string }[] = [
   { azon: 'alaprajz', nev: 'Alaprajz' },
   { azon: 'helyisegek', nev: 'Helyiségek' },
@@ -48,6 +49,7 @@ const FULEK: { azon: Ful; nev: string }[] = [
   { azon: 'gepeszet', nev: 'Gépészet' },
   { azon: 'epulet', nev: 'Épület' },
   { azon: 'eredmeny', nev: 'Eredmény' },
+  { azon: 'hoigeny', nev: 'Hőigény' },
 ];
 
 export type Valtoztat = (f: (p: Projekt) => void) => void;
@@ -122,7 +124,7 @@ export function App() {
     );
 
   return (
-    <div class={`projekt${ful === 'alaprajz' || ful === 'tablazat' ? ' szeles' : ''}`}>
+    <div class={`projekt${ful === 'alaprajz' || ful === 'tablazat' || ful === 'hoigeny' ? ' szeles' : ''}`}>
       <header class="projekt-fej">
         <button class="vissza" onClick={() => setAktiv(null)} aria-label="Vissza a projektekhez">
           ‹ Projektek
@@ -143,6 +145,7 @@ export function App() {
         {ful === 'epulet' && <EpuletNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'szerkezetek' && <SzerkezetekNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'alaprajz' && <AlaprajzNezet p={aktiv} valtoztat={valtoztat} />}
+        {ful === 'hoigeny' && <HoigenyNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'tablazat' && <TablazatNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'helyisegek' && <HelyisegekNezet p={aktiv} valtoztat={valtoztat} />}
         {ful === 'gepeszet' && <GepeszetNezet p={aktiv} valtoztat={valtoztat} />}
