@@ -45,6 +45,9 @@ export function ellenoriz(p: Projekt): Hiany[] {
   for (const hs of p.helyisegek) {
     if (!pozitiv(hs.alapterulet)) hiba(hs.nev, 'Az alapterület hiányzik.', hs.azon);
     if (!pozitiv(hs.belmagassag)) hiba(hs.nev, 'A belmagasság hiányzik.', hs.azon);
+    // D-152: a méretek kizárólag a rajzból jönnek; a nem rajzolt (régi, kézi) adat figyelmeztetést kap.
+    if (!hs.alaprajz) figy(hs.nev, 'A helyiség nincs megrajzolva; a méreteit az Alaprajz fülön kell megrajzolni.', hs.azon);
+    else if (hs.hatarolok.some((b) => b.rajzEl === undefined && b.rajzAlap === undefined)) figy(hs.nev, 'Van nem rajzból származó határoló; a méretek csak a rajzból jöhetnek.', hs.azon);
     for (const o of ['alatta', 'felette'] as const) {
       const reszek = hs.hatarolok.filter((b) => alapOldal(b, rr.get(b.retegrendAzon)) === o);
       const m = alapReszek(hs, reszek);

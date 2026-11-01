@@ -1,14 +1,12 @@
 // PC-s gyors bevitel táblázatban: helyiségek, határolók, nyílások. Billentyűk: Tab a következő mező, Enter a következő
 // sor ugyanazon oszlopa, Ctrl+Enter a sor másolása alá, Ctrl+Delete a sor törlése.
-import type { Tajolas } from '@bimline/calc-core';
-import { ujAzon, type Hatarolo, type Projekt, type Tuloldal } from '@bimline/model';
+import { type Hatarolo, type Projekt, type Tuloldal } from '@bimline/model';
 import type { JSX } from 'preact';
 import type { Valtoztat } from '../App.js';
 import { CellaSzam, Kartya, szam } from '../ui.js';
 import { FUTETLEN } from './Helyisegek.js';
 import { SZERKEZET_NEV } from './Szerkezetek.js';
 
-const TAJOLASOK: readonly Tajolas[] = ['É', 'ÉK', 'K', 'DK', 'D', 'DNy', 'Ny', 'ÉNy'];
 const tuloldalKod = (t: Tuloldal): string => (t.fajta === 'fűtetlen' ? `fűtetlen:${t.ter}` : t.fajta);
 const tuloldalbol = (k: string): Tuloldal => (k.startsWith('fűtetlen:') ? ({ fajta: 'fűtetlen', ter: k.slice(9) } as Tuloldal) : ({ fajta: k } as Tuloldal));
 const TULOLDALAK = [
@@ -19,7 +17,7 @@ const TULOLDALAK = [
 ];
 
 /** Billentyűkezelés egy táblázatra: a cellák `data-s` (sor) és `data-o` (oszlop) attribútummal. */
-function billentyu(tabla: string, ujSor: (s: number) => void, torol: (s: number) => void) {
+function billentyu(tabla: string, ujSor: ((s: number) => void) | null, torol: (s: number) => void) {
   return (e: JSX.TargetedKeyboardEvent<HTMLTableElement>): void => {
     const td = (e.target as HTMLElement).closest('td');
     if (!td?.dataset['s']) return;
@@ -34,6 +32,7 @@ function billentyu(tabla: string, ujSor: (s: number) => void, torol: (s: number)
     };
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
+      if (!ujSor) return;
       ujSor(s);
       requestAnimationFrame(() => cel(s + 1)?.focus());
     } else if (e.key === 'Enter') {
@@ -64,29 +63,21 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
   const hatSorok = p.helyisegek.flatMap((h, i) => h.hatarolok.map((b, j) => ({ h, i, b, j })));
   const nySorok = hatSorok.flatMap((x) => x.b.nyilasok.map((n, k) => ({ ...x, n, k })));
   const rrOpciok = p.retegrendek.filter((r) => r.szerkezet !== 'talajjal_erintkezo_fal').map((r) => ({ ertek: r.azon, nev: `${r.nev} (${SZERKEZET_NEV[r.szerkezet]})` }));
-  const hsOpciok = p.helyisegek.map((h) => ({ ertek: h.azon, nev: h.nev }));
   const vb = (i: number, j: number, f: (b: Hatarolo) => void): void => valtoztat((x) => f(x.helyisegek[i]!.hatarolok[j]!));
 
   return (
     <>
       <p class="halk">
-        Tab: következő mező · Enter: következő sor · Ctrl+Enter: sor másolása alá · Ctrl+Delete: sor törlése. A rajzolt helyiségek felülete és tájolása a rajzból jön (szürke).
+        Tab: következő mező · Enter: következő sor · Ctrl+Enter: nyílás másolása alá · Ctrl+Delete: sor törlése. Helyiséget és határolót csak az Alaprajz fülön lehet felvenni; a méretek, felületek és tájolások kizárólag a rajzból jönnek (szürke, D-152).
       </p>
-      <Kartya
-        cim={`Helyiségek (${p.helyisegek.length})`}
-        jobb={
-          <button class="masodlagos" onClick={() => valtoztat((x) => void x.helyisegek.push({ azon: ujAzon('hs'), nev: `Helyiség ${x.helyisegek.length + 1}`, szint: x.helyisegek.at(-1)?.szint ?? 'fsz', alapterulet: 0, belmagassag: x.helyisegek.at(-1)?.belmagassag ?? 2.7, hatarolok: [] }))}>
-            + Sor
-          </button>
-        }
-      >
+      <Kartya cim={`Helyiségek (${p.helyisegek.length})`}>
         <div class="tablazat">
           <table
             class="beviteli"
             data-tabla="hs"
             onKeyDown={billentyu(
               'hs',
-              (s) => valtoztat((x) => void x.helyisegek.splice(s + 1, 0, { ...structuredClone(x.helyisegek[s]!), azon: ujAzon('hs'), nev: `${x.helyisegek[s]!.nev} (2)`, hatarolok: [], alaprajz: undefined as never })),
+              null,
               (s) => valtoztat((x) => void x.helyisegek.splice(s, 1)),
             )}
           >
@@ -111,7 +102,7 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
                     <input class="cella rovid" aria-label="Szint" value={h.szint} onFocus={(e) => (e.target as HTMLInputElement).select()} onInput={(e) => valtoztat((x) => void (x.helyisegek[s]!.szint = (e.target as HTMLInputElement).value))} />
                   </td>
                   <td data-s={s} data-o="a">
-                    <CellaSzam cimke="Alapterület" ertek={h.alapterulet} tiltott={!!h.alaprajz} tized={2} onValtozas={(v) => valtoztat((x) => void (x.helyisegek[s]!.alapterulet = v))} />
+                    <CellaSzam cimke="Alapterület" ertek={h.alapterulet} tiltott tized={2} onValtozas={(v) => valtoztat((x) => void (x.helyisegek[s]!.alapterulet = v))} />
                   </td>
                   <td data-s={s} data-o="m">
                     <CellaSzam cimke="Belmagasság" ertek={h.belmagassag} onValtozas={(v) => valtoztat((x) => void (x.helyisegek[s]!.belmagassag = v))} />
@@ -126,21 +117,6 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
 
       <Kartya
         cim={`Határolók (${hatSorok.length})`}
-        jobb={
-          <button
-            class="masodlagos"
-            disabled={!p.helyisegek.length || !p.retegrendek.length}
-            onClick={() =>
-              valtoztat((x) => {
-                const h = x.helyisegek.at(-1)!;
-                const fal = x.retegrendek.find((r) => r.szerkezet === 'homlokzati_fal') ?? x.retegrendek[0]!;
-                h.hatarolok.push({ azon: ujAzon('h'), retegrendAzon: fal.azon, tuloldal: { fajta: 'külső' }, tajolas: 'D', hajlasszog: 90, felulet: 0, nyilasok: [] });
-              })
-            }
-          >
-            + Sor
-          </button>
-        }
       >
         <div class="tablazat">
           <table
@@ -148,10 +124,7 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
             data-tabla="hat"
             onKeyDown={billentyu(
               'hat',
-              (s) => {
-                const r = hatSorok[s];
-                if (r) valtoztat((x) => void x.helyisegek[r.i]!.hatarolok.splice(r.j + 1, 0, { ...structuredClone(r.b), azon: ujAzon('h'), nyilasok: [], rajzEl: undefined as never, rajzAlap: undefined as never }));
-              },
+              null,
               (s) => {
                 const r = hatSorok[s];
                 if (r) valtoztat((x) => void x.helyisegek[r.i]!.hatarolok.splice(r.j, 1));
@@ -178,18 +151,7 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
                 return (
                   <tr key={b.azon}>
                     <td data-s={s} data-o="hs">
-                      <Valaszt
-                        cimke="Helyiség"
-                        ertek={h.azon}
-                        opciok={hsOpciok}
-                        onValtozas={(az) =>
-                          valtoztat((x) => {
-                            const [mozg] = x.helyisegek[i]!.hatarolok.splice(j, 1);
-                            const cel = x.helyisegek.find((y) => y.azon === az)!;
-                            cel.hatarolok.push({ ...mozg!, rajzEl: undefined as never, rajzAlap: undefined as never });
-                          })
-                        }
-                      />
+                      <span class="cella-ro">{h.nev}</span>
                     </td>
                     <td data-s={s} data-o="r">
                       <Valaszt cimke="Szerkezet" ertek={b.retegrendAzon} opciok={rrOpciok} onValtozas={(v) => vb(i, j, (x) => void (x.retegrendAzon = v))} />
@@ -198,20 +160,16 @@ export function TablazatNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
                       <Valaszt cimke="Túloldal" ertek={tuloldalKod(b.tuloldal)} opciok={TULOLDALAK} onValtozas={(v) => vb(i, j, (x) => void (x.tuloldal = tuloldalbol(v)))} />
                     </td>
                     <td data-s={s} data-o="taj">
-                      {rajz || (b.hajlasszog ?? 90) < 60 ? (
-                        <span class="cella-ro">{b.tajolas ?? '–'}</span>
-                      ) : (
-                        <Valaszt cimke="Tájolás" ertek={(b.tajolas ?? 'D') as Tajolas} opciok={TAJOLASOK.map((t) => ({ ertek: t, nev: t }))} onValtozas={(v) => vb(i, j, (x) => void (x.tajolas = v))} />
-                      )}
+                      <span class="cella-ro">{b.tajolas ?? '–'}</span>
                     </td>
                     <td data-s={s} data-o="a">
-                      <CellaSzam cimke="Felület" ertek={b.felulet} tiltott={rajz} onValtozas={(v) => vb(i, j, (x) => void (x.felulet = v))} />
+                      <CellaSzam cimke="Felület" ertek={b.felulet} tiltott onValtozas={(v) => vb(i, j, (x) => void (x.felulet = v))} />
                     </td>
                     <td data-s={s} data-o="hs2">
                       <CellaSzam cimke="Hajlásszög" ertek={b.hajlasszog ?? 90} tiltott={rajz} tized={0} onValtozas={(v) => vb(i, j, (x) => void (x.hajlasszog = v))} />
                     </td>
                     <td data-s={s} data-o="p">
-                      {padlo ? <CellaSzam cimke="Kitett kerület" ertek={b.kitettKerulet} tiltott={b.rajzAlap !== undefined && h.hatarolok.filter((x) => x.rajzAlap === 'alatta').length === 1} onValtozas={(v) => vb(i, j, (x) => void (x.kitettKerulet = v))} /> : <span class="cella-ro">–</span>}
+                      {padlo ? <CellaSzam cimke="Kitett kerület" ertek={b.kitettKerulet} tiltott={b.rajzAlap === undefined || h.hatarolok.filter((x) => x.rajzAlap === 'alatta').length === 1} onValtozas={(v) => vb(i, j, (x) => void (x.kitettKerulet = v))} /> : <span class="cella-ro">–</span>}
                     </td>
                     <td class="halk">{nyA > 0 ? szam(nyA, 2) : ''}</td>
                   </tr>
