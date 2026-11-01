@@ -1236,3 +1236,17 @@ Forrás: F-12 (implementációs specifikáció a szabvány oldalképeiből), ell
 | HL-039 | Belső méretezési hőmérséklet | helyiségtípus | B.14. táblázat (lakás 20, fürdő 24 °C …) | MSZ EN 12831-1:2017 B.4.2, B.14. táblázat | – | – |
 | HL-040 | Talaj: geometriai paraméter | A_G, P | B′ = A_G/(0,5·P); helyiségnél az épületé, ha nincs külső fala vagy U_padló ≤ 0,5 | MSZ EN 12831-1:2017 E melléklet, (E.2) | – | – |
 | HL-041 | Talaj: egyenértékű U | B′, z, U_k, ΔU_TB | U_equiv,k = a/(b + (c1 + B′)^n1 + (c2 + z)^n2 + (c3 + U_k + ΔU_TB)^n3) + d; E.1. táblázat; érvényesség: U ≤ 4 (pincefal ≤ 3), 2 ≤ B′ ≤ 50, 0 ≤ z ≤ 5 | MSZ EN 12831-1:2017 E melléklet, (E.1), E.1. táblázat | – | – |
+
+## M8. Nyári hőterhelés – egyszerűsített óránkénti mérleg (nem VDI 2078)
+
+Péter döntése (2026-11-01): a VDI 2078 szövege nem áll rendelkezésre, ezért átlátható, egyszerűsített módszer (D-150). Méretezési nap: F-05 (07.14.); alapállapot 38 °C / 45 % (D-149).
+
+| ID | Számítási lépés / ellenőrzés | Bemenetek | Képlet vagy konstans | Forrás | Normatív adat | Teszt-példa |
+|----|----|----|----|----|----|----|
+| NYH-001 | Méretezési nap hőmérséklet-lefutása | θ_e,csúcs (alapértelmezés 38 °C, D-149) | θ_e(t) = t_k(07.14., t) + (θ_e,csúcs − max t_k); F-05 legmelegebb napja, csúcs 34,1 °C | D-150; F-05 Hőmérsékletek órai | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |
+| NYH-002 | Méretezési nap sugárzása | óra, tájolás, hajlásszög | F-05 07.14. globál sugárzás; 15° alatt vízszintes, egyébként a legközelebbi 30/45/60/90° | D-150; F-05 Sugárzási adatok órai | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |
+| NYH-003 | Transzmissziós hőterhelés | A, U, θ_e(t), θ_i | Q_tr(t) = Σ A·U·(θ_e(t) − θ_i), hőtárolás nélkül (külső levegővel határos szerkezetek) | D-150 | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |
+| NYH-004 | Sugárzási hőterhelés | A_ü, g⊥, F_árny, I(t) | Q_sug(t) = Σ A_ü·F_ü·g⊥·F_árny·I(t); F_ü a (6.24) szerint | D-150; 1. függ. (6.24) | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |
+| NYH-005 | Szellőzési érzékelhető hőterhelés | q m³/h, θ_e(t), θ_i | Q_szell(t) = 0,34·q·(θ_e(t) − θ_i) | D-150; MSZ EN 12831-1 B.2.8 | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |
+| NYH-006 | Csúcsterhelés | óránkénti érzékelhető összeg | Q_csúcs = max_t(Q_tr + Q_sug + Q_belső + Q_szell); épületre az egyidejű órai összeg maximuma | D-150 | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |
+| NYH-007 | Látens terhelés | θ, RH, q | x = 622·e/(p − e), e = RH·6,112·exp(17,62·t/(243,12 + t)) hPa (WMO-No. 8); Q_lat = ρ·q·r_0·(x_e − x_i)/3600 + belső látens | D-150; WMO-No. 8, 4.B melléklet | `modszer/meteo_meretezesi_nap.json#nap_07_14` | – |

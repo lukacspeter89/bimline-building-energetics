@@ -56,8 +56,8 @@ describe('docs/KOVETELMENYMATRIX.md', () => {
 
   it('a mátrix-azonosítók egyediek', () => {
     const idk = [...matrix.matchAll(/^\| ([A-Z]{2,4}-\d{3}) \|/gm)].map((m) => m[1]);
-    // 808 sor a 9/2023 rendelet és módszer szerint (M1–M6), 41 sor az MSZ EN 12831-1 szerint (M7).
-    expect(idk.length).toBe(808 + 41);
+    // 808 sor a 9/2023 rendelet és módszer szerint (M1–M6), 41 sor az MSZ EN 12831-1 szerint (M7), 7 a nyári hőterhelés (M8).
+    expect(idk.length).toBe(808 + 41 + 7);
     expect(new Set(idk).size).toBe(idk.length);
   });
 });

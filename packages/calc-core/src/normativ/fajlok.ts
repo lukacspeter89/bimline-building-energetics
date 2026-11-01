@@ -9,6 +9,7 @@ import d_modszer_hotechnika from '../../../../data/normativ/modszer/hotechnika.j
 import d_modszer_hutes from '../../../../data/normativ/modszer/hutes.json';
 import d_modszer_indikatorok from '../../../../data/normativ/modszer/indikatorok.json';
 import d_modszer_jelolesek from '../../../../data/normativ/modszer/jelolesek.json';
+import d_modszer_meteo_meretezesi_nap from '../../../../data/normativ/modszer/meteo_meretezesi_nap.json';
 import d_modszer_megujulok from '../../../../data/normativ/modszer/megujulok.json';
 import d_modszer_netto_energiaigeny from '../../../../data/normativ/modszer/netto_energiaigeny.json';
 import d_modszer_nyilaszarok from '../../../../data/normativ/modszer/nyilaszarok.json';
@@ -31,6 +32,7 @@ export const NORMATIV_FAJLOK = {
   'modszer/hutes': d_modszer_hutes as unknown as NormativFajlTartalom,
   'modszer/indikatorok': d_modszer_indikatorok as unknown as NormativFajlTartalom,
   'modszer/jelolesek': d_modszer_jelolesek as unknown as NormativFajlTartalom,
+  'modszer/meteo_meretezesi_nap': d_modszer_meteo_meretezesi_nap as unknown as NormativFajlTartalom,
   'modszer/megujulok': d_modszer_megujulok as unknown as NormativFajlTartalom,
   'modszer/netto_energiaigeny': d_modszer_netto_energiaigeny as unknown as NormativFajlTartalom,
   'modszer/nyilaszarok': d_modszer_nyilaszarok as unknown as NormativFajlTartalom,
