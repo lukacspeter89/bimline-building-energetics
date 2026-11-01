@@ -1,0 +1,1715 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_9_1",
+   "cim": "Kollektortermelés ideális tájolás és hajlásszög esetén síkkollektorokra (Qkoll,max)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.2.1.1 fejezet, 9.1. táblázat",
+    "oldal": 69,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Cella: Qkoll,max [kWh/év] (bal felső sarokcella: [kWh/év]). Sorok: Bruttó kollektorfelület [m2]; oszlopok: Rendszer alapterület [m2]. Alkalmazhatóság (9.2.1.1): kizárólag lakóépület HMV igényének fedezése, és a HMV tároló kollektorfelületre vetített térfogata eléri az 50 l/m2 arányt. A táblázatközi értékek interpolálásáról a forrás nem rendelkezik.",
+   "oszlopok": [
+    {
+     "kulcs": "A_koll_brutto",
+     "cim": "Bruttó kollektorfelület [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "A_rszr_40",
+     "cim": "Rendszer alapterület [m2] 40",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_50",
+     "cim": "Rendszer alapterület [m2] 50",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_60",
+     "cim": "Rendszer alapterület [m2] 60",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_70",
+     "cim": "Rendszer alapterület [m2] 70",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_80",
+     "cim": "Rendszer alapterület [m2] 80",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_90",
+     "cim": "Rendszer alapterület [m2] 90",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_100",
+     "cim": "Rendszer alapterület [m2] 100",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_110",
+     "cim": "Rendszer alapterület [m2] 110",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_120",
+     "cim": "Rendszer alapterület [m2] 120",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_130",
+     "cim": "Rendszer alapterület [m2] 130",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_140",
+     "cim": "Rendszer alapterület [m2] 140",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_150",
+     "cim": "Rendszer alapterület [m2] 150",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_200",
+     "cim": "Rendszer alapterület [m2] 200",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_250",
+     "cim": "Rendszer alapterület [m2] 250",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_300",
+     "cim": "Rendszer alapterület [m2] 300",
+     "egyseg": "kWh/év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_koll_brutto": 1.5,
+     "A_rszr_40": 725,
+     "A_rszr_50": 779,
+     "A_rszr_60": 817,
+     "A_rszr_70": 845,
+     "A_rszr_80": 867,
+     "A_rszr_90": 884,
+     "A_rszr_100": 898,
+     "A_rszr_110": 908,
+     "A_rszr_120": 917,
+     "A_rszr_130": 924,
+     "A_rszr_140": 930,
+     "A_rszr_150": 936,
+     "A_rszr_200": 957,
+     "A_rszr_250": 971,
+     "A_rszr_300": 980
+    },
+    {
+     "A_koll_brutto": 2,
+     "A_rszr_40": 844,
+     "A_rszr_50": 944,
+     "A_rszr_60": 1006,
+     "A_rszr_70": 1053,
+     "A_rszr_80": 1089,
+     "A_rszr_90": 1119,
+     "A_rszr_100": 1142,
+     "A_rszr_110": 1160,
+     "A_rszr_120": 1175,
+     "A_rszr_130": 1187,
+     "A_rszr_140": 1198,
+     "A_rszr_150": 1207,
+     "A_rszr_200": 1245,
+     "A_rszr_250": 1268,
+     "A_rszr_300": 1284
+    },
+    {
+     "A_koll_brutto": 2.5,
+     "A_rszr_40": 911,
+     "A_rszr_50": 1054,
+     "A_rszr_60": 1159,
+     "A_rszr_70": 1230,
+     "A_rszr_80": 1283,
+     "A_rszr_90": 1326,
+     "A_rszr_100": 1362,
+     "A_rszr_110": 1388,
+     "A_rszr_120": 1411,
+     "A_rszr_130": 1430,
+     "A_rszr_140": 1446,
+     "A_rszr_150": 1461,
+     "A_rszr_200": 1517,
+     "A_rszr_250": 1553,
+     "A_rszr_300": 1578
+    },
+    {
+     "A_koll_brutto": 3,
+     "A_rszr_40": 963,
+     "A_rszr_50": 1123,
+     "A_rszr_60": 1265,
+     "A_rszr_70": 1373,
+     "A_rszr_80": 1451,
+     "A_rszr_90": 1510,
+     "A_rszr_100": 1558,
+     "A_rszr_110": 1595,
+     "A_rszr_120": 1626,
+     "A_rszr_130": 1653,
+     "A_rszr_140": 1676,
+     "A_rszr_150": 1696,
+     "A_rszr_200": 1775,
+     "A_rszr_250": 1826,
+     "A_rszr_300": 1861
+    },
+    {
+     "A_koll_brutto": 4,
+     "A_rszr_40": 1036,
+     "A_rszr_50": 1224,
+     "A_rszr_60": 1395,
+     "A_rszr_70": 1547,
+     "A_rszr_80": 1687,
+     "A_rszr_90": 1796,
+     "A_rszr_100": 1888,
+     "A_rszr_110": 1948,
+     "A_rszr_120": 1999,
+     "A_rszr_130": 2043,
+     "A_rszr_140": 2081,
+     "A_rszr_150": 2115,
+     "A_rszr_200": 2250,
+     "A_rszr_250": 2337,
+     "A_rszr_300": 2397
+    },
+    {
+     "A_koll_brutto": 5,
+     "A_rszr_40": 1089,
+     "A_rszr_50": 1295,
+     "A_rszr_60": 1485,
+     "A_rszr_70": 1661,
+     "A_rszr_80": 1822,
+     "A_rszr_90": 1971,
+     "A_rszr_100": 2109,
+     "A_rszr_110": 2206,
+     "A_rszr_120": 2296,
+     "A_rszr_130": 2367,
+     "A_rszr_140": 2423,
+     "A_rszr_150": 2472,
+     "A_rszr_200": 2672,
+     "A_rszr_250": 2803,
+     "A_rszr_300": 2893
+    },
+    {
+     "A_koll_brutto": 6,
+     "A_rszr_40": 1138,
+     "A_rszr_50": 1349,
+     "A_rszr_60": 1554,
+     "A_rszr_70": 1745,
+     "A_rszr_80": 1925,
+     "A_rszr_90": 2093,
+     "A_rszr_100": 2247,
+     "A_rszr_110": 2377,
+     "A_rszr_120": 2499,
+     "A_rszr_130": 2599,
+     "A_rszr_140": 2686,
+     "A_rszr_150": 2765,
+     "A_rszr_200": 3046,
+     "A_rszr_250": 3227,
+     "A_rszr_300": 3352
+    },
+    {
+     "A_koll_brutto": 7,
+     "A_rszr_40": 1184,
+     "A_rszr_50": 1398,
+     "A_rszr_60": 1608,
+     "A_rszr_70": 1813,
+     "A_rszr_80": 2005,
+     "A_rszr_90": 2187,
+     "A_rszr_100": 2361,
+     "A_rszr_110": 2502,
+     "A_rszr_120": 2634,
+     "A_rszr_130": 2758,
+     "A_rszr_140": 2875,
+     "A_rszr_150": 2979,
+     "A_rszr_200": 3374,
+     "A_rszr_250": 3610,
+     "A_rszr_300": 3775
+    },
+    {
+     "A_koll_brutto": 8,
+     "A_rszr_40": 1231,
+     "A_rszr_50": 1445,
+     "A_rszr_60": 1658,
+     "A_rszr_70": 1868,
+     "A_rszr_80": 2072,
+     "A_rszr_90": 2264,
+     "A_rszr_100": 2448,
+     "A_rszr_110": 2605,
+     "A_rszr_120": 2750,
+     "A_rszr_130": 2883,
+     "A_rszr_140": 3008,
+     "A_rszr_150": 3126,
+     "A_rszr_200": 3645,
+     "A_rszr_250": 3956,
+     "A_rszr_300": 4165
+    },
+    {
+     "A_koll_brutto": 10,
+     "A_rszr_40": 1291,
+     "A_rszr_50": 1539,
+     "A_rszr_60": 1752,
+     "A_rszr_70": 1968,
+     "A_rszr_80": 2178,
+     "A_rszr_90": 2387,
+     "A_rszr_100": 2590,
+     "A_rszr_110": 2762,
+     "A_rszr_120": 2924,
+     "A_rszr_130": 3077,
+     "A_rszr_140": 3223,
+     "A_rszr_150": 3360,
+     "A_rszr_200": 4014,
+     "A_rszr_250": 4518,
+     "A_rszr_300": 4848
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_2",
+   "cim": "Kollektortermelés ideális tájolás és hajlásszög esetén vákumcsöves kollektorokra (Qkoll,max)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.2.1.1 fejezet, 9.2. táblázat",
+    "oldal": 70,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Cella: Qkoll,max [kWh/év] (bal felső sarokcella: [kWh/év]). Sorok: Bruttó kollektorfelület [m2]; oszlopok: Rendszer alapterület [m2]. Alkalmazhatóság (9.2.1.1): kizárólag lakóépület HMV igényének fedezése, és a HMV tároló kollektorfelületre vetített térfogata eléri az 50 l/m2 arányt. A táblázatközi értékek interpolálásáról a forrás nem rendelkezik. A címben szó szerint „vákumcsöves” (elírás: vákuumcsöves).",
+   "oszlopok": [
+    {
+     "kulcs": "A_koll_brutto",
+     "cim": "Bruttó kollektorfelület [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "A_rszr_40",
+     "cim": "Rendszer alapterület [m2] 40",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_50",
+     "cim": "Rendszer alapterület [m2] 50",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_60",
+     "cim": "Rendszer alapterület [m2] 60",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_70",
+     "cim": "Rendszer alapterület [m2] 70",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_80",
+     "cim": "Rendszer alapterület [m2] 80",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_90",
+     "cim": "Rendszer alapterület [m2] 90",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_100",
+     "cim": "Rendszer alapterület [m2] 100",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_110",
+     "cim": "Rendszer alapterület [m2] 110",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_120",
+     "cim": "Rendszer alapterület [m2] 120",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_130",
+     "cim": "Rendszer alapterület [m2] 130",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_140",
+     "cim": "Rendszer alapterület [m2] 140",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_150",
+     "cim": "Rendszer alapterület [m2] 150",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_200",
+     "cim": "Rendszer alapterület [m2] 200",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_250",
+     "cim": "Rendszer alapterület [m2] 250",
+     "egyseg": "kWh/év"
+    },
+    {
+     "kulcs": "A_rszr_300",
+     "cim": "Rendszer alapterület [m2] 300",
+     "egyseg": "kWh/év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_koll_brutto": 1.5,
+     "A_rszr_40": 904,
+     "A_rszr_50": 982,
+     "A_rszr_60": 1025,
+     "A_rszr_70": 1057,
+     "A_rszr_80": 1081,
+     "A_rszr_90": 1100,
+     "A_rszr_100": 1116,
+     "A_rszr_110": 1127,
+     "A_rszr_120": 1137,
+     "A_rszr_130": 1145,
+     "A_rszr_140": 1152,
+     "A_rszr_150": 1159,
+     "A_rszr_200": 1183,
+     "A_rszr_250": 1198,
+     "A_rszr_300": 1208
+    },
+    {
+     "A_koll_brutto": 2,
+     "A_rszr_40": 1023,
+     "A_rszr_50": 1166,
+     "A_rszr_60": 1268,
+     "A_rszr_70": 1326,
+     "A_rszr_80": 1367,
+     "A_rszr_90": 1399,
+     "A_rszr_100": 1426,
+     "A_rszr_110": 1446,
+     "A_rszr_120": 1463,
+     "A_rszr_130": 1477,
+     "A_rszr_140": 1489,
+     "A_rszr_150": 1500,
+     "A_rszr_200": 1541,
+     "A_rszr_250": 1568,
+     "A_rszr_300": 1585
+    },
+    {
+     "A_koll_brutto": 2.5,
+     "A_rszr_40": 1096,
+     "A_rszr_50": 1279,
+     "A_rszr_60": 1424,
+     "A_rszr_70": 1539,
+     "A_rszr_80": 1620,
+     "A_rszr_90": 1668,
+     "A_rszr_100": 1708,
+     "A_rszr_110": 1738,
+     "A_rszr_120": 1763,
+     "A_rszr_130": 1785,
+     "A_rszr_140": 1803,
+     "A_rszr_150": 1820,
+     "A_rszr_200": 1883,
+     "A_rszr_250": 1924,
+     "A_rszr_300": 1951
+    },
+    {
+     "A_koll_brutto": 3,
+     "A_rszr_40": 1145,
+     "A_rszr_50": 1356,
+     "A_rszr_60": 1535,
+     "A_rszr_70": 1681,
+     "A_rszr_80": 1808,
+     "A_rszr_90": 1902,
+     "A_rszr_100": 1964,
+     "A_rszr_110": 2006,
+     "A_rszr_120": 2041,
+     "A_rszr_130": 2071,
+     "A_rszr_140": 2097,
+     "A_rszr_150": 2119,
+     "A_rszr_200": 2209,
+     "A_rszr_250": 2266,
+     "A_rszr_300": 2305
+    },
+    {
+     "A_koll_brutto": 4,
+     "A_rszr_40": 1225,
+     "A_rszr_50": 1454,
+     "A_rszr_60": 1669,
+     "A_rszr_70": 1875,
+     "A_rszr_80": 2046,
+     "A_rszr_90": 2196,
+     "A_rszr_100": 2332,
+     "A_rszr_110": 2432,
+     "A_rszr_120": 2515,
+     "A_rszr_130": 2579,
+     "A_rszr_140": 2623,
+     "A_rszr_150": 2661,
+     "A_rszr_200": 2814,
+     "A_rszr_250": 2912,
+     "A_rszr_300": 2979
+    },
+    {
+     "A_koll_brutto": 5,
+     "A_rszr_40": 1271,
+     "A_rszr_50": 1532,
+     "A_rszr_60": 1762,
+     "A_rszr_70": 1980,
+     "A_rszr_80": 2192,
+     "A_rszr_90": 2390,
+     "A_rszr_100": 2558,
+     "A_rszr_110": 2693,
+     "A_rszr_120": 2813,
+     "A_rszr_130": 2927,
+     "A_rszr_140": 3022,
+     "A_rszr_150": 3101,
+     "A_rszr_200": 3359,
+     "A_rszr_250": 3506,
+     "A_rszr_300": 3608
+    },
+    {
+     "A_koll_brutto": 6,
+     "A_rszr_40": 1289,
+     "A_rszr_50": 1581,
+     "A_rszr_60": 1838,
+     "A_rszr_70": 2069,
+     "A_rszr_80": 2290,
+     "A_rszr_90": 2504,
+     "A_rszr_100": 2713,
+     "A_rszr_110": 2883,
+     "A_rszr_120": 3028,
+     "A_rszr_130": 3164,
+     "A_rszr_140": 3281,
+     "A_rszr_150": 3392,
+     "A_rszr_200": 3842,
+     "A_rszr_250": 4053,
+     "A_rszr_300": 4194
+    },
+    {
+     "A_koll_brutto": 7,
+     "A_rszr_40": 1303,
+     "A_rszr_50": 1603,
+     "A_rszr_60": 1890,
+     "A_rszr_70": 2144,
+     "A_rszr_80": 2376,
+     "A_rszr_90": 2599,
+     "A_rszr_100": 2815,
+     "A_rszr_110": 3002,
+     "A_rszr_120": 3182,
+     "A_rszr_130": 3345,
+     "A_rszr_140": 3484,
+     "A_rszr_150": 3617,
+     "A_rszr_200": 4201,
+     "A_rszr_250": 4554,
+     "A_rszr_300": 4741
+    },
+    {
+     "A_koll_brutto": 8,
+     "A_rszr_40": 1311,
+     "A_rszr_50": 1619,
+     "A_rszr_60": 1916,
+     "A_rszr_70": 2199,
+     "A_rszr_80": 2451,
+     "A_rszr_90": 2683,
+     "A_rszr_100": 2908,
+     "A_rszr_110": 3101,
+     "A_rszr_120": 3286,
+     "A_rszr_130": 3463,
+     "A_rszr_140": 3634,
+     "A_rszr_150": 3790,
+     "A_rszr_200": 4462,
+     "A_rszr_250": 4963,
+     "A_rszr_300": 5248
+    },
+    {
+     "A_koll_brutto": 10,
+     "A_rszr_40": 1320,
+     "A_rszr_50": 1639,
+     "A_rszr_60": 1949,
+     "A_rszr_70": 2248,
+     "A_rszr_80": 2541,
+     "A_rszr_90": 2813,
+     "A_rszr_100": 3063,
+     "A_rszr_110": 3270,
+     "A_rszr_120": 3467,
+     "A_rszr_130": 3655,
+     "A_rszr_140": 3835,
+     "A_rszr_150": 4007,
+     "A_rszr_200": 4866,
+     "A_rszr_250": 5525,
+     "A_rszr_300": 6048
+    }
+   ]
+  },
+  {
+   "id": "keplet_9_7_k_egyutthatok",
+   "cim": "A teljesítménycsökkentő tényező adott hajlásszögekhez tartozó leíró képlete (9.7) – együtthatók",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.2.1.1 fejezet, (9.7) egyenlet, 9.1. ábra",
+    "oldal": 69,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "k = (9,88·10^-9·αm² − 1,18·10^-6·αm)·γm² + (−4,99·10^-8·αm² + 9,25·10^-6·αm)·γm + (−1,17·10^-4·αm² + 9,11·10^-3·αm + 0,821). Érvényesség: hajlásszög αm 0°–90°, tájolás γm −90°…+90° (kelet – nyugat), fokban. A 9.1. ábra (Napkollektor teljesítménycsökkenés) görbéi 30°, 45°, 60°, 75°, 90° hajlásszögre; az ábrán egy felirat nélküli vízszintes vonal is látható kb. 82%-nál (αm=0 esetén a képlet 0,821-et ad), a jelmagyarázat felirata csonka („Hajlásszö”).",
+   "oszlopok": [
+    {
+     "kulcs": "tag",
+     "cim": "tag",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c_alfa2",
+     "cim": "αm² együtthatója",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c_alfa1",
+     "cim": "αm együtthatója",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c_alfa0",
+     "cim": "konstans",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "tag": "γm² szorzója",
+     "c_alfa2": 9.88e-09,
+     "c_alfa1": -1.18e-06,
+     "c_alfa0": 0
+    },
+    {
+     "tag": "γm szorzója",
+     "c_alfa2": -4.99e-08,
+     "c_alfa1": 9.25e-06,
+     "c_alfa0": 0
+    },
+    {
+     "tag": "konstans tag",
+     "c_alfa2": -0.000117,
+     "c_alfa1": 0.00911,
+     "c_alfa0": 0.821
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_3",
+   "cim": "A HMV nettó igény felosztása havi bontásban lakóépületek esetén",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.2.1.2 fejezet, 9.3. táblázat",
+    "oldal": 70,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Részletes napkollektoros módszer (9.2.1.2), havi módszer esetén. A 12 érték összege 99,99% (nem pontosan 100%). Egyéb rendeltetésű épületeknél a havi fogyasztások időarányosan, vagy a rendeltetésből adódó igények szerint határozhatók meg.",
+   "oszlopok": [
+    {
+     "kulcs": "honap",
+     "cim": "Hónap",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "reszarany_szazalek",
+     "cim": "Havi HMV részarány [%]",
+     "egyseg": "%"
+    }
+   ],
+   "sorok": [
+    {
+     "honap": 1,
+     "reszarany_szazalek": 9.09
+    },
+    {
+     "honap": 2,
+     "reszarany_szazalek": 9.22
+    },
+    {
+     "honap": 3,
+     "reszarany_szazalek": 8.84
+    },
+    {
+     "honap": 4,
+     "reszarany_szazalek": 8.8
+    },
+    {
+     "honap": 5,
+     "reszarany_szazalek": 8.5
+    },
+    {
+     "honap": 6,
+     "reszarany_szazalek": 7.66
+    },
+    {
+     "honap": 7,
+     "reszarany_szazalek": 6.87
+    },
+    {
+     "honap": 8,
+     "reszarany_szazalek": 6.95
+    },
+    {
+     "honap": 9,
+     "reszarany_szazalek": 7.92
+    },
+    {
+     "honap": 10,
+     "reszarany_szazalek": 8.41
+    },
+    {
+     "honap": 11,
+     "reszarany_szazalek": 8.7
+    },
+    {
+     "honap": 12,
+     "reszarany_szazalek": 9.04
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_9_2_1_2",
+   "cim": "9.2.1.2 Részletes módszer – rögzített rendszerparaméterek",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.2.1.2 fejezet",
+    "oldal": 70,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Részletes módszer: MSZ EN 15316-4-3 (alternatív; tervezői szoftver is elfogadható a feltételek betartásával). Külső hőmérséklet és napsugárzás: 2. Függelék 1.2.1. és 1.2.4. pont.",
+   "oszlopok": [
+    {
+     "kulcs": "parameter",
+     "cim": "paraméter",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "egység",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "parameter": "hidegvíz hőmérséklet",
+     "ertek": 10.9,
+     "egyseg": "°C",
+     "eredeti": "A számításokat 10,9 °C-os hidegvíz hőmérsékletre kell elvégezni."
+    },
+    {
+     "parameter": "HMV tároló kollektorfelületre vetített minimális térfogata (egyszerűsített módszer feltétele, 9.2.1.1, 68. o.)",
+     "ertek": 50,
+     "egyseg": "l/m2"
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_4",
+   "cim": "Kazánüzemű HMV készítés teljesítménytényezője, εHMV és fajlagos segédenergia igénye, WHMV,term/Arszr",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.3.1.2 fejezet, 9.4. táblázat",
+    "oldal": 71,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Szó szerint: „A 9.4. táblázatban az ÁF jelölés a fűtőkazán integrált HMV készítéssel, hőcserélő átfolyós üzemmódban ha, V<2 l, a KT jelölés a fűtőkazán integrált HMV készítéssel, hőcserélő kis tárolóval ha, 2<V<10 l.” A kombikazán és kondenzációs kombikazán oszlopok (εHMV és segédenergia) csak 500 m2-ig vannak kitöltve; 750 m2 felett üres cella (null). V=2 l és V=10 l határeset, valamint V≥10 l nincs definiálva. Csak ErP (811/2013/EU) hatályán kívüli készülékekre (9.3.1.2). Interpolációról a forrás nem rendelkezik; 10000 m2 felett nincs adat.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr_max",
+     "cim": "Alapterületig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "eps_allando_hom",
+     "cim": "Teljesítménytényező εHMV [-] – Állandó hőm. Kazán (olaj és gáz)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_alacsony_hom",
+     "cim": "Teljesítménytényező εHMV [-] – Alacsony hőm. kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_kondenz",
+     "cim": "Teljesítménytényező εHMV [-] – Kondenzációs kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_kombi_AF",
+     "cim": "Teljesítménytényező εHMV [-] – Kombikazán ÁF/KT* (ÁF)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_kombi_KT",
+     "cim": "Teljesítménytényező εHMV [-] – Kombikazán ÁF/KT* (KT)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_kondenz_kombi_AF",
+     "cim": "Teljesítménytényező εHMV [-] – Kondenzációs kombikazán ÁF/KT* (ÁF)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_kondenz_kombi_KT",
+     "cim": "Teljesítménytényező εHMV [-] – Kondenzációs kombikazán ÁF/KT* (KT)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "W_term_kombi",
+     "cim": "Segédenergia WHMV,term/Arszr [kWh/m2év] – Kombikazán",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "W_term_mas",
+     "cim": "Segédenergia WHMV,term/Arszr [kWh/m2év] – Más kazánok",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr_max": 100,
+     "eredeti": "100",
+     "eps_allando_hom": 1.82,
+     "eps_alacsony_hom": 1.21,
+     "eps_kondenz": 1.17,
+     "eps_kombi_AF": 1.27,
+     "eps_kombi_KT": 1.41,
+     "eps_kombi_eredeti": "1,27/1,41",
+     "eps_kondenz_kombi_AF": 1.23,
+     "eps_kondenz_kombi_KT": 1.36,
+     "eps_kondenz_kombi_eredeti": "1,23/1,36",
+     "W_term_kombi": 0.2,
+     "W_term_mas": 0.3
+    },
+    {
+     "A_rszr_max": 150,
+     "eredeti": "150",
+     "eps_allando_hom": 1.71,
+     "eps_alacsony_hom": 1.19,
+     "eps_kondenz": 1.15,
+     "eps_kombi_AF": 1.22,
+     "eps_kombi_KT": 1.32,
+     "eps_kombi_eredeti": "1,22/1,32",
+     "eps_kondenz_kombi_AF": 1.19,
+     "eps_kondenz_kombi_KT": 1.28,
+     "eps_kondenz_kombi_eredeti": "1,19/1,28",
+     "W_term_kombi": 0.19,
+     "W_term_mas": 0.24
+    },
+    {
+     "A_rszr_max": 200,
+     "eredeti": "200",
+     "eps_allando_hom": 1.64,
+     "eps_alacsony_hom": 1.18,
+     "eps_kondenz": 1.14,
+     "eps_kombi_AF": 1.2,
+     "eps_kombi_KT": 1.27,
+     "eps_kombi_eredeti": "1,20/1,27",
+     "eps_kondenz_kombi_AF": 1.16,
+     "eps_kondenz_kombi_KT": 1.24,
+     "eps_kondenz_kombi_eredeti": "1,16/1,24",
+     "W_term_kombi": 0.18,
+     "W_term_mas": 0.21
+    },
+    {
+     "A_rszr_max": 300,
+     "eredeti": "300",
+     "eps_allando_hom": 1.56,
+     "eps_alacsony_hom": 1.17,
+     "eps_kondenz": 1.13,
+     "eps_kombi_AF": 1.17,
+     "eps_kombi_KT": 1.22,
+     "eps_kombi_eredeti": "1,17/1,22",
+     "eps_kondenz_kombi_AF": 1.14,
+     "eps_kondenz_kombi_KT": 1.19,
+     "eps_kondenz_kombi_eredeti": "1,14/1,19",
+     "W_term_kombi": 0.17,
+     "W_term_mas": 0.17
+    },
+    {
+     "A_rszr_max": 500,
+     "eredeti": "500",
+     "eps_allando_hom": 1.46,
+     "eps_alacsony_hom": 1.15,
+     "eps_kondenz": 1.12,
+     "eps_kombi_AF": 1.15,
+     "eps_kombi_KT": 1.18,
+     "eps_kombi_eredeti": "1,15/1,18",
+     "eps_kondenz_kombi_AF": 1.11,
+     "eps_kondenz_kombi_KT": 1.15,
+     "eps_kondenz_kombi_eredeti": "1,11/1,15",
+     "W_term_kombi": 0.17,
+     "W_term_mas": 0.13
+    },
+    {
+     "A_rszr_max": 750,
+     "eredeti": "750",
+     "eps_allando_hom": 1.4,
+     "eps_alacsony_hom": 1.14,
+     "eps_kondenz": 1.11,
+     "eps_kombi_AF": null,
+     "eps_kombi_KT": null,
+     "eps_kondenz_kombi_AF": null,
+     "eps_kondenz_kombi_KT": null,
+     "W_term_kombi": null,
+     "W_term_mas": 0.11
+    },
+    {
+     "A_rszr_max": 1000,
+     "eredeti": "1000",
+     "eps_allando_hom": 1.36,
+     "eps_alacsony_hom": 1.14,
+     "eps_kondenz": 1.1,
+     "eps_kombi_AF": null,
+     "eps_kombi_KT": null,
+     "eps_kondenz_kombi_AF": null,
+     "eps_kondenz_kombi_KT": null,
+     "W_term_kombi": null,
+     "W_term_mas": 0.1
+    },
+    {
+     "A_rszr_max": 1500,
+     "eredeti": "1500",
+     "eps_allando_hom": 1.31,
+     "eps_alacsony_hom": 1.13,
+     "eps_kondenz": 1.1,
+     "eps_kombi_AF": null,
+     "eps_kombi_KT": null,
+     "eps_kondenz_kombi_AF": null,
+     "eps_kondenz_kombi_KT": null,
+     "W_term_kombi": null,
+     "W_term_mas": 0.084
+    },
+    {
+     "A_rszr_max": 2500,
+     "eredeti": "2500",
+     "eps_allando_hom": 1.26,
+     "eps_alacsony_hom": 1.12,
+     "eps_kondenz": 1.09,
+     "eps_kombi_AF": null,
+     "eps_kombi_KT": null,
+     "eps_kondenz_kombi_AF": null,
+     "eps_kondenz_kombi_KT": null,
+     "W_term_kombi": null,
+     "W_term_mas": 0.069
+    },
+    {
+     "A_rszr_max": 5000,
+     "eredeti": "5000",
+     "eps_allando_hom": 1.21,
+     "eps_alacsony_hom": 1.11,
+     "eps_kondenz": 1.08,
+     "eps_kombi_AF": null,
+     "eps_kombi_KT": null,
+     "eps_kondenz_kombi_AF": null,
+     "eps_kondenz_kombi_KT": null,
+     "W_term_kombi": null,
+     "W_term_mas": 0.054
+    },
+    {
+     "A_rszr_max": 10000,
+     "eredeti": "10000",
+     "eps_allando_hom": 1.17,
+     "eps_alacsony_hom": 1.1,
+     "eps_kondenz": 1.08,
+     "eps_kombi_AF": null,
+     "eps_kombi_KT": null,
+     "eps_kondenz_kombi_AF": null,
+     "eps_kondenz_kombi_KT": null,
+     "W_term_kombi": null,
+     "W_term_mas": 0.044
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_5",
+   "cim": "Szilárd- és biomassza tüzelés teljesítménytényezője, εHMV [-]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.3.1.2 fejezet, 9.5. táblázat",
+    "oldal": 71,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat egysoros, a fejléc a kazántípusokat tartalmazza; itt transzponálva.",
+   "oszlopok": [
+    {
+     "kulcs": "kazan",
+     "cim": "kazán típus",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_HMV",
+     "cim": "εHMV [-]",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "kazan": "Vegyes tüzelésű kazán",
+     "eps_HMV": 2.0,
+     "eredeti": "2,00"
+    },
+    {
+     "kazan": "Tűzifa (hasábfa) tüzelésű kazán",
+     "eps_HMV": 1.9,
+     "eredeti": "1,9"
+    },
+    {
+     "kazan": "Pellettüzelésű kazán",
+     "eps_HMV": 1.2,
+     "eredeti": "1,2"
+    },
+    {
+     "kazan": "Faelgázosító kazán",
+     "eps_HMV": 1.3,
+     "eredeti": "1,3"
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_6",
+   "cim": "Szilárd- és biomassza tüzelés segédenergia igénye WF,term/Arszr [kWh/m2év]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.3.1.2 fejezet, 9.6. táblázat",
+    "oldal": 71,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A címben a jelölés WF,term (fűtési index), noha a HMV fejezetben van – vélhetően WHMV,term értendő (nyitott kérdés). 500 m2 felett nincs adat.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr_max",
+     "cim": "Alapterületig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "W_vegyes",
+     "cim": "Vegyes tüzelésű kazán (szabályozó nélkül)",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "W_tuzifa_faelgaz",
+     "cim": "Tűzifa (hasábfa) tüzelésű kazán (szabályozóval), faelgázosító kazán",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "W_pellet",
+     "cim": "Pellettüzelésű kazán (Ventilátorral/elektromos gyújtással)",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr_max": 100,
+     "eredeti": "100",
+     "W_vegyes": 0,
+     "W_tuzifa_faelgaz": 0.19,
+     "W_pellet": 1.96
+    },
+    {
+     "A_rszr_max": 150,
+     "eredeti": "150",
+     "W_vegyes": 0,
+     "W_tuzifa_faelgaz": 0.13,
+     "W_pellet": 1.84
+    },
+    {
+     "A_rszr_max": 200,
+     "eredeti": "200",
+     "W_vegyes": 0,
+     "W_tuzifa_faelgaz": 0.1,
+     "W_pellet": 1.78
+    },
+    {
+     "A_rszr_max": 300,
+     "eredeti": "300",
+     "W_vegyes": 0,
+     "W_tuzifa_faelgaz": 0.07,
+     "W_pellet": 1.71
+    },
+    {
+     "A_rszr_max": 500,
+     "eredeti": "500",
+     "W_vegyes": 0,
+     "W_tuzifa_faelgaz": 0.04,
+     "W_pellet": 1.65
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_7",
+   "cim": "Elektromos üzemű HMV készítés teljesítménytényezője, εHMV",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.3.2.2 fejezet, 9.7. táblázat",
+    "oldal": 72,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Csak ErP (811/2013/EU) hatályán kívüli elektromos készülékekre (9.3.2.2). A táblázatban segédenergia-oszlop nincs, és a 9.3.2 nem ad segédenergia-értéket ErP-n kívüli elektromos készülékre (nyitott kérdés).",
+   "oszlopok": [
+    {
+     "kulcs": "csoport",
+     "cim": "",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "rendszer",
+     "cim": "",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_HMV",
+     "cim": "Teljesítménytényező εHMV [-]",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "csoport": "Elektromos fűtőpatron",
+     "rendszer": null,
+     "eps_HMV": 1.0
+    },
+    {
+     "csoport": "Átfolyós vízmelegítő, tároló",
+     "rendszer": null,
+     "eps_HMV": 1.0
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Levegő",
+     "eps_HMV": 0.45
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Víz",
+     "eps_HMV": 0.34
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Talajhő",
+     "eps_HMV": 0.38
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Távozó levegő",
+     "eps_HMV": 0.38
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Távozó levegő/Friss levegő hővisszanyerő ηr=0,6",
+     "eps_HMV": 0.4
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Távozó levegő/Friss levegő hővisszanyerő ηr=0,8",
+     "eps_HMV": 0.42
+    },
+    {
+     "csoport": "Hőszivattyú HMV készítésre",
+     "rendszer": "Pince levegő",
+     "eps_HMV": 0.33
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_8",
+   "cim": "Egyéb HMV készítő rendszerek teljesítménytényezője, εHMV és villamos segédenergia igénye, WHMV,term/Arszr",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.3.3.2 fejezet, 9.8. táblázat",
+    "oldal": 72,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat a 72. oldalon kezdődik (fejléc), a 73. oldalon folytatódik.",
+   "oszlopok": [
+    {
+     "kulcs": "rendszer",
+     "cim": "Rendszer",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_HMV",
+     "cim": "Teljesítménytényező εHMV [-]",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "W_term",
+     "cim": "Segédenergia WHMV,term/Arszr [kWh/m2év]",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "rendszer": "Gázüzemű bojler",
+     "eps_HMV": 1.22,
+     "W_term": 0
+    },
+    {
+     "rendszer": "Átfolyós gáz-vízmelegítő",
+     "eps_HMV": 1.3,
+     "W_term": 0
+    },
+    {
+     "rendszer": "Szilárdtüzelésű fürdőhenger",
+     "eps_HMV": 2.0,
+     "W_term": 0
+    }
+   ]
+  },
+  {
+   "id": "alapertek_9_3_4_tavho",
+   "cim": "9.3.4 Távhőszolgáltatás – teljesítménytényező és segédenergia",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.3.4 fejezet",
+    "oldal": 73,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Szó szerint: „Távhőszolgáltatás esetén a teljesítménytényező: εF=1,01, a villamos segédenergia igény hőközpontonként: 265 kWh/év.” A jelölés εF (fűtési index) a HMV fejezetben – vélhetően εHMV értendő. A 265 kWh/év abszolút (nem fajlagos) érték; nincs megadva, hogy közös (fűtés+HMV) hőközpont esetén hogyan osztandó meg a fűtés és a HMV között.",
+   "oszlopok": [
+    {
+     "kulcs": "parameter",
+     "cim": "paraméter",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "egység",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "parameter": "teljesítménytényező",
+     "ertek": 1.01,
+     "egyseg": "-",
+     "eredeti": "εF=1,01"
+    },
+    {
+     "parameter": "villamos segédenergia igény hőközpontonként",
+     "ertek": 265,
+     "egyseg": "kWh/év",
+     "eredeti": "265 kWh/év"
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_9",
+   "cim": "A melegvíz-tárolás fajlagos vesztesége, QHMV,tár/QHMV,net (a tároló a fűtött légtéren belül)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.4.1 fejezet, 9.9. táblázat",
+    "oldal": 73,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Értékek százalékban (QHMV,tár = érték/100 · QHMV,net). A fűtött téren belüli táblázat „> 500” sorral zárul, míg a fűtött téren kívüli (9.10.) 10000 m2-ig részletez.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr_max",
+     "cim": "Alapterületig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "indirekt",
+     "cim": "A tárolás hővesztesége a nettó melegvíz-készítési hőigény százalékában – A tároló a fűtött légtéren belül – Indirekt fűtésű tároló",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "el_csucson_kivuli",
+     "cim": "… – Csúcson kívüli árammal működő elektromos bojler",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "el_nappali",
+     "cim": "… – Nappali árammal működő elektromos bojler",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "gaz_bojler",
+     "cim": "… – Gázüzemű bojler",
+     "egyseg": "%"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr_max": 100,
+     "eredeti": "100",
+     "indirekt": 24,
+     "el_csucson_kivuli": 20,
+     "el_nappali": 13,
+     "gaz_bojler": 78
+    },
+    {
+     "A_rszr_max": 150,
+     "eredeti": "150",
+     "indirekt": 17,
+     "el_csucson_kivuli": 16,
+     "el_nappali": 10,
+     "gaz_bojler": 66
+    },
+    {
+     "A_rszr_max": 200,
+     "eredeti": "200",
+     "indirekt": 14,
+     "el_csucson_kivuli": 14,
+     "el_nappali": 8,
+     "gaz_bojler": 58
+    },
+    {
+     "A_rszr_max": 300,
+     "eredeti": "300",
+     "indirekt": 10,
+     "el_csucson_kivuli": 12,
+     "el_nappali": 7,
+     "gaz_bojler": 51
+    },
+    {
+     "A_rszr_max": 500,
+     "eredeti": "500",
+     "indirekt": 7,
+     "el_csucson_kivuli": 8,
+     "el_nappali": 6,
+     "gaz_bojler": 43
+    },
+    {
+     "A_rszr_min_kizart": 500,
+     "A_rszr_max": null,
+     "eredeti": "> 500",
+     "indirekt": 5,
+     "el_csucson_kivuli": 6,
+     "el_nappali": 5,
+     "gaz_bojler": 35
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_10",
+   "cim": "A melegvíz-tárolás fajlagos vesztesége, QHMV,tár/QHMV,net (a tároló a fűtött légtéren kívül)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.4.1 fejezet, 9.10. táblázat",
+    "oldal": 73,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Értékek százalékban. A táblázat a 73. oldalon kezdődik, a 74. oldalon folytatódik (300–10000 sorok). 10000 m2 felett nincs adat.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr_max",
+     "cim": "Alapterületig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "indirekt",
+     "cim": "A tárolás hővesztesége a nettó melegvíz-készítési hőigény százalékában – A tároló a fűtött légtéren kívül – Indirekt fűtésű tároló",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "el_csucson_kivuli",
+     "cim": "… – Csúcson kívüli árammal működő elektromos bojler",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "el_nappali",
+     "cim": "… – Nappali árammal működő elektromos bojler",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "gaz_bojler",
+     "cim": "… – Gázüzemű bojler",
+     "egyseg": "%"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr_max": 100,
+     "eredeti": "100",
+     "indirekt": 28,
+     "el_csucson_kivuli": 24,
+     "el_nappali": 16,
+     "gaz_bojler": 97
+    },
+    {
+     "A_rszr_max": 150,
+     "eredeti": "150",
+     "indirekt": 21,
+     "el_csucson_kivuli": 20,
+     "el_nappali": 12,
+     "gaz_bojler": 80
+    },
+    {
+     "A_rszr_max": 200,
+     "eredeti": "200",
+     "indirekt": 16,
+     "el_csucson_kivuli": 16,
+     "el_nappali": 10,
+     "gaz_bojler": 69
+    },
+    {
+     "A_rszr_max": 300,
+     "eredeti": "300",
+     "indirekt": 12,
+     "el_csucson_kivuli": 14,
+     "el_nappali": 8,
+     "gaz_bojler": 61
+    },
+    {
+     "A_rszr_max": 500,
+     "eredeti": "500",
+     "indirekt": 9,
+     "el_csucson_kivuli": 10,
+     "el_nappali": 6,
+     "gaz_bojler": 53
+    },
+    {
+     "A_rszr_max": 750,
+     "eredeti": "750",
+     "indirekt": 6,
+     "el_csucson_kivuli": 8,
+     "el_nappali": 5,
+     "gaz_bojler": 49
+    },
+    {
+     "A_rszr_max": 1000,
+     "eredeti": "1000",
+     "indirekt": 5,
+     "el_csucson_kivuli": 8,
+     "el_nappali": 4,
+     "gaz_bojler": 46
+    },
+    {
+     "A_rszr_max": 1500,
+     "eredeti": "1500",
+     "indirekt": 4,
+     "el_csucson_kivuli": 7,
+     "el_nappali": 4,
+     "gaz_bojler": 40
+    },
+    {
+     "A_rszr_max": 2500,
+     "eredeti": "2500",
+     "indirekt": 4,
+     "el_csucson_kivuli": 6,
+     "el_nappali": 3,
+     "gaz_bojler": 32
+    },
+    {
+     "A_rszr_max": 5000,
+     "eredeti": "5000",
+     "indirekt": 3,
+     "el_csucson_kivuli": 5,
+     "el_nappali": 2,
+     "gaz_bojler": 26
+    },
+    {
+     "A_rszr_max": 10000,
+     "eredeti": "10000",
+     "indirekt": 2,
+     "el_csucson_kivuli": 4,
+     "el_nappali": 2,
+     "gaz_bojler": 22
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_11",
+   "cim": "A melegvíz elosztó és cirkulációs vezeték fajlagos energiaigény, QHMV,száll/QHMV,net",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.5.1 fejezet, 9.11. táblázat",
+    "oldal": 74,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Értékek százalékban. A „Cirkuláció nélkül” oszlopokban csak a 100 m2-es sor ki van töltve (13 / 10); a 150 m2-től kezdődő cellák üresek (null) – nem egyértelmű, hogy 100 m2 felett is 13/10% érvényes-e, vagy cirkuláció nélküli rendszer csak 100 m2-ig értelmezett (nyitott kérdés).",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr_max",
+     "cim": "Alapterületig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "cirk_kivul",
+     "cim": "Az elosztás hővesztesége a nettó melegvíz készítési hőigény százalékában – Cirkulációval – Elosztás a fűtött téren kívül",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "cirk_belul",
+     "cim": "… – Cirkulációval – Elosztás a fűtött téren belül",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "nocirk_kivul",
+     "cim": "… – Cirkuláció nélkül – Elosztás a fűtött téren kívül",
+     "egyseg": "%"
+    },
+    {
+     "kulcs": "nocirk_belul",
+     "cim": "… – Cirkuláció nélkül – Elosztás a fűtött téren belül",
+     "egyseg": "%"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr_max": 100,
+     "eredeti": "100",
+     "cirk_kivul": 28,
+     "cirk_belul": 24,
+     "nocirk_kivul": 13,
+     "nocirk_belul": 10
+    },
+    {
+     "A_rszr_max": 150,
+     "eredeti": "150",
+     "cirk_kivul": 22,
+     "cirk_belul": 19,
+     "nocirk_kivul": null,
+     "nocirk_belul": null
+    },
+    {
+     "A_rszr_max": 200,
+     "eredeti": "200",
+     "cirk_kivul": 19,
+     "cirk_belul": 17,
+     "nocirk_kivul": null,
+     "nocirk_belul": null
+    },
+    {
+     "A_rszr_max": 300,
+     "eredeti": "300",
+     "cirk_kivul": 17,
+     "cirk_belul": 15,
+     "nocirk_kivul": null,
+     "nocirk_belul": null
+    },
+    {
+     "A_rszr_max": 500,
+     "eredeti": "500",
+     "cirk_kivul": 14,
+     "cirk_belul": 13,
+     "nocirk_kivul": null,
+     "nocirk_belul": null
+    },
+    {
+     "A_rszr_max": 750,
+     "eredeti": "750",
+     "cirk_kivul": 13,
+     "cirk_belul": 12,
+     "nocirk_kivul": null,
+     "nocirk_belul": null
+    },
+    {
+     "A_rszr_min_kizart": 750,
+     "A_rszr_max": null,
+     "eredeti": "> 750",
+     "cirk_kivul": 13,
+     "cirk_belul": 12,
+     "nocirk_kivul": null,
+     "nocirk_belul": null
+    }
+   ]
+  },
+  {
+   "id": "tabla_9_12",
+   "cim": "A cirkuláció fajlagos segédenergia igénye, WHMV,sziv_cirk/Arszr",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.6.1 fejezet, 9.12. táblázat",
+    "oldal": 75,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "641/2009/EK: tömszelence nélküli keringetőszivattyúk EEI értéke 2015. augusztus 1-jétől legfeljebb 0,23. 0,17 és 0,23 közötti, ill. 0,17 alatti EEI kezeléséről (interpoláció/kerekítés) a forrás nem rendelkezik.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr_max",
+     "cim": "Alapterületig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "EEI_nem_ismert",
+     "cim": "Fajlagos segédenergia igény [kWh/m2év] – EEI nem ismert",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "EEI_0_23",
+     "cim": "Fajlagos segédenergia igény [kWh/m2év] – EEI=0,23",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "EEI_0_17",
+     "cim": "Fajlagos segédenergia igény [kWh/m2év] – EEI=0,17",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr_max": 100,
+     "eredeti": "100",
+     "EEI_nem_ismert": 1.14,
+     "EEI_0_23": 1.06,
+     "EEI_0_17": 0.98
+    },
+    {
+     "A_rszr_max": 150,
+     "eredeti": "150",
+     "EEI_nem_ismert": 0.82,
+     "EEI_0_23": 0.73,
+     "EEI_0_17": 0.65
+    },
+    {
+     "A_rszr_max": 200,
+     "eredeti": "200",
+     "EEI_nem_ismert": 0.66,
+     "EEI_0_23": 0.55,
+     "EEI_0_17": 0.44
+    },
+    {
+     "A_rszr_max": 300,
+     "eredeti": "300",
+     "EEI_nem_ismert": 0.49,
+     "EEI_0_23": 0.38,
+     "EEI_0_17": 0.33
+    },
+    {
+     "A_rszr_max": 500,
+     "eredeti": "500",
+     "EEI_nem_ismert": 0.34,
+     "EEI_0_23": 0.26,
+     "EEI_0_17": 0.22
+    },
+    {
+     "A_rszr_max": 750,
+     "eredeti": "750",
+     "EEI_nem_ismert": 0.27,
+     "EEI_0_23": 0.2,
+     "EEI_0_17": 0.17
+    },
+    {
+     "A_rszr_max": 1000,
+     "eredeti": "1000",
+     "EEI_nem_ismert": 0.22,
+     "EEI_0_23": 0.16,
+     "EEI_0_17": 0.13
+    },
+    {
+     "A_rszr_max": 1500,
+     "eredeti": "1500",
+     "EEI_nem_ismert": 0.18,
+     "EEI_0_23": 0.13,
+     "EEI_0_17": 0.11
+    },
+    {
+     "A_rszr_max": 2500,
+     "eredeti": "2500",
+     "EEI_nem_ismert": 0.14,
+     "EEI_0_23": 0.11,
+     "EEI_0_17": 0.1
+    },
+    {
+     "A_rszr_max": 5000,
+     "eredeti": "5000",
+     "EEI_nem_ismert": 0.11,
+     "EEI_0_23": 0.09,
+     "EEI_0_17": 0.08
+    },
+    {
+     "A_rszr_min_kizart": 5000,
+     "A_rszr_max": null,
+     "eredeti": "> 5000",
+     "EEI_nem_ismert": 0.1,
+     "EEI_0_23": 0.08,
+     "EEI_0_17": 0.07
+    }
+   ]
+  },
+  {
+   "id": "keplet_9_13_szolar_szivattyu",
+   "cim": "Napkollektoros rendszer szolárköri szivattyújának szivattyúzási energiaigénye (9.13)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "9.6.1 fejezet, (9.13) egyenlet",
+    "oldal": 75,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "WHMV,sziv_szol = 2·(25 + 2·Akoll) [kWh/év] vagy [kWh/időszak]; Akoll: bruttó összes kollektor felület [m2]. Csak a 9.2.1.1 feltételeinek fennállása esetén. Az egységek a képlet szerkezetéből adódó értelmezés; a forrás csak az eredő egységet adja meg.",
+   "oszlopok": [
+    {
+     "kulcs": "konstans",
+     "cim": "konstans",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "érték",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "konstans": "szorzó",
+     "ertek": 2
+    },
+    {
+     "konstans": "alapérték",
+     "ertek": 25,
+     "egyseg": "kWh/év"
+    },
+    {
+     "konstans": "kollektorfelület-szorzó",
+     "ertek": 2,
+     "egyseg": "kWh/(m2·év)"
+    }
+   ]
+  }
+ ]
+}

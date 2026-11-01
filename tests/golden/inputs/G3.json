@@ -1,0 +1,334 @@
+{
+ "id": "G3",
+ "title": "G3 – Fűtetlen pince és garázs mellett, hőszivattyú + hővisszanyerős szellőzés + split hűtés",
+ "rooms": [
+  {
+   "name": "Lakótér",
+   "function": "Nappali",
+   "area": 96.0,
+   "height": 2.7,
+   "temp": 20,
+   "walls": [
+    {
+     "side": "N",
+     "compass": 0,
+     "x": 12.0,
+     "y": 2.7,
+     "A": 32.4,
+     "MinA": 3.18
+    },
+    {
+     "side": "E",
+     "compass": 90,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.8
+    },
+    {
+     "side": "S",
+     "compass": 180,
+     "x": 12.0,
+     "y": 2.7,
+     "A": 32.4,
+     "MinA": 12.36
+    }
+   ],
+   "windows": {
+    "S": [
+     [
+      2.4,
+      2.2,
+      2
+     ],
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "E": [
+     [
+      1.2,
+      1.5,
+      1
+     ]
+    ],
+    "N": [
+     [
+      0.9,
+      1.2,
+      1
+     ]
+    ]
+   },
+   "door": [
+    "N",
+    1.0,
+    2.1
+   ],
+   "garage_wall": {
+    "panel": "R7./ Fal fűtetlen garázs felé",
+    "x": 8.0,
+    "y": 2.7,
+    "A": 21.6,
+    "t_over": 5,
+    "Bu": 0.9
+   },
+   "roof": {
+    "panel": "R2./ Lapostető",
+    "A": 96.0
+   },
+   "basement": {
+    "panel": "R6./ Pincefödém",
+    "A": 96.0,
+    "t_over": 8,
+    "Bu": 0.5
+   }
+  }
+ ],
+ "heated_area": 96.0,
+ "systems": {
+  "heating": {
+   "gen": [
+    {
+     "CkType": 12,
+     "energy": 9,
+     "share": 1
+    }
+   ],
+   "SystemType": 1,
+   "qfvType": 7,
+   "qftType": 4,
+   "EfszType": 9,
+   "Efsz2Type": 4,
+   "RegPart": [
+    2,
+    0,
+    1,
+    2,
+    7
+   ],
+   "desc": "Levegő-víz hőszivattyú, padlófűtés 35/28, puffer nélkül"
+  },
+  "dhw": {
+   "gen": [
+    {
+     "CkType": 23,
+     "energy": 9,
+     "share": 1
+    }
+   ],
+   "qfvType": 3,
+   "qftType": 0,
+   "EcType": 3,
+   "BuildingCategory": 0,
+   "desc": "Hőszivattyú indirekt HMV-tárolóval, cirkuláció nélkül"
+  },
+  "airing": {
+   "n": 0.5,
+   "eta": 85,
+   "dp": 150,
+   "fan_eff": 50,
+   "fszType": 3
+  },
+  "cooling": {
+   "CkType": 0,
+   "eszabType": 7,
+   "cHType": 2
+  }
+ },
+ "iso": null,
+ "materials_used": {
+  "Mészcementvakolat": {
+   "rho": 1700,
+   "lambda": 0.87,
+   "c_kJkgK": 0.88,
+   "mu": 10
+  },
+  "Kerámia falazóblokk 30 (teszt)": {
+   "rho": 800,
+   "lambda": 0.184,
+   "c_kJkgK": 0.92,
+   "mu": 6
+  },
+  "EPS homlokzati hőszigetelés": {
+   "rho": 20,
+   "lambda": 0.039,
+   "c_kJkgK": 1.46,
+   "mu": 30
+  },
+  "Vékonyvakolat": {
+   "rho": 1600,
+   "lambda": 0.7,
+   "c_kJkgK": 0.88,
+   "mu": 15
+  },
+  "Vasbeton": {
+   "rho": 2400,
+   "lambda": 1.55,
+   "c_kJkgK": 0.84,
+   "mu": 80
+  },
+  "EPS 100 lapostető": {
+   "rho": 20,
+   "lambda": 0.035,
+   "c_kJkgK": 1.46,
+   "mu": 30
+  },
+  "Bitumenes lemez": {
+   "rho": 1100,
+   "lambda": 0.17,
+   "c_kJkgK": 1.46,
+   "mu": 20000
+  },
+  "Cementesztrich": {
+   "rho": 2000,
+   "lambda": 1.4,
+   "c_kJkgK": 0.84,
+   "mu": 20
+  },
+  "XPS": {
+   "rho": 35,
+   "lambda": 0.035,
+   "c_kJkgK": 1.46,
+   "mu": 100
+  },
+  "Kerámia burkolat": {
+   "rho": 2300,
+   "lambda": 1.05,
+   "c_kJkgK": 0.84,
+   "mu": 200
+  },
+  "Ásványgyapot": {
+   "rho": 30,
+   "lambda": 0.037,
+   "c_kJkgK": 0.84,
+   "mu": 1
+  },
+  "Kőzetgyapot lamella": {
+   "rho": 80,
+   "lambda": 0.04,
+   "c_kJkgK": 0.84,
+   "mu": 1
+  }
+ },
+ "panels": {
+  "R1./ Külső fal": {
+   "type": "OutsideWall",
+   "code": 0,
+   "Rsi": 0.13,
+   "Rse": 0.04,
+   "layers": [
+    {
+     "name": "Vékonyvakolat",
+     "d_cm": 0.5
+    },
+    {
+     "name": "EPS homlokzati hőszigetelés",
+     "d_cm": 15
+    },
+    {
+     "name": "Kerámia falazóblokk 30 (teszt)",
+     "d_cm": 30
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  },
+  "R2./ Lapostető": {
+   "type": "Roof1",
+   "code": 3,
+   "Rsi": 0.1,
+   "Rse": 0.04,
+   "gradient": 0,
+   "layers": [
+    {
+     "name": "Bitumenes lemez",
+     "d_cm": 1
+    },
+    {
+     "name": "EPS 100 lapostető",
+     "d_cm": 25
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 20
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  },
+  "R6./ Pincefödém": {
+   "type": "Roof3",
+   "code": 5,
+   "Rsi": 0.17,
+   "Rse": 0.17,
+   "layers": [
+    {
+     "name": "Kerámia burkolat",
+     "d_cm": 1
+    },
+    {
+     "name": "Cementesztrich",
+     "d_cm": 6
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 20
+    },
+    {
+     "name": "Kőzetgyapot lamella",
+     "d_cm": 15
+    }
+   ]
+  },
+  "R7./ Fal fűtetlen garázs felé": {
+   "type": "InsideWall1",
+   "code": 18,
+   "Rsi": 0.13,
+   "Rse": 0.13,
+   "layers": [
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    },
+    {
+     "name": "Kerámia falazóblokk 30 (teszt)",
+     "d_cm": 30
+    },
+    {
+     "name": "EPS homlokzati hőszigetelés",
+     "d_cm": 8
+    },
+    {
+     "name": "Vékonyvakolat",
+     "d_cm": 0.5
+    }
+   ]
+  }
+ },
+ "panel_U_hand": {
+  "R1./ Külső fal": 0.176,
+  "R2./ Lapostető": 0.134,
+  "R6./ Pincefödém": 0.234,
+  "R7./ Fal fűtetlen garázs felé": 0.252
+ },
+ "window": {
+  "name": "Ablak",
+  "Ug": 0.6,
+  "g": 0.5,
+  "Uf": 1.0,
+  "frame_mm": 110,
+  "glass": "3 rétegű 4-14-4-14-4 argon (teszt)",
+  "frame": "PVC 82 mm (teszt)"
+ },
+ "door": {
+  "name": "Bejárati ajtó",
+  "U": 1.4
+ }
+}

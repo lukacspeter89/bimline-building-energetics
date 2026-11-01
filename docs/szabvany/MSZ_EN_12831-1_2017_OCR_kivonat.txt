@@ -1,0 +1,113 @@
+EN 12831-1:2017 (E)
+Energy performance of buildings — Method for calculation of the design heat load — Part 1: Space heating load, Module M3-3
+Contents
+European foreword
+Introduction
+1 Scope
+2 Normative references
+3 Terms and definitions
+4 Symbols and abbreviations
+4.1 Symbols
+4.2 Subscripts
+5 Description of the methods
+6 Standard method — Heat load of rooms, building entities and buildings
+6.1 Output data
+6.2 Input data
+6.3 Calculation procedure
+6.3.1 Design heat load
+6.3.2 Design transmission heat losses of a heated space (i)
+6.3.3 Design ventilation heat loss
+6.3.4 Additional heating-up power in intermittently heated spaces
+6.3.5 Time constant
+6.3.6 Heat transfer coefficients without temperature adjustment
+6.3.7 External design temperature (climatic data)
+6.3.8 Influence of the heat emission system in high rooms (ceiling height ≥ 4 m)
+7 Simplified method for the calculation of the design heat load of a heated space (single rooms)
+7.1 Output data
+7.2 Input data
+7.3 Calculation procedure
+8 Simplified method for the calculation of the building design heat load
+8.1 Output data
+8.2 Input data
+8.3 Calculation procedure
+9 Compliance check
+Annex A (normative) Input data, structure for default values
+Annex B (informative) Input data, default values
+Annex C (informative) Detailed consideration of thermal bridges
+Annex D (informative) Internal temperatures of adjacent building entities or adjacent unheated spaces within the same building
+Annex E (informative) Equivalent thermal transmittance of building elements against ground
+Annex F (informative) Estimation of heating-up power in intermittently heated spaces
+Annex G (informative) External air volume flow through large openings
+Bibliography
+1 Scope
+This European Standard covers methods for the calculation of the design heat load for single rooms, building entities and buildings, where the design heat load is defined as the heat supply (power) needed to maintain the required internal design temperature under design external conditions.
+3 Terms and Definitions
+ATD, air terminal device: air out-/inlets allowing air transfer between external and internal air (external ATD) or between separate rooms (internal ATD).
+balanced ventilation: fan-assisted ventilation where the sum of all supply air volume flows equals the sum of all exhausted air volume flows in quantity and over the course of time.
+building entity: certain portion of a building (one or more rooms) used as one unit by one party/occupant (e.g., apartment, office unit).
+design heat load: heat flow (power) required to achieve the specified internal design temperature under external design conditions.
+heated space: space which, per design, is heated to the specified internal design temperature and separated from other spaces by building elements.
+unbalanced ventilation: fan-assisted ventilation where the sums of all supply air volume flows and all exhausted air volume flows differ significantly.
+6 Standard Method — Calculation Procedure
+6.3.1 Design Heat Load
+Building (build):
+ΦHL,build = ∑i (ΦT,ie + ΦT,iae + ΦT,ig) + ΦV,build + ∑i (Φhu,i) - ∑i (Φgain,i)
+Building entity (BE):
+ΦHL,BE = ∑i (ΦT,ie + ΦT,iae + ΦT,iaBE + ΦT,ig) + ΦV,BE + ∑i (Φhu,i) - ∑i (Φgain,i)
+Heated space (i):
+ΦHL,i = ΦT,i + ΦV,i + Φhu,i - Φgain,i
+6.3.2 Design Transmission Heat Losses
+Total design transmission heat loss:
+ΦT,i = (HT,ie + HT,ia + HT,iae + HT,iaBE + HT,ig) · (θint,i - θe)
+Directly to the exterior:
+HT,ie = ∑k [Ak · (Uk + ΔUTB) · fU,k · fie,k]
+Through the ground:
+HT,ig = fθ,ann · ∑k [Ak · Uequiv,k · fig,k · fGW,k]
+6.3.3 Design Ventilation Heat Loss
+Simplified calculation in air-tight buildings:
+ΦV,i = ρ · cp · qv,min,i · (θint,i - θe)
+6.3.5 Building Time Constant
+τ = Ceff / H
+Ceff = ceff · Ve
+7 & 8 Simplified Methods
+Simplified Room Heat Loss
+ΦV,i = Vi · n · (ρa · cp,a) · (θint,i - θe)
+where ρa · cp,a = 0.34 Wh/(m³·K).
+Simplified Building Heat Load
+ΦHL,build = ΦT,build + ΦV,build
+ΦT,build = ∑k [Ak · (Uk + ΔUTB) · fx,k] · (θint,build - θe)
+Annex B — Key Default Values
+Parameter
+Selection Criteria / Category
+Default Value
+Unit
+ 
+ΔUTB (Thermal bridges)
+New buildings, attested minimization
+0.02
+W/(m²·K)
+ΔUTB (Thermal bridges)
+New buildings, generally recognized rules
+0.05
+W/(m²·K)
+ΔUTB (Thermal bridges)
+Internal insulation broken by solid ceilings
+0.15
+W/(m²·K)
+ΔUTB (Thermal bridges)
+All other buildings
+0.10
+W/(m²·K)
+fθ,ann
+Annual variation factor (ground)
+1.45
+-
+ρ · cp
+Specific heat capacity & density product of air
+0.34
+Wh/(m³·K)
+nmin
+Living rooms, offices, kitchens, bathrooms (with windows)
+0.5
+h-1
+

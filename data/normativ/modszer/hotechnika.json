@@ -1,0 +1,693 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_4_1",
+   "cim": "A felületi hőátadási ellenállás értékei (MSZ EN ISO 6946)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4.1.2 fejezet, 4.1. táblázat",
+    "oldal": 24,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Általános esetben, mindkét oldalon levegővel érintkező szerkezet esetén használhatóak. A vízszintes irányhoz tartozó értékek alkalmazhatóak a vízszintes síktól ±30°-os szögig. Nem sík felületek, alacsony emissziós tényezőjű felületek, speciális peremfeltételek esetén MSZ EN ISO 6946 (vagy egyenértékű) szerint. Belső szerkezetek, ill. fűtött és fűtetlen tereket elválasztó szerkezetek esetén mindkét oldalon R_si (4.1, 23. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "jeloles",
+     "cim": "Felületi hőátadási ellenállás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "felfele",
+     "cim": "A hőáram iránya: Felfelé",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "vizszintes",
+     "cim": "A hőáram iránya: Vízszintes",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "lefele",
+     "cim": "A hőáram iránya: Lefelé",
+     "egyseg": "m2K/W"
+    }
+   ],
+   "sorok": [
+    {
+     "jeloles": "R_si",
+     "felfele": 0.1,
+     "vizszintes": 0.13,
+     "lefele": 0.17
+    },
+    {
+     "jeloles": "R_se",
+     "felfele": 0.04,
+     "vizszintes": 0.04,
+     "lefele": 0.04
+    }
+   ]
+  },
+  {
+   "id": "tabla_4_2",
+   "cim": "Zárt, nagy emissziós tényezőjű felületekkel határolt légrétegek hővezetési ellenállása (MSZ EN ISO 6946)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4.1.3 fejezet, 4.2. táblázat",
+    "oldal": 25,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "MEGJEGYZÉS: A közbenső értékek lineáris interpolációval számíthatók. A vízszintes irányhoz tartozó értékek a vízszintes síktól ±30°-os szögig használhatók. Alkalmazási feltételek (egyszerűsített módszer, 4.1.3 b)): min. 0,8 emissziós tényezőjű párhuzamos határoló felületek a hőáramra merőlegesen, vastagság ≤ a másik két irányú méret 0,1-szerese, d ≤ 0,3 m, nincs kapcsolat a belső környezettel; zártnak tekintendő, ha a nyílások ≤ 500 mm2 / fm (függőleges) ill. ≤ 500 mm2 / m2 (vízszintes).",
+   "oszlopok": [
+    {
+     "kulcs": "d_mm",
+     "cim": "A légréteg vastagsága",
+     "egyseg": "mm"
+    },
+    {
+     "kulcs": "felfele",
+     "cim": "Hővezetési ellenállás, hőáram iránya: Felfelé",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "vizszintes",
+     "cim": "Vízszintes",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "lefele",
+     "cim": "Lefelé",
+     "egyseg": "m2K/W"
+    }
+   ],
+   "sorok": [
+    {
+     "d_mm": 0,
+     "felfele": 0.0,
+     "vizszintes": 0.0,
+     "lefele": 0.0
+    },
+    {
+     "d_mm": 5,
+     "felfele": 0.11,
+     "vizszintes": 0.11,
+     "lefele": 0.11
+    },
+    {
+     "d_mm": 7,
+     "felfele": 0.13,
+     "vizszintes": 0.13,
+     "lefele": 0.13
+    },
+    {
+     "d_mm": 10,
+     "felfele": 0.15,
+     "vizszintes": 0.15,
+     "lefele": 0.15
+    },
+    {
+     "d_mm": 15,
+     "felfele": 0.16,
+     "vizszintes": 0.17,
+     "lefele": 0.17
+    },
+    {
+     "d_mm": 25,
+     "felfele": 0.16,
+     "vizszintes": 0.18,
+     "lefele": 0.19
+    },
+    {
+     "d_mm": 50,
+     "felfele": 0.16,
+     "vizszintes": 0.18,
+     "lefele": 0.21
+    },
+    {
+     "d_mm": 100,
+     "felfele": 0.16,
+     "vizszintes": 0.18,
+     "lefele": 0.22
+    },
+    {
+     "d_mm": 300,
+     "felfele": 0.16,
+     "vizszintes": 0.18,
+     "lefele": 0.23
+    }
+   ]
+  },
+  {
+   "id": "tabla_4_3",
+   "cim": "Árnyékoló szerkezetek légáteresztése",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4.3.3 fejezet, 4.3. táblázat",
+    "oldal": 30,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "b_eth = b_ha + b_hf + b_ho (4.19). ANOMÁLIA: a 4. osztály feltétele a forrásban 'beth ≥ 8', ami átfed az 1–3. osztállyal, és a 3 < b_eth < 8 tartomány egyik osztályba sem esik; valószínűleg '3 < beth < 8' (vagy ≤ 8) lenne helyes – NEM javítottuk, szó szerint átvéve.",
+   "oszlopok": [
+    {
+     "kulcs": "osztaly",
+     "cim": "Osztály",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "legatereszto_kepesseg",
+     "cim": "Árnyékoló szerkezet légáteresztő képessége",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "b_eth",
+     "cim": "b_eth",
+     "egyseg": "mm"
+    }
+   ],
+   "sorok": [
+    {
+     "osztaly": 1,
+     "legatereszto_kepesseg": "nagyon magas",
+     "b_eth": {
+      "eredeti": "beth ≥ 35",
+      "min": 35,
+      "min_zart": true,
+      "max": null
+     }
+    },
+    {
+     "osztaly": 2,
+     "legatereszto_kepesseg": "magas",
+     "b_eth": {
+      "eredeti": "15 ≤ beth < 35",
+      "min": 15,
+      "min_zart": true,
+      "max": 35,
+      "max_zart": false
+     }
+    },
+    {
+     "osztaly": 3,
+     "legatereszto_kepesseg": "átlagos",
+     "b_eth": {
+      "eredeti": "8 ≤ beth < 15",
+      "min": 8,
+      "min_zart": true,
+      "max": 15,
+      "max_zart": false
+     }
+    },
+    {
+     "osztaly": 4,
+     "legatereszto_kepesseg": "alacsony",
+     "b_eth": {
+      "eredeti": "beth ≥ 8",
+      "min": 8,
+      "min_zart": true,
+      "max": null
+     }
+    },
+    {
+     "osztaly": 5,
+     "legatereszto_kepesseg": "légtömör",
+     "b_eth": {
+      "eredeti": "beth ≤ 3 és bha+bho=0 vagy bhf+bho=0",
+      "min": null,
+      "max": 3,
+      "max_zart": true,
+      "tovabbi_feltetel": "b_ha+b_ho=0 vagy b_hf+b_ho=0"
+     }
+    }
+   ]
+  },
+  {
+   "id": "tabla_4_4",
+   "cim": "Zárt árnyékoló szerkezetek többlet hővezetési ellenállása, ha az árnyékoló szerkezet hővezetési ellenállása ismert",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4.3.3 fejezet, 4.4. táblázat",
+    "oldal": 31,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Az a/b felbontás az eredeti képletek gépi átírása (1. osztály: ΔR = 0,08 állandó).",
+   "oszlopok": [
+    {
+     "kulcs": "osztaly",
+     "cim": "Árnyékoló szerkezetek légáteresztési osztálya",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eredeti",
+     "cim": "Többlet hővezetési ellenállás ΔR (eredeti szöveg)",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "a",
+     "cim": "ΔR = a·R_árny + b: a szorzó",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "b",
+     "cim": "ΔR = a·R_árny + b: konstans",
+     "egyseg": "m2K/W"
+    }
+   ],
+   "sorok": [
+    {
+     "osztaly": 1,
+     "eredeti": "0,08",
+     "a": 0,
+     "b": 0.08
+    },
+    {
+     "osztaly": 2,
+     "eredeti": "0,25 Rárny + 0,09",
+     "a": 0.25,
+     "b": 0.09
+    },
+    {
+     "osztaly": 3,
+     "eredeti": "0,55 Rárny + 0,11",
+     "a": 0.55,
+     "b": 0.11
+    },
+    {
+     "osztaly": 4,
+     "eredeti": "0,80 Rárny + 0,14",
+     "a": 0.8,
+     "b": 0.14
+    },
+    {
+     "osztaly": 5,
+     "eredeti": "0,95 Rárny + 0,17",
+     "a": 0.95,
+     "b": 0.17
+    }
+   ]
+  },
+  {
+   "id": "tabla_4_5",
+   "cim": "Zárt árnyékoló szerkezetek többlet hővezetési ellenállása",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4.3.3 fejezet, 4.5. táblázat",
+    "oldal": 31,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Akkor alkalmazható (közelítő értékek), ha a zárt árnyékoló szerkezet hővezetési ellenállása nem ismert. Megjegyzés: a 4.5. táblázat 1-2. osztályra adott értékei nem esnek egybe a 4.4. táblázat 1. osztályú 0,08 értékével (pl. Al redőny 0,09) – a két táblázat összevont osztályai miatt eltérés lehetséges.",
+   "oszlopok": [
+    {
+     "kulcs": "tipus",
+     "cim": "Árnyékoló szerkezet típusa",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "R_arny",
+     "cim": "Árnyékoló szerkezet átlagos hővezetési ellenállása, Rárny",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "dR_1_2",
+     "cim": "Többlet hővezetési ellenállás ΔR, 1-2 osztály",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "dR_3",
+     "cim": "ΔR, 3 osztály",
+     "egyseg": "m2K/W"
+    },
+    {
+     "kulcs": "dR_4_5",
+     "cim": "ΔR, 4-5 osztály",
+     "egyseg": "m2K/W"
+    }
+   ],
+   "sorok": [
+    {
+     "tipus": "Alumínium redőny",
+     "R_arny": 0.01,
+     "dR_1_2": 0.09,
+     "dR_3": 0.12,
+     "dR_4_5": 0.15
+    },
+    {
+     "tipus": "Fa vagy műanyag redőny habkitöltés nélküli lamellákkal",
+     "R_arny": 0.1,
+     "dR_1_2": 0.12,
+     "dR_3": 0.16,
+     "dR_4_5": 0.22
+    },
+    {
+     "tipus": "Redőny habkitöltéses lamellákkal",
+     "R_arny": 0.15,
+     "dR_1_2": 0.13,
+     "dR_3": 0.19,
+     "dR_4_5": 0.26
+    },
+    {
+     "tipus": "25-30 mm-es fa lamellák",
+     "R_arny": 0.2,
+     "dR_1_2": 0.14,
+     "dR_3": 0.22,
+     "dR_4_5": 0.3
+    }
+   ]
+  },
+  {
+   "id": "tabla_4_6",
+   "cim": "Talajok jellemző hőtechnikai adatai",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4.4.1 fejezet, 4.6. táblázat",
+    "oldal": 32,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Ha a talaj típusa nem ismert, a 2. típus jellemzőit kell figyelembe venni (4.4.1). Ha az ágyazat (pl. zúzottkő, kavicsfeltöltés) jellemzői nem ismertek, a 2. típust kell figyelembe venni, vagy az ágyazat hővezetési ellenállását el kell hanyagolni. Eredeti cellák: '3,0 · 10^6', '2,0 · 10^6'.",
+   "oszlopok": [
+    {
+     "kulcs": "talajtipus",
+     "cim": "Talajtípus",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "leiras",
+     "cim": "Leírás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "lambda_talaj",
+     "cim": "Hővezetési tényező λtalaj",
+     "egyseg": "W/(m·K)"
+    },
+    {
+     "kulcs": "rho_c",
+     "cim": "Térfogatra vonatkoztatott hőkapacitás ρc",
+     "egyseg": "J/(m3·K)"
+    }
+   ],
+   "sorok": [
+    {
+     "talajtipus": 1,
+     "leiras": "Agyag, iszap",
+     "lambda_talaj": 1.5,
+     "rho_c": 3000000.0
+    },
+    {
+     "talajtipus": 2,
+     "leiras": "Homok, kavics",
+     "lambda_talaj": 2.0,
+     "rho_c": 2000000.0
+    },
+    {
+     "talajtipus": 3,
+     "leiras": "Homogén kő",
+     "lambda_talaj": 3.5,
+     "rho_c": 2000000.0
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_4",
+   "cim": "A 4. fejezet szövegében megadott számszerű alapértékek és küszöbök (gyűjtött táblázat)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "4. fejezet, szövegközi értékek",
+    "oldal": "23-34",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Nem a forrásban szereplő táblázat; a folyószövegben szereplő konstansok gépi gyűjtése, mindegyik hivatkozással.",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Azonosító",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "leiras",
+     "cim": "Leírás / alkalmazás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "hely",
+     "cim": "Fejezet, egyenlet",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "Oldal",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "dU2_szint2",
+     "ertek": 0.04,
+     "egyseg": "W/m2K",
+     "leiras": "ΔU'' légüreg-korrekció, 2. szint: átmenő illesztési hézagok/légüregek miatt a hőszigetelés hideg és meleg oldala között szabad légáramlás alakulhat ki",
+     "hely": "4.1.6, (4.12)",
+     "oldal": 27
+    },
+    {
+     "kulcs": "dU2_szint1",
+     "ertek": 0.01,
+     "egyseg": "W/m2K",
+     "leiras": "ΔU'' légüreg-korrekció, 1. szint: van átmenő hézag, de légáramlás nem jöhet létre; általános esetben ezt kell figyelembe venni",
+     "hely": "4.1.6, (4.12)",
+     "oldal": 27
+    },
+    {
+     "kulcs": "dU2_lepcsozetes",
+     "ertek": 0,
+     "egyseg": "W/m2K",
+     "leiras": "Lépcsőzetesen eltolt, egynél több rétegben beépített hőszigetelés: nincs szükség légüreg-korrekcióra",
+     "hely": "4.1.6",
+     "oldal": 27
+    },
+    {
+     "kulcs": "alpha_atmeno",
+     "ertek": 0.8,
+     "egyseg": "-",
+     "leiras": "α, ha a rögzítőelem teljesen áthatol a szigetelésen",
+     "hely": "4.1.6, (4.13)",
+     "oldal": 27
+    },
+    {
+     "kulcs": "alpha_sullyesztett_szorzo",
+     "ertek": 0.8,
+     "egyseg": "-",
+     "leiras": "α = 0,8 × d1/d0, ha a rögzítőelem süllyesztett",
+     "hely": "4.1.6, (4.13)",
+     "oldal": 27
+    },
+    {
+     "kulcs": "lambda_rogz_kuszob",
+     "ertek": 1,
+     "egyseg": "W/mK",
+     "leiras": "Nem kell rögzítőelem-korrekció, ha λ_rögz < 1 W/mK; a rögzítőelem területénél az 1 W/mK-nél nagyobb hővezetési tényezőjű részt kell figyelembe venni",
+     "hely": "4.1.6",
+     "oldal": 28
+    },
+    {
+     "kulcs": "dU_elhanyagolasi_hatar",
+     "ertek": 0.03,
+     "egyseg": "-",
+     "leiras": "ΔU elhanyagolható, ha kisebb, mint a számított hőátbocsátási tényező 3%-a",
+     "hely": "4.1.6",
+     "oldal": 27
+    },
+    {
+     "kulcs": "forditott_teto_p",
+     "ertek": 1.3,
+     "egyseg": "mm/nap",
+     "leiras": "Fordított tető korrekció (MSZ EN ISO 6946 F melléklet) feltételezett csapadék p értéke",
+     "hely": "4.1.6",
+     "oldal": 28
+    },
+    {
+     "kulcs": "legreteg_max_vastagsag",
+     "ertek": 0.3,
+     "egyseg": "m",
+     "leiras": "Ennél vastagabb (d > 0,3 m) légréteg a U-értékben nem vehető figyelembe, hőegyensúly alapján kell számolni",
+     "hely": "4.1.3 a)",
+     "oldal": 24
+    },
+    {
+     "kulcs": "legreteg_min_emisszio",
+     "ertek": 0.8,
+     "egyseg": "-",
+     "leiras": "Egyszerűsített légréteg-módszer: határoló felületek min. emissziós tényezője",
+     "hely": "4.1.3 b)",
+     "oldal": 24
+    },
+    {
+     "kulcs": "legreteg_max_vastagsag_arany",
+     "ertek": 0.1,
+     "egyseg": "-",
+     "leiras": "Egyszerűsített légréteg-módszer: vastagság ≤ a másik két irányú méret bármelyikének 0,1-szerese",
+     "hely": "4.1.3 b)",
+     "oldal": 24
+    },
+    {
+     "kulcs": "legreteg_szog_tures",
+     "ertek": 30,
+     "egyseg": "°",
+     "leiras": "A vízszintes irányhoz tartozó értékek a vízszintes síktól ±30°-ig",
+     "hely": "4.1.2, 4.1.3",
+     "oldal": 24
+    },
+    {
+     "kulcs": "A_szell_zart_max",
+     "ertek": 500,
+     "egyseg": "mm2",
+     "leiras": "Zárt légréteg: nyílások ≤ 500 mm2 / fm alapél (függőleges) ill. / m2 (vízszintes)",
+     "hely": "4.1.3",
+     "oldal": 24
+    },
+    {
+     "kulcs": "A_szell_intenziv_min",
+     "ertek": 1500,
+     "egyseg": "mm2",
+     "leiras": "Intenzíven kiszellőztetett légréteg: A_szell ≥ 1500 mm2 / 1 m alapél (függőleges) ill. / 1 m2 (vízszintes); köztes (500<A<1500): kismértékben kiszellőztetett",
+     "hely": "4.1.3, (4.4)",
+     "oldal": 25
+    },
+    {
+     "kulcs": "inhomogen_felso_also_arany_max",
+     "ertek": 1.5,
+     "egyseg": "-",
+     "leiras": "Egyszerűsített inhomogén-réteg módszer nem alkalmazható, ha R_tot,felső/R_tot,alsó > 1,5",
+     "hely": "4.1.4 b)",
+     "oldal": 25
+    },
+    {
+     "kulcs": "lejtes_max_6946E",
+     "ertek": 0.05,
+     "egyseg": "-",
+     "leiras": "Változó vastagságú réteg: MSZ EN ISO 6946 E melléklet 5% lejtésig; felette numerikus modellezés",
+     "hely": "4.1.5 a)",
+     "oldal": 26
+    },
+    {
+     "kulcs": "U_ny_t_suly_U",
+     "ertek": 0.7,
+     "egyseg": "-",
+     "leiras": "U_Ny,t = 0,7·U_Ny + 0,3·1/(1/U_Ny+ΔR): U_Ny súlya",
+     "hely": "4.3.3, (4.18)",
+     "oldal": 30
+    },
+    {
+     "kulcs": "U_ny_t_suly_arnyekolo",
+     "ertek": 0.3,
+     "egyseg": "-",
+     "leiras": "(4.18) árnyékolóval csökkentett tag súlya",
+     "hely": "4.3.3, (4.18)",
+     "oldal": 30
+    },
+    {
+     "kulcs": "talaj_numerikus_melyseg",
+     "ertek": -20,
+     "egyseg": "m",
+     "leiras": "Részletes talajmodell: -20 m-es mélységben +10 °C talajhőmérséklet",
+     "hely": "4.4 a)",
+     "oldal": 31
+    },
+    {
+     "kulcs": "talaj_numerikus_homerseklet",
+     "ertek": 10,
+     "egyseg": "°C",
+     "leiras": "Részletes talajmodell: talajhőmérséklet -20 m mélységben",
+     "hely": "4.4 a)",
+     "oldal": 31
+    },
+    {
+     "kulcs": "talaj_alapertelmezett_tipus",
+     "ertek": 2,
+     "egyseg": "-",
+     "leiras": "Ismeretlen talajtípus esetén a 4.6. táblázat 2. típusa",
+     "hely": "4.4.1",
+     "oldal": 31
+    },
+    {
+     "kulcs": "B_karakterisztikus_kerulet_szorzo",
+     "ertek": 0.5,
+     "egyseg": "-",
+     "leiras": "B = A/(0,5·P)",
+     "hely": "4.4.2, (4.20)",
+     "oldal": 32
+    },
+    {
+     "kulcs": "terepszint_kozeli_tures",
+     "ertek": 0.5,
+     "egyseg": "m",
+     "leiras": "Terepszint közelében fekvő padló: ±0,5 m szintkülönbségen belül, ekkor z = 0",
+     "hely": "4.4.2",
+     "oldal": 33
+    },
+    {
+     "kulcs": "U_Tp_jol_szigetelt_B_szorzo",
+     "ertek": 0.457,
+     "egyseg": "-",
+     "leiras": "(4.23) nevezőjében B szorzója",
+     "hely": "4.4.2, (4.23)",
+     "oldal": 33
+    },
+    {
+     "kulcs": "terepszint_feletti_padlo_max_terulet",
+     "ertek": 250,
+     "egyseg": "m2",
+     "leiras": "4.4.3 (4.24) alkalmazhatósága: padló területe ≤ 250 m2",
+     "hely": "4.4.3",
+     "oldal": 33
+    },
+    {
+     "kulcs": "terepszint_feletti_padlo_min_m",
+     "ertek": 0.5,
+     "egyseg": "m",
+     "leiras": "4.4.3 (4.24) alkalmazhatósága: m > 0,5 m",
+     "hely": "4.4.3",
+     "oldal": 33
+    },
+    {
+     "kulcs": "reszleges_pince_melyseg_szorzo",
+     "ertek": 0.5,
+     "egyseg": "-",
+     "leiras": "Részlegesen alápincézett épület közelítés: teljesen alápincézett, mélység = tényleges mélység fele",
+     "hely": "4.4.4",
+     "oldal": 34
+    },
+    {
+     "kulcs": "panel_evszam_hatar",
+     "ertek": 1992,
+     "egyseg": "év",
+     "leiras": "Az 1992 előtt épült házgyári panelos rendszerek U-értéke a 2. Függelék 4.3. pont szerint",
+     "hely": "4.1.7",
+     "oldal": 28
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+ "eset": "G1",
+ "forras": "WinWatt fecske 9.58 (2026.06.08) – XML import után a GUI-lépések a README szerint, 2026-10-29",
+ "oeny_etanusitas": {
+  "besorolas_Ep": "B",
+  "besorolas_CO2": "B",
+  "hasznos_alapterulet_m2": 96.0,
+  "kondicionalt_terfogat_m3": 259.2,
+  "AV_arany": 1.16,
+  "megujulo_arany_pct": 0.76,
+  "Ep_kWh_m2a": 88.2,
+  "Ep_szazalek": 116.0,
+  "CO2_kg_m2a": 23.39,
+  "CO2_szazalek": 117.0,
+  "q_fajlagos_hoveszteseg_W_m3K": 0.13,
+  "kovetelmeny_felujitas_Ep": 144.3,
+  "kovetelmeny_felujitas_q": 0.47,
+  "kovetelmeny_kozel_nulla_Ep": 76.0,
+  "kovetelmeny_kozel_nulla_CO2": 20.0,
+  "kovetelmeny_kozel_nulla_q": 0.34,
+  "futesi_rendszer_minosites": "Good",
+  "hmv_rendszer_minosites": "Good",
+  "szerkezetek": [
+   {
+    "tipus": "FacadeWall",
+    "minosites": "Good",
+    "U": 0.176,
+    "felulet_m2": 92.9
+   },
+   {
+    "tipus": "FlatRoof",
+    "minosites": "Good",
+    "U": 0.134,
+    "felulet_m2": 96.0
+   },
+   {
+    "tipus": "FacadeOpeningsWithWoodenOrPvcFrames",
+    "minosites": "Excellent",
+    "U": 0.718,
+    "felulet_m2": 13.0
+   },
+   {
+    "tipus": "DoorBetweenFacadeOrHeatedAndUnheatedSpaces",
+    "minosites": "Good",
+    "U": 1.4,
+    "felulet_m2": 2.1
+   },
+   {
+    "tipus": "GroundLevelFloorInNewBuildings",
+    "minosites": "Excellent",
+    "U": 0.151,
+    "felulet_m2": 96.0
+   }
+  ],
+  "energiahordozok_kWh_m2a": {
+   "Fossil/Gas": 83.21,
+   "NetworkElectricity": 2.53,
+   "ActiveRenewablePrimaryEnergy": 0.76,
+   "ProducedRemotely": 0.76,
+   "PassiveRenewablePrimaryEnergy": 22.65,
+   "NonRenewablePrimaryEnergy": 88.2,
+   "CarbonDioxideEmissions": 23.39,
+   "AnnualHeatingEnergyNeeds": 40.75
+  },
+  "felhasznalas_celonkent_kWh_m2a": {
+   "Fossil/Gas/Heating": 44.02,
+   "Fossil/Gas/HotWater": 39.19,
+   "NetworkElectricity/Heating": 2.23,
+   "NetworkElectricity/HotWater": 0.3,
+   "ActiveRenewablePrimaryEnergy/Heating": 0.67,
+   "ActiveRenewablePrimaryEnergy/HotWater": 0.09,
+   "ProducedRemotely/Heating": 0.67,
+   "ProducedRemotely/HotWater": 0.09,
+   "PassiveRenewablePrimaryEnergy/Heating": 22.65,
+   "NonRenewablePrimaryEnergy/Heating": 48.71,
+   "NonRenewablePrimaryEnergy/HotWater": 39.49,
+   "CarbonDioxideEmissions/Heating": 12.78,
+   "CarbonDioxideEmissions/HotWater": 10.61
+  },
+  "alternativ_energiak": []
+ },
+ "winwatt_projekt": {
+  "panelek": {
+   "Ablak": {
+    "Type": "ablak (külső, fa vagy PVC)",
+    "k": 0.73,
+    "kFromLayers": null
+   },
+   "Bejárati ajtó": {
+    "Type": "ajtó (külső)",
+    "k": 1.4,
+    "kFromLayers": null
+   },
+   "R1./ Külső fal": {
+    "Type": "külső fal",
+    "k": 0.176,
+    "kFromLayers": 0.17634
+   },
+   "R2./ Lapostető": {
+    "Type": "tető",
+    "k": 0.134,
+    "kFromLayers": 0.13355
+   },
+   "R3./ Talajon fekvő padló": {
+    "Type": "padló (talajra fektetett ISO 13370)",
+    "k": 0.217,
+    "kFromLayers": 0.2168
+   }
+  },
+  "helyisegek": {
+   "Lakótér": {
+    "Area": 96.0,
+    "Height": 2.7,
+    "CalculatedVolume": 259.2,
+    "TransPower_W": 2098.0,
+    "FiltPower_W": 1542.0,
+    "Power_W": 3640.0,
+    "hatarolok": [
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 32.4,
+      "U": 0.176,
+      "Compass": 0.0,
+      "HeatingPower_W": 180.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 21.6,
+      "U": 0.176,
+      "Compass": 90.0,
+      "HeatingPower_W": 124.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 32.4,
+      "U": 0.176,
+      "Compass": 180.0,
+      "HeatingPower_W": 144.0
+     },
+     {
+      "Name": "R1./ Külső fal",
+      "Type": "0",
+      "A": 21.6,
+      "U": 0.176,
+      "Compass": 270.0,
+      "HeatingPower_W": 124.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 9.0,
+      "U": 0.71,
+      "Compass": 180.0,
+      "HeatingPower_W": 224.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.44,
+      "U": 0.73,
+      "Compass": 90.0,
+      "HeatingPower_W": 37.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.44,
+      "U": 0.73,
+      "Compass": 270.0,
+      "HeatingPower_W": 37.0
+     },
+     {
+      "Name": "Ablak",
+      "Type": "10",
+      "A": 1.08,
+      "U": 0.75,
+      "Compass": 0.0,
+      "HeatingPower_W": 28.0
+     },
+     {
+      "Name": "Bejárati ajtó",
+      "Type": "12",
+      "A": 2.1,
+      "U": 1.4,
+      "Compass": 0.0,
+      "HeatingPower_W": 103.0
+     },
+     {
+      "Name": "R2./ Lapostető",
+      "Type": "3",
+      "A": 96.0,
+      "U": 0.134,
+      "Compass": 0.0,
+      "HeatingPower_W": 450.0
+     },
+     {
+      "Name": "R3./ Talajon fekvő padló",
+      "Type": "26",
+      "A": 96.0,
+      "U": 0.15082,
+      "Compass": null,
+      "HeatingPower_W": 647.0
+     }
+    ]
+   }
+  },
+  "epulet": {
+   "HeatingPower_W": 3640.0,
+   "HeatingFiltrationPower_W": 1542.0,
+   "TotalOutsideSurface_m2": 300.0,
+   "TotalVolume_m3": 259.2,
+   "CalculatedSpecificLoss_W_m3K": 0.211,
+   "SpecificMass_kg_m2": 378.0,
+   "EPBD_ISRG": 123.78,
+   "EPBD_ISRGSum": 458540.0,
+   "EPBD_dTWinter": 6.3227,
+   "EPBD_AirVolume": 129.6,
+   "EPBD_HeatedArea": 96.0,
+   "EPBD_Qb": 480.0,
+   "EPBD_QHMV": 2880.0,
+   "EPBD_TempGrad": 72000.0,
+   "EPBD_HeatingHours": 4400.0,
+   "EPBD_HeatingEnergy": 4899.3,
+   "EPBD_CoolingNettoEnergy": 531.27,
+   "EPBD_SpecificHeatingMass": 351.0,
+   "EPBD_PrimerEnergyLimit": 212.89,
+   "EPBD_OptimalPrimerEnergyLimit": 135.72,
+   "EPBD_NeerNullPrimerEnergyLimit": 100.0,
+   "EPBD_CO2Emission": 1907.4,
+   "EPBD_EnergyConsumptions_attr": {
+    "Electric": 242.88,
+    "Gas": 9003.7
+   },
+   "EPBD_rendszerek": {
+    "WinWatt32HeatingSystemItem": [
+     {
+      "Name": "Fűtési rendszer",
+      "SpecificPrimerEnergy": 0.0,
+      "WFinal": 214.08,
+      "QFinal": null
+     }
+    ],
+    "WinWatt32WaterHeatingSystemItem": [
+     {
+      "Name": "Melegvíz-termelő rendszer",
+      "SpecificPrimerEnergy": 0.0,
+      "WFinal": 28.8,
+      "QFinal": null
+     }
+    ]
+   }
+  }
+ }
+}

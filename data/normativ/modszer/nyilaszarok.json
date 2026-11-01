@@ -1,0 +1,1495 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_f2_4_1",
+   "cim": "4.1. táblázat: Néhány üvegezés hőátbocsátási és sugárzásátbocsátási tényezője",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "4. fejezet (Tájékoztató műszaki adatok), 4.1 pont, 4.1. táblázat",
+    "oldal": 26,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Tájékoztató adat: az 1. Függelék 4.3 (29. o.) szerint csak teljesítménynyilatkozat hiányában vehető fel. gn felhasználása: 1. Függelék (6.24) g_F/H = F_ü·g_n, F_ü alapértéke 0,9 (46. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "uvegezes_tipusa",
+     "cim": "Az üvegezés típusa (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "U_U",
+     "cim": "UÜ",
+     "egyseg": "W/(m2K)"
+    },
+    {
+     "kulcs": "g_n",
+     "cim": "gn",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "uvegezes_tipusa": "Egyrétegű üvegezés (4 mm float)",
+     "U_U": 5.8,
+     "g_n": 0.85
+    },
+    {
+     "uvegezes_tipusa": "Kétrétegű üvegezés (4-12-4 mm) bevonat nélkül",
+     "U_U": 2.9,
+     "g_n": 0.75
+    },
+    {
+     "uvegezes_tipusa": "Kétrétegű üvegezés (4-12-4 mm) egy szelektív low-e bevonattal a belső üveg külső oldalán (ε=0,15)",
+     "U_U": 1.6,
+     "g_n": 0.7
+    },
+    {
+     "uvegezes_tipusa": "Kétrétegű üvegezés (4-16-4 mm) egy szelektív low-e bevonattal a belső üveg külső oldalán (ε<0,05), argon nemesgáz töltéssel (>90%)",
+     "U_U": 1.2,
+     "g_n": 0.59
+    },
+    {
+     "uvegezes_tipusa": "Reflektív kétrétegű hővédő (g=0,32) üvegezés (4-16-4 mm) egy low-e bevonattal a külső üveg belső oldalán, argon nemesgáz töltéssel (>90%)",
+     "U_U": 1.1,
+     "g_n": 0.32
+    },
+    {
+     "uvegezes_tipusa": "Háromrétegű üvegezés (4-12-4-12-4 mm) két szelektív low-e bevonattal (ε<0,05), argon nemesgáz töltéssel (>90%)",
+     "U_U": 0.8,
+     "g_n": 0.55
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_4_2",
+   "cim": "4.2. táblázat: Néhány keret hőátbocsátási tényezője",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "4.1 pont, 4.2. táblázat",
+    "oldal": 26,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Tájékoztató adat (teljesítménynyilatkozat hiányában). A „gyenge/közepes/erős” termikus elválasztás és a „többkamrás” határai nincsenek definiálva.",
+   "oszlopok": [
+    {
+     "kulcs": "keret_tipusa",
+     "cim": "A keret típusa (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "anyag",
+     "cim": "anyag (értelmezett)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "U_K",
+     "cim": "UK",
+     "egyseg": "W/(m2K)"
+    }
+   ],
+   "sorok": [
+    {
+     "keret_tipusa": "Műanyag (kétkamrás)",
+     "anyag": "műanyag",
+     "U_K": 2.2
+    },
+    {
+     "keret_tipusa": "Műanyag (háromkamrás)",
+     "anyag": "műanyag",
+     "U_K": 2.0
+    },
+    {
+     "keret_tipusa": "Műanyag (négykamrás)",
+     "anyag": "műanyag",
+     "U_K": 1.6
+    },
+    {
+     "keret_tipusa": "Műanyag (ötkamrás)",
+     "anyag": "műanyag",
+     "U_K": 1.3
+    },
+    {
+     "keret_tipusa": "Műanyag (többkamrás)",
+     "anyag": "műanyag",
+     "U_K": 1.0
+    },
+    {
+     "keret_tipusa": "Fa (50 mm)",
+     "anyag": "fa",
+     "U_K": 2.2
+    },
+    {
+     "keret_tipusa": "Fa (70 mm)",
+     "anyag": "fa",
+     "U_K": 2.0
+    },
+    {
+     "keret_tipusa": "Fa (80 mm)",
+     "anyag": "fa",
+     "U_K": 1.8
+    },
+    {
+     "keret_tipusa": "Fa (100 mm)",
+     "anyag": "fa",
+     "U_K": 1.6
+    },
+    {
+     "keret_tipusa": "Fa (150 mm)",
+     "anyag": "fa",
+     "U_K": 1.2
+    },
+    {
+     "keret_tipusa": "Fém (termikus elválasztás nélkül)",
+     "anyag": "fém",
+     "U_K": 5.8
+    },
+    {
+     "keret_tipusa": "Fém (gyenge termikus elválasztás)",
+     "anyag": "fém",
+     "U_K": 3.3
+    },
+    {
+     "keret_tipusa": "Fém (közepes termikus elválasztás)",
+     "anyag": "fém",
+     "U_K": 2.6
+    },
+    {
+     "keret_tipusa": "Fém (erős termikus elválasztás)",
+     "anyag": "fém",
+     "U_K": 2.0
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_4_3",
+   "cim": "4.3. táblázat: Néhány keret és üvegezés csatlakozásának összesített vonalmenti hőátbocsátási tényezője",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "4.1 pont, 4.3. táblázat",
+    "oldal": 26,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat a 26–27. oldalon folytatódik. A „háromrétegű rétegű” szóismétlés a forrásban így szerepel. Felhasználás: 1. Függelék (4.16) ψk,ü (29. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "tipus",
+     "cim": "A keret, üvegezés és távtartó típusa (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "osztalyozas",
+     "cim": "értelmezett bontás",
+     "egyseg": null
+    },
+    {
+     "kulcs": "psi_K_U",
+     "cim": "ψK,Ü",
+     "egyseg": "W/(mK)"
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "PDF-oldal",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "tipus": "Fa vagy műanyag nyílászáró, low-e bevonatos kétrétegű vagy két low-e bevonatos háromrétegű rétegű üvegezéssel, fém távtartóval",
+     "osztalyozas": {
+      "keret": "fa_vagy_muanyag",
+      "uvegezes": "low-e",
+      "tavtarto": "fem"
+     },
+     "psi_K_U": 0.08,
+     "oldal": 26
+    },
+    {
+     "tipus": "Fa vagy műanyag nyílászáró, low-e bevonatos kétrétegű vagy két low-e bevonatos háromrétegű rétegű üvegezéssel, fejlett (műanyag) távtartóval",
+     "osztalyozas": {
+      "keret": "fa_vagy_muanyag",
+      "uvegezes": "low-e",
+      "tavtarto": "fejlett_muanyag"
+     },
+     "psi_K_U": 0.06,
+     "oldal": 26
+    },
+    {
+     "tipus": "Fa vagy műanyag nyílászáró, bevonat nélküli üvegezéssel, fém távtartóval",
+     "osztalyozas": {
+      "keret": "fa_vagy_muanyag",
+      "uvegezes": "bevonat_nelkuli",
+      "tavtarto": "fem"
+     },
+     "psi_K_U": 0.06,
+     "oldal": 26
+    },
+    {
+     "tipus": "Fa vagy műanyag nyílászáró, bevonat nélküli üvegezéssel, fejlett (műanyag) távtartóval",
+     "osztalyozas": {
+      "keret": "fa_vagy_muanyag",
+      "uvegezes": "bevonat_nelkuli",
+      "tavtarto": "fejlett_muanyag"
+     },
+     "psi_K_U": 0.05,
+     "oldal": 26
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztással, low-e bevonatos kétrétegű vagy két low-e bevonatos háromrétegű rétegű üvegezéssel, fém távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztassal",
+      "uvegezes": "low-e",
+      "tavtarto": "fem"
+     },
+     "psi_K_U": 0.11,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztással, low-e bevonatos kétrétegű vagy két low-e bevonatos háromrétegű rétegű üvegezéssel, fejlett (műanyag) távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztassal",
+      "uvegezes": "low-e",
+      "tavtarto": "fejlett_muanyag"
+     },
+     "psi_K_U": 0.08,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztással, bevonat nélküli üvegezéssel, fém távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztassal",
+      "uvegezes": "bevonat_nelkuli",
+      "tavtarto": "fem"
+     },
+     "psi_K_U": 0.08,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztással, bevonat nélküli üvegezéssel, fejlett (műanyag) távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztassal",
+      "uvegezes": "bevonat_nelkuli",
+      "tavtarto": "fejlett_muanyag"
+     },
+     "psi_K_U": 0.06,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztás nélkül, low-e bevonatos kétrétegű vagy két low-e bevonatos háromrétegű rétegű üvegezéssel, fém távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztas_nelkul",
+      "uvegezes": "low-e",
+      "tavtarto": "fem"
+     },
+     "psi_K_U": 0.05,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztás nélkül, low-e bevonatos kétrétegű vagy két low-e bevonatos háromrétegű rétegű üvegezéssel, fejlett (műanyag) távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztas_nelkul",
+      "uvegezes": "low-e",
+      "tavtarto": "fejlett_muanyag"
+     },
+     "psi_K_U": 0.04,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztás nélkül, bevonat nélküli üvegezéssel, fém távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztas_nelkul",
+      "uvegezes": "bevonat_nelkuli",
+      "tavtarto": "fem"
+     },
+     "psi_K_U": 0.02,
+     "oldal": 27
+    },
+    {
+     "tipus": "Fém nyílászáró termikus elválasztás nélkül, bevonat nélküli üvegezéssel, fejlett (műanyag) távtartóval",
+     "osztalyozas": {
+      "keret": "fem_termikus_elvalasztas_nelkul",
+      "uvegezes": "bevonat_nelkuli",
+      "tavtarto": "fejlett_muanyag"
+     },
+     "psi_K_U": 0.01,
+     "oldal": 27
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_4_4",
+   "cim": "4.4. táblázat: Néhány merevítőprofil és üvegezés csatlakozásának összesített vonalmenti hőátbocsátási tényezője",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "4.1 pont, 4.4. táblázat",
+    "oldal": 27,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat a 27–28. oldalon folytatódik (az utolsó 27. oldali sor szövege a 28. oldalon folytatódik). Hiányzó kombináció: „Bevonat nélküli kétrétegű üvegezés, műanyag belső merevítőprofil távolsága az üvegtől > 4 mm” sor nincs (csak > 2 mm: 0,00). A „> 2 mm” és „> 4 mm” sávhatárok átfedők (pl. 5 mm mindkettőnek megfelel) – értelmezés: 2 < d ≤ 4 mm → „> 2 mm”, d > 4 mm → „> 4 mm” (nyitott kérdés). Felhasználás: 1. Függelék (4.16) ψm,ü (29. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "tipus",
+     "cim": "Az üvegezés és merevítő típusa (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "osztalyozas",
+     "cim": "értelmezett bontás",
+     "egyseg": null
+    },
+    {
+     "kulcs": "psi_M_U",
+     "cim": "ψM,Ü",
+     "egyseg": "W/(mK)"
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "PDF-oldal",
+     "egyseg": null
+    }
+   ],
+   "sorok": [
+    {
+     "tipus": "Low-e bevonatos kétrétegű üvegezés, fém belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_ketretegu",
+      "merevito_anyag": "fem",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.07,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos kétrétegű üvegezés, fém belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_ketretegu",
+      "merevito_anyag": "fem",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.04,
+     "oldal": 27
+    },
+    {
+     "tipus": "Bevonat nélküli kétrétegű üvegezés, fém belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "bevonat_nelkuli_ketretegu",
+      "merevito_anyag": "fem",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.03,
+     "oldal": 27
+    },
+    {
+     "tipus": "Bevonat nélküli kétrétegű üvegezés, fém belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "bevonat_nelkuli_ketretegu",
+      "merevito_anyag": "fem",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.01,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, fém belső merevítőprofil az egyik lég- vagy gázrétegben, fém belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "fem",
+      "retegek": "egyik",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.03,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, fém belső merevítőprofil az egyik lég- vagy gázrétegben, fém belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "fem",
+      "retegek": "egyik",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.01,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, fém belső merevítőprofil mindkét lég- vagy gázrétegben, fém belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "fem",
+      "retegek": "mindket",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.05,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, fém belső merevítőprofil mindkét lég- vagy gázrétegben, fém belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "fem",
+      "retegek": "mindket",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.02,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos kétrétegű üvegezés, műanyag belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_ketretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.04,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos kétrétegű üvegezés, műanyag belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_ketretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.02,
+     "oldal": 27
+    },
+    {
+     "tipus": "Bevonat nélküli kétrétegű üvegezés, műanyag belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "bevonat_nelkuli_ketretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": null,
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.0,
+     "oldal": 27
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, műanyag belső merevítőprofil az egyik lég- vagy gázrétegben, műanyag belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": "egyik",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.02,
+     "oldal": 28
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, műanyag belső merevítőprofil az egyik lég- vagy gázrétegben, műanyag belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": "egyik",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.01,
+     "oldal": 28
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, műanyag belső merevítőprofil mindkét lég- vagy gázrétegben, műanyag belső merevítőprofil távolsága az üvegtől > 2 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": "mindket",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 2 mm",
+       "min_kizart": 2
+      }
+     },
+     "psi_M_U": 0.03,
+     "oldal": 28
+    },
+    {
+     "tipus": "Low-e bevonatos háromrétegű üvegezés, műanyag belső merevítőprofil mindkét lég- vagy gázrétegben, műanyag belső merevítőprofil távolsága az üvegtől > 4 mm",
+     "osztalyozas": {
+      "uvegezes": "low-e_haromretegu",
+      "merevito_anyag": "muanyag",
+      "retegek": "mindket",
+      "tavolsag_uvegtol_mm": {
+       "eredeti": "> 4 mm",
+       "min_kizart": 4
+      }
+     },
+     "psi_M_U": 0.02,
+     "oldal": 28
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_4_5",
+   "cim": "4.5. táblázat: Néhány mobil árnyékoló árnyékolási tényezője",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "4.2 pont (Mobil árnyékolók árnyékolási tényezői), 4.5. táblázat",
+    "oldal": 28,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "„-” = az adott elhelyezés nem értelmezett (null). Felhasználás: 1. Függelék (6.22) g_árny,H – csak hűtési módban; fűtés esetén g_árny,F = 1 (47. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "arnyekolo_tipus",
+     "cim": "Árnyékoló típus (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "g_arny_belul",
+     "cim": "Árnyékolási tényező (gárny) – belül elhelyezve",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "g_arny_kivul",
+     "cim": "Árnyékolási tényező (gárny) – kívül elhelyezve",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "arnyekolo_tipus": "Spaletta",
+     "g_arny_belul": null,
+     "eredeti_belul": "-",
+     "g_arny_kivul": 0.15
+    },
+    {
+     "arnyekolo_tipus": "Redőny",
+     "g_arny_belul": null,
+     "eredeti_belul": "-",
+     "g_arny_kivul": 0.1
+    },
+    {
+     "arnyekolo_tipus": "Reluxa, világos",
+     "g_arny_belul": 0.45,
+     "g_arny_kivul": 0.15
+    },
+    {
+     "arnyekolo_tipus": "Reluxa, sötét",
+     "g_arny_belul": 0.8,
+     "g_arny_kivul": 0.35
+    },
+    {
+     "arnyekolo_tipus": "Textil roló, világos",
+     "g_arny_belul": 0.55,
+     "g_arny_kivul": 0.35
+    },
+    {
+     "arnyekolo_tipus": "Textil roló, sötét",
+     "g_arny_belul": 0.85,
+     "g_arny_kivul": 0.6
+    },
+    {
+     "arnyekolo_tipus": "Roló reflexív (alu) bevonattal",
+     "g_arny_belul": 0.2,
+     "g_arny_kivul": 0.1
+    },
+    {
+     "arnyekolo_tipus": "Függöny, világos",
+     "g_arny_belul": 0.8,
+     "g_arny_kivul": null,
+     "eredeti_kivul": "-"
+    },
+    {
+     "arnyekolo_tipus": "Függöny, sötét",
+     "g_arny_belul": 0.95,
+     "g_arny_kivul": null,
+     "eredeti_kivul": "-"
+    }
+   ]
+  },
+  {
+   "id": "tabla_f2_4_6",
+   "cim": "Lakásépítésben használt vasbeton-szendvicspanelek korszakonkénti jellemző, mérés alapján kifejezett, átlagos hőátbocsátási tényezők értéke",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék (referenciaértékek)",
+    "hely": "2. Függelék 4.3 pont, 4.6 táblázat (hivatkozva: 1. Függelék 4.1.7, 28. o.)",
+    "oldal": "28-30",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "2. Függelék 4.3: 'Az értékek nem tartalmazzák a csatlakozási hőhidak hatását. Utóbbit egyszerűsített módszerrel lehet számolni.' 1. Függelék 4.1.7: az értékek az elemen belüli hőhidak hatását tartalmazzák. ANOMÁLIA: a kiegészítő hőszigetelés vastagságának (0, 4, 8, 12, 16, 20) mértékegysége a táblázatfejben nincs megadva (valószínűleg cm). A 'lakotelep_peldak' cellák a forrásban több sorra összevont cellák; minden érintett sorhoz ismételve rendeltük (a Debrecen-csoport cellája a 29–30. oldalon folytatódik, összefűzve). Zárójeles vastagságok (pl. '265 (210)') a forrás szerint: 'ertek' + 'zarojeles_ertek', a zárójeles érték jelentését a forrás nem magyarázza. '1982-' típusú nyitott időszaknál max = null. Gyártási időszakok csoporton belül átfedhetnek (pl. Budapest I. 1975-1983 és 1982-1990) – forráshű. | A 2. Függelék-ágens független átvitelével értékre egyezik; az ottani megjegyzések: Szöveg (4.3 pont, 28. o.): „A panelos rendszerek átlagos U-tényezőjét az utólagos hőszigetelés függvényében a 4.6. táblázat mutatja. Az értékek nem tartalmazzák a csatlakozási hőhidak hatását. Utóbbit egyszerűsített módszerrel lehet számolni.” A cím előtt nincs „táblázat:” szó (a forrásban „4.6 Lakásépítésben …”). A táblázat 28–30. oldalon fut; a „példák” cella több gyártási-idő sorra összevont, itt soronként ismételve. Zárójeles réteg-értékek (pl. „265 (210)”) változatlanul: alapérték + `_zarojeles` mező, jelentésük a forrásban nincs magyarázva (valószínűleg alternatív panelváltozat – nyitott kérdés). Tartományok („55-75”, „120-140”) min/max-ra bontva. ANOMÁLIÁK: (1) a kiegészítő hőszigetelés vastagságának (0, 4, 8, 12, 16, 20) mértékegysége nincs megadva (valószínűleg cm); (2) Szolnok 1989-1991: teljes 260 ≠ 60+60+160 = 280 mm (a zárójeles 220 = 60+60+100 egyezik); (3) azonos rétegrendű és U_0/U_4/U_8/U_16/U_20 értékű sorokban a 12-es oszlop eltér: Budapest III. 1984-1994: 0,276, Debrecen 1987-1994 és Szeged 1982-1987: 0,278; (4) az 1. Függelék 4.1.7 „1992 előtt épült” panelokra írja elő, de a táblázatban 1992 utáni gyártási idők is vannak (1984-1994, 1987-1994, „1982-”); (5) az 1. Függelék 4.1.7 szerint az értékek „az elemen belüli hőhidak hatását igen” tartalmazzák – a 2. Függelék ezt nem mondja. Helyesírás a forrás szerint (pl. „Pesterzsébert”, „Joskar-Cla, Cladl”, „Dunaújváro s” sortörés → „Dunaújváros”). Ellenőrzés: a többi sorban teljes = külső + hőszig. + belső (egyezik, a tartományos sorok kivételével: 60+55..75+120..140 = 235..275 ∋ 250); minden sorban U monoton csökken a vastagsággal.",
+   "oszlopok": [
+    {
+     "kulcs": "hazgyar",
+     "cim": "házgyár, poligon üzem",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "lakotelep_peldak",
+     "cim": "készült lakótelepek példák",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "gyartasi_ido",
+     "cim": "gyártási idő",
+     "egyseg": "év"
+    },
+    {
+     "kulcs": "hoszigeteles",
+     "cim": "hőszigetelés (anyag)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "d_teljes_mm",
+     "cim": "Eredeti rétegek vastagsága: teljes",
+     "egyseg": "mm"
+    },
+    {
+     "kulcs": "d_kulso_kereg_mm",
+     "cim": "külső kéreg",
+     "egyseg": "mm"
+    },
+    {
+     "kulcs": "d_hoszigeteles_mm",
+     "cim": "hőszigetelés",
+     "egyseg": "mm"
+    },
+    {
+     "kulcs": "d_belso_szerk_mm",
+     "cim": "belső szerk.",
+     "egyseg": "mm"
+    },
+    {
+     "kulcs": "U_0",
+     "cim": "Átlagos hőátbocsátási tényező, kiegészítő hőszigetelés: 0",
+     "egyseg": "W/m2K"
+    },
+    {
+     "kulcs": "U_4",
+     "cim": "… 4",
+     "egyseg": "W/m2K"
+    },
+    {
+     "kulcs": "U_8",
+     "cim": "… 8",
+     "egyseg": "W/m2K"
+    },
+    {
+     "kulcs": "U_12",
+     "cim": "… 12",
+     "egyseg": "W/m2K"
+    },
+    {
+     "kulcs": "U_16",
+     "cim": "… 16",
+     "egyseg": "W/m2K"
+    },
+    {
+     "kulcs": "U_20",
+     "cim": "… 20",
+     "egyseg": "W/m2K"
+    },
+    {
+     "kulcs": "oldal",
+     "cim": "PDF oldal",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "hazgyar": "Dunaújváros",
+     "lakotelep_peldak": "Dunaújváros: Dózsa városrész, Belváros, Technikum városrész, felső Duna part, Kertváros, Római városrész; Szeged",
+     "gyartasi_ido": {
+      "eredeti": "1967-1979",
+      "min": 1967,
+      "max": 1979
+     },
+     "hoszigeteles": "salakgyapot",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 100,
+     "d_belso_szerk_mm": 130,
+     "U_0": 1.786,
+     "U_4": 0.68,
+     "U_8": 0.424,
+     "U_12": 0.31,
+     "U_16": 0.244,
+     "U_20": 0.201,
+     "oldal": 28
+    },
+    {
+     "hazgyar": "Dunaújváros",
+     "lakotelep_peldak": "Dunaújváros: Dózsa városrész, Belváros, Technikum városrész, felső Duna part, Kertváros, Római városrész; Szeged",
+     "gyartasi_ido": {
+      "eredeti": "1977-1982",
+      "min": 1977,
+      "max": 1982
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 60,
+     "d_belso_szerk_mm": 170,
+     "U_0": 1.796,
+     "U_4": 0.672,
+     "U_8": 0.405,
+     "U_12": 0.294,
+     "U_16": 0.234,
+     "U_20": 0.199,
+     "oldal": 28
+    },
+    {
+     "hazgyar": "Dunaújváros",
+     "lakotelep_peldak": "Dunaújváros: Dózsa városrész, Belváros, Technikum városrész, felső Duna part, Kertváros, Római városrész; Szeged",
+     "gyartasi_ido": {
+      "eredeti": "1982-",
+      "min": 1982,
+      "max": null
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.393,
+     "U_4": 0.591,
+     "U_8": 0.392,
+     "U_12": 0.295,
+     "U_16": 0.235,
+     "U_20": 0.191,
+     "oldal": 28
+    },
+    {
+     "hazgyar": "Pécs",
+     "lakotelep_peldak": "Pécs, Siklós",
+     "gyartasi_ido": {
+      "eredeti": "1971-1983",
+      "min": 1971,
+      "max": 1983
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.591,
+     "U_4": 0.662,
+     "U_8": 0.419,
+     "U_12": 0.306,
+     "U_16": 0.241,
+     "U_20": 0.199,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Pécs",
+     "lakotelep_peldak": "Pécs, Siklós",
+     "gyartasi_ido": {
+      "eredeti": "1983-1987",
+      "min": 1983,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 270,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": 70,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.323,
+     "U_4": 0.602,
+     "U_8": 0.393,
+     "U_12": 0.292,
+     "U_16": 0.232,
+     "U_20": 0.193,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest I.",
+     "lakotelep_peldak": "Kelenföld",
+     "gyartasi_ido": {
+      "eredeti": "1965-1967",
+      "min": 1965,
+      "max": 1967
+     },
+     "hoszigeteles": "salakgyapot",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": 110,
+     "d_belso_szerk_mm": 90,
+     "U_0": 1.725,
+     "U_4": 0.663,
+     "U_8": 0.417,
+     "U_12": 0.306,
+     "U_16": 0.241,
+     "U_20": 0.199,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest I.",
+     "lakotelep_peldak": "Kelenföld, Óbuda, Csorba úti, Zugló",
+     "gyartasi_ido": {
+      "eredeti": "1967-1974",
+      "min": 1967,
+      "max": 1974
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 55,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 115,
+     "U_0": 1.551,
+     "U_4": 0.639,
+     "U_8": 0.408,
+     "U_12": 0.3,
+     "U_16": 0.237,
+     "U_20": 0.194,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest I.",
+     "lakotelep_peldak": "Óbuda, Békásmegyer, Andor utca, Kelenföld, Újpalota, Rákoskeresztúr, Kőbánya Városközpont, Kaszásdűlő, Dunyov úti, Budakeszi",
+     "gyartasi_ido": {
+      "eredeti": "1975-1983",
+      "min": 1975,
+      "max": 1983
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.612,
+     "U_4": 0.659,
+     "U_8": 0.418,
+     "U_12": 0.305,
+     "U_16": 0.24,
+     "U_20": 0.199,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest I.",
+     "lakotelep_peldak": "Óbuda, Békásmegyer, Andor utca, Kelenföld, Újpalota, Rákoskeresztúr, Kőbánya Városközpont, Kaszásdűlő, Dunyov úti, Budakeszi",
+     "gyartasi_ido": {
+      "eredeti": "1982-1990",
+      "min": 1982,
+      "max": 1990
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.041,
+     "U_4": 0.542,
+     "U_8": 0.367,
+     "U_12": 0.277,
+     "U_16": 0.222,
+     "U_20": 0.186,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest II.",
+     "lakotelep_peldak": "Árpádhídfői, Csepel Városközpont, Újpest Városközpont, Zugló, Szentkorona utcai, Újpalota",
+     "gyartasi_ido": {
+      "eredeti": "1968-1974",
+      "min": 1968,
+      "max": 1974
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": {
+      "eredeti": "265 (210)",
+      "ertek": 265,
+      "zarojeles_ertek": 210
+     },
+     "d_kulso_kereg_mm": 65,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": {
+      "eredeti": "150 (95)",
+      "ertek": 150,
+      "zarojeles_ertek": 95
+     },
+     "U_0": 1.495,
+     "U_4": 0.643,
+     "U_8": 0.41,
+     "U_12": 0.301,
+     "U_16": 0.237,
+     "U_20": 0.196,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest II.",
+     "lakotelep_peldak": "Zugló, Kőbánya- Újhegyi, Újlipótváros, Gogol utca, Csepel- Királymajor, Józsefváros, Kőbánya- Városközpont, Valéria, Mihálkovics utca, Váci- Gyöngyösi utca, Csengettyű utca, Valéria, Szegedi-Országbíró utca, Rákoskeresztúr, Csepellakótelep, Gyakorló utca, Viraforgó, Pesterzsébert",
+     "gyartasi_ido": {
+      "eredeti": "1974-1987",
+      "min": 1974,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 265,
+     "d_kulso_kereg_mm": 65,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.387,
+     "U_4": 0.622,
+     "U_8": 0.402,
+     "U_12": 0.297,
+     "U_16": 0.235,
+     "U_20": 0.194,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest II.",
+     "lakotelep_peldak": "Zugló, Kőbánya- Újhegyi, Újlipótváros, Gogol utca, Csepel- Királymajor, Józsefváros, Kőbánya- Városközpont, Valéria, Mihálkovics utca, Váci- Gyöngyösi utca, Csengettyű utca, Valéria, Szegedi-Országbíró utca, Rákoskeresztúr, Csepellakótelep, Gyakorló utca, Viraforgó, Pesterzsébert",
+     "gyartasi_ido": {
+      "eredeti": "1982-",
+      "min": 1982,
+      "max": null
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.041,
+     "U_4": 0.542,
+     "U_8": 0.367,
+     "U_12": 0.277,
+     "U_16": 0.222,
+     "U_20": 0.186,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Győr",
+     "lakotelep_peldak": "Győr Ady",
+     "gyartasi_ido": {
+      "eredeti": "1968-1971",
+      "min": 1968,
+      "max": 1971
+     },
+     "hoszigeteles": "salakgyapot",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": {
+      "eredeti": "100 (75)",
+      "ertek": 100,
+      "zarojeles_ertek": 75
+     },
+     "d_belso_szerk_mm": {
+      "eredeti": "100 (125)",
+      "ertek": 100,
+      "zarojeles_ertek": 125
+     },
+     "U_0": 1.796,
+     "U_4": 0.696,
+     "U_8": 0.431,
+     "U_12": 0.314,
+     "U_16": 0.246,
+     "U_20": 0.202,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Győr",
+     "lakotelep_peldak": "Győr: Ady város, József Attila, Marcal, Győr 2, Győr 5; Sopron; Szombathely: KISZ, Joskar-Cla, Cladl, Derkovits; Sárvár; Körmend; Celldömök; Tapolca; Balatonfüred; Székesfehérvár; Várpalota; Oroszlány; Tatabánya: Sárberek, Bánhida, Dózsakert, Gál István, Újváros; Budapest: Őrmező, Gazdagrét, Rózsakert; Tata, Komárom",
+     "gyartasi_ido": {
+      "eredeti": "1971-1974",
+      "min": 1971,
+      "max": 1974
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.981,
+     "U_4": 0.713,
+     "U_8": 0.432,
+     "U_12": 0.312,
+     "U_16": 0.243,
+     "U_20": 0.203,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Győr",
+     "lakotelep_peldak": "Győr: Ady város, József Attila, Marcal, Győr 2, Győr 5; Sopron; Szombathely: KISZ, Joskar-Cla, Cladl, Derkovits; Sárvár; Körmend; Celldömök; Tapolca; Balatonfüred; Székesfehérvár; Várpalota; Oroszlány; Tatabánya: Sárberek, Bánhida, Dózsakert, Gál István, Újváros; Budapest: Őrmező, Gazdagrét, Rózsakert; Tata, Komárom",
+     "gyartasi_ido": {
+      "eredeti": "1974-1985",
+      "min": 1974,
+      "max": 1985
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 265,
+     "d_kulso_kereg_mm": 65,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.591,
+     "U_4": 0.662,
+     "U_8": 0.419,
+     "U_12": 0.306,
+     "U_16": 0.241,
+     "U_20": 0.199,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Győr",
+     "lakotelep_peldak": "Győr: Ady város, József Attila, Marcal, Győr 2, Győr 5; Sopron; Szombathely: KISZ, Joskar-Cla, Cladl, Derkovits; Sárvár; Körmend; Celldömök; Tapolca; Balatonfüred; Székesfehérvár; Várpalota; Oroszlány; Tatabánya: Sárberek, Bánhida, Dózsakert, Gál István, Újváros; Budapest: Őrmező, Gazdagrét, Rózsakert; Tata, Komárom",
+     "gyartasi_ido": {
+      "eredeti": "1984-1990",
+      "min": 1984,
+      "max": 1990
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.323,
+     "U_4": 0.602,
+     "U_8": 0.393,
+     "U_12": 0.292,
+     "U_16": 0.232,
+     "U_20": 0.193,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Miskolc",
+     "lakotelep_peldak": "Miskolc: Belváros, Győrikapu, Gyula utca, Kazincbarcika, Salgótarján",
+     "gyartasi_ido": {
+      "eredeti": "1969-1971",
+      "min": 1969,
+      "max": 1971
+     },
+     "hoszigeteles": "salakgyapot",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": {
+      "eredeti": "100 (75)",
+      "ertek": 100,
+      "zarojeles_ertek": 75
+     },
+     "d_belso_szerk_mm": {
+      "eredeti": "100 (125)",
+      "ertek": 100,
+      "zarojeles_ertek": 125
+     },
+     "U_0": 1.796,
+     "U_4": 0.696,
+     "U_8": 0.431,
+     "U_12": 0.314,
+     "U_16": 0.246,
+     "U_20": 0.202,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Miskolc",
+     "lakotelep_peldak": "Miskolc: Avas, Belváros, Bereka, Bodótető, Bolgárföld, Diósgyőr, Győrikapu, Gyula utca, Jókai utca, Majláth utca, Martin telep, Mátyás király út, Összekötő városrész, Szinvan népkert, Szentpéteri kapu; Ózd; Kazincbarcika; Salgótarján; Eger",
+     "gyartasi_ido": {
+      "eredeti": "1971-1975",
+      "min": 1971,
+      "max": 1975
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 50,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.981,
+     "U_4": 0.713,
+     "U_8": 0.432,
+     "U_12": 0.312,
+     "U_16": 0.243,
+     "U_20": 0.203,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Miskolc",
+     "lakotelep_peldak": "Miskolc: Avas, Belváros, Bereka, Bodótető, Bolgárföld, Diósgyőr, Győrikapu, Gyula utca, Jókai utca, Majláth utca, Martin telep, Mátyás király út, Összekötő városrész, Szinvan népkert, Szentpéteri kapu; Ózd; Kazincbarcika; Salgótarján; Eger",
+     "gyartasi_ido": {
+      "eredeti": "1975-1987",
+      "min": 1975,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 265,
+     "d_kulso_kereg_mm": 65,
+     "d_hoszigeteles_mm": 50,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.591,
+     "U_4": 0.662,
+     "U_8": 0.419,
+     "U_12": 0.306,
+     "U_16": 0.241,
+     "U_20": 0.199,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Miskolc",
+     "lakotelep_peldak": "Miskolc: Avas, Belváros, Bereka, Bodótető, Bolgárföld, Diósgyőr, Győrikapu, Gyula utca, Jókai utca, Majláth utca, Martin telep, Mátyás király út, Összekötő városrész, Szinvan népkert, Szentpéteri kapu; Ózd; Kazincbarcika; Salgótarján; Eger",
+     "gyartasi_ido": {
+      "eredeti": "1985-1989",
+      "min": 1985,
+      "max": 1989
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.323,
+     "U_4": 0.602,
+     "U_8": 0.393,
+     "U_12": 0.292,
+     "U_16": 0.232,
+     "U_20": 0.193,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Szolnok",
+     "lakotelep_peldak": "Szolnok; Karcag; Törökszentmiklós",
+     "gyartasi_ido": {
+      "eredeti": "1989-1991",
+      "min": 1989,
+      "max": 1991
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": {
+      "eredeti": "260 (220)",
+      "ertek": 260,
+      "zarojeles_ertek": 220
+     },
+     "d_kulso_kereg_mm": 60,
+     "d_hoszigeteles_mm": 60,
+     "d_belso_szerk_mm": {
+      "eredeti": "160 (100)",
+      "ertek": 160,
+      "zarojeles_ertek": 100
+     },
+     "U_0": 1.553,
+     "U_4": 0.655,
+     "U_8": 0.416,
+     "U_12": 0.304,
+     "U_16": 0.24,
+     "U_20": 0.198,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest III.",
+     "lakotelep_peldak": "Újpalota, Kelenföld, Csepel Városközpont, Csángó utca, Zugló, Óbuda, Drégelyvár utca, Kerepesi út, Tüzér utca, Kőbánya-Újhegy, Eperfasor utca, Havanna lakótelep, Vát utca, Kispest, Békásmegyer, Gyakorló utca, Szobor- Faludi utca",
+     "gyartasi_ido": {
+      "eredeti": "1971-1987",
+      "min": 1971,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 60,
+     "d_hoszigeteles_mm": {
+      "eredeti": "55-75",
+      "min": 55,
+      "max": 75
+     },
+     "d_belso_szerk_mm": {
+      "eredeti": "120-140",
+      "min": 120,
+      "max": 140
+     },
+     "U_0": 1.457,
+     "U_4": 0.611,
+     "U_8": 0.406,
+     "U_12": 0.299,
+     "U_16": 0.237,
+     "U_20": 0.196,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Budapest III.",
+     "lakotelep_peldak": "Újpalota, Kelenföld, Csepel Városközpont, Csángó utca, Zugló, Óbuda, Drégelyvár utca, Kerepesi út, Tüzér utca, Kőbánya-Újhegy, Eperfasor utca, Havanna lakótelep, Vát utca, Kispest, Békásmegyer, Gyakorló utca, Szobor- Faludi utca",
+     "gyartasi_ido": {
+      "eredeti": "1984-1994",
+      "min": 1984,
+      "max": 1994
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.067,
+     "U_4": 0.546,
+     "U_8": 0.369,
+     "U_12": 0.276,
+     "U_16": 0.223,
+     "U_20": 0.186,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Debrecen",
+     "lakotelep_peldak": "Debrecen: Újkert, Vénkert, Mester utca, Hüvelyes út, Csapó utca, Doboz út, Burgundia utca, Kandia-Szt Anna utcai, Tócóvölgy, Tócóskert; Budapest: Colombus; Nyíregyháza: Értkert, Örösföld, Jószváros, egyéb",
+     "gyartasi_ido": {
+      "eredeti": "1970-1989",
+      "min": 1970,
+      "max": 1989
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 60,
+     "d_hoszigeteles_mm": {
+      "eredeti": "55-75",
+      "min": 55,
+      "max": 75
+     },
+     "d_belso_szerk_mm": {
+      "eredeti": "120-140",
+      "min": 120,
+      "max": 140
+     },
+     "U_0": 1.457,
+     "U_4": 0.611,
+     "U_8": 0.406,
+     "U_12": 0.299,
+     "U_16": 0.237,
+     "U_20": 0.196,
+     "oldal": 29
+    },
+    {
+     "hazgyar": "Debrecen",
+     "lakotelep_peldak": "Debrecen: Újkert, Vénkert, Mester utca, Hüvelyes út, Csapó utca, Doboz út, Burgundia utca, Kandia-Szt Anna utcai, Tócóvölgy, Tócóskert; Budapest: Colombus; Nyíregyháza: Értkert, Örösföld, Jószváros, egyéb",
+     "gyartasi_ido": {
+      "eredeti": "1987-1994",
+      "min": 1987,
+      "max": 1994
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.067,
+     "U_4": 0.546,
+     "U_8": 0.369,
+     "U_12": 0.278,
+     "U_16": 0.223,
+     "U_20": 0.186,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Szeged",
+     "lakotelep_peldak": "Szeged: Tarján, Felsőváros, Északváros, Makkosháza, Újrókus, Odessza, Marostő; Kecskemét: Széchenyi város; Budapest: Kaszálórét; Csongrád; Szentes; Hódmezővásárhely; Orosháza; Békéscsaba; Tótkomlós",
+     "gyartasi_ido": {
+      "eredeti": "1971-1987",
+      "min": 1971,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 250,
+     "d_kulso_kereg_mm": 60,
+     "d_hoszigeteles_mm": {
+      "eredeti": "55-75",
+      "min": 55,
+      "max": 75
+     },
+     "d_belso_szerk_mm": {
+      "eredeti": "120-140",
+      "min": 120,
+      "max": 140
+     },
+     "U_0": 1.457,
+     "U_4": 0.611,
+     "U_8": 0.406,
+     "U_12": 0.299,
+     "U_16": 0.237,
+     "U_20": 0.196,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Szeged",
+     "lakotelep_peldak": "Szeged: Tarján, Felsőváros, Északváros, Makkosháza, Újrókus, Odessza, Marostő; Kecskemét: Széchenyi város; Budapest: Kaszálórét; Csongrád; Szentes; Hódmezővásárhely; Orosháza; Békéscsaba; Tótkomlós",
+     "gyartasi_ido": {
+      "eredeti": "1982-1987",
+      "min": 1982,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.067,
+     "U_4": 0.546,
+     "U_8": 0.369,
+     "U_12": 0.278,
+     "U_16": 0.223,
+     "U_20": 0.186,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Budapest IV.",
+     "lakotelep_peldak": "Fehérvári út, Gogol utca, Pesterzsébet, Kispest, Csepel, Rákoskeresztúr, Ada utca, Rátz László- Bigszádi út, Adony utca",
+     "gyartasi_ido": {
+      "eredeti": "1974-1983",
+      "min": 1974,
+      "max": 1983
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.612,
+     "U_4": 0.659,
+     "U_8": 0.418,
+     "U_12": 0.305,
+     "U_16": 0.24,
+     "U_20": 0.199,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Budapest IV.",
+     "lakotelep_peldak": "Fehérvári út, Gogol utca, Pesterzsébet, Kispest, Csepel, Rákoskeresztúr, Ada utca, Rátz László- Bigszádi út, Adony utca",
+     "gyartasi_ido": {
+      "eredeti": "1981-1990",
+      "min": 1981,
+      "max": 1990
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.041,
+     "U_4": 0.542,
+     "U_8": 0.367,
+     "U_12": 0.277,
+     "U_16": 0.222,
+     "U_20": 0.186,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Veszprém",
+     "lakotelep_peldak": "Veszprém: Jutasi út, Cholnoky Sólyi-Vilonyai utca, Egri út; Ajkán: Alkotmány utca, Béke út, Fő utca mellett, Ifjúsági utca, Petőfi S. utca; Siófokon; Várpalotán; Székesfehérváron; Érden; Budapesten: Békásmegyer",
+     "gyartasi_ido": {
+      "eredeti": "1975-1981",
+      "min": 1975,
+      "max": 1981
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.612,
+     "U_4": 0.659,
+     "U_8": 0.418,
+     "U_12": 0.305,
+     "U_16": 0.24,
+     "U_20": 0.199,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Veszprém",
+     "lakotelep_peldak": "Veszprém: Jutasi út, Cholnoky Sólyi-Vilonyai utca, Egri út; Ajkán: Alkotmány utca, Béke út, Fő utca mellett, Ifjúsági utca, Petőfi S. utca; Siófokon; Várpalotán; Székesfehérváron; Érden; Budapesten: Békásmegyer",
+     "gyartasi_ido": {
+      "eredeti": "1981-1986",
+      "min": 1981,
+      "max": 1986
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.041,
+     "U_4": 0.542,
+     "U_8": 0.367,
+     "U_12": 0.277,
+     "U_16": 0.222,
+     "U_20": 0.186,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Kecskemét",
+     "lakotelep_peldak": "Kecskemét: Széchenyi város, Árpád város; Budapest: Pesterzsébet, Csepel, Mézesfehér utca, Rakéta utca; Dunaújváros: Béke városrész; Baja; Nagykőrös; Cegléd; Gödöllő; Kiskunfélegyháza; Kistarcsa; Nagytarcsa; Pécs; Kiskunhalas; Kiskunfélegyháza",
+     "gyartasi_ido": {
+      "eredeti": "1976-1987",
+      "min": 1976,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.612,
+     "U_4": 0.659,
+     "U_8": 0.418,
+     "U_12": 0.305,
+     "U_16": 0.24,
+     "U_20": 0.199,
+     "oldal": 30
+    },
+    {
+     "hazgyar": "Kecskemét",
+     "lakotelep_peldak": "Kecskemét: Széchenyi város, Árpád város; Budapest: Pesterzsébet, Csepel, Mézesfehér utca, Rakéta utca; Dunaújváros: Béke városrész; Baja; Nagykőrös; Cegléd; Gödöllő; Kiskunfélegyháza; Kistarcsa; Nagytarcsa; Pécs; Kiskunhalas; Kiskunfélegyháza",
+     "gyartasi_ido": {
+      "eredeti": "1985-1987",
+      "min": 1985,
+      "max": 1987
+     },
+     "hoszigeteles": "EPS",
+     "d_teljes_mm": 300,
+     "d_kulso_kereg_mm": 70,
+     "d_hoszigeteles_mm": 80,
+     "d_belso_szerk_mm": 150,
+     "U_0": 1.041,
+     "U_4": 0.542,
+     "U_8": 0.367,
+     "U_12": 0.277,
+     "U_16": 0.222,
+     "U_20": 0.186,
+     "oldal": 30
+    }
+   ]
+  }
+ ]
+}

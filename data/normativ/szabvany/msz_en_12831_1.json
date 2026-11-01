@@ -1,0 +1,950 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "alapertekek",
+   "cim": "Szövegközi és melléklet-beli egyedi alapértékek (B, D, E, G melléklet és a 6. fejezet konstansai)",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "6. fejezet; B.2.2, B.2.3, B.2.6, B.2.8, B.2.12–B.2.14, B.2.18, B.3.2, B.4.1 (B.13), D.1–D.2; 6.3.8 – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "Tájékoztató (B melléklet) értékek: akkor érvényesek, ha nincs nemzeti melléklet (A) szerinti adat. A magyar nemzeti melléklet értékei nem ismertek, ezért ezek az alapértékek (D-146).",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Azonosító",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Egység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "hely",
+     "cim": "Hely",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "f_U_k",
+     "ertek": 1.0,
+     "egyseg": "–",
+     "hely": "B.2.2"
+    },
+    {
+     "kulcs": "f_theta_ann",
+     "ertek": 1.45,
+     "egyseg": "–",
+     "hely": "B.2.3"
+    },
+    {
+     "kulcs": "f_GW_tavol",
+     "ertek": 1.0,
+     "egyseg": "–",
+     "hely": "B.2.3: talajvíz és padlólemez távolsága > 1 m"
+    },
+    {
+     "kulcs": "f_GW_kozel",
+     "ertek": 1.15,
+     "egyseg": "–",
+     "hely": "B.2.3: távolság ≤ 1 m"
+    },
+    {
+     "kulcs": "h_occup",
+     "ertek": 1.0,
+     "egyseg": "m",
+     "hely": "B.2.6"
+    },
+    {
+     "kulcs": "rho_cp",
+     "ertek": 0.34,
+     "egyseg": "Wh/(m3K)",
+     "hely": "B.2.8"
+    },
+    {
+     "kulcs": "v_leak",
+     "ertek": 0.67,
+     "egyseg": "–",
+     "hely": "B.2.13"
+    },
+    {
+     "kulcs": "f_dir",
+     "ertek": 2,
+     "egyseg": "–",
+     "hely": "B.2.14"
+    },
+    {
+     "kulcs": "n_ATD_alap",
+     "ertek": 0.3,
+     "egyseg": "1/h",
+     "hely": "B.2.12 (B.3)"
+    },
+    {
+     "kulcs": "dp_ATD_design",
+     "ertek": 4,
+     "egyseg": "Pa",
+     "hely": "B.2.12"
+    },
+    {
+     "kulcs": "phi_gain",
+     "ertek": 0,
+     "egyseg": "W",
+     "hely": "B.2.18"
+    },
+    {
+     "kulcs": "dU_TB_egyszerusitett",
+     "ertek": 0.1,
+     "egyseg": "W/(m2K)",
+     "hely": "B.3.2"
+    },
+    {
+     "kulcs": "dtheta_e_tau_0",
+     "ertek": -0.8,
+     "egyseg": "K",
+     "hely": "B.13"
+    },
+    {
+     "kulcs": "k_tau",
+     "ertek": 0.016,
+     "egyseg": "K/h",
+     "hely": "B.13"
+    },
+    {
+     "kulcs": "dtheta_e_tau_min",
+     "ertek": 0.0,
+     "egyseg": "K",
+     "hely": "B.13"
+    },
+    {
+     "kulcs": "dtheta_e_tau_max",
+     "ertek": 4.0,
+     "egyseg": "K",
+     "hely": "B.13"
+    },
+    {
+     "kulcs": "theta_u_min_fagyvedelem",
+     "ertek": 5,
+     "egyseg": "°C",
+     "hely": "D.1"
+    },
+    {
+     "kulcs": "theta_j_min_futott_max",
+     "ertek": 15,
+     "egyseg": "°C",
+     "hely": "D.2 a lábjegyzet"
+    },
+    {
+     "kulcs": "theta_j_min_futetlen_min",
+     "ertek": 5,
+     "egyseg": "°C",
+     "hely": "D.2 a lábjegyzet; 7. táblázat: másik épület max(θe,m; 5 °C)"
+    },
+    {
+     "kulcs": "kis_nyilas_szorzo",
+     "ertek": 2,
+     "egyseg": "m3/(h·cm2)",
+     "hely": "6.3.3.4, (32)"
+    },
+    {
+     "kulcs": "magas_helyiseg_hatar",
+     "ertek": 4,
+     "egyseg": "m",
+     "hely": "6.3.8, 7–8. táblázat"
+    },
+    {
+     "kulcs": "egyszerusitett_dT_szures",
+     "ertek": 4,
+     "egyseg": "K",
+     "hely": "7.3.2"
+    },
+    {
+     "kulcs": "E_padlo_U_max",
+     "ertek": 4,
+     "egyseg": "W/(m2K)",
+     "hely": "E melléklet érvényessége"
+    },
+    {
+     "kulcs": "E_pincefal_U_max",
+     "ertek": 3,
+     "egyseg": "W/(m2K)",
+     "hely": "E melléklet érvényessége"
+    },
+    {
+     "kulcs": "E_B_min",
+     "ertek": 2,
+     "egyseg": "m",
+     "hely": "E melléklet érvényessége"
+    },
+    {
+     "kulcs": "E_B_max",
+     "ertek": 50,
+     "egyseg": "m",
+     "hely": "E melléklet érvényessége"
+    },
+    {
+     "kulcs": "E_z_max",
+     "ertek": 5,
+     "egyseg": "m",
+     "hely": "E melléklet érvényessége"
+    },
+    {
+     "kulcs": "E_B_epulet_U_hatar",
+     "ertek": 0.5,
+     "egyseg": "W/(m2K)",
+     "hely": "E melléklet 1. pont: helyiségnél az épület B′-je, ha nincs külső fala vagy U_floor ≤ 0,5"
+    }
+   ]
+  },
+  {
+   "id": "tabla_B1",
+   "cim": "Hőhíd-pótlék ΔU_TB",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.1, B.1. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Kulcs",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "kriterium",
+     "cim": "Kiválasztási kritérium",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "dU_TB",
+     "cim": "ΔU_TB",
+     "egyseg": "W/(m2K)"
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "uj_igazolt",
+     "kriterium": "Új épület, magas hőszigetelési szint, igazoltan az általános gyakorlatot meghaladó hőhíd-minimalizálással",
+     "dU_TB": 0.02
+    },
+    {
+     "kulcs": "uj_altalanos",
+     "kriterium": "Új épület, az általánosan elismert hőhíd-minimalizálási szabályoknak megfelelően",
+     "dU_TB": 0.05
+    },
+    {
+     "kulcs": "belso_szigeteles",
+     "kriterium": "Túlnyomóan belső oldali hőszigeteléssel, tömör födémek (pl. vasbeton) által megszakítva",
+     "dU_TB": 0.15
+    },
+    {
+     "kulcs": "egyeb",
+     "kriterium": "Minden egyéb épület",
+     "dU_TB": 0.1
+    }
+   ]
+  },
+  {
+   "id": "tabla_B2",
+   "cim": "f_1 hőmérséklet-igazító tag fűtetlen terek felé (belmagasság < 4 m)",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.4, B.2. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "a: egy helyiség pincének tekinthető, ha a külső falfelületének több mint 70 %-a talajjal érintkezik. A „≥ 3 külső fal” sor példája az eredetiben „external (heated) staircase” [?].",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Kulcs",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ter",
+     "cim": "Fűtetlen tér",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "reszletezes",
+     "cim": "Részletezés",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "f1",
+     "cim": "f_1",
+     "egyseg": "–"
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "helyiseg_1kulso",
+     "ter": "Helyiség / szomszédos helyiségcsoport",
+     "reszletezes": "1 külső fal",
+     "f1": 0.4
+    },
+    {
+     "kulcs": "helyiseg_2kulso_ajto_nelkul",
+     "ter": "Helyiség / szomszédos helyiségcsoport",
+     "reszletezes": "2 külső fal, külső ajtó nélkül",
+     "f1": 0.5
+    },
+    {
+     "kulcs": "helyiseg_2kulso_ajtoval",
+     "ter": "Helyiség / szomszédos helyiségcsoport",
+     "reszletezes": "2 külső fal, külső ajtóval",
+     "f1": 0.6
+    },
+    {
+     "kulcs": "helyiseg_3kulso",
+     "ter": "Helyiség / szomszédos helyiségcsoport",
+     "reszletezes": "≥ 3 külső fal (pl. külső lépcsőház)",
+     "f1": 0.8
+    },
+    {
+     "kulcs": "pince_nyilas_nelkul",
+     "ter": "Pince",
+     "reszletezes": "külső ajtó/ablak nélkül",
+     "f1": 0.5
+    },
+    {
+     "kulcs": "pince_nyilassal",
+     "ter": "Pince",
+     "reszletezes": "külső ajtóval/ablakkal",
+     "f1": 0.8
+    },
+    {
+     "kulcs": "padlas_nagy_legcsere",
+     "ter": "Tetőtér (padlás)",
+     "reszletezes": "nagy légcsere; pl. nem folytonos fedés záró alátéthéjazat nélkül",
+     "f1": 1.0
+    },
+    {
+     "kulcs": "padlas_szigeteletlen",
+     "ter": "Tetőtér (padlás)",
+     "reszletezes": "egyéb, hőszigeteletlen tető",
+     "f1": 0.9
+    },
+    {
+     "kulcs": "padlas_szigetelt",
+     "ter": "Tetőtér (padlás)",
+     "reszletezes": "hőszigetelt tető",
+     "f1": 0.7
+    },
+    {
+     "kulcs": "kozlekedo_belso",
+     "ter": "Közlekedőtér",
+     "reszletezes": "belső tér (külső fal nélkül), kis légcsere (≤ 0,5 1/h)",
+     "f1": 0.0
+    },
+    {
+     "kulcs": "kozlekedo_szabad",
+     "ter": "Közlekedőtér",
+     "reszletezes": "szabadon szellőző: A_nyílás / V > 0,005 m2/m3",
+     "f1": 1.0
+    },
+    {
+     "kulcs": "padlo_maszoter",
+     "ter": "Padló",
+     "reszletezes": "függesztett (padló mászótér felett)",
+     "f1": 0.8
+    }
+   ]
+  },
+  {
+   "id": "tabla_B3",
+   "cim": "Hőleadási jellemzők magas helyiségekben",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.6, B.3. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "a: Δθ_surf csak a fűtött felületre (pl. padlófűtésnél a padlóra); nem fűtött felületen 0 K.",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Kulcs",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "rendszer",
+     "cim": "Hőleadó rendszer",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "G_air",
+     "cim": "G_θair,i",
+     "egyseg": "K/m"
+    },
+    {
+     "kulcs": "dT_rad",
+     "cim": "Δθ_rad",
+     "egyseg": "K"
+    },
+    {
+     "kulcs": "dT_surf_padlo",
+     "cim": "Δθ_surf padló",
+     "egyseg": "K"
+    },
+    {
+     "kulcs": "dT_surf_fal",
+     "cim": "Δθ_surf fal",
+     "egyseg": "K"
+    },
+    {
+     "kulcs": "dT_surf_menny",
+     "cim": "Δθ_surf mennyezet",
+     "egyseg": "K"
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "meleglegos",
+     "rendszer": "Meleglevegős fűtés, kiegészítő destratifikáció nélkül",
+     "G_air": 1.0,
+     "dT_rad": 0,
+     "dT_surf_padlo": 0,
+     "dT_surf_fal": 0,
+     "dT_surf_menny": 0
+    },
+    {
+     "kulcs": "meleglegos_destrat",
+     "rendszer": "Meleglevegős fűtés, kiegészítő destratifikációval",
+     "G_air": 0.35,
+     "dT_rad": 0,
+     "dT_surf_padlo": 0,
+     "dT_surf_fal": 0,
+     "dT_surf_menny": 0
+    },
+    {
+     "kulcs": "mennyezeti_panel",
+     "rendszer": "Mennyezeti sugárzó panel",
+     "G_air": 0.35,
+     "dT_rad": 1.5,
+     "dT_surf_padlo": 0,
+     "dT_surf_fal": 0,
+     "dT_surf_menny": 0
+    },
+    {
+     "kulcs": "sotetsugarzo",
+     "rendszer": "Sugárzócsöves hősugárzó (sötétsugárzó)",
+     "G_air": 0.2,
+     "dT_rad": 1.5,
+     "dT_surf_padlo": 0,
+     "dT_surf_fal": 0,
+     "dT_surf_menny": 0
+    },
+    {
+     "kulcs": "vilagito_sugarzo",
+     "rendszer": "Világító (fényes) hősugárzó",
+     "G_air": 0.2,
+     "dT_rad": 1.5,
+     "dT_surf_padlo": 0,
+     "dT_surf_fal": 0,
+     "dT_surf_menny": 0
+    },
+    {
+     "kulcs": "feluletfutes",
+     "rendszer": "Felületbe épített hőleadó (padló-/fal-/mennyezetfűtés)",
+     "G_air": 0.2,
+     "dT_rad": 1.5,
+     "dT_surf_padlo": 1.5,
+     "dT_surf_fal": 1.5,
+     "dT_surf_menny": 1.5
+    },
+    {
+     "kulcs": "radiator",
+     "rendszer": "Radiátor",
+     "G_air": 1.0,
+     "dT_rad": 0,
+     "dT_surf_padlo": 0,
+     "dT_surf_fal": 0,
+     "dT_surf_menny": 0
+    }
+   ]
+  },
+  {
+   "id": "tabla_B4",
+   "cim": "Térfogatra vonatkoztatott hőtároló képesség c_eff",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.7, B.4. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Kulcs",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "jellemzes",
+     "cim": "Jellemzés",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c_eff",
+     "cim": "c_eff",
+     "egyseg": "Wh/(m3K)"
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "alacsony",
+     "jellemzes": "nagy belső/külső térfogatarány (csarnok); túlnyomóan könnyűszerkezet; álmennyezet; emelt padló",
+     "c_eff": 15
+    },
+    {
+     "kulcs": "kozepes_magas",
+     "jellemzes": "kis belső/külső térfogatarány, kis belmagasság, vastag falak; túlnyomóan nehézszerkezet (tégla, beton)",
+     "c_eff": 50
+    }
+   ]
+  },
+  {
+   "id": "tabla_B5",
+   "cim": "Helyiség/zóna térfogatáram-arány f_i-z",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.9, B.5. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "helyisegek_min",
+     "cim": "Helyiségek száma a zónában (legalább)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "f_i_z",
+     "cim": "f_i-z",
+     "egyseg": "–"
+    }
+   ],
+   "sorok": [
+    {
+     "helyisegek_min": 1,
+     "f_i_z": 1
+    },
+    {
+     "helyisegek_min": 2,
+     "f_i_z": 0.5
+    }
+   ]
+  },
+  {
+   "id": "tabla_B6",
+   "cim": "Légáteresztés q_env,50 légtömörségi osztály szerint",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.10, B.6. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "a: meglévő épületnél adat hiányában alacsony követelmény feltételezhető bizonyos esetekben (lásd a szabványt).",
+   "oszlopok": [
+    {
+     "kulcs": "osztaly",
+     "cim": "Osztály",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "meres",
+     "cim": "Légtömörség-mérés",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "kovetelmeny",
+     "cim": "Követelmény",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "q_env50",
+     "cim": "q_env,50",
+     "egyseg": "m3/(m2h)"
+    }
+   ],
+   "sorok": [
+    {
+     "osztaly": "I",
+     "meres": "átadás után mérés lesz",
+     "kovetelmeny": "magas",
+     "q_env50": 2
+    },
+    {
+     "osztaly": "II",
+     "meres": "átadás után mérés lesz",
+     "kovetelmeny": "közepes",
+     "q_env50": 3
+    },
+    {
+     "osztaly": "III",
+     "meres": "nem volt és nem is lesz mérés",
+     "kovetelmeny": "közepes",
+     "q_env50": 6
+    },
+    {
+     "osztaly": "IV",
+     "meres": "nem volt és nem is lesz mérés",
+     "kovetelmeny": "alacsony",
+     "q_env50": 12
+    }
+   ]
+  },
+  {
+   "id": "tabla_B7",
+   "cim": "Minimális légcsereszám n_min",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.10 (számozatlan bekezdés), B.7. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "3 m-nél nagyobb belmagasságnál nem javasolt használni.",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Kulcs",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "tipus",
+     "cim": "Helyiségtípus",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "n_min",
+     "cim": "n_min",
+     "egyseg": "1/h"
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "allando",
+     "tipus": "Állandó tartózkodású terek (nappali, iroda)",
+     "n_min": 0.5
+    },
+    {
+     "kulcs": "vizes_ablakos",
+     "tipus": "Konyha, fürdő, WC stb. (ablakkal)",
+     "n_min": 0.5
+    },
+    {
+     "kulcs": "mellek_belso",
+     "tipus": "Mellékhelyiségek, belső (ablaktalan) helyiségek",
+     "n_min": 0.0
+    }
+   ]
+  },
+  {
+   "id": "tabla_B8",
+   "cim": "Térfogatáram-arány együttható f_qv,z",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.11, B.8. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "Δh_z sávok: ≤ 5; 5–10; 10–20; > 20 m (a felső határ zárt). Intenzív árnyékolás: belváros, erdő; normál: néhány épülettel vagy fával lazán körülvett; nincs: szabad terület.",
+   "oszlopok": [
+    {
+     "kulcs": "homlokzat",
+     "cim": "Kitett homlokzatok (egy / tobb)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "hgz",
+     "cim": "Zóna magassága terep felett (le50 / gt50)",
+     "egyseg": "m"
+    },
+    {
+     "kulcs": "arnyekoltsag",
+     "cim": "Árnyékoltság",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "dh5",
+     "cim": "Δh_z ≤ 5 m",
+     "egyseg": "–"
+    },
+    {
+     "kulcs": "dh10",
+     "cim": "5 < Δh_z ≤ 10 m",
+     "egyseg": "–"
+    },
+    {
+     "kulcs": "dh20",
+     "cim": "10 < Δh_z ≤ 20 m",
+     "egyseg": "–"
+    },
+    {
+     "kulcs": "dhtobb",
+     "cim": "Δh_z > 20 m",
+     "egyseg": "–"
+    }
+   ],
+   "sorok": [
+    {
+     "homlokzat": "egy",
+     "hgz": null,
+     "arnyekoltsag": null,
+     "dh5": 0.03,
+     "dh10": 0.05,
+     "dh20": 0.08,
+     "dhtobb": 0.11
+    },
+    {
+     "homlokzat": "tobb",
+     "hgz": "le50",
+     "arnyekoltsag": "intenziv",
+     "dh5": 0.03,
+     "dh10": 0.05,
+     "dh20": 0.08,
+     "dhtobb": 0.11
+    },
+    {
+     "homlokzat": "tobb",
+     "hgz": "le50",
+     "arnyekoltsag": "normal",
+     "dh5": 0.05,
+     "dh10": 0.05,
+     "dh20": 0.08,
+     "dhtobb": 0.11
+    },
+    {
+     "homlokzat": "tobb",
+     "hgz": "le50",
+     "arnyekoltsag": "nincs",
+     "dh5": 0.07,
+     "dh10": 0.07,
+     "dh20": 0.08,
+     "dhtobb": 0.11
+    },
+    {
+     "homlokzat": "tobb",
+     "hgz": "gt50",
+     "arnyekoltsag": null,
+     "dh5": 0.09,
+     "dh10": 0.09,
+     "dh20": 0.09,
+     "dhtobb": 0.11
+    }
+   ]
+  },
+  {
+   "id": "tabla_B9",
+   "cim": "Homlokzatszám-tényező f_fac,z",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.2.15, B.9. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "homlokzat",
+     "cim": "Kitett homlokzatok",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "f_fac",
+     "cim": "f_fac,z",
+     "egyseg": "–"
+    }
+   ],
+   "sorok": [
+    {
+     "homlokzat": "egy",
+     "f_fac": 12
+    },
+    {
+     "homlokzat": "tobb",
+     "f_fac": 8
+    }
+   ]
+  },
+  {
+   "id": "tabla_B14",
+   "cim": "Belső méretezési hőmérséklet θ_int,i",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "B.4.2, B.14. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Kulcs",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "tipus",
+     "cim": "Épület/helyiség típusa",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "theta_int",
+     "cim": "θ_int,i",
+     "egyseg": "°C"
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "egyszemelyes_iroda",
+     "tipus": "Egyszemélyes iroda",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "egyteru_iroda",
+     "tipus": "Egyterű iroda",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "targyalo",
+     "tipus": "Tárgyaló",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "eloadoterem",
+     "tipus": "Előadóterem",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "etterem",
+     "tipus": "Étkezde/étterem",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "tanterem",
+     "tipus": "Tanterem",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "bolcsode",
+     "tipus": "Bölcsőde/óvoda",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "aruhaz",
+     "tipus": "Áruház",
+     "theta_int": 16
+    },
+    {
+     "kulcs": "lakas",
+     "tipus": "Lakás",
+     "theta_int": 20
+    },
+    {
+     "kulcs": "furdo",
+     "tipus": "Fürdőszoba",
+     "theta_int": 24
+    },
+    {
+     "kulcs": "templom",
+     "tipus": "Templom",
+     "theta_int": 15
+    },
+    {
+     "kulcs": "muzeum",
+     "tipus": "Múzeum/galéria",
+     "theta_int": 16
+    }
+   ]
+  },
+  {
+   "id": "tabla_E1",
+   "cim": "U_equiv,k paraméterei (talajjal érintkező szerkezetek, egyszerűsített)",
+   "forras": {
+    "dokumentum": "MSZ EN 12831-1:2017 (Épületek energetikai teljesítőképessége. A tervezési hőterhelés számítási módszere. 1. rész: Tervezési hőterhelés)",
+    "hely": "E melléklet, E.1. táblázat – átírás: docs/szabvany/EN12831-1_implementacios_spec.md (Péter, 2026-10-30; a szabvány oldalképei alapján)"
+   },
+   "hatalyos_tol": "2017-01-01",
+   "megjegyzes": "Pincefalnál c1 = n1 = 0 (B′-nek nincs hatása, de B′ ≠ 0). Érvényesség: U_fl ≤ 4, U_bw ≤ 3 W/(m2K), w = 0,4 m, λ = 2 W/(mK), 2 ≤ B′ ≤ 50 m, 0 ≤ z ≤ 5 m.",
+   "oszlopok": [
+    {
+     "kulcs": "szerkezet",
+     "cim": "Szerkezet",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "a",
+     "cim": "a",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "b",
+     "cim": "b",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c1",
+     "cim": "c1",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c2",
+     "cim": "c2",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c3",
+     "cim": "c3",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "n1",
+     "cim": "n1",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "n2",
+     "cim": "n2",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "n3",
+     "cim": "n3",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "d",
+     "cim": "d",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "szerkezet": "padlo",
+     "a": 0.9671,
+     "b": -7.455,
+     "c1": 10.76,
+     "c2": 9.773,
+     "c3": 0.0265,
+     "n1": 0.5532,
+     "n2": 0.6027,
+     "n3": -0.9296,
+     "d": -0.0203
+    },
+    {
+     "szerkezet": "pincefal",
+     "a": 0.93328,
+     "b": -2.1552,
+     "c1": 0,
+     "c2": 1.466,
+     "c3": 0.1006,
+     "n1": 0,
+     "n2": 0.45325,
+     "n3": -1.0068,
+     "d": -0.0692
+    }
+   ]
+  }
+ ]
+}

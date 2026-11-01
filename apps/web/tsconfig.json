@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "composite": false, "types": [], "lib": ["ES2022", "DOM", "DOM.Iterable"], "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "include": ["src", "../../packages/model/src", "../../packages/calc-core/src", "../../packages/model/mintak/*.json", "../../data/normativ/**/*.json"]
+}

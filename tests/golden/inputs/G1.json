@@ -1,0 +1,303 @@
+{
+ "id": "G1",
+ "title": "G1 – Földszintes lapostetős ház, kondenzációs gázkazán",
+ "rooms": [
+  {
+   "name": "Lakótér",
+   "function": "Nappali",
+   "area": 96.0,
+   "height": 2.7,
+   "temp": 20,
+   "walls": [
+    {
+     "side": "N",
+     "compass": 0,
+     "x": 12.0,
+     "y": 2.7,
+     "A": 32.4,
+     "MinA": 3.18
+    },
+    {
+     "side": "E",
+     "compass": 90,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.44
+    },
+    {
+     "side": "S",
+     "compass": 180,
+     "x": 12.0,
+     "y": 2.7,
+     "A": 32.4,
+     "MinA": 9.0
+    },
+    {
+     "side": "W",
+     "compass": 270,
+     "x": 8.0,
+     "y": 2.7,
+     "A": 21.6,
+     "MinA": 1.44
+    }
+   ],
+   "windows": {
+    "S": [
+     [
+      1.5,
+      1.5,
+      4
+     ]
+    ],
+    "E": [
+     [
+      1.2,
+      1.2,
+      1
+     ]
+    ],
+    "W": [
+     [
+      1.2,
+      1.2,
+      1
+     ]
+    ],
+    "N": [
+     [
+      0.9,
+      1.2,
+      1
+     ]
+    ]
+   },
+   "door": [
+    "N",
+    1.0,
+    2.1
+   ],
+   "roof": {
+    "panel": "R2./ Lapostető",
+    "A": 96.0
+   },
+   "floor": {
+    "panel": "R3./ Talajon fekvő padló",
+    "A": 96.0,
+    "P": 40.0,
+    "x": 40.0
+   }
+  }
+ ],
+ "heated_area": 96.0,
+ "systems": {
+  "heating": {
+   "gen": [
+    {
+     "CkType": 6,
+     "energy": 2,
+     "share": 1
+    }
+   ],
+   "SystemType": 0,
+   "qfvType": 6,
+   "qftType": 4,
+   "EfszType": 9,
+   "Efsz2Type": 4,
+   "RegPart": [
+    2,
+    2,
+    1,
+    2,
+    7
+   ],
+   "desc": "Kondenzációs gázkazán a fűtött térben, kétcsöves radiátoros 55/45, termosztatikus szelepek, EC szivattyú"
+  },
+  "dhw": {
+   "gen": [
+    {
+     "CkType": 3,
+     "energy": 2,
+     "share": 1
+    }
+   ],
+   "qfvType": 3,
+   "qftType": 0,
+   "EcType": 3,
+   "BuildingCategory": 0,
+   "desc": "A kazán indirekt tárolót fűt (fűtött térben), cirkuláció nélkül"
+  }
+ },
+ "iso": {
+  "A": 96.0,
+  "P": 40.0,
+  "w": 0.47
+ },
+ "materials_used": {
+  "Mészcementvakolat": {
+   "rho": 1700,
+   "lambda": 0.87,
+   "c_kJkgK": 0.88,
+   "mu": 10
+  },
+  "Kerámia falazóblokk 30 (teszt)": {
+   "rho": 800,
+   "lambda": 0.184,
+   "c_kJkgK": 0.92,
+   "mu": 6
+  },
+  "EPS homlokzati hőszigetelés": {
+   "rho": 20,
+   "lambda": 0.039,
+   "c_kJkgK": 1.46,
+   "mu": 30
+  },
+  "Vékonyvakolat": {
+   "rho": 1600,
+   "lambda": 0.7,
+   "c_kJkgK": 0.88,
+   "mu": 15
+  },
+  "Vasbeton": {
+   "rho": 2400,
+   "lambda": 1.55,
+   "c_kJkgK": 0.84,
+   "mu": 80
+  },
+  "EPS 100 lapostető": {
+   "rho": 20,
+   "lambda": 0.035,
+   "c_kJkgK": 1.46,
+   "mu": 30
+  },
+  "Bitumenes lemez": {
+   "rho": 1100,
+   "lambda": 0.17,
+   "c_kJkgK": 1.46,
+   "mu": 20000
+  },
+  "Cementesztrich": {
+   "rho": 2000,
+   "lambda": 1.4,
+   "c_kJkgK": 0.84,
+   "mu": 20
+  },
+  "XPS": {
+   "rho": 35,
+   "lambda": 0.035,
+   "c_kJkgK": 1.46,
+   "mu": 100
+  },
+  "Kerámia burkolat": {
+   "rho": 2300,
+   "lambda": 1.05,
+   "c_kJkgK": 0.84,
+   "mu": 200
+  },
+  "Ásványgyapot": {
+   "rho": 30,
+   "lambda": 0.037,
+   "c_kJkgK": 0.84,
+   "mu": 1
+  },
+  "Kőzetgyapot lamella": {
+   "rho": 80,
+   "lambda": 0.04,
+   "c_kJkgK": 0.84,
+   "mu": 1
+  }
+ },
+ "panels": {
+  "R1./ Külső fal": {
+   "type": "OutsideWall",
+   "code": 0,
+   "Rsi": 0.13,
+   "Rse": 0.04,
+   "layers": [
+    {
+     "name": "Vékonyvakolat",
+     "d_cm": 0.5
+    },
+    {
+     "name": "EPS homlokzati hőszigetelés",
+     "d_cm": 15
+    },
+    {
+     "name": "Kerámia falazóblokk 30 (teszt)",
+     "d_cm": 30
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  },
+  "R2./ Lapostető": {
+   "type": "Roof1",
+   "code": 3,
+   "Rsi": 0.1,
+   "Rse": 0.04,
+   "gradient": 0,
+   "layers": [
+    {
+     "name": "Bitumenes lemez",
+     "d_cm": 1
+    },
+    {
+     "name": "EPS 100 lapostető",
+     "d_cm": 25
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 20
+    },
+    {
+     "name": "Mészcementvakolat",
+     "d_cm": 1.5
+    }
+   ]
+  },
+  "R3./ Talajon fekvő padló": {
+   "type": "FloorISO",
+   "code": 26,
+   "Rsi": 0.17,
+   "Rse": 0.04,
+   "layers": [
+    {
+     "name": "Kerámia burkolat",
+     "d_cm": 1
+    },
+    {
+     "name": "Cementesztrich",
+     "d_cm": 6
+    },
+    {
+     "name": "XPS",
+     "d_cm": 15
+    },
+    {
+     "name": "Vasbeton",
+     "d_cm": 10
+    }
+   ]
+  }
+ },
+ "panel_U_hand": {
+  "R1./ Külső fal": 0.176,
+  "R2./ Lapostető": 0.134,
+  "R3./ Talajon fekvő padló": 0.217
+ },
+ "window": {
+  "name": "Ablak",
+  "Ug": 0.6,
+  "g": 0.5,
+  "Uf": 1.0,
+  "frame_mm": 110,
+  "glass": "3 rétegű 4-14-4-14-4 argon (teszt)",
+  "frame": "PVC 82 mm (teszt)"
+ },
+ "door": {
+  "name": "Bejárati ajtó",
+  "U": 1.4
+ }
+}

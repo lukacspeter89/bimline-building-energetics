@@ -1,0 +1,265 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_11_1",
+   "cim": "A berendezés teljes és az érezhető hűtőteljesítményének aránya (cH)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "11.1.1 fejezet, 11.1. táblázat",
+    "oldal": 82,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "„néhány jellegzetes esetben ad irányadó értékeket” (82. o.) – a táblázat nem teljes körű; köztes hőfoklépcsőre (pl. 8/14, 14/18 °C) nem ad értéket. A hutokozeg_be_C/ki_C mezők a szöveges cellából kibontott számok. 6.9 pont (51. o.): ha a gépi hűtés látens hőigényét MSZ EN ISO 52016-1 szerint külön számítják, a cH korrekciós tényezőt nem szabad figyelembe venni.",
+   "oszlopok": [
+    {
+     "kulcs": "hutokozeg",
+     "cim": "A hűtőközeg hőmérséklete",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "c_H",
+     "cim": "cH",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "hutokozeg": "16/18 oC (pl. klímagerendák)",
+     "c_H": 1.0,
+     "hutokozeg_be_C": 16,
+     "hutokozeg_ki_C": 18
+    },
+    {
+     "hutokozeg": "6/12 oC (pl. fan-coil készülék)",
+     "c_H": 1.25,
+     "hutokozeg_be_C": 6,
+     "hutokozeg_ki_C": 12
+    },
+    {
+     "hutokozeg": "Közvetlen elpárologtatós rendszer (5 oC)",
+     "c_H": 1.45,
+     "hutokozeg_be_C": 5,
+     "hutokozeg_ki_C": null
+    }
+   ]
+  },
+  {
+   "id": "tabla_11_2",
+   "cim": "Szezonális teljesítménytényező, SEER és hűtési teljesítménytényező értékek, εH",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "11.1.2 fejezet, 11.2. táblázat",
+    "oldal": "82–83",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat a 82. oldalon kezdődik és a 83. oldalon folytatódik (utolsó két sor). εH = 1/SEER (11.3) a szöveg szerint elektromos üzemű hőszivattyúkra; a táblázat a földgáz üzemű hőszivattyúkra is ad εH-t. ANOMÁLIA: 1/1,7 = 0,588, a táblázat 0,58-at ad (kerekítve 0,59 lenne); a többi sor 1/SEER két tizedesre kerekítve egyezik. Az 'energiahordozo_ertelmezes' mező nem a forrás része, hanem értelmező címke (a sor szövegéből).",
+   "oszlopok": [
+    {
+     "kulcs": "hutogep_tipus",
+     "cim": "Hűtőgép típusa",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "SEER",
+     "cim": "SEER",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_H",
+     "cim": "εH",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "hutogep_tipus": "Kompresszoros léghűtés (split)",
+     "SEER": 2.5,
+     "eps_H": 0.4,
+     "energiahordozo_ertelmezes": "villamos"
+    },
+    {
+     "hutogep_tipus": "Léghűtéses kompakt és osztott kivitelű (távkondenzátoros) folyadékhűtő",
+     "SEER": 3.0,
+     "eps_H": 0.33,
+     "energiahordozo_ertelmezes": "villamos"
+    },
+    {
+     "hutogep_tipus": "Vízhűtéses folyadékhűtők (scroll kompresszor)",
+     "SEER": 4.3,
+     "eps_H": 0.23,
+     "energiahordozo_ertelmezes": "villamos"
+    },
+    {
+     "hutogep_tipus": "Vízhűtéses folyadékhűtők (csavar kompresszor)",
+     "SEER": 5.0,
+     "eps_H": 0.2,
+     "energiahordozo_ertelmezes": "villamos"
+    },
+    {
+     "hutogep_tipus": "Vízhűtéses folyadékhűtők (turbó kompresszor)",
+     "SEER": 7.0,
+     "eps_H": 0.14,
+     "energiahordozo_ertelmezes": "villamos"
+    },
+    {
+     "hutogep_tipus": "Talajhő/víz elektromos hőszivattyú",
+     "SEER": 5.0,
+     "eps_H": 0.2,
+     "energiahordozo_ertelmezes": "villamos"
+    },
+    {
+     "hutogep_tipus": "Földgáz üzemű hőszivattyú, a gázmotor hulladékhője hasznosítva van",
+     "SEER": 1.7,
+     "eps_H": 0.58,
+     "energiahordozo_ertelmezes": "földgáz"
+    },
+    {
+     "hutogep_tipus": "Földgáz üzemű hőszivattyú, a gázmotor hulladékhője nincs hasznosítva",
+     "SEER": 1.4,
+     "eps_H": 0.71,
+     "energiahordozo_ertelmezes": "földgáz"
+    }
+   ]
+  },
+  {
+   "id": "tabla_11_3",
+   "cim": "Szabályozási veszteségtényező hűtés esetén",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "11.1.4 fejezet, 11.3. táblázat",
+    "oldal": 83,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A 18/20 °C padlóhűtés (1,100) nagyobb, mint a 14/18 és 16/18 °C (1,000) – a forrás szerint, nem javítva.",
+   "oszlopok": [
+    {
+     "kulcs": "hohordozo_csoport",
+     "cim": "Hőhordozó csoport (alcímsor)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "rendszer",
+     "cim": "Rendszer",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_H_szab",
+     "cim": "εH,szab",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "hohordozo_csoport": "Víz hőhordozó közeg",
+     "rendszer": "Hűtött víz 6 °C / 12 °C (pl. fan coil)",
+     "eps_H_szab": 1.13
+    },
+    {
+     "hohordozo_csoport": "Víz hőhordozó közeg",
+     "rendszer": "Hűtött víz 8 °C / 14 °C (pl. fan coil)",
+     "eps_H_szab": 1.1
+    },
+    {
+     "hohordozo_csoport": "Víz hőhordozó közeg",
+     "rendszer": "Hűtött víz 14 °C / 18 °C (pl. indukciós berendezés)",
+     "eps_H_szab": 1.0
+    },
+    {
+     "hohordozo_csoport": "Víz hőhordozó közeg",
+     "rendszer": "Hűtött víz 16 °C / 18 °C (pl. hűtőmennyezet)",
+     "eps_H_szab": 1.0
+    },
+    {
+     "hohordozo_csoport": "Víz hőhordozó közeg",
+     "rendszer": "Hűtött víz 18 °C / 20 °C (pl. padlóhűtés)",
+     "eps_H_szab": 1.1
+    },
+    {
+     "hohordozo_csoport": "Levegő hőhordozó közeg",
+     "rendszer": "Befúvó és elszívó berendezés passzív hűtéssel (pl. talajhőcserélővel)",
+     "eps_H_szab": 1.0
+    },
+    {
+     "hohordozo_csoport": "Levegő hőhordozó közeg",
+     "rendszer": "Befúvó és elszívó berendezés aktív hűtéssel (pl. hőszivattyús hővisszanyeréssel)",
+     "eps_H_szab": 1.1
+    },
+    {
+     "hohordozo_csoport": "Hűtőközeg hőhordozó",
+     "rendszer": "Direkt elpárologtatás",
+     "eps_H_szab": 1.13
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_11",
+   "cim": "Hűtés – szövegben megadott alapértékek (nem számozott táblázat)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "11.1, 11.1.2, 11.1.3 fejezet",
+    "oldal": "82–83",
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A passzív talajhőcserélős szabály a módszerben nem kapcsolódik explicit képlethez (hogyan kerül W_H,s a (11.2) W_H,seg tagjába) – lásd anomáliák.",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Mennyiség",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Mértékegység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "feltetel",
+     "cim": "Alkalmazási feltétel",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "hely",
+     "cim": "Hely",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "W_H_veg",
+     "ertek": 0,
+     "egyseg": "kWh/év",
+     "feltetel": "Egyszerűsített esetben",
+     "hely": "11.1, (11.2) után, 82. o."
+    },
+    {
+     "kulcs": "eps_H_szall",
+     "ertek": 1,
+     "egyseg": "-",
+     "feltetel": "Egyszerűsített módszer esetén az elosztási veszteségek elhanyagolhatók",
+     "hely": "11.1.3, 83. o."
+    },
+    {
+     "kulcs": "passziv_talajhocserelo_Q_csokkenes_per_W_H_s",
+     "ertek": 10,
+     "egyseg": "kWh nettó hűtési hőigény-csökkenés / 1 kWh segédenergia (W_H,s)",
+     "feltetel": "Passzív üzemű (hőszivattyú nélküli) talajhőcserélő, a talajkollektor hidraulikai ellenállása és a keringtetett térfogatáram ismeretének hiányában (egyszerűsített eljárás)",
+     "hely": "11.1.2, 83. o."
+    }
+   ]
+  }
+ ]
+}

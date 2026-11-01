@@ -1,0 +1,11 @@
+{
+  "name": "@bimline/model",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Projekt-adatmodell és teljes számítási lánc a @bimline/calc-core fölött",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": { "@bimline/calc-core": "0.1.0" }
+}

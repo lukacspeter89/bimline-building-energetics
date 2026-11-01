@@ -1,0 +1,62 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_f2_3_1",
+   "cim": "3.1. táblázat: Fűtőérték és égéshő hányadosa különböző energiahordozók esetén",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 2. Függelék – Számítási módszer referenciaértékei",
+    "hely": "3. fejezet (Energiahordozókra vonatkozó adatok), 3.1. táblázat",
+    "oldal": 25,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Felhasználás: 1. Függelék (14.2)–(14.5): E_x,súlyozott = Σ_i Q_x,vég,i · F_fé/éh · f_súly,i + Σ_i W_x,vég,i · f_súly,i (89. o.). Nyitott kérdés: PB-gáz/propán, pellet, brikett stb. külön nem szerepel (besorolásuk – pl. „fa, biomassza” – nincs kimondva).",
+   "oszlopok": [
+    {
+     "kulcs": "energiahordozo",
+     "cim": "Energiahordozó (szó szerint)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "kulcs",
+     "cim": "gépi kulcs (értelmezett)",
+     "egyseg": null
+    },
+    {
+     "kulcs": "F_fe_eh",
+     "cim": "F_fé/éh",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "energiahordozo": "földgáz",
+     "kulcs": "foldgaz",
+     "F_fe_eh": 0.9
+    },
+    {
+     "energiahordozo": "fa, biomassza",
+     "kulcs": "fa_biomassza",
+     "F_fe_eh": 0.93
+    },
+    {
+     "energiahordozo": "szén",
+     "kulcs": "szen",
+     "F_fe_eh": 0.96
+    },
+    {
+     "energiahordozo": "olaj",
+     "kulcs": "olaj",
+     "F_fe_eh": 0.94
+    },
+    {
+     "energiahordozo": "nem éghető energiahordozók (áram, távhő, egyéb megújulók)",
+     "kulcs": "nem_egheto",
+     "F_fe_eh": 1.0
+    }
+   ]
+  }
+ ]
+}

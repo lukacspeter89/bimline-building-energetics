@@ -1,0 +1,75 @@
+{
+  "schema_verzio": 1,
+  "tablazatok": [
+    {
+      "id": "sulyozo_tenyezok",
+      "cim": "A fűtőértéken számított végsőenergia igény súlyozó tényezői",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "7. melléklet 2. pont, táblázat",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "A táblázat oszlopjelei a forrásban A, B, C, E, F (D nincs). (*) Az értékek a 3. pont szerinti esetekben alkalmazhatók (lásd szilard_bio_kedvezmenyes_feltetelek). (**) Villamos energia termelő atomerőművek önfogyasztására vonatkozóan fnren = 0, fren = 0, ftot = 0, valamint fCO2eq = 0. (***) A távhőre és a távhűtésre vonatkozó értékeket a 8. melléklet szerint kell főszabály szerint meghatározni (a távhőszolgáltató évente közli, a Lechner Nonprofit Kft. március 15-ig közzéteszi az e-epites.hu-n, 8. § (1)); a megjelölt értékek a 8. § (1) bekezdése szerinti kötelezettség elmulasztása esetén alkalmazandók. Az fCO2eq egysége g/kWh.",
+      "oszlopok": [
+        {"kulcs": "sor", "cim": "táblázat sora"},
+        {"kulcs": "kod", "cim": "programbeli azonosító (nem normatív)"},
+        {"kulcs": "csoport", "cim": "energiahordozó-csoport"},
+        {"kulcs": "energiahordozo", "cim": "Energiahordozó"},
+        {"kulcs": "f_nren", "cim": "fnren"},
+        {"kulcs": "f_ren", "cim": "fren"},
+        {"kulcs": "f_tot", "cim": "ftot"},
+        {"kulcs": "f_co2eq_g_kWh", "cim": "fCO2eq (g/kWh)", "egyseg": "g/kWh"},
+        {"kulcs": "labjegyzet", "cim": "lábjegyzet"}
+      ],
+      "sorok": [
+        {"sor": 2, "kod": "fosszilis_szilard", "csoport": "Fosszilis tüzelőanyagok", "energiahordozo": "Szilárd", "f_nren": 1.1, "f_ren": 0, "f_tot": 1.1, "f_co2eq_g_kWh": 456, "labjegyzet": null},
+        {"sor": 3, "kod": "fosszilis_folyekony", "csoport": "Fosszilis tüzelőanyagok", "energiahordozo": "Folyékony", "f_nren": 1.1, "f_ren": 0, "f_tot": 1.1, "f_co2eq_g_kWh": 308, "labjegyzet": null},
+        {"sor": 4, "kod": "fosszilis_gaz", "csoport": "Fosszilis tüzelőanyagok", "energiahordozo": "Gáz", "f_nren": 1.1, "f_ren": 0, "f_tot": 1.1, "f_co2eq_g_kWh": 297, "labjegyzet": null},
+        {"sor": 5, "kod": "bio_szilard", "csoport": "Bio tüzelőanyagok", "energiahordozo": "Szilárd", "f_nren": 0.6, "f_ren": 0.6, "f_tot": 1.2, "f_co2eq_g_kWh": 40, "labjegyzet": null},
+        {"sor": 6, "kod": "bio_szilard_kedvezmenyes", "csoport": "Bio tüzelőanyagok", "energiahordozo": "Szilárd(*)", "f_nren": 0.2, "f_ren": 1.0, "f_tot": 1.2, "f_co2eq_g_kWh": 40, "labjegyzet": "*"},
+        {"sor": 7, "kod": "bio_folyekony", "csoport": "Bio tüzelőanyagok", "energiahordozo": "Folyékony", "f_nren": 0.5, "f_ren": 1, "f_tot": 1.5, "f_co2eq_g_kWh": 70, "labjegyzet": null},
+        {"sor": 8, "kod": "bio_gaz", "csoport": "Bio tüzelőanyagok", "energiahordozo": "Gáz", "f_nren": 0.4, "f_ren": 1, "f_tot": 1.4, "f_co2eq_g_kWh": 83, "labjegyzet": null},
+        {"sor": 9, "kod": "villamos", "csoport": "Villamos energia(**)", "energiahordozo": "Villamos energia(**)", "f_nren": 2.3, "f_ren": 0.3, "f_tot": 2.6, "f_co2eq_g_kWh": 455, "labjegyzet": "**"},
+        {"sor": 10, "kod": "tavho_alapertelmezett", "csoport": "Távhő(***)", "energiahordozo": "Távhő(***)", "f_nren": 1.38, "f_ren": 0, "f_tot": 1.38, "f_co2eq_g_kWh": 374, "labjegyzet": "***"},
+        {"sor": 11, "kod": "tavhutes_alapertelmezett", "csoport": "Távhűtés(***)", "energiahordozo": "Távhűtés(***)", "f_nren": 1.38, "f_ren": 0, "f_tot": 1.38, "f_co2eq_g_kWh": 374, "labjegyzet": "***"},
+        {"sor": 12, "kod": "hulladekho", "csoport": "Hulladékhő", "energiahordozo": "Hulladékhő", "f_nren": 0, "f_ren": 0, "f_tot": 0, "f_co2eq_g_kWh": 0, "labjegyzet": null},
+        {"sor": 13, "kod": "nap_pv", "csoport": "Napenergia", "energiahordozo": "PV villamos energia", "f_nren": 0, "f_ren": 1, "f_tot": 1, "f_co2eq_g_kWh": 74, "labjegyzet": null},
+        {"sor": 14, "kod": "nap_termikus", "csoport": "Napenergia", "energiahordozo": "Termikus", "f_nren": 0, "f_ren": 1, "f_tot": 1, "f_co2eq_g_kWh": 25, "labjegyzet": null},
+        {"sor": 15, "kod": "szel", "csoport": "Szél", "energiahordozo": "Szél", "f_nren": 0, "f_ren": 1, "f_tot": 1, "f_co2eq_g_kWh": 12, "labjegyzet": null},
+        {"sor": 16, "kod": "kornyezeti_ho", "csoport": "Környezeti hő", "energiahordozo": "Geo-, aero-, hidrotermikus", "f_nren": 0, "f_ren": 1, "f_tot": 1, "f_co2eq_g_kWh": 27, "labjegyzet": null},
+        {"sor": 17, "kod": "export_halozatba", "csoport": "Exportált (kiváltott) villamos energia", "energiahordozo": "A hálózatba exportált", "f_nren": 2.3, "f_ren": 0.3, "f_tot": 2.6, "f_co2eq_g_kWh": 455, "labjegyzet": null},
+        {"sor": 18, "kod": "export_nem_szabalyozott_fogyasztonak", "csoport": "Exportált (kiváltott) villamos energia", "energiahordozo": "A rendelet által nem szabályozott fogyasztóknak átadott", "f_nren": 2.3, "f_ren": 0.3, "f_tot": 2.6, "f_co2eq_g_kWh": 455, "labjegyzet": null}
+      ]
+    },
+    {
+      "id": "szilard_bio_kedvezmenyes_feltetelek",
+      "cim": "A szilárd bio tüzelőanyag kedvezményes (6. sor szerinti) súlyozó tényezőjének alkalmazási esetei",
+      "forras": {
+        "dokumentum": "9/2023. (V. 25.) ÉKM rendelet",
+        "hely": "7. melléklet 3. pont",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2023-9-20-8X",
+        "idoallapot": "2023.11.02.",
+        "lekeres": "2026-10-29"
+      },
+      "hatalyos_tol": "2023-11-01",
+      "megjegyzes": "Ha egyik eset sem igazolt, a 5. sor (fnren = 0,6) alkalmazandó. A program ezt a hőtermelő adatlapján rögzített igazolással (dokumentum, dátum) engedi kiválasztani.",
+      "oszlopok": [
+        {"kulcs": "pont", "cim": "pont"},
+        {"kulcs": "eset", "cim": "eset (szó szerint)"},
+        {"kulcs": "p_max_kW", "cim": "hőteljesítmény felső határa", "egyseg": "kW"},
+        {"kulcs": "p_min_kW_kizart", "cim": "hőteljesítmény alsó határa (nagyobb mint)", "egyseg": "kW"},
+        {"kulcs": "beepites_elott", "cim": "számlával igazolt beépítés e dátum előtt"}
+      ],
+      "sorok": [
+        {"pont": "3.1.", "eset": "a hőtermelő berendezés legfeljebb 500 kW hőteljesítményű szilárd tüzelésű kazán, és megfelel a 2009/125/EK európai parlamenti és tanácsi irányelvnek a szilárd tüzelésű kazánok környezettudatos tervezésére vonatkozó követelmények tekintetében történő végrehajtásáról szóló, 2015. április 28-i (EU) 2015/1189 bizottsági rendelet követelményeinek", "p_max_kW": 500, "p_min_kW_kizart": null, "beepites_elott": null},
+        {"pont": "3.2.", "eset": "a hőtermelő berendezés legfeljebb 50 kW névleges hőteljesítményű, pelletté préselt faanyaggal működő, zárt égésterű szilárd tüzelésű egyedi helyiségfűtő berendezés, és megfelel a 2009/125/EK európai parlamenti és tanácsi irányelvnek a szilárd tüzelésű egyedi helyiségfűtő berendezések környezettudatos tervezésére vonatkozó követelmények tekintetében történő végrehajtásáról szóló, 2015. április 28-i (EU) 2015/1185 bizottsági rendelet követelményeinek", "p_max_kW": 50, "p_min_kW_kizart": null, "beepites_elott": null},
+        {"pont": "3.3.", "eset": "a hőtermelő berendezés számlával igazolható módon 2023. november 1. előtt került beépítésre, legfeljebb 500 kW hőteljesítményű szilárd tüzelésű kazán, és megfelel a megújuló energiát termelő berendezések és rendszerek beszerzéséhez és működtetéséhez nyújtott támogatások igénybevételének műszaki követelményeiről szóló 55/2016. (XII. 21.) NFM rendelet 1. melléklete szerinti követelményeknek", "p_max_kW": 500, "p_min_kW_kizart": null, "beepites_elott": "2023-11-01"},
+        {"pont": "3.4.", "eset": "a hőtermelő berendezés számlával igazolható módon 2023. november 1. előtt került beépítésre, pelletté préselt faanyaggal működő, zárt égésterű szilárd tüzelésű egyedi helyiségfűtő berendezés, és megfelel a megújuló energiát termelő berendezések és rendszerek beszerzéséhez és működtetéséhez nyújtott támogatások igénybevételének műszaki követelményeiről szóló 55/2016. (XII. 21.) NFM rendelet 1. melléklete szerinti követelményeknek", "p_max_kW": null, "p_min_kW_kizart": null, "beepites_elott": "2023-11-01"},
+        {"pont": "3.5.", "eset": "a hőtermelő berendezés 500 kW-nál nagyobb hőteljesítményű szilárd tüzelésű kazán, és megfelel a megújuló energiát termelő berendezések és rendszerek beszerzéséhez és működtetéséhez nyújtott támogatások igénybevételének műszaki követelményeiről szóló 55/2016. (XII. 21.) NFM rendelet 1. melléklete szerinti követelményeknek", "p_max_kW": null, "p_min_kW_kizart": 500, "beepites_elott": null}
+      ]
+    }
+  ]
+}

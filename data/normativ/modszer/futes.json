@@ -1,0 +1,1902 @@
+{
+ "schema_verzio": 1,
+ "tablazatok": [
+  {
+   "id": "tabla_8_1",
+   "cim": "A fűtött téren kívül elhelyezett folyékony és gáznemű tüzelőanyagokkal üzemelő kazánok teljesítménytényezői, εF és segédenergia igénye, WF,term/Arszr",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.1.2 fejezet, 8.1. táblázat",
+    "oldal": 57,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Csak ErP (811/2013/EU) hatálya alá NEM eső készülékekre (8.3.1.2). A teljesítménytényező meghatározásához azt az alapterületet kell figyelembe venni, amelynek fűtésére az adott berendezés szolgál (társasházaknál lakásonkénti/helyiségenkénti hőtermelők!). Köztes alapterületnél lineáris interpoláció (7. fejezet, 55. o.). A hőtermelők teljesítménytényezői égéshőre vonatkoznak (55. o.). Bivalens/multivalens rendszernél a fajlagos értékeket a fedezett nettó igény hányadával csökkenteni kell (55. o.). Az alapterület-tartományon (100 m2 alatt, 10000 m2 felett) kívüli értelmezést a módszer nem adja meg.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alapterület A_rszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "eps_F_allando",
+     "cim": "Teljesítménytényezők εF [-] / Állandó hőmérsékletű kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_F_alacsony",
+     "cim": "Teljesítménytényezők εF [-] / Alacsony hőmérsékletű kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_F_kondenzacios",
+     "cim": "Teljesítménytényezők εF [-] / Kondenzációs kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "W_F_term_per_A",
+     "cim": "Segédenergia WF,term/Arszr [kWh/m2év]",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "eps_F_allando": 1.38,
+     "eps_F_alacsony": 1.14,
+     "eps_F_kondenzacios": 1.05,
+     "W_F_term_per_A": 0.79
+    },
+    {
+     "A_rszr": 150,
+     "eps_F_allando": 1.33,
+     "eps_F_alacsony": 1.13,
+     "eps_F_kondenzacios": 1.05,
+     "W_F_term_per_A": 0.66
+    },
+    {
+     "A_rszr": 200,
+     "eps_F_allando": 1.3,
+     "eps_F_alacsony": 1.12,
+     "eps_F_kondenzacios": 1.04,
+     "W_F_term_per_A": 0.58
+    },
+    {
+     "A_rszr": 300,
+     "eps_F_allando": 1.27,
+     "eps_F_alacsony": 1.12,
+     "eps_F_kondenzacios": 1.04,
+     "W_F_term_per_A": 0.48
+    },
+    {
+     "A_rszr": 500,
+     "eps_F_allando": 1.23,
+     "eps_F_alacsony": 1.11,
+     "eps_F_kondenzacios": 1.03,
+     "W_F_term_per_A": 0.38
+    },
+    {
+     "A_rszr": 750,
+     "eps_F_allando": 1.21,
+     "eps_F_alacsony": 1.1,
+     "eps_F_kondenzacios": 1.03,
+     "W_F_term_per_A": 0.31
+    },
+    {
+     "A_rszr": 1000,
+     "eps_F_allando": 1.2,
+     "eps_F_alacsony": 1.1,
+     "eps_F_kondenzacios": 1.02,
+     "W_F_term_per_A": 0.27
+    },
+    {
+     "A_rszr": 1500,
+     "eps_F_allando": 1.18,
+     "eps_F_alacsony": 1.09,
+     "eps_F_kondenzacios": 1.02,
+     "W_F_term_per_A": 0.23
+    },
+    {
+     "A_rszr": 2500,
+     "eps_F_allando": 1.16,
+     "eps_F_alacsony": 1.09,
+     "eps_F_kondenzacios": 1.02,
+     "W_F_term_per_A": 0.18
+    },
+    {
+     "A_rszr": 5000,
+     "eps_F_allando": 1.14,
+     "eps_F_alacsony": 1.08,
+     "eps_F_kondenzacios": 1.01,
+     "W_F_term_per_A": 0.13
+    },
+    {
+     "A_rszr": 10000,
+     "eps_F_allando": 1.13,
+     "eps_F_alacsony": 1.08,
+     "eps_F_kondenzacios": 1.01,
+     "W_F_term_per_A": 0.09
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_2",
+   "cim": "A fűtött téren belül elhelyezett folyékony és gáznemű tüzelőanyagokkal üzemelő kazánok teljesítménytényezői, εF és segédenergia igénye, WF,term/Arszr",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.1.2 fejezet, 8.2. táblázat",
+    "oldal": 58,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "ANOMÁLIA: a PDF-en (58. o.) a 2. εF-oszlop fejléce hibásan „[kWh/m2év]” (a 8.1. táblázat analógiája alapján valószínűleg „Alacsony hőmérsékletű kazán” – NEM javítottuk, a kulcs semleges). Az Állandó hőmérsékletű kazán oszlop 750–10000 m2 között üres, a 2. és a Kondenzációs oszlop csak 100 m2-nél tartalmaz értéket (1,08; 1,01), a többi cella üres a PDF-en (null). Nem eldönthető, hogy az üres cella a felette lévő érték változatlan továbbvitelét jelenti-e. Csak ErP hatálya alá nem eső készülékekre. Lineáris interpoláció köztes alapterületnél.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alapterület A_rszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "eps_F_allando",
+     "cim": "Teljesítménytényezők εF [-] / Állandó hőmérsékletű kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_F_masodik_oszlop",
+     "cim": "Teljesítménytényezők εF [-] / [kWh/m2év]",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_F_kondenzacios",
+     "cim": "Teljesítménytényezők εF [-] / Kondenzációs kazán",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "W_F_term_per_A",
+     "cim": "Segédenergia WF,term/Arszr [kWh/m2év]",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "eps_F_allando": 1.3,
+     "eps_F_masodik_oszlop": 1.08,
+     "eps_F_kondenzacios": 1.01,
+     "W_F_term_per_A": 0.79
+    },
+    {
+     "A_rszr": 150,
+     "eps_F_allando": 1.24,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.66
+    },
+    {
+     "A_rszr": 200,
+     "eps_F_allando": 1.21,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.58
+    },
+    {
+     "A_rszr": 300,
+     "eps_F_allando": 1.18,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.48
+    },
+    {
+     "A_rszr": 500,
+     "eps_F_allando": 1.15,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.38
+    },
+    {
+     "A_rszr": 750,
+     "eps_F_allando": null,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.31
+    },
+    {
+     "A_rszr": 1000,
+     "eps_F_allando": null,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.27
+    },
+    {
+     "A_rszr": 1500,
+     "eps_F_allando": null,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.23
+    },
+    {
+     "A_rszr": 2500,
+     "eps_F_allando": null,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.18
+    },
+    {
+     "A_rszr": 5000,
+     "eps_F_allando": null,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.13
+    },
+    {
+     "A_rszr": 10000,
+     "eps_F_allando": null,
+     "eps_F_masodik_oszlop": null,
+     "eps_F_kondenzacios": null,
+     "W_F_term_per_A": 0.09
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_3",
+   "cim": "Szilárd- és biomassza tüzelés teljesítménytényezője, εF [-]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.1.2 fejezet, 8.3. táblázat",
+    "oldal": 58,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Az eredeti táblázat egysoros, a kazántípusok oszlopfejlécek; itt soronként átfordítva. Alapterülettől független érték.",
+   "oszlopok": [
+    {
+     "kulcs": "kazan_tipus",
+     "cim": "(kazántípus – a táblázat fejléce)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_F",
+     "cim": "εF",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "kazan_tipus": "Vegyes tüzelésű kazán",
+     "eps_F": 1.85
+    },
+    {
+     "kazan_tipus": "Tűzifa (hasábfa) tüzelésű kazán",
+     "eps_F": 1.75
+    },
+    {
+     "kazan_tipus": "Pellettüzelésű kazán",
+     "eps_F": 1.1
+    },
+    {
+     "kazan_tipus": "Faelgázosító kazán",
+     "eps_F": 1.2
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_4",
+   "cim": "Szilárd- és biomassza tüzelés segédenergia igénye WF,term/Arszr [kWh/m2év]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.1.2 fejezet, 8.4. táblázat",
+    "oldal": 58,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Fejléc: „Alapterületig”. ANOMÁLIA: a táblázat csak 500 m2-ig tart; 500 m2 feletti alapterületre nem ad értéket. A 8.3. táblázat Faelgázosító kazánjához nincs segédenergia-oszlop.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alapterületig A_rszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "vegyes_szabalyozo_nelkul",
+     "cim": "Vegyes tüzelésű kazán (szabályozó nélkül)",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "tuzifa_szabalyozoval",
+     "cim": "Tűzifa (hasábfa) tüzelésű kazán (szabályozóval)",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "pellet_ventilator_elektromos_gyujtas",
+     "cim": "Pellettüzelésű kazán (Ventilátorral/elektromos gyújtással)",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "vegyes_szabalyozo_nelkul": 0,
+     "tuzifa_szabalyozoval": 0.19,
+     "pellet_ventilator_elektromos_gyujtas": 1.96
+    },
+    {
+     "A_rszr": 150,
+     "vegyes_szabalyozo_nelkul": 0,
+     "tuzifa_szabalyozoval": 0.13,
+     "pellet_ventilator_elektromos_gyujtas": 1.84
+    },
+    {
+     "A_rszr": 200,
+     "vegyes_szabalyozo_nelkul": 0,
+     "tuzifa_szabalyozoval": 0.1,
+     "pellet_ventilator_elektromos_gyujtas": 1.78
+    },
+    {
+     "A_rszr": 300,
+     "vegyes_szabalyozo_nelkul": 0,
+     "tuzifa_szabalyozoval": 0.07,
+     "pellet_ventilator_elektromos_gyujtas": 1.71
+    },
+    {
+     "A_rszr": 500,
+     "vegyes_szabalyozo_nelkul": 0,
+     "tuzifa_szabalyozoval": 0.04,
+     "pellet_ventilator_elektromos_gyujtas": 1.65
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_5",
+   "cim": "Elektromos üzemű hőszivattyúk teljesítménytényezője, εF",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.2.2 fejezet, 8.5. táblázat",
+    "oldal": 59,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A PDF-en a hőforrás cella csak a csoport első sorában szerepel (összevont csoport), itt minden sorban ismételve. A Levegő/levegő sor a 60. oldalon folytatódik, fűtővíz-hőmérséklet cellája üres (null). A t_elore/t_vissza mezők a „55/45” szöveg felbontásai. Csak ErP hatályán kívüli készülékekre; εF = 1/SCOP. Köztes hőfoklépcsőnél a 7. fejezet szerinti, közepes hőmérsékletkülönbségre viszonyított lineáris interpoláció (55. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "hoforras_futokozeg",
+     "cim": "Hőforrás / Fűtőközeg",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "futoviz_homerseklet",
+     "cim": "Fűtővíz hőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "eps_F",
+     "cim": "Teljesítménytényező εF [-]",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "hoforras_futokozeg": "Víz/Víz",
+     "futoviz_homerseklet": "55/45",
+     "t_elore": 55,
+     "t_vissza": 45,
+     "eps_F": 0.23
+    },
+    {
+     "hoforras_futokozeg": "Víz/Víz",
+     "futoviz_homerseklet": "35/28",
+     "t_elore": 35,
+     "t_vissza": 28,
+     "eps_F": 0.19
+    },
+    {
+     "hoforras_futokozeg": "Talajhő/Víz",
+     "futoviz_homerseklet": "55/45",
+     "t_elore": 55,
+     "t_vissza": 45,
+     "eps_F": 0.27
+    },
+    {
+     "hoforras_futokozeg": "Talajhő/Víz",
+     "futoviz_homerseklet": "35/28",
+     "t_elore": 35,
+     "t_vissza": 28,
+     "eps_F": 0.23
+    },
+    {
+     "hoforras_futokozeg": "Levegő/Víz",
+     "futoviz_homerseklet": "55/45",
+     "t_elore": 55,
+     "t_vissza": 45,
+     "eps_F": 0.37
+    },
+    {
+     "hoforras_futokozeg": "Levegő/Víz",
+     "futoviz_homerseklet": "35/28",
+     "t_elore": 35,
+     "t_vissza": 28,
+     "eps_F": 0.3
+    },
+    {
+     "hoforras_futokozeg": "Távozó levegő/Víz (hővisszanyerő nélkül)",
+     "futoviz_homerseklet": "55/45",
+     "t_elore": 55,
+     "t_vissza": 45,
+     "eps_F": 0.3
+    },
+    {
+     "hoforras_futokozeg": "Távozó levegő/Víz (hővisszanyerő nélkül)",
+     "futoviz_homerseklet": "35/28",
+     "t_elore": 35,
+     "t_vissza": 28,
+     "eps_F": 0.24
+    },
+    {
+     "hoforras_futokozeg": "Levegő/levegő",
+     "futoviz_homerseklet": null,
+     "t_elore": null,
+     "t_vissza": null,
+     "eps_F": 0.4
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_6",
+   "cim": "Földgáz üzemű hőszivattyúk teljesítménytényezője, εF",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.2.2 fejezet, 8.6. táblázat",
+    "oldal": 60,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Energiahordozó: földgáz (nem villamos). Csak ErP hatályán kívüli készülékekre.",
+   "oszlopok": [
+    {
+     "kulcs": "hoforras_futokozeg",
+     "cim": "Hőforrás / Fűtőközeg",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "futoviz_homerseklet",
+     "cim": "Fűtővíz hőmérséklete",
+     "egyseg": "°C"
+    },
+    {
+     "kulcs": "eps_F",
+     "cim": "Teljesítménytényező εF [-]",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "hoforras_futokozeg": "Levegő/Víz",
+     "futoviz_homerseklet": "45/40",
+     "t_elore": 45,
+     "t_vissza": 40,
+     "eps_F": 0.58
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_7",
+   "cim": "Egyéb berendezések teljesítménytényezője, εF",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.3.4.2 fejezet, 8.7. táblázat",
+    "oldal": 61,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Lábjegyzet szó szerint: „1) Elektromos üzemű hőtárolós kályháknál a ventilátor energiafelhasználását a teljesítménytényező már tartalmazza.” Csak ErP hatályán kívüli egyedi és direkt elektromos fűtésekre (8.3.4.2).",
+   "oszlopok": [
+    {
+     "kulcs": "hoforras_futokozeg",
+     "cim": "Hőforrás / Fűtőközeg",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_F",
+     "cim": "Teljesítménytényező εF [-]",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "hoforras_futokozeg": "Elektromos hősugárzó, elektromos fűtőfilm",
+     "eps_F": 1.0
+    },
+    {
+     "hoforras_futokozeg": "Elektromos kazán",
+     "eps_F": 1.11
+    },
+    {
+     "hoforras_futokozeg": "Elektromos hőtárolós kályha1)",
+     "eps_F": 1.03
+    },
+    {
+     "hoforras_futokozeg": "Fatüzelésű cserépkályha",
+     "eps_F": 1.6
+    },
+    {
+     "hoforras_futokozeg": "Kandalló (zárt, hagyományos)",
+     "eps_F": 1.8
+    },
+    {
+     "hoforras_futokozeg": "Egyedi fűtés kályhával",
+     "eps_F": 1.9
+    },
+    {
+     "hoforras_futokozeg": "Kandalló (nyitott, hagyományos)",
+     "eps_F": 4.0
+    },
+    {
+     "hoforras_futokozeg": "Hőmérsékletszabályozó nélküli, vagy csak folyamatos hőmérsékletszabályozásra képes gázkonvektorok (A készülék nem képes a csökkentett gázterhelés állapotából a főégő kikapcsolt állapotába kapcsolni.)",
+     "eps_F": 1.4
+    },
+    {
+     "hoforras_futokozeg": "Kombinált hőmérsékletszabályozással ellátott, hagyományos gázkonvektor (A készülék képes a csökkentett gázterhelés állapotából a főégő kikapcsolt állapotába kapcsolni.)",
+     "eps_F": 1.32
+    },
+    {
+     "hoforras_futokozeg": "Kombinált hőmérséklet szabályozóval ellátott és szakaszos gáz-levegő arányszabályozást megvalósító nyílt égésterű, gravitációs kéménybe kötött gázkonvektorok, amelyek csökkentett terhelésen mért hatásfoka legalább 89%.",
+     "eps_F": 1.12
+    },
+    {
+     "hoforras_futokozeg": "Kombinált hőmérséklet szabályozóval ellátott és szakaszos gáz-levegő arányszabályozást megvalósító külsőfali gázkonvektorok, amelyek csökkentett terhelésen mért hatásfoka legalább 93%.",
+     "eps_F": 1.07
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_8",
+   "cim": "A hőelosztás fajlagos veszteségei az alapterület és a rendszer méretezési hőfoklépcső függvényében, QF,száll/Arszr (vízszintes elosztóvezetékek a fűtött téren kívül)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.5.1 fejezet, 8.8. táblázat",
+    "oldal": 62,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Fejléc: „A hőelosztás veszteségei QF,száll/Arszr [kWh/m2év]”. Szöveg a táblázat alatt szó szerint: „A táblázattól eltérő hőfoklépcső esetén a közepes hőmérsékletkülönbségre viszonyított lineáris interpolációval kell meghatározni a hőelosztás veszteségét. Fan coilos rendszerek esetén az ajánlott érték 70/55 °C, vagy 55/45 °C.” 62. o.: „Részrendszer esetén a táblázatokból kiolvasható értékeket a részrendszerhez tartozó nettó hőigény és az épület teljes nettó fűtési igényének hányadosával meg kell szorozni.” Az utolsó sor eredetije „> 500”. Az „Alapterületig” fejléc és a 7. fejezet lineáris interpolációs szabálya közötti viszony (lépcsős vagy interpolált olvasás) nem egyértelmű.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alapterületig A_rszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "dt_90_70",
+     "cim": "90/70 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "dt_70_55",
+     "cim": "70/55 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "dt_55_45",
+     "cim": "55/45 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "dt_35_28",
+     "cim": "35/28 °C",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "dt_90_70": 13.8,
+     "dt_70_55": 10.3,
+     "dt_55_45": 7.8,
+     "dt_35_28": 4.0
+    },
+    {
+     "A_rszr": 150,
+     "dt_90_70": 10.3,
+     "dt_70_55": 7.7,
+     "dt_55_45": 5.8,
+     "dt_35_28": 2.9
+    },
+    {
+     "A_rszr": 200,
+     "dt_90_70": 8.5,
+     "dt_70_55": 6.3,
+     "dt_55_45": 4.8,
+     "dt_35_28": 2.3
+    },
+    {
+     "A_rszr": 300,
+     "dt_90_70": 6.8,
+     "dt_70_55": 5.0,
+     "dt_55_45": 3.7,
+     "dt_35_28": 1.8
+    },
+    {
+     "A_rszr": 500,
+     "dt_90_70": 5.4,
+     "dt_70_55": 3.9,
+     "dt_55_45": 2.9,
+     "dt_35_28": 1.3
+    },
+    {
+     "A_rszr": null,
+     "A_rszr_min": 500,
+     "A_rszr_max": null,
+     "eredeti": "> 500",
+     "dt_90_70": 4.6,
+     "dt_70_55": 3.4,
+     "dt_55_45": 2.5,
+     "dt_35_28": 1.1
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_9",
+   "cim": "A hőelosztás fajlagos veszteségei az alapterület és a rendszer méretezési hőfoklépcső függvényében, QF,száll/Arszr (vízszintes elosztóvezetékek a fűtött téren belül)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.5.1 fejezet, 8.9. táblázat",
+    "oldal": 62,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Fejléc: „A hőelosztás veszteségei QF,száll/Arszr [kWh/m2év]”. Szöveg a táblázat alatt szó szerint: „A táblázattól eltérő hőfoklépcső esetén a közepes hőmérsékletkülönbségre viszonyított lineáris interpolációval kell meghatározni a hőelosztás veszteségét. Fan coilos rendszerek esetén az ajánlott érték 70/55 °C, vagy 55/45 °C.” 62. o.: „Részrendszer esetén a táblázatokból kiolvasható értékeket a részrendszerhez tartozó nettó hőigény és az épület teljes nettó fűtési igényének hányadosával meg kell szorozni.” Az utolsó sor eredetije „> 500”. Az „Alapterületig” fejléc és a 7. fejezet lineáris interpolációs szabálya közötti viszony (lépcsős vagy interpolált olvasás) nem egyértelmű.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alapterületig A_rszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "dt_90_70",
+     "cim": "90/70 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "dt_70_55",
+     "cim": "70/55 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "dt_55_45",
+     "cim": "55/45 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "dt_35_28",
+     "cim": "35/28 °C",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "dt_90_70": 4.1,
+     "dt_70_55": 2.9,
+     "dt_55_45": 2.1,
+     "dt_35_28": 0.7
+    },
+    {
+     "A_rszr": 150,
+     "dt_90_70": 3.6,
+     "dt_70_55": 2.5,
+     "dt_55_45": 1.8,
+     "dt_35_28": 0.6
+    },
+    {
+     "A_rszr": 200,
+     "dt_90_70": 3.3,
+     "dt_70_55": 2.3,
+     "dt_55_45": 1.6,
+     "dt_35_28": 0.6
+    },
+    {
+     "A_rszr": 300,
+     "dt_90_70": 3.0,
+     "dt_70_55": 2.1,
+     "dt_55_45": 1.5,
+     "dt_35_28": 0.5
+    },
+    {
+     "A_rszr": 500,
+     "dt_90_70": 2.8,
+     "dt_70_55": 2.0,
+     "dt_55_45": 1.4,
+     "dt_35_28": 0.5
+    },
+    {
+     "A_rszr": null,
+     "A_rszr_min": 500,
+     "A_rszr_max": null,
+     "eredeti": "> 500",
+     "dt_90_70": 2.7,
+     "dt_70_55": 1.9,
+     "dt_55_45": 1.3,
+     "dt_35_28": 0.5
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_10",
+   "cim": "Szabályozási veszteségtényezők szabad fűtőfelületekre",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.6.1.1 fejezet, 8.10. táblázat",
+    "oldal": 63,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Alkalmazás: (8.12) εF,szab = εF,szab,o + εF,szab,1 + εF,szab,2 + εF,szab,3 + εF,szab,4 (εF,szab,4 a 8.12. táblázatból). Az 1,042-es alapérték cellája a PDF-en két sort tartalmaz egy cellában („Szabályozás referencia helyiségre, PI-szabályozó” és „Központi előremenő hőmérséklet szabályozás helyiségenkénti hőmérséklet szabályozással”), itt sortöréssel egy szövegben. A „Ventilátoros radiátorok” sor a PDF-en az egycsöves alcsoport alatt áll, alcsoport-fejléc nélkül (itt alcsoport=null). Az előjeles cellák eredeti szövege az „eredeti” mezőben. ANOMÁLIA: az alapérték helyiségenkénti szabályozást is említ (1,042), miközben a Korrekció 3 is a helyiségenkénti szabályozást korrigálja – a halmozás szabályát a módszer nem rendezi.",
+   "oszlopok": [
+    {
+     "kulcs": "tenyezo",
+     "cim": "Tényező",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "blokk",
+     "cim": "(blokkfejléc)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "csoport",
+     "cim": "(sorfejléc, 1. oszlop)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "alcsoport",
+     "cim": "(alcsoport-fejléc)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "leiras",
+     "cim": "(2. oszlop – kialakítás / szabályozás)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás nélkül vagy központi előremenő hőmérséklet szabályozással, de helyiséghőmérséklet szabályozás nélkül.",
+     "ertek": 1.149
+    },
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás referencia helyiségre (P-szabályozó vagy ismeretlen)",
+     "ertek": 1.083
+    },
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás referencia helyiségre, PI-szabályozó\nKözponti előremenő hőmérséklet szabályozás helyiségenkénti hőmérséklet szabályozással",
+     "ertek": 1.042
+    },
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás referencia helyiségre optimalizációs funkcióval (pl. jelenlétérzékelővel, adaptív szabályozóval)",
+     "ertek": 1.03
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": "kétcsöves fűtés és modernizált egycsöves fűtés",
+     "leiras": "90 °C/70 °C",
+     "ertek": 0.036,
+     "eredeti": "+0,036"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": "kétcsöves fűtés és modernizált egycsöves fűtés",
+     "leiras": "70 °C/55 °C",
+     "ertek": 0.021,
+     "eredeti": "+0,021"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": "kétcsöves fűtés és modernizált egycsöves fűtés",
+     "leiras": "55 °C/45 °C",
+     "ertek": 0.015,
+     "eredeti": "+0,015"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": "kétcsöves fűtés és modernizált egycsöves fűtés",
+     "leiras": "45 °C/35 °C",
+     "ertek": 0.012,
+     "eredeti": "+0,012"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": "egycsöves fűtés (nem felújított)",
+     "leiras": "90 °C/70 °C",
+     "ertek": 0.048,
+     "eredeti": "+0,048"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": "egycsöves fűtés (nem felújított)",
+     "leiras": "70 °C/55 °C",
+     "ertek": 0.036,
+     "eredeti": "+0,036"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Közepes méretezési hőmérsékletkülönbség hatása",
+     "alcsoport": null,
+     "leiras": "Ventilátoros radiátorok (pl. padlókonvektor ventilátorral)",
+     "ertek": 0.0,
+     "eredeti": "+0,000"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Külső határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "belsőfali radiátor",
+     "ertek": 0.039,
+     "eredeti": "+0,039"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Külső határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "külsőfali radiátor",
+     "ertek": 0.009,
+     "eredeti": "+0,009"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Külső határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "radiátor üvegfelület előtt hőtükör nélkül",
+     "ertek": 0.051,
+     "eredeti": "+0,051"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Külső határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "radiátor üvegfelület előtt hőtükörrel",
+     "ertek": 0.036,
+     "eredeti": "+0,036"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "nincs",
+     "ertek": 0,
+     "eredeti": "0"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "különálló (pl. kéziszelep)",
+     "ertek": -0.03,
+     "eredeti": "-0,030"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "különálló, képes önálló be-kikapcsolásra (pl. termosztatikus szelep)",
+     "ertek": -0.06,
+     "eredeti": "-0,060"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "hálózatba integrált, képes önálló reagálásra és beavatkozásra (pl. épületfelügyeletbe kötött)",
+     "ertek": -0.072,
+     "eredeti": "-0,072"
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_11",
+   "cim": "Szabályozási veszteségtényezők beágyazott fűtőfelületekre",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.6.1.1 fejezet, 8.11. táblázat",
+    "oldal": 63,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A táblázat a 63. oldalon kezdődik és a 64. oldalon folytatódik (Korrekció 1–3). Alkalmazás: (8.12). Az 1,042-es alapérték cellája két sort tartalmaz egy cellában. A „Padlófűtés” alcsoport-sor a PDF-en érték nélküli. Hivatkozott szabvány: MSZ EN 1264-2 (a korrekció besorolási feltételeként). Ugyanaz az alapérték/Korrekció 3 halmozási anomália, mint a 8.10. táblázatnál.",
+   "oszlopok": [
+    {
+     "kulcs": "tenyezo",
+     "cim": "Tényező",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "blokk",
+     "cim": "(blokkfejléc)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "csoport",
+     "cim": "(sorfejléc, 1. oszlop)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "alcsoport",
+     "cim": "(alcsoport-fejléc)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "leiras",
+     "cim": "(2. oszlop – kialakítás / szabályozás)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás nélkül vagy központi előremenő hőmérséklet szabályozással, de helyiséghőmérséklet szabályozás nélkül",
+     "ertek": 1.149
+    },
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás referencia helyiségre (ismeretlen szabályozó)",
+     "ertek": 1.083
+    },
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás referencia helyiségre, kétpontos szabályozó (0,5 K hiszterézis alatt), P-, PI-, PID-szabályozó\nKözponti előremenő hőmérséklet szabályozás helyiségenkénti hőmérséklet szabályozással",
+     "ertek": 1.042
+    },
+    {
+     "tenyezo": "eps_F_szab_o",
+     "blokk": "Szabályozási veszteségtényező alapértékei (εF,szab,o)",
+     "csoport": "Hőtermelő szabályozása",
+     "alcsoport": null,
+     "leiras": "Szabályozás optimalizációs funkcióval, pl. jelenlétérzékelővel, adaptív szabályozóval",
+     "ertek": 1.03
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Rendszer",
+     "alcsoport": "Padlófűtés",
+     "leiras": "— nedves fektetésű",
+     "ertek": 0.021,
+     "eredeti": "+0,021"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Rendszer",
+     "alcsoport": "Padlófűtés",
+     "leiras": "— száraz fektetésű",
+     "ertek": 0.012,
+     "eredeti": "+0,012"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Rendszer",
+     "alcsoport": "Padlófűtés",
+     "leiras": "— vékony réteggel fedett fektetés",
+     "ertek": 0.006,
+     "eredeti": "+0,006"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Rendszer",
+     "alcsoport": null,
+     "leiras": "Falfűtés",
+     "ertek": 0.045,
+     "eredeti": "+0,045"
+    },
+    {
+     "tenyezo": "eps_F_szab_1",
+     "blokk": "Korrekció 1 (εF,szab,1)",
+     "csoport": "Rendszer",
+     "alcsoport": null,
+     "leiras": "Mennyezetfűtés",
+     "ertek": 0.063,
+     "eredeti": "+0,063"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "beágyazott fűtőfelület MSZ EN 1264-2 szerinti minimális hőszigetelés nélkül",
+     "ertek": 0.042,
+     "eredeti": "+0,042"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "beágyazott fűtőfelület MSZ EN 1264-2 szerinti minimális hőszigeteléssel",
+     "ertek": 0.015,
+     "eredeti": "+0,015"
+    },
+    {
+     "tenyezo": "eps_F_szab_2",
+     "blokk": "Korrekció 2 (εF,szab,2)",
+     "csoport": "Határolószerkezetek hatása",
+     "alcsoport": null,
+     "leiras": "beágyazott fűtőfelület a MSZ EN 1264-2-ban előírt minimális hőszigetelésnél 100%-kal jobb hőszigeteléssel",
+     "ertek": 0.003,
+     "eredeti": "+0,003"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "nincs",
+     "ertek": 0,
+     "eredeti": "0"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "különálló (pl. helyiségenkénti külön körök)",
+     "ertek": -0.03,
+     "eredeti": "-0,030"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "különálló, képes önálló be-kikapcsolásra (pl. termosztatikus zónaszelep)",
+     "ertek": -0.06,
+     "eredeti": "-0,060"
+    },
+    {
+     "tenyezo": "eps_F_szab_3",
+     "blokk": "Korrekció 3 (εF,szab,3)",
+     "csoport": "Helyiségenkénti szabályozás",
+     "alcsoport": null,
+     "leiras": "hálózatba integrált, képes önálló reagálásra és beavatkozásra (pl. épületfelügyeletbe kötött)",
+     "ertek": -0.072,
+     "eredeti": "-0,072"
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_12",
+   "cim": "Beszabályozás hatását kifejező korrekció",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.6.1.1 fejezet, 8.12. táblázat",
+    "oldal": 64,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Az eredeti táblázat két párhuzamos blokk (bal: Egycsöves rendszer + εF,szab,4; jobb: Kétcsöves rendszer + εF,szab,4 két aloszloppal: „hőleadók száma max. 10”, „hőleadók száma 10 felett”); itt egymás alatti sorokként. Az egy sorban álló bal/jobb tételek között nincs tartalmi megfeleltetés. A „statikus-beállítás” kötőjeles írásmód a PDF szerinti. A kétcsöves első és utolsó sorában az érték mindkét aloszlopra összevont cella.",
+   "oszlopok": [
+    {
+     "kulcs": "rendszer",
+     "cim": "Egycsöves rendszer / Kétcsöves rendszer",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "kialakitas",
+     "cim": "(beszabályozás leírása)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_F_szab_4",
+     "cim": "εF,szab,4 (egycsöves)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_F_szab_4_max10",
+     "cim": "εF,szab,4 / hőleadók száma max. 10 (kétcsöves)",
+     "egyseg": "-"
+    },
+    {
+     "kulcs": "eps_F_szab_4_10felett",
+     "cim": "εF,szab,4 / hőleadók száma 10 felett (kétcsöves)",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "rendszer": "Egycsöves rendszer",
+     "kialakitas": "nincs hidraulikai beszabályozás",
+     "eps_F_szab_4": 0.042,
+     "eredeti": "+0,042"
+    },
+    {
+     "rendszer": "Egycsöves rendszer",
+     "kialakitas": "körönkénti statikus beszabályozás",
+     "eps_F_szab_4": 0.024,
+     "eredeti": "+0,024"
+    },
+    {
+     "rendszer": "Egycsöves rendszer",
+     "kialakitas": "körönkénti dinamikus beszabályozás (pl. dinamikus térfogatáram korlátozó szelepekkel)",
+     "eps_F_szab_4": 0.018,
+     "eredeti": "+0,018"
+    },
+    {
+     "rendszer": "Egycsöves rendszer",
+     "kialakitas": "körönkénti dinamikus beszabályozás (pl. dinamikus térfogatáram korlátozó szelepekkel) és a terheléstől függően dinamikus szabályozás (pl. a visszatérő hőmérsékletének korlátozása)",
+     "eps_F_szab_4": 0.012,
+     "eredeti": "+0,012"
+    },
+    {
+     "rendszer": "Egycsöves rendszer",
+     "kialakitas": "körönkénti dinamikus beszabályozás (pl.  dinamikus térfogatáram korlátozó szelepekkel) és a terheléstől függően dinamikus szabályozás (hőfoklépcső)",
+     "eps_F_szab_4": 0.006,
+     "eredeti": "+0,006"
+    },
+    {
+     "rendszer": "Kétcsöves rendszer",
+     "kialakitas": "nincs hidraulikai beszabályozás",
+     "eps_F_szab_4_max10": 0.036,
+     "eps_F_szab_4_10felett": 0.036,
+     "eredeti": "+0,036 (a két oszlopra összevont cella)"
+    },
+    {
+     "rendszer": "Kétcsöves rendszer",
+     "kialakitas": "fűtőtestenként/fűtőfelületenként statikus beállítás, csoportos beszabályozás nélkül (pl.: radiátor visszatérő szelep)",
+     "eps_F_szab_4_max10": 0.018,
+     "eps_F_szab_4_10felett": 0.024,
+     "eredeti": "+0,018 | +0,024"
+    },
+    {
+     "rendszer": "Kétcsöves rendszer",
+     "kialakitas": "fűtőtestenként /fűtőfelületenként statikus-beállítás csoportos statikus beszabályozással (pl. strangszabályozó szelepekkel)",
+     "eps_F_szab_4_max10": 0.012,
+     "eps_F_szab_4_10felett": 0.018,
+     "eredeti": "+0,012 | +0,018"
+    },
+    {
+     "rendszer": "Kétcsöves rendszer",
+     "kialakitas": "fűtőtestenként /fűtőfelületenként statikus-beállítás csoportos dinamikus beszabályozással (pl. nyomáskülönbség-szabályozókkal)",
+     "eps_F_szab_4_max10": 0.006,
+     "eps_F_szab_4_10felett": 0.012,
+     "eredeti": "+0,006 | +0,012"
+    },
+    {
+     "rendszer": "Kétcsöves rendszer",
+     "kialakitas": "fűtőtestenként/fűtőfelületenként dinamikus beszabályozás (pl. automatikus térfogatáram korlátozókkal/nyomáskülönbség-szabályozókkal)",
+     "eps_F_szab_4_max10": 0.0,
+     "eps_F_szab_4_10felett": 0.0,
+     "eredeti": "+0,000 (a két oszlopra összevont cella)"
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_13",
+   "cim": "Szabályozási veszteségtényezők villamos fűtés esetén",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.6.1.2 fejezet, 8.13. táblázat",
+    "oldal": 65,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "8.6.1.2: „A szabályozási veszteségtényező a táblázatokból olvasható ki a szabályozás típusának függvényében.” Itt εF,szab közvetlenül (nem alapérték+korrekció). A „szabályozás-nélkül” kötőjeles írásmód a PDF szerinti.",
+   "oszlopok": [
+    {
+     "kulcs": "elhelyezes",
+     "cim": "(sorfejléc: elhelyezés)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "szabalyozas",
+     "cim": "(szabályozás leírása)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_F_szab",
+     "cim": "Szabályozási veszteségtényező (εF,szab)",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "elhelyezes": "Külső fal mellett",
+     "szabalyozas": "Közvetlen elektromos fűtés P-szabályozóval (1 K)",
+     "eps_F_szab": 1.066
+    },
+    {
+     "elhelyezes": "Külső fal mellett",
+     "szabalyozas": "Közvetlen elektromos fűtés PI-szabályozóval (optimalizációval)",
+     "eps_F_szab": 1.042
+    },
+    {
+     "elhelyezes": "Külső fal mellett",
+     "szabalyozas": "Hőtárolós fűtés szabályozás-nélkül, külső hőmérsékletfüggő előremenő szabályozás nélkül és statikus/dinamikus beszabályozás nélkül",
+     "eps_F_szab": 1.161
+    },
+    {
+     "elhelyezes": "Külső fal mellett",
+     "szabalyozas": "Hőtárolós fűtés P-szabályozóval (1 K), külső hőmérsékletfüggő előremenő szabályozással és statikus/dinamikus beszabályozással",
+     "eps_F_szab": 1.089
+    },
+    {
+     "elhelyezes": "Külső fal mellett",
+     "szabalyozas": "Hőtárolós fűtés PID-szabályozóval, optimalizációval, külső hőmérsékletfüggő előremenő szabályozással és beszabályozással",
+     "eps_F_szab": 1.066
+    },
+    {
+     "elhelyezes": "Belső fal mellett",
+     "szabalyozas": "Közvetlen elektromos fűtés P- vagy nem beazonosítható szabályozóval (1 K)",
+     "eps_F_szab": 1.089
+    },
+    {
+     "elhelyezes": "Belső fal mellett",
+     "szabalyozas": "Közvetlen elektromos fűtés PI-szabályozóval (optimalizációval)",
+     "eps_F_szab": 1.066
+    },
+    {
+     "elhelyezes": "Belső fal mellett",
+     "szabalyozas": "Hőtárolós fűtés szabályozás-nélkül, külső hőmérsékletfüggő előremenő szabályozás nélkül és statikus/dinamikus beszabályozás nélkül",
+     "eps_F_szab": 1.185
+    },
+    {
+     "elhelyezes": "Belső fal mellett",
+     "szabalyozas": "Hőtárolós fűtés P-szabályozóval (1 K), külső hőmérsékletfüggő előremenő szabályozással és statikus/dinamikus beszabályozással",
+     "eps_F_szab": 1.113
+    },
+    {
+     "elhelyezes": "Belső fal mellett",
+     "szabalyozas": "Hőtárolós fűtés PID-szabályozóval, optimalizációval, külső hőmérsékletfüggő előremenő szabályozással és beszabályozással",
+     "eps_F_szab": 1.089
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_14",
+   "cim": "Szabályozási veszteségtényezők közvetlen helyiséglevegő fűtés esetén",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.6.1.2 fejezet, 8.14. táblázat",
+    "oldal": 65,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "ANOMÁLIA: gázkonvektor magasabb rendű szabályozással belső falnál elhelyezve nincs megadva.",
+   "oszlopok": [
+    {
+     "kulcs": "rendszerkialakitas",
+     "cim": "Rendszerkialakítás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "szabalyozas",
+     "cim": "szabályozás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "eps_F_szab",
+     "cim": "εF,szab",
+     "egyseg": "-"
+    }
+   ],
+   "sorok": [
+    {
+     "rendszerkialakitas": "Gázkonvektor",
+     "szabalyozas": "Saját, segédenergia nélküli termosztatikus szabályozással, külső falnál lehelyezve",
+     "eps_F_szab": 1.2
+    },
+    {
+     "rendszerkialakitas": "Gázkonvektor",
+     "szabalyozas": "Saját, segédenergia nélküli termosztatikus szabályozással, belső falnál lehelyezve",
+     "eps_F_szab": 1.24
+    },
+    {
+     "rendszerkialakitas": "Gázkonvektor",
+     "szabalyozas": "Magasabb rendű szabályozás (pl. szobatermosztát, PI szabályozó), külső falnál lehelyezve",
+     "eps_F_szab": 1.12
+    },
+    {
+     "rendszerkialakitas": "Egyedi kályha, kandalló",
+     "szabalyozas": "Szabályozás nélkül",
+     "eps_F_szab": 1.2
+    },
+    {
+     "rendszerkialakitas": "Levegőfűtés (indukciós berendezéssel, fan coillal)",
+     "szabalyozas": "a belső hőmérséklet alacsony színvonalú szabályozása (pl. on-off vagy P szabályozás vagy nem beazonosítható szabályozás)",
+     "eps_F_szab": 1.066
+    },
+    {
+     "rendszerkialakitas": "Levegőfűtés (indukciós berendezéssel, fan coillal)",
+     "szabalyozas": "a belső hőmérséklet folytonos PI vagy PID szabályozása",
+     "eps_F_szab": 1.042
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_15",
+   "cim": "Hőtárolás fajlagos energiaigénye, QF,tár/Arszr [kWh/m2év] és segédenergia igénye, WF,tár/Arszr [kWh/m2év]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.7 fejezet, 8.15. táblázat",
+    "oldal": 65,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Fejléc a 65. oldalon, adatsorok a 66. oldalon. Szöveg szó szerint (66. o.): „Szilárdtüzelésű vagy biomassza tüzelésű rendszer tárolóinál a táblázatban szereplő fajlagos energiaigény értékeket 2,6 szorzótényezővel meg kell szorozni. A segédenergia igény értékei változtatás nélkül alkalmazandók. Részrendszer esetén a táblázatokból kiolvasható értékeket a részrendszerhez tartozó nettó hőigény és az épület teljes nettó fűtési igényének hányadosával meg kell szorozni.” ANOMÁLIA: a „fűtött térben” oszlopokban sok cella üres a PDF-en (null) – nem egyértelmű, hogy az üres cella a felette lévő érték továbbvitelét, interpolációt vagy hiányt jelent (55/45: 500, 750, 1500–10000 m2 üres, 1000 m2 = 0,0; 35/28: csak 100 m2 = 0,1 és 300 m2 = 0,0 van megadva).",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alap-területig Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "Q_tar_futott_ter_55_45",
+     "cim": "Fajlagos energiaigény QF,tár/Arszr / Elhelyezés a fűtött térben / 55/45 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "Q_tar_futott_ter_35_28",
+     "cim": "Fajlagos energiaigény QF,tár/Arszr / Elhelyezés a fűtött térben / 35/28 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "Q_tar_futott_teren_kivul_55_45",
+     "cim": "Fajlagos energiaigény QF,tár/Arszr / Elhelyezés a fűtött téren kívül / 55/45 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "Q_tar_futott_teren_kivul_35_28",
+     "cim": "Fajlagos energiaigény QF,tár/Arszr / Elhelyezés a fűtött téren kívül / 35/28 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "W_tar",
+     "cim": "Segédenergia igény WF,tár/Arszr",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "Q_tar_futott_ter_55_45": 0.3,
+     "Q_tar_futott_ter_35_28": 0.1,
+     "Q_tar_futott_teren_kivul_55_45": 2.6,
+     "Q_tar_futott_teren_kivul_35_28": 1.4,
+     "W_tar": 0.63
+    },
+    {
+     "A_rszr": 150,
+     "Q_tar_futott_ter_55_45": 0.2,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 1.9,
+     "Q_tar_futott_teren_kivul_35_28": 1.0,
+     "W_tar": 0.43
+    },
+    {
+     "A_rszr": 200,
+     "Q_tar_futott_ter_55_45": 0.2,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 1.5,
+     "Q_tar_futott_teren_kivul_35_28": 0.8,
+     "W_tar": 0.34
+    },
+    {
+     "A_rszr": 300,
+     "Q_tar_futott_ter_55_45": 0.1,
+     "Q_tar_futott_ter_35_28": 0.0,
+     "Q_tar_futott_teren_kivul_55_45": 1.1,
+     "Q_tar_futott_teren_kivul_35_28": 0.6,
+     "W_tar": 0.24
+    },
+    {
+     "A_rszr": 500,
+     "Q_tar_futott_ter_55_45": null,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.7,
+     "Q_tar_futott_teren_kivul_35_28": 0.4,
+     "W_tar": 0.16
+    },
+    {
+     "A_rszr": 750,
+     "Q_tar_futott_ter_55_45": null,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.5,
+     "Q_tar_futott_teren_kivul_35_28": 0.3,
+     "W_tar": 0.12
+    },
+    {
+     "A_rszr": 1000,
+     "Q_tar_futott_ter_55_45": 0.0,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.4,
+     "Q_tar_futott_teren_kivul_35_28": 0.2,
+     "W_tar": 0.1
+    },
+    {
+     "A_rszr": 1500,
+     "Q_tar_futott_ter_55_45": null,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.3,
+     "Q_tar_futott_teren_kivul_35_28": 0.2,
+     "W_tar": 0.08
+    },
+    {
+     "A_rszr": 2500,
+     "Q_tar_futott_ter_55_45": null,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.2,
+     "Q_tar_futott_teren_kivul_35_28": 0.1,
+     "W_tar": 0.07
+    },
+    {
+     "A_rszr": 5000,
+     "Q_tar_futott_ter_55_45": null,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.2,
+     "Q_tar_futott_teren_kivul_35_28": 0.1,
+     "W_tar": 0.06
+    },
+    {
+     "A_rszr": 10000,
+     "Q_tar_futott_ter_55_45": null,
+     "Q_tar_futott_ter_35_28": null,
+     "Q_tar_futott_teren_kivul_55_45": 0.2,
+     "Q_tar_futott_teren_kivul_35_28": 0.1,
+     "W_tar": 0.05
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_16",
+   "cim": "Fajlagos villamos segédenergia igény különböző szivattyútípusok és hőfoklépcsők esetén, WF,sziv/Arszr [kWh/m2év]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.8.1 fejezet, 8.16. táblázat",
+    "oldal": 66,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Fejléc a 66. oldalon, adatsorok a 67. oldalon. A PDF-en a fejléccellák tördelése széteső („Alap-területi”, „Beágyazott fűtőfelülete/k”, „90/7 0 °C”, „EEI=0,2 3”, „EEI=0,1 7”); itt a nyilvánvalóan összetartozó szöveget összefűztük. A 7 K oszlop(ok)hoz a PDF nem ad előremenő/visszatérő hőmérsékletet. Az EEI-oszlopok nem bontanak szabad/beágyazott fűtőfelület és hőfoklépcső szerint. Kapcsolódó szöveg: 641/2009/EK rendelet szerint az EEI 2015. augusztus 1-jétől legfeljebb 0,23 lehet. A vezetékrendszer alatt elosztó vezetékek (vízszintes), strangok (függőleges) és bekötővezetékek értendők.",
+   "oszlopok": [
+    {
+     "kulcs": "A_rszr",
+     "cim": "Alap-területi Arszr [m2]",
+     "egyseg": "m2"
+    },
+    {
+     "kulcs": "fsz_szabad_20K",
+     "cim": "Fordulatszám szabályozású szivattyú / Szabad fűtőfelületek / 20 K 90/70 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "fsz_szabad_15K",
+     "cim": "Fordulatszám szabályozású szivattyú / Szabad fűtőfelületek / 15 K 70/55 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "fsz_szabad_10K",
+     "cim": "Fordulatszám szabályozású szivattyú / Szabad fűtőfelületek / 10 K 55/45 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "fsz_beagyazott_7K",
+     "cim": "Fordulatszám szabályozású szivattyú / Beágyazott fűtőfelületek / 7 K",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "all_szabad_20K",
+     "cim": "Állandó fordulatú szivattyú / Szabad fűtőfelületek / 20 K 90/70 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "all_szabad_15K",
+     "cim": "Állandó fordulatú szivattyú / Szabad fűtőfelületek / 15 K 70/55 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "all_szabad_10K",
+     "cim": "Állandó fordulatú szivattyú / Szabad fűtőfelületek / 10 K 55/45 °C",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "all_beagyazott_7K",
+     "cim": "Állandó fordulatú szivattyú / Beágyazott fűtőfelületek / 7 K",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "ec_EEI_0_23",
+     "cim": "Elektronikusan szabályozott, állandó mágneses motorral szerelt szivattyúk / EEI=0,23",
+     "egyseg": "kWh/m2év"
+    },
+    {
+     "kulcs": "ec_EEI_0_17",
+     "cim": "Elektronikusan szabályozott, állandó mágneses motorral szerelt szivattyúk / EEI=0,17",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "A_rszr": 100,
+     "fsz_szabad_20K": 1.69,
+     "fsz_szabad_15K": 1.85,
+     "fsz_szabad_10K": 1.98,
+     "fsz_beagyazott_7K": 3.52,
+     "all_szabad_20K": 2.02,
+     "all_szabad_15K": 2.22,
+     "all_szabad_10K": 2.38,
+     "all_beagyazott_7K": 4.22,
+     "ec_EEI_0_23": 1.44,
+     "ec_EEI_0_17": 1.28
+    },
+    {
+     "A_rszr": 150,
+     "fsz_szabad_20K": 1.12,
+     "fsz_szabad_15K": 1.24,
+     "fsz_szabad_10K": 1.35,
+     "fsz_beagyazott_7K": 2.4,
+     "all_szabad_20K": 1.42,
+     "all_szabad_15K": 1.56,
+     "all_szabad_10K": 1.71,
+     "all_beagyazott_7K": 3.03,
+     "ec_EEI_0_23": 0.9,
+     "ec_EEI_0_17": 0.75
+    },
+    {
+     "A_rszr": 200,
+     "fsz_szabad_20K": 0.86,
+     "fsz_szabad_15K": 0.95,
+     "fsz_szabad_10K": 1.06,
+     "fsz_beagyazott_7K": 1.88,
+     "all_szabad_20K": 1.11,
+     "all_szabad_15K": 1.24,
+     "all_szabad_10K": 1.38,
+     "all_beagyazott_7K": 2.44,
+     "ec_EEI_0_23": 0.67,
+     "ec_EEI_0_17": 0.55
+    },
+    {
+     "A_rszr": 300,
+     "fsz_szabad_20K": 0.61,
+     "fsz_szabad_15K": 0.68,
+     "fsz_szabad_10K": 0.78,
+     "fsz_beagyazott_7K": 1.39,
+     "all_szabad_20K": 0.81,
+     "all_szabad_15K": 0.91,
+     "all_szabad_10K": 1.04,
+     "all_beagyazott_7K": 1.85,
+     "ec_EEI_0_23": 0.46,
+     "ec_EEI_0_17": 0.36
+    },
+    {
+     "A_rszr": 500,
+     "fsz_szabad_20K": 0.42,
+     "fsz_szabad_15K": 0.48,
+     "fsz_szabad_10K": 0.57,
+     "fsz_beagyazott_7K": 1.01,
+     "all_szabad_20K": 0.57,
+     "all_szabad_15K": 0.65,
+     "all_szabad_10K": 0.78,
+     "all_beagyazott_7K": 1.38,
+     "ec_EEI_0_23": 0.31,
+     "ec_EEI_0_17": 0.23
+    },
+    {
+     "A_rszr": 750,
+     "fsz_szabad_20K": 0.33,
+     "fsz_szabad_15K": 0.38,
+     "fsz_szabad_10K": 0.47,
+     "fsz_beagyazott_7K": 0.83,
+     "all_szabad_20K": 0.45,
+     "all_szabad_15K": 0.52,
+     "all_szabad_10K": 0.64,
+     "all_beagyazott_7K": 1.14,
+     "ec_EEI_0_23": 0.24,
+     "ec_EEI_0_17": 0.18
+    },
+    {
+     "A_rszr": 1000,
+     "fsz_szabad_20K": 0.28,
+     "fsz_szabad_15K": 0.33,
+     "fsz_szabad_10K": 0.42,
+     "fsz_beagyazott_7K": 0.74,
+     "all_szabad_20K": 0.39,
+     "all_szabad_15K": 0.46,
+     "all_szabad_10K": 0.58,
+     "all_beagyazott_7K": 1.02,
+     "ec_EEI_0_23": 0.2,
+     "ec_EEI_0_17": 0.14
+    },
+    {
+     "A_rszr": 1500,
+     "fsz_szabad_20K": 0.23,
+     "fsz_szabad_15K": 0.28,
+     "fsz_szabad_10K": 0.37,
+     "fsz_beagyazott_7K": 0.65,
+     "all_szabad_20K": 0.33,
+     "all_szabad_15K": 0.39,
+     "all_szabad_10K": 0.51,
+     "all_beagyazott_7K": 0.9,
+     "ec_EEI_0_23": 0.16,
+     "ec_EEI_0_17": 0.11
+    },
+    {
+     "A_rszr": 2500,
+     "fsz_szabad_20K": 0.2,
+     "fsz_szabad_15K": 0.24,
+     "fsz_szabad_10K": 0.33,
+     "fsz_beagyazott_7K": 0.58,
+     "all_szabad_20K": 0.28,
+     "all_szabad_15K": 0.34,
+     "all_szabad_10K": 0.46,
+     "all_beagyazott_7K": 0.81,
+     "ec_EEI_0_23": 0.14,
+     "ec_EEI_0_17": 0.1
+    },
+    {
+     "A_rszr": 5000,
+     "fsz_szabad_20K": 0.17,
+     "fsz_szabad_15K": 0.22,
+     "fsz_szabad_10K": 0.3,
+     "fsz_beagyazott_7K": 0.53,
+     "all_szabad_20K": 0.24,
+     "all_szabad_15K": 0.3,
+     "all_szabad_10K": 0.42,
+     "all_beagyazott_7K": 0.74,
+     "ec_EEI_0_23": 0.12,
+     "ec_EEI_0_17": 0.09
+    },
+    {
+     "A_rszr": 10000,
+     "fsz_szabad_20K": 0.16,
+     "fsz_szabad_15K": 0.2,
+     "fsz_szabad_10K": 0.28,
+     "fsz_beagyazott_7K": 0.5,
+     "all_szabad_20K": 0.22,
+     "all_szabad_15K": 0.28,
+     "all_szabad_10K": 0.4,
+     "all_beagyazott_7K": 0.7,
+     "ec_EEI_0_23": 0.11,
+     "ec_EEI_0_17": 0.08
+    }
+   ]
+  },
+  {
+   "id": "tabla_8_17",
+   "cim": "Fancoil ventilátorának fajlagos villamos segédenergia igénye , egész éves üzemben (hűtési és fűtési módban) összesen WFC/Arszr [kWh/m2év]",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "8.8.1 fejezet, 8.17. táblázat",
+    "oldal": 67,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "Egész éves (hűtési és fűtési módú) összesített érték. ANOMÁLIA: a módszer nem adja meg a fűtés/hűtés közötti megosztást, és a (8.3) képlet nem tartalmaz WFC tagot.",
+   "oszlopok": [
+    {
+     "kulcs": "rendszer",
+     "cim": "Rendszer",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "kialakitas",
+     "cim": "Kialakítás",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "W_FC",
+     "cim": "Segédenergia [kWh/m2év]",
+     "egyseg": "kWh/m2év"
+    }
+   ],
+   "sorok": [
+    {
+     "rendszer": "Fancoil",
+     "kialakitas": "Padlón álló, oldalfali, mennyezet alatti",
+     "W_FC": 2
+    },
+    {
+     "rendszer": "Fancoil",
+     "kialakitas": "Álmennyezetbe telepített",
+     "W_FC": 2.4
+    },
+    {
+     "rendszer": "Fancoil",
+     "kialakitas": "Légcsatornázható",
+     "W_FC": 2.8
+    },
+    {
+     "rendszer": "Fancoil",
+     "kialakitas": "Négy irányban fúvó",
+     "W_FC": 4.4
+    }
+   ]
+  },
+  {
+   "id": "alapertekek_7_8",
+   "cim": "A 7–8. fejezet szövegben megadott alapértékei és konstansai (táblázatként kezelve)",
+   "forras": {
+    "dokumentum": "9/2023. (V. 25.) ÉKM rendelet 7. § (1) a) szerinti számítási módszer, 1. Függelék",
+    "hely": "7. és 8. fejezet, szövegközi értékek (54–67. o., soronként a hely mezőben)",
+    "oldal": 54,
+    "url": "https://kormany.hu/dokumentumtar/epuletek-energetikai-jellemzoinek-meghatarozasa-szamitasi-modszer-2",
+    "lekeres": "2026-10-29"
+   },
+   "hatalyos_tol": "2023-11-01",
+   "megjegyzes": "A hőtermelők teljesítménytényezői égéshőre vannak vonatkoztatva (7. fejezet, 55. o.).",
+   "oszlopok": [
+    {
+     "kulcs": "kulcs",
+     "cim": "Azonosító",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "leiras",
+     "cim": "Leírás (forrás szerint)",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "ertek",
+     "cim": "Érték",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "egyseg",
+     "cim": "Egység",
+     "egyseg": ""
+    },
+    {
+     "kulcs": "hely",
+     "cim": "Hely",
+     "egyseg": ""
+    }
+   ],
+   "sorok": [
+    {
+     "kulcs": "eps_F_alulmeretezett_direkt_elektromos",
+     "leiras": "Alulméretezett fűtési rendszer esetén a nem fedezhető hányadot direkt hálózati elektromos hőtermeléssel fedezik az εF=1 teljesítménytényezővel (HMV-re ugyanez)",
+     "ertek": 1,
+     "egyseg": "-",
+     "hely": "7. fejezet, 54. o."
+    },
+    {
+     "kulcs": "hoszivattyu_ErP_szorzo",
+     "leiras": "ErP hőszivattyú: εF = 1/(2,5·ηs) – a nevezőben szereplő szorzó",
+     "ertek": 2.5,
+     "egyseg": "-",
+     "hely": "8.3.2.1, (8.6), 59. o."
+    },
+    {
+     "kulcs": "elektromos_futes_ErP_szorzo",
+     "leiras": "ErP elektromos (egyedi) fűtés: εF = 1/(2,5·ηs) – a nevezőben szereplő szorzó",
+     "ertek": 2.5,
+     "egyseg": "-",
+     "hely": "8.3.4.1, (8.9), 61. o."
+    },
+    {
+     "kulcs": "tavho_eps_F",
+     "leiras": "Távhőszolgáltatás esetén a teljesítménytényező",
+     "ertek": 1.01,
+     "egyseg": "-",
+     "hely": "8.3.3, 60. o."
+    },
+    {
+     "kulcs": "tavho_W_F_term_hokozpont",
+     "leiras": "Távhő: a hőtermelés villamos segédenergia igénye hőközpontonként",
+     "ertek": 215,
+     "egyseg": "kWh/év",
+     "hely": "8.3.3, 60. o."
+    },
+    {
+     "kulcs": "tarolo_szilard_biomassza_szorzo",
+     "leiras": "Szilárdtüzelésű vagy biomassza tüzelésű rendszer tárolóinál a 8.15. táblázat fajlagos energiaigény értékeinek szorzótényezője (segédenergia változatlan)",
+     "ertek": 2.6,
+     "egyseg": "-",
+     "hely": "8.7, 66. o."
+    },
+    {
+     "kulcs": "EEI_max_2015_08_01",
+     "leiras": "Keringetőszivattyúk energiahatékonysági mutatója (EEI) 2015. augusztus 1-jétől legfeljebb (641/2009/EK)",
+     "ertek": 0.23,
+     "egyseg": "-",
+     "hely": "8.8.1, 66. o."
+    },
+    {
+     "kulcs": "ErP_kazan_hatar_kW_1",
+     "leiras": "ErP-be tartozó helyiségfűtő berendezések és kombinált fűtőberendezések: legfeljebb 400 kW mért hőteljesítmény",
+     "ertek": 400,
+     "egyseg": "kW",
+     "hely": "8.3.1.1, 57. o.",
+     "eredeti": "legfeljebb 400 kW",
+     "max": 400
+    },
+    {
+     "kulcs": "ErP_kazan_hatar_kW_2",
+     "leiras": "legfeljebb 70 kW mért hőteljesítményű helyiségfűtő berendezések, melyeket 2015. szeptember 26. után hozták forgalomba (a felsorolás nem teljeskörű)",
+     "ertek": 70,
+     "egyseg": "kW",
+     "hely": "8.3.1.1, 57. o.",
+     "eredeti": "legfeljebb 70 kW",
+     "max": 70
+    },
+    {
+     "kulcs": "fancoil_ajanlott_hofoklepcso",
+     "leiras": "Fan coilos rendszerek esetén az ajánlott érték (hőelosztási veszteséghez)",
+     "ertek": "70/55 °C, vagy 55/45 °C",
+     "egyseg": "°C",
+     "hely": "8.5.1, 62. o."
+    }
+   ]
+  }
+ ]
+}

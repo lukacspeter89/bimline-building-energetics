@@ -1,0 +1,12 @@
+{
+  "name": "BIMLine energetika",
+  "short_name": "Energetika",
+  "description": "Épületenergetikai számítás és tanúsítás a 9/2023. (V. 25.) ÉKM rendelet szerint",
+  "lang": "hu",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f5f4",
+  "theme_color": "#0f6b5c",
+  "icons": [{ "src": "ikon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
