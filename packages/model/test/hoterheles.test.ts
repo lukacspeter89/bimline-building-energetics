@@ -93,3 +93,21 @@ describe('Méretezési hőterhelés a projektből', () => {
     expect(furdo!.transzmisszio.reszek.ia).toBeCloseTo(31.746, 3);
   });
 });
+
+describe('Nyári hőterhelés a projektből (D-150)', () => {
+  it('NYH-003 NYH-005 NYH-006 6 × 4 m szoba, belső 5 W/m², 12 órakor (θ_e 38 °C): transzmisszió 48·0,193424·12 + 2·1,4·12 + 24·0,194553·12; szellőzés 0,34·30·12', async () => {
+    const { nyariProjekt } = await import('../src/index.js');
+    const p = projekt();
+    p.helyisegek[0]!.hoterheles = { ...p.helyisegek[0]!.hoterheles, nyariBelso: 5 };
+    const r = nyariProjekt(p);
+    const h = r.helyisegek[0]!;
+    const o = h.orai[12]!;
+    // A belső alapállapot 26 °C (2. függ. 2.1. táblázat); ΔT = 12 K. Ablak nincs (ajtó), napsugárzás 0.
+    expect(o.transzmisszio).toBeCloseTo((48 * (1 / 5.17) + 2 * 1.4 + 24 * (1 / 5.14)) * 12, 6);
+    expect(o.szellozes).toBeCloseTo(0.34 * 30 * 12, 9);
+    expect(o.belso).toBe(120);
+    expect(o.napsugarzas).toBe(0);
+    expect(h.csucs.ora).toBe(12);
+    expect(r.epulet.ertek).toBeCloseTo(h.csucs.erzekelheto, 9);
+  });
+});

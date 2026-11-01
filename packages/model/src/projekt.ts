@@ -151,6 +151,11 @@ export interface HelyisegHoterheles {
   qSup?: number;
   /** Hőleadó rendszer (csak ≥ 4 m belmagasságnál, B.3. táblázat). */
   holeado?: HoleadoMagas;
+  /** Nyári hőterhelés: belső érzékelhető hőterhelés [W/m²] és látens [W] (terv: személyek, világítás, gépek). */
+  nyariBelso?: number;
+  nyariLatens?: number;
+  /** Az ablakok árnyékolási tényezője nyáron (1: árnyékolás nélkül). */
+  nyariArnyek?: number;
 }
 
 /** A méretezési hőterhelés (MSZ EN 12831-1) épületszintű bemenetei. */
@@ -178,6 +183,8 @@ export interface HoterhelesBeallitas {
   futetlenF1: Partial<Record<FutetlenTerTipus, FutetlenF1>>;
   /** Belső fal rétegrendje a különböző hőmérsékletű szomszédos helyiségek közti H_T,ia-hoz (rajzolt közös falak). */
   belsoFalRetegrendAzon?: string;
+  /** Nyári hőterhelés (D-149, D-150): külső csúcshőmérséklet és páratartalom, belső hőmérséklet és (látenshez) páratartalom. */
+  nyari?: { thetaEcsucs: number; rhE: number; thetaI: number; rhI?: number };
 }
 
 export interface FutesiRendszer {

@@ -1,9 +1,9 @@
 // Méretezési hőterhelés (MSZ EN 12831-1:2017) helyiségenként: feltételek és eredménytáblázat.
 import { tabla, type BelsoTipus12831, type FutetlenF1, type FutetlenTerTipus, type HohidKategoria, type HotaroloKat12831, type LegtomorsegiOsztaly, type NMinTipus, type TablaHivatkozas } from '@bimline/calc-core';
-import { alapHoterhelesBeallitas, hoterhelesProjekt, javasoltNMin, javasoltTipus, type HoterhelesBeallitas, type Projekt } from '@bimline/model';
+import { alapHoterhelesBeallitas, alapNyari, hoterhelesProjekt, javasoltNMin, javasoltTipus, nyariProjekt, type HoterhelesBeallitas, type Projekt } from '@bimline/model';
 import { useMemo } from 'preact/hooks';
 import type { Valtoztat } from '../App.js';
-import { Gombsor, Kapcsolo, Kartya, SzamMezo, SzovegMezo, Valaszto, szam } from '../ui.js';
+import { CellaSzam, Gombsor, Kapcsolo, Kartya, SzamMezo, SzovegMezo, Valaszto, szam } from '../ui.js';
 
 const T = (id: string): TablaHivatkozas => `szabvany/msz_en_12831_1#${id}`;
 const opciok = <K extends string>(id: string, kulcs: string, nev: (s: Record<string, unknown>) => string) =>
@@ -169,6 +169,114 @@ export function HoigenyNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozta
           )}
         </>
       )}
+      <NyariResz p={p} valtoztat={valtoztat} />
     </>
   );
 }
+
+function NyariResz({ p, valtoztat }: { p: Projekt; valtoztat: Valtoztat }) {
+  const ny = p.hoterheles?.nyari ?? alapNyari();
+  const vn = (f: (n: NonNullable<HoterhelesBeallitas['nyari']>) => void): void =>
+    valtoztat((x) => {
+      const b = (x.hoterheles ??= alapHoterhelesBeallitas());
+      f((b.nyari ??= alapNyari()));
+    });
+  const r = useMemo(() => {
+    try {
+      return { ok: true as const, e: nyariProjekt(p) };
+    } catch (e) {
+      return { ok: false as const, hiba: (e as Error).message };
+    }
+  }, [p]);
+  const szintek = [...new Set(p.helyisegek.map((h) => h.szint))];
+  return (
+    <>
+      <Kartya cim="Nyári hőterhelés – egyszerűsített óránkénti mérleg (nem VDI 2078)">
+        <p class="halk">
+          Méretezési nap: a 9/2023 módszer órás adatsorának legmelegebb napja (07.14.), a csúcsra eltolt hőmérséklettel és ugyanazon nap sugárzásával. A szerkezetek hőtárolását nem
+          veszi figyelembe, ezért a csúcsot a biztonság javára becsüli (D-150).
+        </p>
+        <div class="racs">
+          <SzamMezo id="ny-te" cimke="Külső csúcshőmérséklet" egyseg="°C" ertek={ny.thetaEcsucs} onValtozas={(v) => vn((n) => void (n.thetaEcsucs = v))} />
+          <SzamMezo id="ny-rhe" cimke="Külső páratartalom" egyseg="%" ertek={ny.rhE} onValtozas={(v) => vn((n) => void (n.rhE = v))} />
+          <SzamMezo id="ny-ti" cimke="Belső hőmérséklet" egyseg="°C" ertek={ny.thetaI} onValtozas={(v) => vn((n) => void (n.thetaI = v))} />
+          <SzamMezo id="ny-rhi" cimke="Belső páratartalom (látenshez)" egyseg="%" ertek={ny.rhI} onValtozas={(v) => vn((n) => void (n.rhI = v))} />
+        </div>
+      </Kartya>
+      {!r.ok ? (
+        <Kartya cim="Nyári hőterhelés – hiba">
+          <p class="hiba">{r.hiba}</p>
+        </Kartya>
+      ) : (
+        <>
+          <Kartya cim="Épület (egyidejű csúcs)" jobb={<b class="nagy-szam">{szam(r.e.epulet.ertek / 1000, 2)} kW</b>}>
+            <p class="halk">A helyiségek órai érzékelhető terhelésének összege {r.e.epulet.ora}:00-kor a legnagyobb; a helyiségenkénti csúcsok más órára is eshetnek.</p>
+          </Kartya>
+          {szintek.map((sz) => (
+            <Kartya key={sz} cim={`Nyár – szint: ${sz}`}>
+              <div class="tablazat">
+                <table class="beviteli">
+                  <thead>
+                    <tr>
+                      <th>Helyiség</th>
+                      <th>Belső [W/m²]</th>
+                      <th>Látens belső [W]</th>
+                      <th>Árnyékolás F</th>
+                      <th>Csúcs [W]</th>
+                      <th>óra</th>
+                      <th>ebből sugárzás</th>
+                      <th>[W/m²]</th>
+                      <th>Látens [W]</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {r.e.helyisegek
+                      .filter((x) => x.szint === sz)
+                      .map((e) => {
+                        const i = p.helyisegek.findIndex((x) => x.azon === e.azon);
+                        const h = p.helyisegek[i]!;
+                        const vh = (f: (o: NonNullable<typeof h.hoterheles>) => void): void => valtoztat((x) => f((x.helyisegek[i]!.hoterheles ??= {})));
+                        return (
+                          <tr key={e.azon}>
+                            <th scope="row">{e.nev}</th>
+                            <td>
+                              <CellaSzamNy ertek={h.hoterheles?.nyariBelso} onValtozas={(v) => vh((o) => void (o.nyariBelso = v))} />
+                            </td>
+                            <td>
+                              <CellaSzamNy ertek={h.hoterheles?.nyariLatens} onValtozas={(v) => vh((o) => void (o.nyariLatens = v))} />
+                            </td>
+                            <td>
+                              <CellaSzamNy ertek={h.hoterheles?.nyariArnyek ?? 1} onValtozas={(v) => vh((o) => void (o.nyariArnyek = v))} />
+                            </td>
+                            <td>
+                              <b>{szam(e.csucs.erzekelheto, 0)}</b>
+                            </td>
+                            <td>{e.csucs.ora}:00</td>
+                            <td>{szam(e.csucs.napsugarzas, 0)}</td>
+                            <td>{szam(e.fajlagos, 1)}</td>
+                            <td>{szam(e.latens, 0)}</td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </div>
+            </Kartya>
+          ))}
+          {r.e.jelzesek.length > 0 && (
+            <Kartya cim="Nyár – megjegyzések">
+              <ul class="hianyok">
+                {r.e.jelzesek.map((j, i) => (
+                  <li key={i}>{j}</li>
+                ))}
+                <li>Az árnyékolási tényező az ablak üvegezésén átjutó sugárzást szorozza (pl. külső redőny: 2. függ. 4.5. táblázat).</li>
+              </ul>
+            </Kartya>
+          )}
+        </>
+      )}
+    </>
+  );
+}
+
+const CellaSzamNy = ({ ertek, onValtozas }: { ertek: number | undefined; onValtozas: (v: number) => void }) => <CellaSzam cimke="érték" ertek={ertek} onValtozas={onValtozas} />;
