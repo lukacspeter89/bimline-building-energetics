@@ -133,6 +133,8 @@ export interface Helyiseg {
   hatarolok: Hatarolo[];
   /** Rajzolt alaprajz: a nettó (belméretű) kontúr pontjai, zárt sokszög (JEL-004, MOD-006). */
   alaprajz?: { pontok: Pont[] };
+  /** A terv helyiségfeliratán szereplő nettó terület [m²] (alátétből), a rajzolt terület ellenőrzéséhez. */
+  tervTerulet?: number;
   /** Méretezési hőterhelés (MSZ EN 12831-1) helyiségadatai; hiányzó mezőnél a nevből / nyílásokból adódó javaslat. */
   hoterheles?: HelyisegHoterheles;
 }

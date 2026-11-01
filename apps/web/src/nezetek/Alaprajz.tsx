@@ -6,9 +6,11 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import type { Valtoztat } from '../App.js';
 import { Gombsor, Kartya, SzamMezo, SzovegMezo, TorlesGomb, Valaszto, szam } from '../ui.js';
 import { FUTETLEN, HataroloSor } from './Helyisegek.js';
+import * as tarolo from '../tarolo.js';
+import { cimkeABen, igazitas, kepMegnyit, leptekezes, pdfMegnyit, vilagba as alatetVilagba, type Alatet, type PdfDok } from '../alatet.js';
 import { SZERKEZET_NEV } from './Szerkezetek.js';
 
-type Eszkoz = 'kijelöl' | 'téglalap' | 'sokszög';
+type Eszkoz = 'kijelöl' | 'téglalap' | 'sokszög' | 'lépték' | 'igazít';
 const ESZKOZOK: readonly Eszkoz[] = ['kijelöl', 'téglalap', 'sokszög'];
 interface Nezet {
   /** px / m */
@@ -65,6 +67,27 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
   const [vazlat, setVazlat] = useState<Pont[]>([]);
   const [kurzor, setKurzor] = useState<Pont | null>(null);
   const [meret, setMeret] = useState({ w: 360, h: 300 });
+  // Alaprajz-alátét (szintenként, külön tárban).
+  const [alatet, setAlatetAll] = useState<Alatet | undefined>(undefined);
+  const [alatetLatszik, setAlatetLatszik] = useState(true);
+  const [kalib, setKalib] = useState<Pont[]>([]);
+  const [kalibTav, setKalibTav] = useState<number | undefined>(undefined);
+  const [pdf, setPdf] = useState<PdfDok | null>(null);
+  const [alatetUzenet, setAlatetUzenet] = useState('');
+  useEffect(() => {
+    let el = false;
+    void tarolo.alatetBetolt<Alatet>(p.azon, szint).then((a) => !el && setAlatetAll(a));
+    return () => void (el = true);
+  }, [p.azon, szint]);
+  const setAlatet = (a: Alatet | undefined): void => {
+    setAlatetAll(a);
+    void tarolo.alatetMent(p.azon, szint, a);
+    // A terv északi iránya a forgatással együtt adja a rajz északi irányát (a forgatás az óramutatóval ellentétes).
+    if (a?.eszakLapon !== undefined) {
+      const sz = Math.round(((((a.eszakLapon - a.fi) % 360) + 360) % 360) * 100) / 100;
+      if (sz !== (p.epulet.eszakSzog ?? 0)) valtoztat((x) => void (x.epulet.eszakSzog = sz));
+    }
+  };
   const svgRef = useRef<SVGSVGElement>(null);
   const muvelet = useRef<
     | { tipus: 'pan'; sx: number; sy: number; nezet: Nezet; mozgott: boolean }
@@ -99,6 +122,7 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
 
   const illeszt = (): void => {
     const pp = szintHs.filter(vanRajz).flatMap((h) => h.alaprajz!.pontok);
+    if (pp.length === 0 && alatet) pp.push(...[alatetVilagba(alatet, 0, 0), alatetVilagba(alatet, alatet.w, 0), alatetVilagba(alatet, 0, alatet.h), alatetVilagba(alatet, alatet.w, alatet.h)]);
     if (pp.length === 0) return setNezet({ k: Math.min(meret.w, meret.h) / 12, vx: -1, vy: meret.h / (Math.min(meret.w, meret.h) / 12) - 1 });
     const minx = Math.min(...pp.map((q) => q.x));
     const maxx = Math.max(...pp.map((q) => q.x));
@@ -137,7 +161,10 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
     const azon = ujAzon('hs');
     valtoztat((x) => {
       const elozo = x.helyisegek.filter((h) => h.szint === szint).at(-1) ?? x.helyisegek.at(-1);
-      const h: Helyiseg = { azon, nev: `Helyiség ${x.helyisegek.length + 1}`, szint, alapterulet: 0, belmagassag: elozo?.belmagassag ?? 2.7, hatarolok: [], alaprajz: { pontok } };
+      // A tervi felirat (alátét) neve és területe, ha a rajzolt kontúrba esik.
+      const c = alatet ? cimkeABen(alatet, pontok) : undefined;
+      const nev = c ? `${c.szam} ${c.nev}`.trim() || `Helyiség ${x.helyisegek.length + 1}` : `Helyiség ${x.helyisegek.length + 1}`;
+      const h: Helyiseg = { azon, nev, szint, alapterulet: 0, belmagassag: elozo?.belmagassag ?? 2.7, hatarolok: [], alaprajz: { pontok }, ...(c ? { tervTerulet: c.A } : {}) };
       x.helyisegek.push(h);
       const fal = x.retegrendek.find((r) => r.szerkezet === 'homlokzati_fal');
       if (fal)
@@ -246,7 +273,16 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
       }
       setKurzor(null);
     } else if (m.tipus === 'koppint' && !m.mozgott) {
-      if (eszkoz === 'sokszög') {
+      if ((eszkoz === 'lépték' || eszkoz === 'igazít') && alatet) {
+        const q = vilagba(sp.x, sp.y);
+        const pontok = kalib.length >= 2 ? [q] : [...kalib, q];
+        setKalib(pontok);
+        if (pontok.length === 2 && eszkoz === 'igazít') {
+          setAlatet(igazitas(alatet, pontok[0]!, pontok[1]!));
+          setKalib([]);
+          setEszkoz('kijelöl');
+        }
+      } else if (eszkoz === 'sokszög') {
         const q = igazit(vilagba(sp.x, sp.y));
         const elso = vazlat[0];
         if (elso && vazlat.length >= 3 && Math.hypot(kepre(elso).x - sp.x, kepre(elso).y - sp.y) < 18) {
@@ -314,7 +350,7 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
         }
       >
         <div class="rajz-eszkozok">
-          <Gombsor ertek={eszkoz} opciok={ESZKOZOK} onValtozas={(t) => (setEszkoz(t), setVazlat([]))} />
+          <Gombsor ertek={ESZKOZOK.includes(eszkoz) ? eszkoz : undefined} opciok={ESZKOZOK} onValtozas={(t) => (setEszkoz(t), setVazlat([]), setKalib([]))} />
           <div class="gombok kicsi">
             <button type="button" onClick={() => nagyit(1.25)} aria-label="Nagyítás">
               +
@@ -330,6 +366,8 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
         <p class="halk rajz-sugo">
           {eszkoz === 'téglalap' && 'Húzd az ujjad sarokból sarokba: a helyiség belméretű kontúrja. Rácsra és a meglévő sarkokra igazít.'}
           {eszkoz === 'sokszög' && (vazlat.length === 0 ? 'Koppints a sarkokra sorban; az elsőre koppintva zárul.' : `${vazlat.length} pont – az elsőre koppintva vagy a Kész gombbal zárul.`)}
+          {eszkoz === 'lépték' && (kalib.length < 2 ? `Koppints az alátéten két pontra, amelyek távolságát ismered (${kalib.length}/2).` : 'Add meg alább a két pont valós távolságát.')}
+          {eszkoz === 'igazít' && `Koppints egy hosszú fal két végére: a rajz úgy fordul, hogy a fal vízszintes vagy függőleges legyen (${kalib.length}/2).`}
           {eszkoz === 'kijelöl' && 'Koppints egy falra vagy helyiségre. A kijelölt helyiség sarkai húzhatók. Két ujjal nagyítás.'}
         </p>
         <div class="rajz-doboz">
@@ -345,7 +383,12 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
             role="img"
             aria-label={`Alaprajz, ${szint}: ${szintHs.length} helyiség`}
           >
-            {racsVonalak}
+            {alatet && alatetLatszik && <AlatetKep a={alatet} kepre={kepre} />}
+            {alatet && alatetLatszik ? racsVonalak.filter((l) => (l.props as { class?: string }).class === 'racs-fo') : racsVonalak}
+            {kalib.map((q, i) => (
+              <circle key={`k${i}`} cx={kepre(q).x} cy={kepre(q).y} r={6} class="rajz-csucs elso" />
+            ))}
+            {kalib.length === 2 && <line x1={kepre(kalib[0]!).x} y1={kepre(kalib[0]!).y} x2={kepre(kalib[1]!).x} y2={kepre(kalib[1]!).y} class="rajz-vazlat" />}
             {alattiHs.map((h) => (
               <path key={`a${h.azon}`} d={ut(h.alaprajz!.pontok)} class="rajz-alatti" />
             ))}
@@ -445,6 +488,30 @@ export function AlaprajzNezet({ p, valtoztat }: { p: Projekt; valtoztat: Valtozt
             nyílás
           </span>
         </div>
+        <AlatetPanel
+          alatet={alatet}
+          latszik={alatetLatszik}
+          setLatszik={setAlatetLatszik}
+          setAlatet={(a) => {
+            setAlatet(a);
+            setKalib([]);
+          }}
+          pdf={pdf}
+          setPdf={setPdf}
+          uzenet={alatetUzenet}
+          setUzenet={setAlatetUzenet}
+          kozep={vilagba(meret.w / 2, meret.h / 2)}
+          kalib={eszkoz === 'lépték' ? kalib : []}
+          kalibTav={kalibTav}
+          setKalibTav={setKalibTav}
+          leptekKesz={() => {
+            if (alatet && kalib.length === 2 && kalibTav) setAlatet(leptekezes(alatet, kalib[0]!, kalib[1]!, kalibTav));
+            setKalib([]);
+            setEszkoz('kijelöl');
+          }}
+          eszkoz={eszkoz}
+          setEszkoz={(e) => (setEszkoz(e), setKalib([]))}
+        />
         <SzamMezo id="eszak" cimke="Északi irány (a rajz tetejétől, óramutató szerint)" egyseg="°" ertek={eszak} onValtozas={(v) => valtoztat((x) => void (x.epulet.eszakSzog = v))} />
       </Kartya>
       <div class="alaprajz-panel">
@@ -524,7 +591,14 @@ function HelyisegPanel({ p, h, valtoztat, onTorolve }: { p: Projekt; h: Helyiseg
     return { o, reszek, m: alapReszek(h, reszek) };
   });
   return (
-    <Kartya cim={h.nev} jobb={<span class="halk">{szam(h.alapterulet, 2)} m²</span>}>
+    <Kartya
+      cim={h.nev}
+      jobb={
+        <span class={`halk${h.tervTerulet && Math.abs(h.alapterulet / h.tervTerulet - 1) > 0.05 ? ' hiba' : ''}`}>
+          {szam(h.alapterulet, 2)} m²{h.tervTerulet ? ` (terv: ${szam(h.tervTerulet, 2)} m², ${h.alapterulet >= h.tervTerulet ? '+' : ''}${szam((h.alapterulet / h.tervTerulet - 1) * 100, 1)} %)` : ''}
+        </span>
+      }
+    >
       <div class="racs">
         <SzovegMezo id={`ap-${h.azon}-nev`} cimke="Név" ertek={h.nev} onValtozas={(s) => vh((x) => void (x.nev = s))} />
         <SzamMezo id={`ap-${h.azon}-m`} cimke="Belmagasság" egyseg="m" ertek={h.belmagassag} onValtozas={(v) => vh((x) => void (x.belmagassag = v))} />
@@ -639,5 +713,141 @@ function ElPanel({ p, h, el, valtoztat, onHelyiseg }: { p: Projekt; h: Helyiseg;
       {!b && e.szabad > 0.01 && <p class="halk">Belső falként nem számít a hőveszteségbe.</p>}
       {falak.length === 0 && <p class="figyelem">Fal rétegrend még nincs: vegyél fel egyet a Szerkezetek fülön.</p>}
     </Kartya>
+  );
+}
+
+function AlatetKep({ a, kepre }: { a: Alatet; kepre: (q: Pont) => { x: number; y: number } }) {
+  const o = kepre(alatetVilagba(a, 0, 0));
+  const u = kepre(alatetVilagba(a, 1, 0));
+  const v = kepre(alatetVilagba(a, 0, 1));
+  return (
+    <image
+      href={a.kep}
+      width={a.w}
+      height={a.h}
+      opacity={a.atlatszo}
+      transform={`matrix(${u.x - o.x} ${u.y - o.y} ${v.x - o.x} ${v.y - o.y} ${o.x} ${o.y})`}
+      preserveAspectRatio="none"
+      style={{ pointerEvents: 'none' }}
+    />
+  );
+}
+
+function AlatetPanel(b: {
+  alatet: Alatet | undefined;
+  latszik: boolean;
+  setLatszik: (x: boolean) => void;
+  setAlatet: (a: Alatet | undefined) => void;
+  pdf: PdfDok | null;
+  setPdf: (d: PdfDok | null) => void;
+  uzenet: string;
+  setUzenet: (s: string) => void;
+  kozep: Pont;
+  kalib: Pont[];
+  kalibTav: number | undefined;
+  setKalibTav: (x: number | undefined) => void;
+  leptekKesz: () => void;
+  eszkoz: Eszkoz;
+  setEszkoz: (e: Eszkoz) => void;
+}) {
+  const [oldal, setOldal] = useState(1);
+  const elhelyez = (k: Omit<Alatet, 'x0' | 'y0' | 'fi' | 'atlatszo'>): Alatet => ({ ...k, fi: 0, atlatszo: 0.55, x0: b.kozep.x - (k.w * k.s) / 2, y0: b.kozep.y + (k.h * k.s) / 2 });
+  const betolt = async (f: File): Promise<void> => {
+    b.setUzenet('Betöltés…');
+    try {
+      if (/pdf$/i.test(f.type) || /\.pdf$/i.test(f.name)) {
+        const d = await pdfMegnyit(await f.arrayBuffer());
+        b.setPdf(d);
+        setOldal(1);
+        b.setAlatet(elhelyez(await d.oldal(1)));
+        b.setUzenet(`PDF, ${d.oldalak} oldal. Válaszd ki az alaprajz oldalát, majd állítsd be a léptéket.`);
+      } else {
+        b.setAlatet(elhelyez(await kepMegnyit(f)));
+        b.setUzenet('Kép betöltve. Állítsd be a léptéket két ismert pont távolságával.');
+      }
+    } catch (e) {
+      b.setUzenet(`Nem sikerült megnyitni: ${(e as Error).message}`);
+    }
+  };
+  const a = b.alatet;
+  return (
+    <div class="alatet-panel">
+      <div class="kartya-fej">
+        <h3>Alátét (PDF vagy kép)</h3>
+        {a && (
+          <span class="halk">
+            {a.cimkek.length} tervi felirat · {szam(a.s * 1000, 2)} mm/px
+          </span>
+        )}
+      </div>
+      <div class="gombok kicsi">
+        <label class="fajl-gomb">
+          {a ? 'Másik terv…' : 'Terv betöltése…'}
+          <input type="file" accept="application/pdf,image/*" onChange={(e) => {
+            const f = (e.target as HTMLInputElement).files?.[0];
+            if (f) void betolt(f);
+          }} />
+        </label>
+        {b.pdf && b.pdf.oldalak > 1 && (
+          <select
+            class="cella"
+            aria-label="Oldal"
+            value={oldal}
+            onChange={async (e) => {
+              const n = Number((e.target as HTMLSelectElement).value);
+              setOldal(n);
+              b.setUzenet('Oldal renderelése…');
+              const k = await b.pdf!.oldal(n);
+              b.setAlatet(a ? { ...a, ...k, s: k.s50 && a.s50 ? a.s * (k.s50 / a.s50) : k.s } : elhelyez(k));
+              b.setUzenet('');
+            }}
+          >
+            {Array.from({ length: b.pdf.oldalak }, (_, i) => (
+              <option key={i} value={i + 1}>
+                {i + 1}. oldal
+              </option>
+            ))}
+          </select>
+        )}
+        {a && (
+          <>
+            <button type="button" class={b.eszkoz === 'lépték' ? 'elsodleges' : 'masodlagos'} onClick={() => b.setEszkoz('lépték')}>
+              Lépték két ponttal
+            </button>
+            {a.s50 && (
+              <button type="button" class="masodlagos" onClick={() => b.setAlatet({ ...a, s: a.s50!, x0: b.kozep.x - (a.w * a.s50!) / 2, y0: b.kozep.y + (a.h * a.s50!) / 2 })}>
+                1:50
+              </button>
+            )}
+            <button type="button" class={b.eszkoz === 'igazít' ? 'elsodleges' : 'masodlagos'} onClick={() => b.setEszkoz('igazít')}>
+              Igazítás falra
+            </button>
+            <button type="button" class="masodlagos" onClick={() => b.setLatszik(!b.latszik)}>
+              {b.latszik ? 'Elrejt' : 'Mutat'}
+            </button>
+            <TorlesGomb kicsi cimke="Alátét törlése" onTorol={() => (b.setAlatet(undefined), b.setPdf(null))} />
+          </>
+        )}
+      </div>
+      {b.uzenet && <p class="halk">{b.uzenet}</p>}
+      {a && b.kalib.length === 2 && (
+        <div class="racs">
+          <SzamMezo id="alatet-tav" cimke="A két pont valós távolsága" egyseg="m" ertek={b.kalibTav} onValtozas={(v) => b.setKalibTav(v)} />
+          <button type="button" class="elsodleges" disabled={!b.kalibTav} onClick={b.leptekKesz}>
+            Lépték beállítása
+          </button>
+        </div>
+      )}
+      {a && (
+        <div class="racs">
+          <SzamMezo id="alatet-fi" cimke="Forgatás" egyseg="°" ertek={Math.round(a.fi * 100) / 100} onValtozas={(v) => b.setAlatet({ ...a, fi: v })} />
+          <SzamMezo id="alatet-eszak" cimke="Észak a terven (a lap tetejétől, óramutató szerint)" egyseg="°" ertek={a.eszakLapon} onValtozas={(v) => b.setAlatet({ ...a, eszakLapon: v })} />
+          <label class="mezo">
+            <span class="cimke">Átlátszóság</span>
+            <input type="range" min={0.1} max={1} step={0.05} value={a.atlatszo} onInput={(e) => b.setAlatet({ ...a, atlatszo: Number((e.target as HTMLInputElement).value) })} />
+          </label>
+        </div>
+      )}
+    </div>
   );
 }

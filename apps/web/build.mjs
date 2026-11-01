@@ -10,7 +10,15 @@ import { fileURLToPath } from 'node:url';
 
 const ide = dirname(fileURLToPath(import.meta.url));
 const dist = join(ide, 'dist');
+// A pdf.js workerét szövegként ágyazzuk be (Blob URL-ből indul), így egyfájlos és offline módban is működik.
+const workerSzoveg = {
+  name: 'pdf-worker-szoveg',
+  setup(b) {
+    b.onLoad({ filter: /pdf\.worker\.min\.mjs$/ }, (a) => ({ contents: readFileSync(a.path, 'utf8'), loader: 'text' }));
+  },
+};
 const opciok = {
+  plugins: [workerSzoveg],
   entryPoints: [join(ide, 'src', 'main.tsx')],
   bundle: true,
   format: 'iife',
